@@ -1,0 +1,267 @@
+.landingRoot {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  font-family: var(--font-montserrat), var(--font-vazirmatn), sans-serif;
+}
+
+.portfolioSection {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+  width: 90%;
+  max-width: 800px;
+  opacity: 0;
+}
+
+.headerSection {
+  top: 25%;
+  animation: fadeIn 1.2s forwards 0.5s;
+}
+
+.nameTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(255, 255, 255, 0.75);
+  animation:
+    typing 1.8s steps(30, end) forwards,
+    blinkCaret 0.75s step-end infinite;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.jobTitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin: 10px 0 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeIn 1.2s forwards 1.8s;
+}
+
+.skillsSection {
+  top: 40%;
+  animation: fadeIn 1.5s forwards 2.5s;
+  margin-top: 20px;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.skillItem {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0 10px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.skillItem:not(:last-child)::after {
+  content: '•';
+  position: absolute;
+  right: -10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contactSection {
+  top: 50%;
+  animation: slideUp 1s forwards 3s;
+  margin-top: 20px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.contactItem {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 180px;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.contactItem:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contactLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactIcon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.resumeSection {
+  top: 70%;
+  animation: slideUp 1s forwards 3.5s;
+  margin-top: 30px;
+}
+
+.credits {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-montserrat), sans-serif;
+  z-index: 100;
+}
+
+.credits a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes blinkCaret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .headerSection {
+    top: 10%;
+  }
+
+  .nameTitle {
+    font-size: 2.2rem;
+    border-right: none;
+    animation: none;
+  }
+
+  .jobTitle {
+    font-size: 1.1rem;
+    animation: fadeIn 1.2s forwards 0.8s;
+  }
+
+  .skillsSection {
+    top: 25%;
+    animation: fadeIn 1.5s forwards 1.8s;
+  }
+
+  .contactSection {
+    top: 45%;
+  }
+
+  .resumeSection {
+    top: 65%;
+  }
+
+  .contactItem {
+    padding: 10px 15px;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerSection {
+    top: 8%;
+  }
+
+  .nameTitle {
+    font-size: 1.8rem;
+  }
+
+  .jobTitle {
+    font-size: 1rem;
+  }
+
+  .skillsSection {
+    top: 22%;
+  }
+
+  .contactSection {
+    top: 40%;
+  }
+
+  .resumeSection {
+    top: 60%;
+  }
+
+  .contactItem {
+    min-width: 130px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+.landingCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
