@@ -1,7 +1,7 @@
 {
-  "name": "mahdavinia-portfolio",
+  "name": "genesis-aurora",
   "version": "1.0.0",
-  "description": "Portfolio and bilingual resume for Ali Mahdavinia",
+  "description": "Genesis — team brand site for SaaS architecture and systems engineering",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-
   "dependencies": {
     "next": "^14.2.0",
     "react": "^18.3.0",
@@ -19,12 +18,14 @@
     "@types/node": "^20.14.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.5.4",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5.5.0"
   },
   "engines": {
     "node": ">=18.0.0"
   }
 }
-

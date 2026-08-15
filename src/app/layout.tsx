@@ -1,109 +1,62 @@
-import type { Metadata } from 'next';
-import {
-  Montserrat,
-  Playfair_Display,
-  Vazirmatn,
-} from 'next/font/google';
-import './globals.css';
-import { getProfileData } from '@/lib/profile';
+import type { Metadata } from 'next'
+import { Inter, Playfair_Display, Vazirmatn, Montserrat } from 'next/font/google'
+import './globals.css'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  weight: ['300', '400', '600'],
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['400', '700', '900'],
+  style: ['normal', 'italic'],
+})
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   variable: '--font-montserrat',
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-playfair',
-});
+})
 
 const vazirmatn = Vazirmatn({
   subsets: ['arabic'],
   weight: ['300', '400', '600', '700'],
   variable: '--font-vazirmatn',
-});
-
-const profile = getProfileData();
-const landing = profile.landing;
+})
 
 export const metadata: Metadata = {
-  title: `${landing.name} | Portfolio & Resume`,
-  description:
-    `${landing.name} — ${landing.tagline}. Backend Developer & System Architect specializing in Django/Python. Portfolio and bilingual resume.`,
+  title: 'GENESIS // Aurora Flow',
+  description: 'From the void of is empty; We code the light.',
+  keywords: ['SaaS', 'DDD', 'Rust', 'Python', 'Architecture', 'Genesis'],
   metadataBase: new URL('https://mahdavinia.ir'),
-  keywords: [
-    'Ali Mahdavinia',
-    'Backend Developer',
-    'Django',
-    'Python',
-    'System Architecture',
-    'Portfolio',
-    'Resume',
-    'Software Engineer',
-  ],
-  authors: [{ name: landing.name }],
-  creator: landing.name,
   openGraph: {
-    title: `${landing.name} | Portfolio & Resume`,
-    description: `${landing.tagline} — Backend Developer & System Architect. Explore portfolio and bilingual resume.`,
+    title: 'GENESIS // Aurora Flow',
+    description: 'From the void of is empty; We code the light.',
     type: 'website',
     url: 'https://mahdavinia.ir',
-    siteName: `${landing.name} Portfolio`,
-    images: [
-      {
-        url: '/logo.png',
-        width: 512,
-        height: 512,
-        alt: `${landing.name} logo`,
-      },
-    ],
-    locale: 'fa_IR',
-    alternateLocale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${landing.name} | Portfolio & Resume`,
-    description: `${landing.tagline} — Backend Developer & System Architect`,
-    images: ['/logo.png'],
-    creator: '@mahdaviniaali',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    siteName: 'Genesis',
   },
   icons: {
-    icon: [
-      { url: '/logo.png', sizes: 'any' },
-      { url: '/logo.png', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: [{ url: '/logo.png', sizes: 'any' }],
+    apple: [{ url: '/logo.png', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/manifest.json',
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="fa" data-theme="dark">
-      <body
-        className={`${montserrat.variable} ${playfair.variable} ${vazirmatn.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable} ${montserrat.variable} ${vazirmatn.variable}`}
+    >
+      <body className="font-sans antialiased">{children}</body>
     </html>
-  );
+  )
 }
