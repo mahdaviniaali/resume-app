@@ -1,11 +1,11 @@
 {
-  "name": "Ali Mahdavinia — Portfolio & Resume",
-  "short_name": "Ali Mahdavinia",
-  "description": "Backend Developer & System Architect — Portfolio and bilingual resume",
+  "name": "Genesis",
+  "short_name": "Genesis",
+  "description": "Genesis — from messy systems to durable architecture",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#050507",
+  "theme_color": "#050507",
   "icons": [
     {
       "src": "/logo.png",
@@ -15,4 +15,3 @@
     }
   ]
 }
-

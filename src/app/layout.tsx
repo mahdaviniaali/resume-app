@@ -28,12 +28,13 @@ const vazirmatn = Vazirmatn({
 })
 
 export const metadata: Metadata = {
-  title: 'GENESIS // Aurora Flow',
-  description: 'From the void of is empty; We code the light.',
-  keywords: ['SaaS', 'DDD', 'Rust', 'Python', 'Architecture', 'Genesis'],
+  title: 'GENESIS // From chaos to clarity',
+  description:
+    'Genesis turns messy systems and hard problems into durable multi-tenant SaaS, domain-driven design, and high-performance cores.',
+  keywords: ['Genesis', 'SaaS', 'DDD', 'Rust', 'Python', 'System Architecture', 'Team'],
   metadataBase: new URL('https://mahdavinia.ir'),
   openGraph: {
-    title: 'GENESIS // Aurora Flow',
+    title: 'GENESIS // From chaos to clarity',
     description: 'From the void of is empty; We code the light.',
     type: 'website',
     url: 'https://mahdavinia.ir',

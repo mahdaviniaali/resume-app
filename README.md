@@ -1,82 +1,63 @@
-# Portfolio & Resume — Ali Mahdavinia
+# Genesis — Team Brand Platform
 
-Portfolio landing page and bilingual (Persian/English) resume built with Next.js 14, powered by a single JSON data source.
+From messy systems to durable architecture. Next.js brand site + FastAPI CMS + per-member bilingual resumes.
 
-## Features
+## Stack
 
-- 🎨 **Modern Landing Page** with WebGL Fluid Simulation
-- 📄 **Bilingual Resume** (Persian/English) with language switcher
-- 📱 **Fully Responsive** design
-- ⚡ **Next.js 14** with App Router
-- 🎯 **Single Source of Truth** — All data in `src/data/profile.json`
-- 🔍 **SEO Optimized** with proper metadata
+- **Frontend:** Next.js 14, Tailwind, Aurora landing (7 sections)
+- **Backend:** FastAPI, SQLAlchemy, SQLite, JWT admin auth
+- **Admin:** `/admin` panel for members, resumes, site copy
 
-## Project Structure
+## Quick start
 
-```
-resume-app/
-├── data/
-│   └── profile.json      # Single source of truth for all data
-├── public/               # Static assets
-│   ├── logo.png
-│   ├── dat.gui.min.js
-│   └── fluid.js
-├── src/
-│   ├── app/             # Next.js App Router pages
-│   │   ├── page.tsx     # Landing page
-│   │   └── resume/      # Resume page
-│   └── lib/
-│       └── profile.ts   # Profile data utilities
-└── package.json
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
+### 1. API
 
 ```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
+cd backend
+python -m venv .venv
+.\.venv\Scripts\pip install -r requirements.txt   # Windows
+# source .venv/bin/activate && pip install -r requirements.txt  # macOS/Linux
+copy .env.example .env
+.\.venv\Scripts\uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+API docs: http://127.0.0.1:8000/docs
 
-## Data Management
+Default admin: `admin` / `admin123` (change in `backend/.env`)
 
-All content is managed through `src/data/profile.json`:
+### 2. Web
 
-- **Landing Page**: `profile.landing`
-- **Resume**: `profile.resume` (bilingual with `fa` and `en`)
+```bash
+# from repo root
+npm install
+# ensure .env.local has NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+npm run dev
+```
 
-Update the JSON file to change any content — no code changes needed!
+- Public site: http://localhost:3000
+- Team resume example: http://localhost:3000/team/ali-mahdavinia
+- Admin: http://localhost:3000/admin/login
 
-## Deployment
+## Homepage sections
 
-This project can be deployed on:
+1. Hero — Genesis manifesto  
+2. The Void — messy / hard problems  
+3. The Crossing — chaos → order narrative  
+4. Capabilities — services bento  
+5. Method — discover → illuminate  
+6. Team — members → individual resumes  
+7. Contact — real mailto / social links  
 
-- **Vercel** (recommended for Next.js)
-- **Netlify**
-- **Any Node.js hosting** with `npm run build && npm start`
+## Data
 
-## License
+- Seeded on first API boot from `src/data/profile.json` (Ali) + placeholder teammates  
+- Runtime content lives in SQLite (`backend/genesis.db`)  
+- Edit everything in Admin → Members / Site Settings  
 
-Private project — All rights reserved.
+## Scripts
 
----
-
-Built with ❤️ by Ali Mahdavinia
-
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Next.js |
+| `npm run build` | Production web build |
+| Backend uvicorn | See API section above |

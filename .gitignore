@@ -33,3 +33,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# backend
+backend/.venv/
+backend/**/__pycache__/
+backend/*.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+
