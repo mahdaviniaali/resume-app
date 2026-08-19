@@ -8,22 +8,45 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-playfair)', 'serif'],
-        sans: ['var(--font-inter)', 'sans-serif'],
+        display: ['var(--font-orbitron)', 'var(--font-vazirmatn)', 'sans-serif'],
+        sans: ['var(--font-vazirmatn)', 'var(--font-inter)', 'Tahoma', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        mono: ['var(--font-jetbrains)', 'ui-monospace', 'monospace'],
+        quote: ['var(--font-source-code)', 'ui-monospace', 'monospace'],
       },
       colors: {
-        void: '#050507',
-        muted: '#777777',
-        border: 'rgba(255, 255, 255, 0.08)',
-        glass: 'rgba(255, 255, 255, 0.02)',
+        void: '#050505',
+        ink: '#0A0A0A',
+        gold: '#D4AF37',
+        'gold-bright': '#F5B342',
+        muted: '#8A8A8A',
+        dim: '#707070',
+        line: '#2A2A2A',
+        grid: '#1A1A1A',
+        border: '#2A2A2A',
+        glass: 'rgba(255, 255, 255, 0.025)',
+      },
+      letterSpacing: {
+        hero: '0.18em',
+        wide: '0.1em',
+        en: '0.05em',
+      },
+      lineHeight: {
+        roomy: '2',
       },
       animation: {
         blink: 'blink 3s infinite',
-        'fade-up': 'fadeUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+        caret: 'caret 1.1s step-end infinite',
+        'fade-up': 'fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
       },
       keyframes: {
         blink: {
           '50%': { opacity: '0.3' },
+        },
+        caret: {
+          '0%, 45%': { opacity: '1' },
+          '50%, 100%': { opacity: '0' },
         },
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(30px)' },

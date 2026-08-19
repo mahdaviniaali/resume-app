@@ -23,6 +23,12 @@ export interface SiteSettings {
 
 export interface HomeContent {
   hero?: Record<string, string>
+  beyond?: {
+    title: string
+    subtitle: string
+    lead: string
+    stages: { label: string; text: string }[]
+  }
   void?: {
     title: string
     subtitle: string

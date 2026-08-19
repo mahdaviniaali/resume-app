@@ -1,24 +1,26 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { AuroraCanvas } from '@/components/AuroraCanvas'
-import { CustomCursor } from '@/components/CustomCursor'
+import { SiteAtmosphere } from '@/components/SiteAtmosphere'
+import { HeroBackdrop } from '@/components/HeroBackdrop'
 import { Vignette } from '@/components/Vignette'
 import { Navigation } from '@/components/Navigation'
 import { HeroSection } from '@/components/sections/HeroSection'
+import { BeyondCodeSection } from '@/components/sections/BeyondCodeSection'
 import { VoidSection } from '@/components/sections/VoidSection'
 import { CrossingSection } from '@/components/sections/CrossingSection'
 import { CapabilitiesSection } from '@/components/sections/CapabilitiesSection'
 import { MethodSection } from '@/components/sections/MethodSection'
 import { TeamSection } from '@/components/sections/TeamSection'
 import { ContactSection } from '@/components/sections/ContactSection'
+import { homeFa } from '@/data/homeFa'
 import { fetchMembers, fetchSite, type SiteSettings, type TeamMember } from '@/lib/api'
 
 const fallbackSite: SiteSettings = {
-  brand_name: 'Genesis',
-  tagline: 'From the void of "is empty"; We code the light.',
+  brand_name: 'جنسیس',
+  tagline: 'از خلأِ خالی است؛ ما نور را می‌سازیم.',
   contacts: { email: '', telegram: '', linkedin: '', github: '' },
-  home_content: {},
+  home_content: homeFa,
 }
 
 export default function Home() {
@@ -29,14 +31,22 @@ export default function Home() {
   useEffect(() => {
     Promise.all([fetchSite(), fetchMembers()])
       .then(([siteData, memberData]) => {
-        setSite(siteData)
+        setSite({
+          ...siteData,
+          brand_name:
+            !siteData.brand_name || siteData.brand_name === 'Genesis'
+              ? 'جنسیس'
+              : siteData.brand_name,
+          // Landing copy is Persian; keep API contacts/members
+          home_content: homeFa,
+        })
         setMembers(memberData)
       })
-      .catch(() => setError('Backend offline — start FastAPI on :8000'))
+      .catch(() => setError('بک‌اند در دسترس نیست — FastAPI را روی :8000 اجرا کنید'))
   }, [])
 
-  const home = site.home_content || {}
-  const hero = home.hero || {}
+  const home = homeFa
+  const beyond = home.beyond
   const voidBlock = home.void
   const crossing = home.crossing
   const capabilities = home.capabilities
@@ -45,28 +55,41 @@ export default function Home() {
   const contact = home.contact
 
   return (
-    <main className="relative min-h-screen">
-      <AuroraCanvas />
+    <main className="relative min-h-screen bg-void">
+      <SiteAtmosphere />
       <Vignette />
-      <CustomCursor />
 
-      <div className="relative z-10 mx-auto max-w-[1200px] px-4 py-12 sm:px-8 sm:py-16">
-        <Navigation brandName={site.brand_name} />
-        {error && (
-          <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
-            {error}
-          </p>
+      <div className="relative z-10">
+        <div className="relative min-h-svh w-full overflow-hidden">
+          <HeroBackdrop />
+          <div className="relative z-10 flex min-h-svh flex-col">
+            <div className="absolute inset-x-0 top-0 z-20">
+              <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
+                <Navigation brandName={site.brand_name} />
+              </div>
+            </div>
+
+            <div className="mx-auto mt-auto flex w-full max-w-[1280px] flex-col px-4 pb-3 sm:px-8 sm:pb-5">
+              {error && (
+                <p className="mb-4 border border-gold/30 bg-black/50 px-4 py-3 font-mono text-sm text-gold backdrop-blur-sm">
+                  {error}
+                </p>
+              )}
+              <HeroSection />
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-[1280px] px-4 pb-12 sm:px-8 sm:pb-16">
+
+        {beyond && (
+          <BeyondCodeSection
+            title={beyond.title}
+            subtitle={beyond.subtitle}
+            lead={beyond.lead}
+            stages={beyond.stages}
+          />
         )}
-
-        <HeroSection
-          eyebrow={hero.eyebrow}
-          line1={hero.line1}
-          line2Prefix={hero.line2_prefix}
-          line2Stroke={hero.line2_stroke}
-          line3Prefix={hero.line3_prefix}
-          line3Accent={hero.line3_accent}
-          description={hero.description}
-        />
 
         {voidBlock && (
           <VoidSection title={voidBlock.title} subtitle={voidBlock.subtitle} items={voidBlock.items} />
@@ -93,17 +116,18 @@ export default function Home() {
         )}
 
         <TeamSection
-          title={team?.title || 'The Circle'}
-          subtitle={team?.subtitle || 'Architects of the unseen'}
+          title={team?.title || 'حلقه'}
+          subtitle={team?.subtitle || 'معماران نادیده'}
           members={members}
         />
 
         <ContactSection
-          title={contact?.title || "Let's weave the light."}
-          subtitle={contact?.subtitle || 'Transmit a signal.'}
-          button={contact?.button || 'Transmit Signal →'}
+          title={contact?.title || 'بیایید نور را ببافیم.'}
+          subtitle={contact?.subtitle || 'یک سیگنال بفرستید.'}
+          button={contact?.button || 'ارسال سیگنال ←'}
           contacts={site.contacts}
         />
+        </div>
       </div>
     </main>
   )

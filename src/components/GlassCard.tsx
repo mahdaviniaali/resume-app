@@ -34,7 +34,7 @@ export function GlassCard({
   }
 
   const handleContactClick = () => {
-    alert('Signal received. We are coding the light.')
+    alert('سیگنال دریافت شد. داریم نور را می‌سازیم.')
   }
 
   return (
@@ -50,7 +50,7 @@ export function GlassCard({
       }
     >
       {icon && (
-        <div className="mb-4 font-sans text-xs tracking-[1px] text-[#555]">{icon}</div>
+        <div className="mb-4 font-sans text-xs tracking-[1px] text-[#777]">{icon}</div>
       )}
 
       <h3
@@ -61,12 +61,10 @@ export function GlassCard({
         {title}
       </h3>
 
-      {description && (
-        <p className="text-sm font-light leading-relaxed text-[#888]">{description}</p>
-      )}
+      {description && <p className="body-soft">{description}</p>}
 
       {code && (
-        <pre className="mt-6 whitespace-pre-wrap rounded-xl border border-white/5 bg-black/20 p-4 font-sans text-sm font-light text-[#aaa]">
+        <pre className="mt-6 whitespace-pre-wrap border border-line bg-black/40 p-4 font-mono text-sm leading-roomy text-muted">
           {code}
         </pre>
       )}
@@ -75,9 +73,9 @@ export function GlassCard({
         <button
           type="button"
           onClick={handleContactClick}
-          className="contact-btn mt-8 cursor-none rounded-full border-none bg-white px-12 py-5 font-sans text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+          className="contact-btn mt-8 rounded-full border-none bg-white px-12 py-5 font-sans text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
         >
-          Transmit Signal &rarr;
+          ارسال سیگنال ←
         </button>
       )}
     </div>

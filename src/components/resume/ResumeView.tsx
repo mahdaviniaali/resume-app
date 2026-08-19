@@ -275,7 +275,7 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
 }
 
 export function ResumeView({ resume, memberName }: { resume: ResumeData; memberName?: string }) {
-  const [language, setLanguage] = useState<Language>('en')
+  const [language, setLanguage] = useState<Language>('fa')
   const [printMode, setPrintMode] = useState<'view' | 'dual' | 'simple'>('view')
   const [downloadMenuOpen, setDownloadMenuOpen] = useState(false)
 

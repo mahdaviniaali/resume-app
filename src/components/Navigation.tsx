@@ -4,30 +4,38 @@ import { useRef } from 'react'
 import { useReveal } from '@/hooks/useReveal'
 
 const links = [
-  { href: '#void', label: 'Void' },
-  { href: '#crossing', label: 'Crossing' },
-  { href: '#capabilities', label: 'Capabilities' },
-  { href: '#method', label: 'Method' },
-  { href: '#team', label: 'Team' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#beyond', label: 'فراتر از کد' },
+  { href: '#void', label: 'خلأ' },
+  { href: '#crossing', label: 'گذار' },
+  { href: '#capabilities', label: 'توانایی‌ها' },
+  { href: '#method', label: 'روش' },
+  { href: '#team', label: 'تیم' },
+  { href: '#contact', label: 'تماس' },
 ]
 
-export function Navigation({ brandName = 'Genesis' }: { brandName?: string }) {
+export function Navigation({ brandName = 'ISEMPTY' }: { brandName?: string }) {
   const ref = useRef<HTMLElement>(null)
   useReveal(ref)
+
+  const brand = !brandName || brandName === 'Genesis' || brandName === 'جنسیس' ? 'ISEMPTY' : brandName
 
   return (
     <nav
       ref={ref}
-      className="mb-16 flex flex-col gap-6 py-8 sm:mb-24 sm:flex-row sm:items-center sm:justify-between"
+      className="flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:py-4"
     >
-      <a href="#hero" className="font-display text-2xl font-bold text-white">
-        {brandName}
+      <a
+        href="#hero"
+        dir="ltr"
+        className="font-display text-sm font-extrabold uppercase tracking-[0.22em] text-white sm:text-base"
+      >
+        <span className="me-2 font-mono font-normal tracking-normal text-gold">&gt;_</span>
+        {brand}
       </a>
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] uppercase tracking-[2px] text-muted">
-        <span className="mr-1 inline-flex items-center gap-2">
-          <span className="inline-block h-2 w-2 animate-blink rounded-full bg-white/80" />
-          Protocol
+      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+        <span className="inline-flex items-center gap-2 text-gold">
+          <span className="inline-block h-1.5 w-1.5 animate-blink bg-gold" />
+          ONLINE
         </span>
         {links.map((link) => (
           <a key={link.href} href={link.href} className="transition-colors hover:text-white">
