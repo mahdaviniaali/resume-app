@@ -27,7 +27,7 @@ export interface HomeContent {
     title: string
     subtitle: string
     lead: string
-    stages: { label: string; text: string }[]
+    stages: { label: string; text: string; highlight?: string }[]
   }
   void?: {
     title: string

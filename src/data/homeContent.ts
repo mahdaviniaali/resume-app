@@ -20,14 +20,17 @@ export const homeContent: HomeContent = {
       {
         label: 'Idea',
         text: 'Bring the unfinished thought. We pressure-test it, name the real problem, and turn fog into something buildable.',
+        highlight: 'fog into something buildable',
       },
       {
         label: 'System',
         text: 'Abstract thinking becomes working architecture — domain, services, data — clean enough to own, sharp enough to scale.',
+        highlight: 'working architecture',
       },
       {
         label: 'Experience',
         text: 'We obsess over the path. Clear flows. Honest hierarchy. Users decide fast — and never disappear into the UI.',
+        highlight: 'never disappear',
       },
     ],
   },
