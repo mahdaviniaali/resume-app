@@ -9,19 +9,31 @@ export const HERO_DESIGN_H = Math.round((1280 * 793) / 1983) // 512
 export function HeroStage({ children }: { children: ReactNode }) {
   const shellRef = useRef<HTMLDivElement>(null)
   const [scale, setScale] = useState(1)
+  const [parallaxY, setParallaxY] = useState(0)
 
   useEffect(() => {
     const el = shellRef.current
     if (!el) return
 
-    const update = () => {
+    const updateScale = () => {
       setScale(el.clientWidth / HERO_DESIGN_W)
     }
-    update()
+    updateScale()
 
-    const ro = new ResizeObserver(update)
+    const ro = new ResizeObserver(updateScale)
     ro.observe(el)
     return () => ro.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      // Same pace as the old HeroBackdrop: bg moves slower than page content
+      const y = Math.min(window.scrollY, window.innerHeight)
+      setParallaxY(y * 0.22)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
@@ -41,7 +53,8 @@ export function HeroStage({ children }: { children: ReactNode }) {
         <img
           src="/hero.png"
           alt=""
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[108%] w-full object-cover object-center will-change-transform"
+          style={{ transform: `translateY(${parallaxY}px) scale(1.04)` }}
           fetchPriority="high"
           aria-hidden
         />
