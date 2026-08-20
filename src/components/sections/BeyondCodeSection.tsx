@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { useInView } from '@/hooks/useInView'
 
 interface Stage {
@@ -15,6 +15,8 @@ interface BeyondCodeSectionProps {
   lead?: string
   stages?: Stage[]
 }
+
+const CYCLE_MS = 4500
 
 const defaultStages: Stage[] = [
   {
@@ -47,13 +49,6 @@ function highlightPhrase(text: string, phrase?: string) {
   )
 }
 
-function splitSentences(text: string) {
-  return text
-    .split(/(?<=[.!?])\s+/)
-    .map((s) => s.trim())
-    .filter(Boolean)
-}
-
 function LeadWords({ text }: { text: string }) {
   const tokens = text.split(/(\s+)/)
   let wordIndex = 0
@@ -62,13 +57,13 @@ function LeadWords({ text }: { text: string }) {
       {tokens.map((token, i) => {
         if (/^\s+$/.test(token)) return <span key={`sp-${i}`}>{token}</span>
         const isKey = /^(idea|system|experience)([.,;:!?]*)?$/i.test(token)
-        const delay = wordIndex * 38
+        const delay = wordIndex * 32
         wordIndex += 1
         return (
           <span
             key={`w-${i}`}
-            className={`beyond-lead-word ${isKey ? 'is-key' : ''}`}
-            style={{ transitionDelay: `${120 + delay}ms` }}
+            className="beyond-lead-word"
+            style={{ transitionDelay: `${100 + delay}ms` }}
           >
             {isKey ? <em className="beyond-mark">{token}</em> : token}
           </span>
@@ -78,26 +73,7 @@ function LeadWords({ text }: { text: string }) {
   )
 }
 
-function GiantLabel({ word }: { word: string }) {
-  return (
-    <span className="beyond-giant-word" aria-label={word}>
-      {word.split('').map((ch, i) => (
-        <span
-          key={`${word}-${i}-${ch}`}
-          className="beyond-giant-letter"
-          style={{ animationDelay: `${i * 42}ms` }}
-        >
-          {ch}
-        </span>
-      ))}
-    </span>
-  )
-}
-
-/**
- * Beyond — interactive type theatre.
- * Navy atmosphere, yellow only on text marks. No illustrations.
- */
+/** Modern minimal — soft navy, yellow text marks, lively motion */
 export function BeyondCodeSection({
   title = 'More than code',
   subtitle = 'Idea · System · Experience',
@@ -108,6 +84,9 @@ export function BeyondCodeSection({
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
   const [tick, setTick] = useState(0)
+  const [progress, setProgress] = useState(0)
+  const activeRef = useRef(0)
+  const resumeTimer = useRef<number | null>(null)
 
   const enriched = stages.map((stage, i) => ({
     ...stage,
@@ -115,128 +94,133 @@ export function BeyondCodeSection({
   }))
 
   const current = enriched[active] ?? enriched[0]
-  const sentences = splitSentences(current.text)
-  const marquee = `${enriched.map((s) => s.label.toUpperCase()).join(' · ')} · `
+  activeRef.current = active
+
+  const goTo = (index: number, manual = false) => {
+    const len = enriched.length
+    const next = ((index % len) + len) % len
+    if (next === activeRef.current) return
+    setActive(next)
+    setTick((t) => t + 1)
+    setProgress(0)
+
+    if (manual) {
+      setPaused(true)
+      if (resumeTimer.current) window.clearTimeout(resumeTimer.current)
+      resumeTimer.current = window.setTimeout(() => setPaused(false), 5000)
+    }
+  }
 
   useEffect(() => {
-    if (!visible || paused) return
-    const id = window.setInterval(() => {
-      setActive((prev) => (prev + 1) % enriched.length)
-      setTick((t) => t + 1)
-    }, 4200)
-    return () => window.clearInterval(id)
-  }, [visible, paused, enriched.length])
+    return () => {
+      if (resumeTimer.current) window.clearTimeout(resumeTimer.current)
+    }
+  }, [])
 
-  const select = (index: number) => {
-    setActive(index)
-    setTick((t) => t + 1)
-    setPaused(true)
-  }
+  useEffect(() => {
+    if (!visible || paused) {
+      setProgress(0)
+      return
+    }
+
+    const started = performance.now()
+    let raf = 0
+
+    const loop = (now: number) => {
+      const t = Math.min(1, (now - started) / CYCLE_MS)
+      setProgress(t)
+      if (t >= 1) {
+        goTo(activeRef.current + 1)
+        return
+      }
+      raf = requestAnimationFrame(loop)
+    }
+
+    raf = requestAnimationFrame(loop)
+    return () => cancelAnimationFrame(raf)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible, paused, active, enriched.length])
 
   return (
     <section
       id="beyond"
       ref={ref}
-      className={`beyond-theatre scroll-mt-24 ${visible ? 'is-on' : ''}`}
-      onMouseLeave={() => setPaused(false)}
+      className={`beyond-soft scroll-mt-24 ${visible ? 'is-on' : ''}`}
+      aria-label={title}
     >
-      {/* Ambient type ribbon */}
-      <div className="beyond-marquee" aria-hidden>
-        <div className="beyond-marquee-track">
-          <span>{marquee.repeat(6)}</span>
-          <span>{marquee.repeat(6)}</span>
-        </div>
-      </div>
+      <header className="beyond-head mb-9 sm:mb-11">
+        <p className="beyond-eyebrow mb-3 font-inter text-[11px] font-medium uppercase tracking-[0.2em] text-[#8fa3c7]">
+          01 — {subtitle.replace(/·/g, ' / ')}
+        </p>
 
-      <header className="beyond-head relative z-[1] mb-10 sm:mb-12">
-        <div className="mb-3 font-mono text-lg tracking-[0.14em] text-[#8fa3c7]">
-          &gt;_<span className="ms-2 text-[10px] tracking-[0.2em] text-[#5c6e8f]">01</span>
-        </div>
-
-        <h2 className="beyond-title font-display text-[clamp(2rem,5vw,3.4rem)] font-extrabold uppercase leading-[0.95] tracking-[0.14em] text-white">
+        <h2 className="beyond-title font-display text-[clamp(1.9rem,4.2vw,2.85rem)] font-bold uppercase leading-[1.05] tracking-[0.08em] text-white">
           <span className="beyond-title-line">{title}</span>
         </h2>
 
-        <p className="beyond-kicker mt-4 font-inter text-[0.8rem] font-light uppercase tracking-[0.16em] text-[#9aabcd]">
-          {subtitle.replace(/·/g, ' — ')}
-        </p>
-
         {lead ? (
-          <p className="beyond-lead mt-7 max-w-[38rem] font-quote text-[1.02rem] font-light leading-roomy tracking-[0.03em] text-[#c5cddc]">
+          <p className="beyond-lead mt-5 max-w-[36rem] font-inter text-[1rem] font-light leading-[1.85] tracking-[0.01em] text-[#b8c2d4]">
             <LeadWords text={lead} />
           </p>
         ) : null}
       </header>
 
+      {/* Soft pill tabs */}
+      <div className="beyond-tabs mb-7 flex flex-wrap gap-2" role="tablist" aria-label="Stages">
+        {enriched.map((stage, i) => {
+          const on = i === active
+          return (
+            <button
+              key={stage.label}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              className={`beyond-tab ${on ? 'is-on' : ''}`}
+              onClick={() => goTo(i, true)}
+              style={{ '--i': i } as CSSProperties}
+            >
+              <span className="beyond-tab-label">{stage.label}</span>
+              {on ? (
+                <span
+                  className="beyond-tab-fill"
+                  style={{ transform: `scaleX(${paused ? 0 : progress})` }}
+                  aria-hidden
+                />
+              ) : null}
+            </button>
+          )
+        })}
+      </div>
+
+      {/* Soft stage panel */}
       <div
-        className="beyond-board relative z-[1]"
+        className="beyond-panel"
+        data-phase={active}
         onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
       >
-        {/* Stage picker */}
-        <nav className="beyond-nav" aria-label="Stages">
-          {enriched.map((stage, i) => {
-            const on = i === active
-            return (
-              <button
-                key={stage.label}
-                type="button"
-                className={`beyond-nav-item ${on ? 'is-on' : ''}`}
-                aria-current={on ? 'true' : undefined}
-                onClick={() => select(i)}
-                onFocus={() => select(i)}
-                style={{ '--i': i } as CSSProperties}
-              >
-                <span className="beyond-nav-num font-mono text-[10px] tracking-[0.18em]">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span className="beyond-nav-label font-inter text-[0.78rem] font-light uppercase tracking-[0.16em]">
-                  {stage.label}
-                </span>
-                <span className="beyond-nav-bar" aria-hidden />
-              </button>
-            )
-          })}
+        <div className="beyond-blob beyond-blob-a" aria-hidden />
+        <div className="beyond-blob beyond-blob-b" aria-hidden />
 
-          <p className="beyond-counter mt-auto hidden font-mono text-[10px] tracking-[0.2em] text-[#6d7f9e] lg:block">
-            {String(active + 1).padStart(2, '0')}
-            <span className="text-[#3d4f73]"> / </span>
-            {String(enriched.length).padStart(2, '0')}
-          </p>
-        </nav>
-
-        {/* Focus stage */}
-        <div className="beyond-focus" data-phase={active}>
-          <div className="beyond-focus-wash" aria-hidden />
-
-          <p key={`g-${tick}`} className="beyond-giant font-display font-extrabold uppercase text-white">
-            <GiantLabel word={current.label} />
+        <div key={tick} className="beyond-panel-inner">
+          <p className="beyond-stage-word font-display font-bold uppercase tracking-[0.06em] text-white">
+            {current.label}
           </p>
 
-          <div key={`b-${tick}`} className="beyond-body mt-6 max-w-xl sm:mt-8">
-            {sentences.map((sentence, i) => (
-              <p
-                key={`${current.label}-${i}`}
-                className="beyond-line font-quote text-[0.95rem] font-light leading-roomy tracking-[0.03em] text-[#b8c2d4]"
-                style={{ animationDelay: `${180 + i * 110}ms` }}
-              >
-                {highlightPhrase(sentence, current.highlight)}
-              </p>
-            ))}
-          </div>
+          <p className="beyond-stage-copy mt-4 max-w-lg font-inter text-[0.95rem] font-light leading-[1.9] text-[#c2cad8]">
+            {highlightPhrase(current.text, current.highlight)}
+          </p>
+        </div>
 
-          {/* Quiet siblings under giant — mobile rhythm */}
-          <ul className="beyond-ghosts mt-10 flex flex-wrap gap-x-6 gap-y-2 lg:mt-14" aria-hidden>
-            {enriched.map((stage, i) => (
-              <li
-                key={stage.label}
-                className={`beyond-ghost font-display text-[0.7rem] font-bold uppercase tracking-[0.2em] ${
-                  i === active ? 'is-on' : ''
-                }`}
-              >
-                {stage.label}
-              </li>
-            ))}
-          </ul>
+        <div className="beyond-dots" aria-hidden>
+          {enriched.map((stage, i) => (
+            <button
+              key={stage.label}
+              type="button"
+              className={`beyond-dot ${i === active ? 'is-on' : ''}`}
+              onClick={() => goTo(i, true)}
+              aria-label={stage.label}
+            />
+          ))}
         </div>
       </div>
     </section>

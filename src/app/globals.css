@@ -290,13 +290,8 @@
     animation: section-swap-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  /* —— Beyond theatre: typography + layout only —— */
-  .beyond-theatre {
-    --navy-deep: #070b16;
-    --navy-mid: #121a2e;
-    --navy-line: rgba(120, 145, 190, 0.28);
-    --navy-mute: #6d7f9e;
-    --navy-soft: #9aabcd;
+  /* —— Beyond: modern soft minimal —— */
+  .beyond-soft {
     position: relative;
   }
 
@@ -305,51 +300,33 @@
     color: #f5b342;
   }
 
-  .beyond-marquee {
-    pointer-events: none;
-    position: absolute;
-    inset-inline: -1.5rem;
-    top: -0.5rem;
-    overflow: hidden;
-    opacity: 0;
-    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    transition: opacity 1s ease 0.1s;
-  }
-
-  .beyond-theatre.is-on .beyond-marquee {
-    opacity: 0.22;
-  }
-
-  .beyond-marquee-track {
-    display: flex;
-    width: max-content;
-    gap: 0;
-    animation: beyond-marquee 42s linear infinite;
-  }
-
-  .beyond-marquee-track span {
-    padding-right: 2rem;
-    font-family: var(--font-orbitron), var(--font-inter), sans-serif;
-    font-size: clamp(2.8rem, 7vw, 5rem);
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #1a2744;
-    white-space: nowrap;
-  }
-
-  .beyond-head {
+  .beyond-head,
+  .beyond-tabs,
+  .beyond-panel {
     opacity: 0;
     transform: translateY(18px);
     transition:
-      opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .beyond-theatre.is-on .beyond-head {
+  .beyond-tabs {
+    transition-delay: 0.08s;
+  }
+
+  .beyond-panel {
+    transition-delay: 0.16s;
+  }
+
+  .beyond-soft.is-on .beyond-head,
+  .beyond-soft.is-on .beyond-tabs,
+  .beyond-soft.is-on .beyond-panel {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .beyond-eyebrow {
+    opacity: 0.9;
   }
 
   .beyond-title {
@@ -359,227 +336,189 @@
   .beyond-title-line {
     display: inline-block;
     transform: translateY(110%);
-    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.06s;
   }
 
-  .beyond-theatre.is-on .beyond-title-line {
+  .beyond-soft.is-on .beyond-title-line {
     transform: translateY(0);
-  }
-
-  .beyond-kicker {
-    opacity: 0;
-    transition: opacity 0.6s ease 0.35s;
-  }
-
-  .beyond-theatre.is-on .beyond-kicker {
-    opacity: 1;
   }
 
   .beyond-lead-word {
     display: inline-block;
     opacity: 0;
-    transform: translateY(0.6em);
-    filter: blur(4px);
+    transform: translateY(0.4em);
     transition:
-      opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-      filter 0.55s ease;
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .beyond-theatre.is-on .beyond-lead-word {
+  .beyond-soft.is-on .beyond-lead-word {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 
-  .beyond-board {
-    display: grid;
-    gap: 1.75rem;
-    margin-top: 0.5rem;
-    padding: 1.25rem 0 0.5rem;
-    border-top: 1px solid var(--navy-line);
-  }
-
-  @media (min-width: 900px) {
-    .beyond-board {
-      grid-template-columns: 10.5rem minmax(0, 1fr);
-      gap: 2.5rem 3rem;
-      padding-top: 1.75rem;
-      min-height: 22rem;
-    }
-  }
-
-  .beyond-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 1.25rem;
-    align-content: flex-start;
-  }
-
-  @media (min-width: 900px) {
-    .beyond-nav {
-      flex-direction: column;
-      flex-wrap: nowrap;
-      gap: 0.15rem;
-      min-height: 100%;
-      padding-top: 0.35rem;
-    }
-  }
-
-  .beyond-nav-item {
+  .beyond-tab {
     position: relative;
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    padding: 0.65rem 0;
-    text-align: left;
-    color: var(--navy-mute);
-    background: transparent;
-    opacity: 0;
-    transform: translateX(-12px);
+    overflow: hidden;
+    border-radius: 999px;
+    border: 1px solid rgba(130, 155, 200, 0.18);
+    background: rgba(18, 28, 48, 0.45);
+    padding: 0.65rem 1.15rem;
+    color: #8fa0bc;
+    backdrop-filter: blur(10px);
     transition:
       color 0.35s ease,
-      opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-    transition-delay: calc(0.35s + var(--i, 0) * 0.08s);
+      background 0.35s ease,
+      border-color 0.35s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease;
   }
 
-  .beyond-theatre.is-on .beyond-nav-item {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .beyond-nav-item:hover,
-  .beyond-nav-item:focus-visible {
-    color: #d5deef;
-    outline: none;
-  }
-
-  .beyond-nav-item.is-on {
-    color: #eef2fa;
-  }
-
-  .beyond-nav-bar {
-    position: absolute;
-    left: 0;
-    bottom: 0.35rem;
-    height: 1px;
-    width: 0;
-    background: linear-gradient(90deg, #8fa3c7, transparent);
-    transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .beyond-nav-item.is-on .beyond-nav-bar {
-    width: 100%;
-  }
-
-  @media (min-width: 900px) {
-    .beyond-nav-bar {
-      left: -1rem;
-      top: 50%;
-      bottom: auto;
-      width: 2px;
-      height: 0;
-      background: #8fa3c7;
-      transform: translateY(-50%);
-    }
-
-    .beyond-nav-item.is-on .beyond-nav-bar {
-      width: 2px;
-      height: 1.1rem;
-    }
-  }
-
-  .beyond-focus {
+  .beyond-tab-label {
     position: relative;
-    overflow: hidden;
-    padding: 1.5rem 1.25rem 1.75rem;
-    background:
-      radial-gradient(ellipse 90% 80% at 12% 0%, rgba(55, 85, 150, 0.18), transparent 55%),
-      linear-gradient(165deg, rgba(14, 22, 40, 0.92), rgba(7, 11, 22, 0.55));
-    border: 1px solid rgba(100, 125, 175, 0.18);
-    opacity: 0;
-    transform: translateY(22px);
-    transition:
-      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
-      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+    z-index: 1;
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
   }
 
-  .beyond-theatre.is-on .beyond-focus {
-    opacity: 1;
-    transform: translateY(0);
+  .beyond-tab:hover {
+    color: #e8eef8;
+    border-color: rgba(150, 175, 220, 0.35);
+    transform: translateY(-1px);
   }
 
-  .beyond-focus-wash {
-    pointer-events: none;
+  .beyond-tab:focus-visible {
+    outline: 2px solid rgba(143, 163, 199, 0.5);
+    outline-offset: 2px;
+  }
+
+  .beyond-tab.is-on {
+    color: #f4f7fc;
+    border-color: rgba(160, 185, 230, 0.4);
+    background: rgba(40, 65, 120, 0.35);
+    box-shadow: 0 8px 28px rgba(20, 40, 90, 0.25);
+  }
+
+  .beyond-tab-fill {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 80% 30%, rgba(70, 100, 160, 0.12), transparent 45%);
-    transition: opacity 0.6s ease, transform 0.8s ease;
+    transform-origin: left center;
+    background: linear-gradient(90deg, rgba(100, 130, 190, 0.35), rgba(100, 130, 190, 0.08));
+    transition: transform 0.08s linear;
   }
 
-  .beyond-focus[data-phase='0'] .beyond-focus-wash {
-    transform: translate(-4%, 2%);
-  }
-
-  .beyond-focus[data-phase='1'] .beyond-focus-wash {
-    transform: translate(2%, -3%) scale(1.05);
-  }
-
-  .beyond-focus[data-phase='2'] .beyond-focus-wash {
-    transform: translate(6%, 4%);
-  }
-
-  .beyond-giant {
+  .beyond-panel {
     position: relative;
-    z-index: 1;
-    margin: 0;
-    font-size: clamp(3.2rem, 12vw, 6.5rem);
-    line-height: 0.92;
-    letter-spacing: 0.12em;
     overflow: hidden;
-    perspective: 700px;
+    min-height: 15.5rem;
+    border-radius: 1.75rem;
+    border: 1px solid rgba(120, 145, 190, 0.14);
+    background: linear-gradient(145deg, rgba(16, 26, 46, 0.75), rgba(8, 12, 24, 0.55));
+    padding: 1.75rem 1.5rem 1.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   }
 
-  .beyond-giant-word {
-    display: inline-flex;
-    transform-style: preserve-3d;
+  @media (min-width: 640px) {
+    .beyond-panel {
+      min-height: 16.5rem;
+      padding: 2.25rem 2.25rem 1.75rem;
+    }
   }
 
-  .beyond-giant-letter {
-    display: inline-block;
-    animation: beyond-letter-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  .beyond-blob {
+    pointer-events: none;
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(48px);
+    opacity: 0.55;
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
   }
 
-  .beyond-body {
+  .beyond-blob-a {
+    width: 14rem;
+    height: 14rem;
+    left: -3rem;
+    top: -4rem;
+    background: rgba(70, 105, 175, 0.35);
+  }
+
+  .beyond-blob-b {
+    width: 12rem;
+    height: 12rem;
+    right: -2rem;
+    bottom: -4rem;
+    background: rgba(45, 70, 130, 0.3);
+  }
+
+  .beyond-panel[data-phase='0'] .beyond-blob-a {
+    transform: translate(0, 0) scale(1);
+  }
+
+  .beyond-panel[data-phase='1'] .beyond-blob-a {
+    transform: translate(40%, 25%) scale(1.1);
+  }
+
+  .beyond-panel[data-phase='2'] .beyond-blob-a {
+    transform: translate(70%, 10%) scale(0.95);
+  }
+
+  .beyond-panel[data-phase='0'] .beyond-blob-b {
+    transform: translate(0, 0);
+  }
+
+  .beyond-panel[data-phase='1'] .beyond-blob-b {
+    transform: translate(-30%, -20%);
+  }
+
+  .beyond-panel[data-phase='2'] .beyond-blob-b {
+    transform: translate(-55%, -35%) scale(1.15);
+  }
+
+  .beyond-panel-inner {
     position: relative;
     z-index: 1;
+    animation: beyond-soft-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  .beyond-line {
+  .beyond-stage-word {
     margin: 0;
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(3px);
-    animation: beyond-line-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    font-size: clamp(2.4rem, 7vw, 3.75rem);
+    line-height: 1;
   }
 
-  .beyond-line + .beyond-line {
-    margin-top: 0.65rem;
+  .beyond-stage-copy {
+    margin: 0;
   }
 
-  .beyond-ghost {
-    color: #2a3a58;
-    transition: color 0.35s ease, letter-spacing 0.35s ease;
+  .beyond-dots {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
   }
 
-  .beyond-ghost.is-on {
-    color: #8fa3c7;
-    letter-spacing: 0.28em;
+  .beyond-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    border: 0;
+    padding: 0;
+    background: rgba(130, 155, 200, 0.3);
+    transition:
+      width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      background 0.35s ease;
   }
 
-  .beyond-counter {
-    padding-top: 2rem;
+  .beyond-dot.is-on {
+    width: 1.35rem;
+    background: #9eb4d8;
+  }
+
+  .beyond-dot:hover {
+    background: rgba(170, 190, 225, 0.65);
   }
 }
 
@@ -630,38 +569,14 @@
   }
 }
 
-@keyframes beyond-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes beyond-letter-in {
+@keyframes beyond-soft-in {
   from {
     opacity: 0;
-    transform: translateY(0.7em) rotateX(35deg);
-    filter: blur(6px);
+    transform: translateY(12px) scale(0.985);
   }
   to {
     opacity: 1;
-    transform: translateY(0) rotateX(0deg);
-    filter: blur(0);
-  }
-}
-
-@keyframes beyond-line-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(3px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+    transform: translateY(0) scale(1);
   }
 }
 
