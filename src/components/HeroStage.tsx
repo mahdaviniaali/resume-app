@@ -27,7 +27,6 @@ export function HeroStage({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const onScroll = () => {
-      // Same pace as the old HeroBackdrop: bg moves slower than page content
       const y = Math.min(window.scrollY, window.innerHeight)
       setParallaxY(y * 0.22)
     }
@@ -54,7 +53,7 @@ export function HeroStage({ children }: { children: ReactNode }) {
           src="/hero.png"
           alt=""
           className="pointer-events-none absolute inset-x-0 top-0 h-[108%] w-full object-cover object-center will-change-transform"
-          style={{ transform: `translateY(${parallaxY}px) scale(1.04)` }}
+          style={{ transform: `translateY(${parallaxY}px)` }}
           fetchPriority="high"
           aria-hidden
         />
