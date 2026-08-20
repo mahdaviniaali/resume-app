@@ -70,7 +70,7 @@ export default function Home() {
           <HeroSection />
         </HeroStage>
 
-        <div className="mx-auto max-w-[1280px] px-4 pb-12 sm:px-8 sm:pb-16">
+        <div className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-8 sm:pb-24">
           {beyond && (
             <BeyondCodeSection
               title={beyond.title}

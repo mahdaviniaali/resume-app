@@ -8,7 +8,7 @@ interface SectionHeaderProps {
   align?: 'start' | 'center'
 }
 
-/** Shared cinematic section header — matches hero sparseness */
+/** Bold editorial header — oversized index + display title */
 export function SectionHeader({
   index,
   kicker,
@@ -18,17 +18,23 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   const alignCls = align === 'center' ? 'items-center text-center mx-auto' : 'items-start text-left'
   return (
-    <header className={`mb-14 flex max-w-3xl flex-col gap-4 sm:mb-16 ${alignCls}`}>
-      <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-gold">
-        {index ? <span className="text-muted">{index}</span> : null}
-        {index ? <span className="h-px w-6 bg-line" aria-hidden /> : null}
-        <span>{kicker}</span>
-      </div>
-      <h2 className="font-sans text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.35] tracking-tight text-white">
+    <header className={`relative mb-12 flex max-w-4xl flex-col gap-5 sm:mb-16 ${alignCls}`}>
+      {index ? (
+        <span
+          className="pointer-events-none absolute -left-2 -top-10 select-none font-display text-[clamp(4.5rem,14vw,9rem)] font-black leading-none tracking-tight text-white/[0.04] sm:-top-14"
+          aria-hidden
+        >
+          {index}
+        </span>
+      ) : null}
+      <p className="relative font-mono text-[10px] uppercase tracking-[0.28em] text-gold">{kicker}</p>
+      <h2 className="relative font-display text-[clamp(2rem,5.5vw,3.75rem)] font-extrabold uppercase leading-[1.05] tracking-[0.06em] text-white">
         {title}
       </h2>
       {lead ? (
-        <p className="max-w-2xl text-[0.95rem] font-light leading-8 text-[#b8b8b8]">{lead}</p>
+        <p className="relative max-w-2xl border-l border-gold/60 pl-5 font-inter text-[0.95rem] font-light leading-8 text-[#b8b8b8]">
+          {lead}
+        </p>
       ) : null}
     </header>
   )

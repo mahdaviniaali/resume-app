@@ -18,13 +18,13 @@ export function TeamSection({ title, subtitle, members }: TeamSectionProps) {
     <section
       id="team"
       ref={ref}
-      className={`mt-28 scroll-mt-24 transition-opacity duration-700 sm:mt-36 ${
+      className={`mt-28 scroll-mt-24 transition-opacity duration-700 sm:mt-40 ${
         visible ? 'opacity-100' : 'opacity-45'
       }`}
     >
       <SectionHeader index="06" kicker={subtitle} title={title} />
 
-      <ul className="divide-y divide-line border-y border-line">
+      <ul className="grid gap-6 sm:grid-cols-2 sm:gap-8">
         {members.map((member, i) => {
           const name = member.name_en || member.name_fa
           const role = member.role_en || member.role_fa
@@ -32,41 +32,49 @@ export function TeamSection({ title, subtitle, members }: TeamSectionProps) {
           const initial = name.slice(0, 1)
 
           return (
-            <li key={member.id}>
+            <li
+              key={member.id}
+              style={{
+                opacity: visible ? 1 : 0.3,
+                transform: visible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `opacity 0.55s ease ${i * 80}ms, transform 0.55s ease ${i * 80}ms`,
+              }}
+            >
               <Link
                 href={`/team/${member.slug}`}
-                className="group grid gap-5 py-10 transition-colors hover:bg-white/[0.025] sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-8 sm:py-12"
-                style={{
-                  opacity: visible ? 1 : 0.3,
-                  transform: visible ? 'translateY(0)' : 'translateY(16px)',
-                  transition: `opacity 0.55s ease ${i * 70}ms, transform 0.55s ease ${i * 70}ms`,
-                }}
+                className="group relative flex h-full flex-col overflow-hidden border border-line bg-ink/30 p-6 transition-colors duration-500 hover:border-gold/45 hover:bg-gold/[0.03] sm:p-8"
               >
-                <div className="flex h-14 w-14 items-center justify-center overflow-hidden border border-line bg-ink font-display text-xl text-white transition-colors group-hover:border-gold/50">
-                  {member.avatar_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={resolveMediaUrl(member.avatar_url)}
-                      alt={name}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    initial
-                  )}
-                </div>
-
-                <div className="min-w-0">
-                  <div className="mb-1 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                    <h3 className="font-sans text-xl font-medium text-white sm:text-2xl">{name}</h3>
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-muted">{role}</span>
+                <div className="mb-8 flex items-start justify-between gap-4">
+                  <div className="flex h-20 w-20 items-center justify-center overflow-hidden border border-line bg-void font-display text-3xl text-white transition-transform duration-500 group-hover:scale-[1.03] sm:h-24 sm:w-24">
+                    {member.avatar_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={resolveMediaUrl(member.avatar_url)}
+                        alt={name}
+                        className="h-full w-full object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0"
+                      />
+                    ) : (
+                      initial
+                    )}
                   </div>
-                  <p className="max-w-2xl text-sm leading-7 text-[#8f8f8f] group-hover:text-[#bdbdbd]">
-                    {bio}
-                  </p>
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-gold/70 transition-colors group-hover:text-gold">
+                    Resume →
+                  </span>
                 </div>
 
-                <span className="font-mono text-[10px] tracking-[0.18em] text-gold/70 transition-colors group-hover:text-gold">
-                  Resume →
+                <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">{role}</p>
+                <h3 className="mb-4 font-display text-2xl font-bold uppercase tracking-[0.08em] text-white sm:text-3xl">
+                  {name}
+                </h3>
+                <p className="mt-auto max-w-sm font-inter text-sm font-light leading-7 text-[#8f8f8f] group-hover:text-[#bdbdbd]">
+                  {bio}
+                </p>
+
+                <span
+                  className="pointer-events-none absolute -bottom-4 -right-2 select-none font-display text-7xl font-black text-white/[0.03] transition-colors group-hover:text-gold/[0.08]"
+                  aria-hidden
+                >
+                  {String(i + 1).padStart(2, '0')}
                 </span>
               </Link>
             </li>
