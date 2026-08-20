@@ -22,23 +22,26 @@ export function Navigation({ brandName = 'ISEMPTY' }: { brandName?: string }) {
   return (
     <nav
       ref={ref}
-      className="flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:py-4"
+      dir="ltr"
+      className="flex items-center justify-between gap-6 py-4"
     >
       <a
         href="#hero"
-        dir="ltr"
-        className="font-display text-sm font-extrabold uppercase tracking-[0.22em] text-white sm:text-base"
+        className="shrink-0 font-display text-base font-extrabold uppercase tracking-[0.22em] text-white"
       >
         <span className="me-2 font-mono font-normal tracking-normal text-gold">&gt;_</span>
         {brand}
       </a>
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+      <div
+        dir="rtl"
+        className="flex flex-nowrap items-center justify-end gap-x-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted"
+      >
         <span className="inline-flex items-center gap-2 text-gold">
           <span className="inline-block h-1.5 w-1.5 animate-blink bg-gold" />
           ONLINE
         </span>
         {links.map((link) => (
-          <a key={link.href} href={link.href} className="transition-colors hover:text-white">
+          <a key={link.href} href={link.href} className="whitespace-nowrap transition-colors hover:text-white">
             {link.label}
           </a>
         ))}

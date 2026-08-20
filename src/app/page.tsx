@@ -60,16 +60,17 @@ export default function Home() {
       <Vignette />
 
       <div className="relative z-10">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
-          <Navigation brandName={site.brand_name} />
-        </div>
-
         <HeroStage>
+          <div className="absolute inset-x-0 top-0 z-20 px-10">
+            <Navigation brandName={site.brand_name} />
+          </div>
+
           {error && (
-            <p className="absolute left-10 top-8 z-[2] border border-gold/30 bg-black/50 px-4 py-3 font-mono text-sm text-gold backdrop-blur-sm">
+            <p className="absolute left-10 top-[4.5rem] z-[2] border border-gold/30 bg-black/50 px-4 py-3 font-mono text-sm text-gold backdrop-blur-sm">
               {error}
             </p>
           )}
+
           <HeroSection />
         </HeroStage>
 

@@ -51,7 +51,7 @@ export function HeroSection() {
     <section
       id="hero"
       dir="ltr"
-      className="absolute inset-0 z-[1] flex items-center pl-10 pr-5 scroll-mt-8"
+      className="absolute inset-0 z-[1] flex items-center pl-10 pr-5 pt-14 scroll-mt-8"
     >
       <div className="grid w-full grid-cols-[minmax(0,1fr)_180px] items-center gap-6 pr-2">
         <div className="max-w-[560px] text-left">
