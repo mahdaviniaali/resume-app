@@ -1,42 +1,31 @@
 # Genesis — Team Brand Platform
 
-From messy systems to durable architecture. Next.js brand site + FastAPI CMS + per-member bilingual resumes.
+From messy systems to durable architecture. Next.js brand site + Prisma CMS + per-member bilingual resumes.
 
 ## Stack
 
-- **Frontend:** Next.js 14, Tailwind, Aurora landing (7 sections)
-- **Backend:** FastAPI, SQLAlchemy, SQLite, JWT admin auth
+- **App:** Next.js 14 (App Router) + Tailwind + Aurora landing
+- **API:** Next.js Route Handlers under `/api`
+- **DB:** Prisma + SQLite (`prisma/dev.db`)
+- **Fonts:** Self-hosted via `@fontsource` (no Google Fonts / CDN — works in Iran without VPN)
 - **Admin:** `/admin` panel for members, resumes, site copy
 
 ## Quick start
 
-### 1. API
-
 ```bash
-cd backend
-python -m venv .venv
-.\.venv\Scripts\pip install -r requirements.txt   # Windows
-# source .venv/bin/activate && pip install -r requirements.txt  # macOS/Linux
-copy .env.example .env
-.\.venv\Scripts\uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-API docs: http://127.0.0.1:8000/docs
-
-Default admin: `admin` / `admin123` (change in `backend/.env`)
-
-### 2. Web
-
-```bash
-# from repo root
 npm install
-# ensure .env.local has NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+npx prisma migrate dev
 npm run dev
 ```
 
 - Public site: http://localhost:3000
 - Team resume example: http://localhost:3000/team/ali-mahdavinia
 - Admin: http://localhost:3000/admin/login
+- Health: http://localhost:3000/api/health
+
+Default admin: `admin` / `admin123` (change in `.env`)
+
+Copy `.env.example` → `.env` if needed. First API request also seeds the DB if empty.
 
 ## Homepage sections
 
@@ -50,14 +39,16 @@ npm run dev
 
 ## Data
 
-- Seeded on first API boot from `src/data/profile.json` (Ali) + placeholder teammates  
-- Runtime content lives in SQLite (`backend/genesis.db`)  
+- Seeded on first boot from `src/data/profile.json` (Ali) + placeholder teammates  
+- Runtime content lives in SQLite (`prisma/dev.db`)  
 - Edit everything in Admin → Members / Site Settings  
+- Uploads go to `public/uploads/`
 
 ## Scripts
 
 | Command | Purpose |
 |---------|---------|
-| `npm run dev` | Next.js |
-| `npm run build` | Production web build |
-| Backend uvicorn | See API section above |
+| `npm run dev` | Next.js (web + API) |
+| `npm run build` | Production build |
+| `npm run db:migrate` | Apply Prisma migrations |
+| `npm run db:studio` | Prisma Studio |

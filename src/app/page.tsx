@@ -42,7 +42,7 @@ export default function Home() {
         })
         setMembers(memberData)
       })
-      .catch(() => setError('بک‌اند در دسترس نیست — FastAPI را روی :8000 اجرا کنید'))
+      .catch(() => setError('API در دسترس نیست — سرور Next.js را بررسی کنید'))
   }, [])
 
   const home = homeFa

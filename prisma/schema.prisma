@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  @@map("admin_users")
+}
+
+model SiteSettings {
+  id          Int      @id @default(autoincrement())
+  brandName   String   @default("Genesis")
+  tagline     String   @default("From the void of \"is empty\"; We code the light.")
+  email       String   @default("hello@genesis.dev")
+  telegram    String   @default("")
+  linkedin    String   @default("")
+  github      String   @default("")
+  homeContent String   @default("{}")
+  updatedAt   DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model TeamMember {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  nameEn      String
+  nameFa      String   @default("")
+  roleEn      String
+  roleFa      String   @default("")
+  shortBioEn  String   @default("")
+  shortBioFa  String   @default("")
+  avatarUrl   String   @default("")
+  email       String   @default("")
+  github      String   @default("")
+  linkedin    String   @default("")
+  telegram    String   @default("")
+  sortOrder   Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  resume      Resume?
+
+  @@map("team_members")
+}
+
+model Resume {
+  id        Int        @id @default(autoincrement())
+  memberId  Int        @unique
+  dataJson  String     @default("{}")
+  updatedAt DateTime   @updatedAt
+  member    TeamMember @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@map("resumes")
+}

@@ -138,10 +138,10 @@ export interface ResumeData {
   }
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000'
+const API_BASE = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/$/, '')
 
 export function getApiBase() {
-  return API_BASE.replace(/\/$/, '')
+  return API_BASE
 }
 
 export function resolveMediaUrl(url: string) {

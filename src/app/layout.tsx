@@ -1,57 +1,37 @@
 import type { Metadata } from 'next'
-import {
-  Inter,
-  Orbitron,
-  JetBrains_Mono,
-  Source_Code_Pro,
-  Vazirmatn,
-  Montserrat,
-  Playfair_Display,
-} from 'next/font/google'
+
+/* Self-hosted via npm — no Google Fonts / CDN (works in Iran without VPN) */
+import '@fontsource/vazirmatn/300.css'
+import '@fontsource/vazirmatn/400.css'
+import '@fontsource/vazirmatn/500.css'
+import '@fontsource/vazirmatn/600.css'
+import '@fontsource/vazirmatn/700.css'
+import '@fontsource/inter/300.css'
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
+import '@fontsource/orbitron/500.css'
+import '@fontsource/orbitron/700.css'
+import '@fontsource/orbitron/800.css'
+import '@fontsource/orbitron/900.css'
+import '@fontsource/montserrat/300.css'
+import '@fontsource/montserrat/400.css'
+import '@fontsource/montserrat/600.css'
+import '@fontsource/montserrat/800.css'
+import '@fontsource/jetbrains-mono/400.css'
+import '@fontsource/jetbrains-mono/500.css'
+import '@fontsource/jetbrains-mono/700.css'
+import '@fontsource/source-code-pro/300.css'
+import '@fontsource/source-code-pro/400.css'
+import '@fontsource/source-code-pro/600.css'
+import '@fontsource/playfair-display/400.css'
+import '@fontsource/playfair-display/400-italic.css'
+import '@fontsource/playfair-display/700.css'
+import '@fontsource/playfair-display/700-italic.css'
+import '@fontsource/playfair-display/900.css'
+import '@fontsource/playfair-display/900-italic.css'
+
 import './globals.css'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '600'],
-})
-
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  variable: '--font-orbitron',
-  weight: ['500', '700', '800', '900'],
-})
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  weight: ['300', '400', '600', '800'],
-})
-
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  weight: ['400', '500', '700'],
-})
-
-const sourceCode = Source_Code_Pro({
-  subsets: ['latin'],
-  variable: '--font-source-code',
-  weight: ['300', '400', '600'],
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400', '700', '900'],
-  style: ['normal', 'italic'],
-})
-
-const vazirmatn = Vazirmatn({
-  subsets: ['arabic'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-vazirmatn',
-})
 
 export const metadata: Metadata = {
   title: 'ISEMPTY // Systems. Architecture. Engineering.',
@@ -80,11 +60,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="fa"
-      dir="rtl"
-      className={`${inter.variable} ${orbitron.variable} ${montserrat.variable} ${jetbrains.variable} ${sourceCode.variable} ${playfair.variable} ${vazirmatn.variable}`}
-    >
+    <html lang="fa" dir="rtl">
       <body className="font-sans antialiased">{children}</body>
     </html>
   )

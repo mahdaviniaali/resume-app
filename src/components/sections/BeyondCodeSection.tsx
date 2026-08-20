@@ -88,7 +88,7 @@ export function BeyondCodeSection({
         {/* Visual stage */}
         <div className="relative mb-8 h-[300px] overflow-hidden rounded-2xl border border-white/10 bg-black/45 sm:h-[380px]">
           <img
-            src="/void-light.png"
+            src="/hero.png"
             alt=""
             className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.38] mix-blend-lighten saturate-[0.85]"
             aria-hidden
