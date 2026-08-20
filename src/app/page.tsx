@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { SiteAtmosphere } from '@/components/SiteAtmosphere'
-import { HeroBackdrop } from '@/components/HeroBackdrop'
+import { HeroStage } from '@/components/HeroStage'
 import { Vignette } from '@/components/Vignette'
 import { Navigation } from '@/components/Navigation'
 import { HeroSection } from '@/components/sections/HeroSection'
@@ -60,25 +60,18 @@ export default function Home() {
       <Vignette />
 
       <div className="relative z-10">
-        <div className="relative min-h-svh w-full overflow-hidden">
-          <HeroBackdrop />
-          <div className="relative z-10 flex min-h-svh flex-col">
-            <div className="absolute inset-x-0 top-0 z-20">
-              <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
-                <Navigation brandName={site.brand_name} />
-              </div>
-            </div>
-
-            <div className="mx-auto mt-auto flex w-full max-w-[1280px] flex-col px-4 pb-3 sm:px-8 sm:pb-5">
-              {error && (
-                <p className="mb-4 border border-gold/30 bg-black/50 px-4 py-3 font-mono text-sm text-gold backdrop-blur-sm">
-                  {error}
-                </p>
-              )}
-              <HeroSection />
-            </div>
-          </div>
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
+          <Navigation brandName={site.brand_name} />
         </div>
+
+        <HeroStage>
+          {error && (
+            <p className="absolute left-10 top-8 z-[2] border border-gold/30 bg-black/50 px-4 py-3 font-mono text-sm text-gold backdrop-blur-sm">
+              {error}
+            </p>
+          )}
+          <HeroSection />
+        </HeroStage>
 
         <div className="mx-auto max-w-[1280px] px-4 pb-12 sm:px-8 sm:pb-16">
 
