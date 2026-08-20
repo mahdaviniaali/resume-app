@@ -11,7 +11,7 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
   useEffect(() => {
     fetchMember(params.slug)
       .then(setMember)
-      .catch(() => setError('عضو پیدا نشد یا API در دسترس نیست'))
+      .catch(() => setError('Member not found or API offline'))
   }, [params.slug])
 
   if (error) {
@@ -25,7 +25,7 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
   if (!member || !member.resume) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#050607] text-[#888]">
-        در حال بارگذاری…
+        Loading…
       </div>
     )
   }
@@ -33,7 +33,7 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
   return (
     <ResumeView
       resume={member.resume as ResumeData}
-      memberName={member.name_fa || member.name_en}
+      memberName={member.name_en || member.name_fa}
     />
   )
 }

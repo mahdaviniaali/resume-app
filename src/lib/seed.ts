@@ -151,10 +151,10 @@ export function emptyResume(
 }
 
 let seeded = false
+let rosterSynced = false
 let seedPromise: Promise<void> | null = null
 
 export async function ensureSeeded() {
-  if (seeded) return
   if (!seedPromise) {
     seedPromise = seedIfEmpty()
       .then(() => {
@@ -165,7 +165,109 @@ export async function ensureSeeded() {
         throw err
       })
   }
-  return seedPromise
+  await seedPromise
+  if (!rosterSynced) {
+    await syncSecondMemberToMahan()
+    rosterSynced = true
+  }
+}
+
+function buildMahanResume() {
+  const resume = emptyResume(
+    'Mahan Tahmasbi',
+    'ماهان طهماسبی',
+    'SEO & Marketing',
+    'سئو و بازاریابی',
+    'mahan@genesis.dev',
+  )
+  resume.summary = {
+    en: 'SEO and growth marketer — turns product clarity into discoverable presence and durable acquisition loops.',
+    fa: 'سئو و بازاریابی رشد — وضوح محصول را به دیده شدن و حلقه‌های پایدار جذب تبدیل می‌کند.',
+  }
+  resume.skills = [
+    'SEO Strategy',
+    'Content Marketing',
+    'Growth Marketing',
+    'Analytics',
+    'Conversion Optimization',
+  ]
+  resume.experiences = [
+    {
+      title: { en: 'SEO & Marketing', fa: 'سئو و بازاریابی' },
+      location: { en: 'Genesis', fa: 'جنسیس' },
+      date: { en: '2024 — Present', fa: '۱۴۰۳ — اکنون' },
+      description: {
+        en: 'Owns search visibility, content systems, and go-to-market messaging so architecture work reaches the right audience.',
+        fa: 'مالک دیده شدن در جستجو، سیستم محتوا و پیام go-to-market تا کار معماری به مخاطب درست برسد.',
+      },
+    },
+  ]
+  return resume
+}
+
+/** Replace legacy second teammate (Sara) with Mahan Tahmasbi on existing DBs */
+async function syncSecondMemberToMahan() {
+  const mahanData = {
+    slug: 'mahan-tahmasbi',
+    nameEn: 'Mahan Tahmasbi',
+    nameFa: 'ماهان طهماسبی',
+    roleEn: 'SEO & Marketing',
+    roleFa: 'سئو و بازاریابی',
+    shortBioEn:
+      'SEO and marketing — grows discoverability and demand around products the team architects.',
+    shortBioFa: 'سئو و بازاریابی — دیده شدن و تقاضای محصولاتی که تیم معماری می‌کند را رشد می‌دهد.',
+    email: 'mahan@genesis.dev',
+    sortOrder: 1,
+    isPublished: true,
+  }
+  const resumeJson = JSON.stringify(buildMahanResume())
+
+  const sara = await prisma.teamMember.findUnique({
+    where: { slug: 'sara-nokhavat' },
+    include: { resume: true },
+  })
+  if (sara) {
+    await prisma.teamMember.update({
+      where: { id: sara.id },
+      data: mahanData,
+    })
+    if (sara.resume) {
+      await prisma.resume.update({
+        where: { memberId: sara.id },
+        data: { dataJson: resumeJson },
+      })
+    } else {
+      await prisma.resume.create({
+        data: { memberId: sara.id, dataJson: resumeJson },
+      })
+    }
+    return
+  }
+
+  const mahan = await prisma.teamMember.findUnique({
+    where: { slug: 'mahan-tahmasbi' },
+    include: { resume: true },
+  })
+  if (mahan) {
+    await prisma.teamMember.update({
+      where: { id: mahan.id },
+      data: mahanData,
+    })
+    if (mahan.resume) {
+      await prisma.resume.update({
+        where: { memberId: mahan.id },
+        data: { dataJson: resumeJson },
+      })
+    }
+    return
+  }
+
+  await prisma.teamMember.create({
+    data: {
+      ...mahanData,
+      resume: { create: { dataJson: resumeJson } },
+    },
+  })
 }
 
 async function seedIfEmpty() {
@@ -177,7 +279,7 @@ async function seedIfEmpty() {
   const hasCore =
     existingAdmin &&
     existingSlugs.has('ali-mahdavinia') &&
-    existingSlugs.has('sara-nokhavat') &&
+    existingSlugs.has('mahan-tahmasbi') &&
     existingSlugs.has('reza-karimi')
   if (hasCore) {
     const site = await prisma.siteSettings.findFirst()
@@ -213,35 +315,7 @@ async function seedIfEmpty() {
 
   const emailClean = contacts.email.replace('mailto:', '')
 
-  const saraResume = emptyResume(
-    'Sara Nokhavat',
-    'سارا نخاوت',
-    'Product & Domain Strategist',
-    'استراتژیست محصول و دامنه',
-    'sara@genesis.dev',
-  )
-  saraResume.summary = {
-    en: 'Product strategist focused on domain clarity. Bridges founders and engineers so Genesis ships systems that match the real business — not a guess.',
-    fa: 'استراتژیست محصول با تمرکز روی شفافیت دامنه. پل بین بنیان‌گذار و مهندس تا سیستم با واقعیت بیزینس هم‌خوان باشد.',
-  }
-  saraResume.skills = [
-    'Domain Workshops',
-    'User Research',
-    'PRD / Spec Writing',
-    'SaaS Roadmaps',
-    'Stakeholder Alignment',
-  ]
-  saraResume.experiences = [
-    {
-      title: { en: 'Product Strategist', fa: 'استراتژیست محصول' },
-      location: { en: 'Genesis', fa: 'جنسیس' },
-      date: { en: '2024 — Present', fa: '۱۴۰۳ — اکنون' },
-      description: {
-        en: 'Runs discovery workshops, shapes backlog language, and keeps engineering aligned with revenue-critical flows.',
-        fa: 'ورکشاپ کشف، زبان بک‌لاگ و هم‌راستایی مهندسی با جریان‌های حیاتی درآمد.',
-      },
-    },
-  ]
+  const mahanResume = buildMahanResume()
 
   const rezaResume = emptyResume(
     'Reza Karimi',
@@ -331,21 +405,22 @@ async function seedIfEmpty() {
       })
     }
 
-    if (!existingSlugsInTx.has('sara-nokhavat')) {
+    if (!existingSlugsInTx.has('mahan-tahmasbi')) {
       await tx.teamMember.create({
         data: {
-          slug: 'sara-nokhavat',
-          nameEn: 'Sara Nokhavat',
-          nameFa: 'سارا نخاوت',
-          roleEn: 'Product & Domain Strategist',
-          roleFa: 'استراتژیست محصول و دامنه',
+          slug: 'mahan-tahmasbi',
+          nameEn: 'Mahan Tahmasbi',
+          nameFa: 'ماهان طهماسبی',
+          roleEn: 'SEO & Marketing',
+          roleFa: 'سئو و بازاریابی',
           shortBioEn:
-            'Turns ambiguous briefs into crisp requirements and domain language the whole team can ship against.',
-          shortBioFa: 'بریف‌های مبهم را به نیازمندی و زبان دامنه شفاف برای کل تیم تبدیل می‌کند.',
+            'SEO and marketing — grows discoverability and demand around products the team architects.',
+          shortBioFa:
+            'سئو و بازاریابی — دیده شدن و تقاضای محصولاتی که تیم معماری می‌کند را رشد می‌دهد.',
           sortOrder: 1,
           isPublished: true,
-          email: 'sara@genesis.dev',
-          resume: { create: { dataJson: JSON.stringify(saraResume) } },
+          email: 'mahan@genesis.dev',
+          resume: { create: { dataJson: JSON.stringify(mahanResume) } },
         },
       })
     }

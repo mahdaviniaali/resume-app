@@ -1,0 +1,145 @@
+import type { HomeContent } from '@/lib/api'
+
+/** English landing copy — bold, sharp, invitation to build with us */
+export const homeContent: HomeContent = {
+  hero: {
+    eyebrow: '[ ISEMPTY PROTOCOL ]',
+    line1: 'From the void',
+    line2_prefix: 'of',
+    line2_stroke: 'is empty',
+    line3_prefix: 'We code the',
+    line3_accent: 'light',
+    description:
+      'Half-baked ideas. Messy systems. Users lost in their own product. We turn that chaos into architecture you can ship — and a path people can actually follow.',
+  },
+  beyond: {
+    title: 'More than code',
+    subtitle: 'Idea · System · Experience',
+    lead: 'We don’t just write backends. We shape the idea, forge the system, and design the experience so nobody gets lost inside what you build.',
+    stages: [
+      {
+        label: 'Idea',
+        text: 'Bring the unfinished thought. We pressure-test it, name the real problem, and turn fog into something buildable.',
+      },
+      {
+        label: 'System',
+        text: 'Abstract thinking becomes working architecture — domain, services, data — clean enough to own, sharp enough to scale.',
+      },
+      {
+        label: 'Experience',
+        text: 'We obsess over the path. Clear flows. Honest hierarchy. Users decide fast — and never disappear into the UI.',
+      },
+    ],
+  },
+  void: {
+    title: 'The void',
+    subtitle: 'Where most products get stuck',
+    items: [
+      {
+        label: '01',
+        title: 'Blurry idea',
+        text: 'There’s energy, no edges. Everyone feels something is missing — nobody can say what should be built.',
+      },
+      {
+        label: '02',
+        title: 'Power without a path',
+        text: 'Strong backend. Confused users. Technical firepower without experience clarity is just expensive noise.',
+      },
+      {
+        label: '03',
+        title: 'Hidden logic',
+        text: 'Rules buried in code and hallway knowledge. Change becomes danger. The product stops breathing.',
+      },
+    ],
+  },
+  crossing: {
+    title: 'The crossing',
+    subtitle: 'From fog to a path people feel',
+    steps: [
+      { from: 'Raw idea', to: 'Shared product language' },
+      { from: 'Fuzzy requirements', to: 'Precise domain model' },
+      { from: 'Crowded UI', to: 'Clear user flow' },
+      { from: 'Dark system', to: 'Lit path you can own' },
+    ],
+  },
+  capabilities: {
+    title: 'What we bring',
+    subtitle: 'Idea, architecture, experience',
+    cards: [
+      {
+        icon: '01 // IDEA',
+        title: 'Shape the idea',
+        description:
+          'We listen to the half-finished thought, draw the borders, and turn it into something the team can actually build.',
+        span: 2,
+      },
+      {
+        icon: '02 // EXPERIENCE',
+        title: 'UX that doesn’t lose people',
+        description: 'Paths, hierarchy, clarity — so nobody gets trapped inside your product.',
+        span: 1,
+      },
+      {
+        icon: '03 // DOMAIN',
+        title: 'System architecture',
+        description: 'Order on chaos. Clean contexts. Structures that scale without collapsing.',
+        span: 1,
+      },
+      {
+        icon: '04 // MULTI-TENANT',
+        title: 'SaaS ecosystems',
+        description: 'Isolated, secure, scalable — one foundation, many territories.',
+        span: 2,
+      },
+      {
+        icon: 'CORE // PYTHON & DJANGO',
+        title: 'Business logic',
+        description: 'Complex multi-tenant logic with battle-tested speed.',
+        code: 'def create_reality(req):\n    if req.void.is_empty:\n        return Architect.build(SaaS())',
+        span: 2,
+      },
+      {
+        icon: 'CORE // RUST ASYNC',
+        title: 'High performance',
+        description: 'Zero-cost abstraction where memory and speed actually matter.',
+        code: 'async fn illuminate(s: &mut Void) {\n    s.extract_truth().await;\n    Light::from(s)\n}',
+        span: 2,
+      },
+    ],
+  },
+  method: {
+    title: 'How we move',
+    subtitle: 'From thought to an experience that doesn’t lose anyone',
+    steps: [
+      {
+        key: 'Discover',
+        text: 'We hear the idea — even unfinished. We name the real pain in the domain and the user.',
+      },
+      {
+        key: 'Model',
+        text: 'We build a shared language: domain, flows, and paths that the UI can feel too.',
+      },
+      {
+        key: 'Build',
+        text: 'Modular systems. Experiences arranged so the path stays lit the whole way.',
+      },
+      {
+        key: 'Illuminate',
+        text: 'We hand over clarity — documented, observable, owned by your team and your users.',
+      },
+    ],
+  },
+  team: {
+    title: 'The circle',
+    subtitle: 'Architects of idea, system, and experience',
+  },
+  contact: {
+    title: 'Got chaos? Good.',
+    subtitle:
+      'Half-built idea. Product users get lost in. System that fights you. Throw it our way — we’ll turn it into light.',
+    button: 'Send your chaos →',
+  },
+}
+
+/** @deprecated use homeContent — kept so old imports don’t break mid-refactor */
+export const homeFa = homeContent

@@ -1,5 +1,6 @@
 'use client'
 
+import { SectionHeader } from '@/components/SectionHeader'
 import { useInView } from '@/hooks/useInView'
 import type { ContactLinks } from '@/lib/api'
 
@@ -11,67 +12,52 @@ interface ContactSectionProps {
 }
 
 export function ContactSection({ title, subtitle, button, contacts }: ContactSectionProps) {
-  const { ref, visible } = useInView<HTMLElement>()
+  const { ref, visible } = useInView<HTMLElement>({ threshold: 0.15 })
 
   const mailto = contacts.email
-    ? `mailto:${contacts.email}?subject=Genesis%20Signal`
+    ? `mailto:${contacts.email}?subject=${encodeURIComponent('ISEMPTY Signal')}`
     : '#team'
 
+  const socials = [
+    contacts.email ? { label: 'Email', href: `mailto:${contacts.email}` } : null,
+    contacts.telegram ? { label: 'Telegram', href: contacts.telegram } : null,
+    contacts.linkedin ? { label: 'LinkedIn', href: contacts.linkedin } : null,
+    contacts.github ? { label: 'GitHub', href: contacts.github } : null,
+  ].filter(Boolean) as { label: string; href: string }[]
+
   return (
-    <section id="contact" ref={ref} className="mt-32 scroll-mt-24 pb-24 sm:mt-40">
-      <div
-        className={`glass-card relative flex flex-col items-center overflow-hidden text-center void-shard ${
-          visible ? 'is-on' : ''
-        }`}
-      >
-        <div
-          className="pointer-events-none absolute inset-0 opacity-40"
-          style={{
-            background: visible
-              ? 'radial-gradient(circle at 50% 30%, rgba(212,175,55,0.16), transparent 55%)'
-              : 'none',
-            transition: 'background 1s ease',
-          }}
-          aria-hidden
-        />
-        <div
-          className="mb-6 h-px w-24 bg-gradient-to-r from-transparent via-white to-transparent"
-          style={{
-            transform: visible ? 'scaleX(1)' : 'scaleX(0.2)',
-            opacity: visible ? 1 : 0.3,
-            transition: 'all 0.8s cubic-bezier(0.16,1,0.3,1)',
-          }}
-          aria-hidden
-        />
-        <h2 className="relative mb-4 font-display text-4xl italic text-white sm:text-5xl">{title}</h2>
-        <p className="relative mb-8 max-w-lg text-sm text-[#bdbdbd]">{subtitle}</p>
-        <a
-          href={mailto}
-          className="contact-btn relative rounded-full bg-white px-12 py-5 font-sans text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
-        >
-          {button}
-        </a>
-        <div className="relative mt-10 flex flex-wrap justify-center gap-6 text-xs uppercase tracking-[2px] text-[#8a8a8a]">
-          {contacts.telegram && (
-            <a href={contacts.telegram} className="hover:text-white" target="_blank" rel="noreferrer">
-              تلگرام
-            </a>
-          )}
-          {contacts.linkedin && (
-            <a href={contacts.linkedin} className="hover:text-white" target="_blank" rel="noreferrer">
-              لینکدین
-            </a>
-          )}
-          {contacts.github && (
-            <a href={contacts.github} className="hover:text-white" target="_blank" rel="noreferrer">
-              گیت‌هاب
-            </a>
-          )}
-          {contacts.email && (
-            <a href={`mailto:${contacts.email}`} className="hover:text-white">
-              ایمیل
-            </a>
-          )}
+    <section
+      id="contact"
+      ref={ref}
+      className={`mt-28 scroll-mt-24 pb-24 transition-opacity duration-700 sm:mt-40 sm:pb-32 ${
+        visible ? 'opacity-100' : 'opacity-45'
+      }`}
+    >
+      <div className="border border-line bg-ink/40 px-6 py-14 sm:px-12 sm:py-20">
+        <SectionHeader index="07" kicker="Contact" title={title} lead={subtitle} />
+
+        <div className="flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
+          <a
+            href={mailto}
+            className="inline-flex w-fit items-center gap-3 border border-white/80 bg-white px-8 py-4 font-sans text-sm font-semibold text-black transition hover:bg-transparent hover:text-white"
+          >
+            {button}
+          </a>
+
+          <ul className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+            {socials.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  className="transition-colors hover:text-gold"
+                  target={s.href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={s.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

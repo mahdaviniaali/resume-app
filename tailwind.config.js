@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-orbitron)', 'var(--font-vazirmatn)', 'sans-serif'],
-        sans: ['var(--font-vazirmatn)', 'var(--font-inter)', 'Tahoma', 'sans-serif'],
+        display: ['var(--font-orbitron)', 'var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'var(--font-montserrat)', 'system-ui', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
         mono: ['var(--font-jetbrains)', 'ui-monospace', 'monospace'],

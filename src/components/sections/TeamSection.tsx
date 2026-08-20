@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { SectionHeader } from '@/components/SectionHeader'
 import { useInView } from '@/hooks/useInView'
 import { resolveMediaUrl, type TeamMember } from '@/lib/api'
 
@@ -11,48 +12,67 @@ interface TeamSectionProps {
 }
 
 export function TeamSection({ title, subtitle, members }: TeamSectionProps) {
-  const { ref, visible } = useInView<HTMLElement>()
+  const { ref, visible } = useInView<HTMLElement>({ threshold: 0.1 })
 
   return (
-    <section id="team" ref={ref} className="mt-32 scroll-mt-24 sm:mt-40">
-      <p className="section-kicker">{subtitle}</p>
-      <h2 className="section-title">{title}</h2>
-      <div className="grid gap-6 md:grid-cols-3">
+    <section
+      id="team"
+      ref={ref}
+      className={`mt-28 scroll-mt-24 transition-opacity duration-700 sm:mt-36 ${
+        visible ? 'opacity-100' : 'opacity-45'
+      }`}
+    >
+      <SectionHeader index="06" kicker={subtitle} title={title} />
+
+      <ul className="divide-y divide-line border-y border-line">
         {members.map((member, i) => {
-          const name = member.name_fa || member.name_en
-          const role = member.role_fa || member.role_en
-          const bio = member.short_bio_fa || member.short_bio_en
+          const name = member.name_en || member.name_fa
+          const role = member.role_en || member.role_fa
+          const bio = member.short_bio_en || member.short_bio_fa
+          const initial = name.slice(0, 1)
+
           return (
-            <Link
-              key={member.id}
-              href={`/team/${member.slug}`}
-              className={`glass-card void-shard group block transition-transform duration-500 hover:-translate-y-1 ${
-                visible ? 'is-on' : ''
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/5 font-display text-2xl text-white transition duration-500 group-hover:border-white/35 group-hover:shadow-[0_0_24px_rgba(138,43,226,0.3)]">
-                {member.avatar_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={resolveMediaUrl(member.avatar_url)}
-                    alt={name}
-                    className="h-full w-full rounded-full object-cover"
-                  />
-                ) : (
-                  name.slice(0, 1)
-                )}
-              </div>
-              <h3 className="mb-1 font-display text-2xl text-white group-hover:text-[#eee]">{name}</h3>
-              <p className="mb-4 text-xs tracking-[1px] text-[#8a8a8a]">{role}</p>
-              <p className="body-soft">{bio}</p>
-              <span className="mt-6 inline-block text-sm text-white/65 transition group-hover:text-white">
-                مشاهده رزومه ←
-              </span>
-            </Link>
+            <li key={member.id}>
+              <Link
+                href={`/team/${member.slug}`}
+                className="group grid gap-5 py-10 transition-colors hover:bg-white/[0.025] sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-8 sm:py-12"
+                style={{
+                  opacity: visible ? 1 : 0.3,
+                  transform: visible ? 'translateY(0)' : 'translateY(16px)',
+                  transition: `opacity 0.55s ease ${i * 70}ms, transform 0.55s ease ${i * 70}ms`,
+                }}
+              >
+                <div className="flex h-14 w-14 items-center justify-center overflow-hidden border border-line bg-ink font-display text-xl text-white transition-colors group-hover:border-gold/50">
+                  {member.avatar_url ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={resolveMediaUrl(member.avatar_url)}
+                      alt={name}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    initial
+                  )}
+                </div>
+
+                <div className="min-w-0">
+                  <div className="mb-1 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                    <h3 className="font-sans text-xl font-medium text-white sm:text-2xl">{name}</h3>
+                    <span className="font-mono text-[10px] tracking-[0.16em] text-muted">{role}</span>
+                  </div>
+                  <p className="max-w-2xl text-sm leading-7 text-[#8f8f8f] group-hover:text-[#bdbdbd]">
+                    {bio}
+                  </p>
+                </div>
+
+                <span className="font-mono text-[10px] tracking-[0.18em] text-gold/70 transition-colors group-hover:text-gold">
+                  Resume →
+                </span>
+              </Link>
+            </li>
           )
         })}
-      </div>
+      </ul>
     </section>
   )
 }

@@ -13,14 +13,14 @@ import { CapabilitiesSection } from '@/components/sections/CapabilitiesSection'
 import { MethodSection } from '@/components/sections/MethodSection'
 import { TeamSection } from '@/components/sections/TeamSection'
 import { ContactSection } from '@/components/sections/ContactSection'
-import { homeFa } from '@/data/homeFa'
+import { homeContent } from '@/data/homeContent'
 import { fetchMembers, fetchSite, type SiteSettings, type TeamMember } from '@/lib/api'
 
 const fallbackSite: SiteSettings = {
-  brand_name: 'جنسیس',
-  tagline: 'از خلأِ خالی است؛ ما نور را می‌سازیم.',
+  brand_name: 'ISEMPTY',
+  tagline: 'From the void of is empty; We code the light.',
   contacts: { email: '', telegram: '', linkedin: '', github: '' },
-  home_content: homeFa,
+  home_content: homeContent,
 }
 
 export default function Home() {
@@ -33,19 +33,15 @@ export default function Home() {
       .then(([siteData, memberData]) => {
         setSite({
           ...siteData,
-          brand_name:
-            !siteData.brand_name || siteData.brand_name === 'Genesis'
-              ? 'جنسیس'
-              : siteData.brand_name,
-          // Landing copy is Persian; keep API contacts/members
-          home_content: homeFa,
+          brand_name: 'ISEMPTY',
+          home_content: homeContent,
         })
         setMembers(memberData)
       })
-      .catch(() => setError('API در دسترس نیست — سرور Next.js را بررسی کنید'))
+      .catch(() => setError('API offline — check the Next.js server'))
   }, [])
 
-  const home = homeFa
+  const home = homeContent
   const beyond = home.beyond
   const voidBlock = home.void
   const crossing = home.crossing
@@ -60,8 +56,6 @@ export default function Home() {
       <Vignette />
 
       <div className="relative z-10">
-        {/* Keep a full first viewport so scroll-driven phases below stay paced.
-            Photo canvas still scales like an image; letterbox fills the rest. */}
         <div className="relative min-h-svh w-full bg-[#050505]">
           <HeroStage>
             <div className="absolute inset-x-0 top-0 z-20 px-10">
@@ -79,52 +73,54 @@ export default function Home() {
         </div>
 
         <div className="mx-auto max-w-[1280px] px-4 pb-12 sm:px-8 sm:pb-16">
+          {beyond && (
+            <BeyondCodeSection
+              title={beyond.title}
+              subtitle={beyond.subtitle}
+              lead={beyond.lead}
+              stages={beyond.stages}
+            />
+          )}
 
-        {beyond && (
-          <BeyondCodeSection
-            title={beyond.title}
-            subtitle={beyond.subtitle}
-            lead={beyond.lead}
-            stages={beyond.stages}
+          {voidBlock && (
+            <VoidSection title={voidBlock.title} subtitle={voidBlock.subtitle} items={voidBlock.items} />
+          )}
+
+          {crossing && (
+            <CrossingSection
+              title={crossing.title}
+              subtitle={crossing.subtitle}
+              steps={crossing.steps}
+            />
+          )}
+
+          {capabilities && (
+            <CapabilitiesSection
+              title={capabilities.title}
+              subtitle={capabilities.subtitle}
+              cards={capabilities.cards}
+            />
+          )}
+
+          {method && (
+            <MethodSection title={method.title} subtitle={method.subtitle} steps={method.steps} />
+          )}
+
+          <TeamSection
+            title={team?.title || 'The circle'}
+            subtitle={team?.subtitle || 'Architects of idea, system, and experience'}
+            members={members}
           />
-        )}
 
-        {voidBlock && (
-          <VoidSection title={voidBlock.title} subtitle={voidBlock.subtitle} items={voidBlock.items} />
-        )}
-
-        {crossing && (
-          <CrossingSection
-            title={crossing.title}
-            subtitle={crossing.subtitle}
-            steps={crossing.steps}
+          <ContactSection
+            title={contact?.title || 'Got chaos? Good.'}
+            subtitle={
+              contact?.subtitle ||
+              'Half-built idea. Lost users. System that fights you. Throw it our way.'
+            }
+            button={contact?.button || 'Send your chaos →'}
+            contacts={site.contacts}
           />
-        )}
-
-        {capabilities && (
-          <CapabilitiesSection
-            title={capabilities.title}
-            subtitle={capabilities.subtitle}
-            cards={capabilities.cards}
-          />
-        )}
-
-        {method && (
-          <MethodSection title={method.title} subtitle={method.subtitle} steps={method.steps} />
-        )}
-
-        <TeamSection
-          title={team?.title || 'حلقه'}
-          subtitle={team?.subtitle || 'معماران نادیده'}
-          members={members}
-        />
-
-        <ContactSection
-          title={contact?.title || 'بیایید نور را ببافیم.'}
-          subtitle={contact?.subtitle || 'یک سیگنال بفرستید.'}
-          button={contact?.button || 'ارسال سیگنال ←'}
-          contacts={site.contacts}
-        />
         </div>
       </div>
     </main>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-/* Self-hosted via npm — no Google Fonts / CDN (works in Iran without VPN) */
+/* Self-hosted via npm — no Google Fonts / CDN (works offline / behind filters) */
 import '@fontsource/vazirmatn/300.css'
 import '@fontsource/vazirmatn/400.css'
 import '@fontsource/vazirmatn/500.css'
@@ -36,16 +36,16 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'ISEMPTY // Systems. Architecture. Engineering.',
   description:
-    'From the void of is empty; we code the light. Systems architecture, DDD, and high-performance backends.',
-  keywords: ['ISEMPTY', 'جنسیس', 'SaaS', 'DDD', 'Rust', 'Python', 'معماری سیستم', 'تیم'],
+    'From the void of is empty; we code the light. Messy ideas and broken systems → durable architecture and paths users can follow.',
+  keywords: ['ISEMPTY', 'SaaS', 'DDD', 'Rust', 'Python', 'system architecture', 'product'],
   metadataBase: new URL('https://isempty.online'),
   openGraph: {
     title: 'ISEMPTY // Systems. Architecture. Engineering.',
-    description: 'From the void of is empty; we code the light.',
+    description: 'Got chaos? Good. We turn it into light.',
     type: 'website',
     url: 'https://isempty.online',
     siteName: 'ISEMPTY',
-    locale: 'fa_IR',
+    locale: 'en_US',
   },
   icons: {
     icon: [{ url: '/logo.png', sizes: 'any' }],
@@ -60,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="en" dir="ltr">
       <body className="font-sans antialiased">{children}</body>
     </html>
   )
