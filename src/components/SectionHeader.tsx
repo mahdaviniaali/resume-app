@@ -1,39 +1,42 @@
 'use client'
 
-interface SectionHeaderProps {
-  index?: string
-  kicker: string
-  title: string
-  lead?: string
-  align?: 'start' | 'center'
-}
-
-/** Bold editorial header — oversized index + display title */
+/** Same DNA as HeroSection: >_ · display title · inter uppercase · quote bar */
 export function SectionHeader({
   index,
   kicker,
   title,
   lead,
-  align = 'start',
-}: SectionHeaderProps) {
-  const alignCls = align === 'center' ? 'items-center text-center mx-auto' : 'items-start text-left'
+}: {
+  index?: string
+  kicker: string
+  title: string
+  lead?: string
+}) {
   return (
-    <header className={`relative mb-12 flex max-w-4xl flex-col gap-5 sm:mb-16 ${alignCls}`}>
-      {index ? (
-        <span
-          className="pointer-events-none absolute -left-2 -top-10 select-none font-display text-[clamp(4.5rem,14vw,9rem)] font-black leading-none tracking-tight text-white/[0.04] sm:-top-14"
-          aria-hidden
-        >
-          {index}
-        </span>
-      ) : null}
-      <p className="relative font-mono text-[10px] uppercase tracking-[0.28em] text-gold">{kicker}</p>
-      <h2 className="relative font-display text-[clamp(2rem,5.5vw,3.75rem)] font-extrabold uppercase leading-[1.05] tracking-[0.06em] text-white">
+    <header className="mb-10 max-w-[560px] text-left sm:mb-12">
+      <div className="mb-3 font-mono text-lg tracking-[0.14em] text-gold">
+        &gt;_<span className="ms-2 text-[10px] tracking-[0.2em] text-muted">{index}</span>
+      </div>
+      <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.65rem)] font-extrabold uppercase leading-[1.05] tracking-[0.14em] text-white">
         {title}
       </h2>
+      <p className="mt-4 font-inter text-[0.85rem] font-light uppercase leading-roomy tracking-[0.14em] text-white/90">
+        {kicker.split(/[·•]/).map((part, i, arr) => {
+          const t = part.trim()
+          if (!t) return null
+          const accent = i === 1
+          return (
+            <span key={`${t}-${i}`}>
+              {accent ? <span className="text-gold">{t}</span> : t}
+              {i < arr.length - 1 ? <span className="text-white/90">. </span> : null}
+            </span>
+          )
+        })}
+      </p>
       {lead ? (
-        <p className="relative max-w-2xl border-l border-gold/60 pl-5 font-inter text-[0.95rem] font-light leading-8 text-[#b8b8b8]">
-          {lead}
+        <p className="mt-5 flex max-w-[28rem] items-start gap-3 font-quote text-[0.95rem] font-light leading-roomy tracking-[0.03em] text-[#cfcfcf]">
+          <span className="mt-1 inline-block h-9 w-px shrink-0 bg-gold" aria-hidden />
+          <span>{lead}</span>
         </p>
       ) : null}
     </header>

@@ -12,6 +12,7 @@ module.exports = {
         sans: ['var(--font-inter)', 'var(--font-montserrat)', 'system-ui', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'Times New Roman', 'serif'],
         mono: ['var(--font-jetbrains)', 'ui-monospace', 'monospace'],
         quote: ['var(--font-source-code)', 'ui-monospace', 'monospace'],
       },

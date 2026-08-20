@@ -1,6 +1,5 @@
 'use client'
 
-import { useInView } from '@/hooks/useInView'
 import type { ContactLinks } from '@/lib/api'
 
 interface ContactSectionProps {
@@ -11,10 +10,8 @@ interface ContactSectionProps {
 }
 
 export function ContactSection({ title, subtitle, button, contacts }: ContactSectionProps) {
-  const { ref, visible } = useInView<HTMLElement>({ threshold: 0.15 })
-
   const mailto = contacts.email
-    ? `mailto:${contacts.email}?subject=${encodeURIComponent('ISEMPTY Signal')}`
+    ? `mailto:${contacts.email}?subject=${encodeURIComponent('ISEMPTY')}`
     : '#team'
 
   const socials = [
@@ -25,63 +22,39 @@ export function ContactSection({ title, subtitle, button, contacts }: ContactSec
   ].filter(Boolean) as { label: string; href: string }[]
 
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className={`relative mt-32 scroll-mt-24 overflow-hidden pb-28 transition-opacity duration-700 sm:mt-48 sm:pb-36 ${
-        visible ? 'opacity-100' : 'opacity-45'
-      }`}
-    >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(212,175,55,0.08),transparent_55%)]"
-        aria-hidden
-      />
-
-      <p
-        className="pointer-events-none absolute -left-4 top-8 select-none font-display text-[clamp(5rem,20vw,14rem)] font-black uppercase leading-none tracking-tighter text-white/[0.035]"
-        aria-hidden
-      >
-        SIGNAL
+    <section id="contact" className="scroll-mt-24 pb-20 sm:pb-28">
+      <div className="mb-3 font-mono text-lg tracking-[0.14em] text-gold">
+        &gt;_<span className="ms-2 text-[10px] tracking-[0.2em] text-muted">07</span>
+      </div>
+      <h2 className="max-w-[560px] font-display text-[clamp(1.75rem,3.5vw,2.65rem)] font-extrabold uppercase leading-[1.05] tracking-[0.14em] text-white">
+        {title}
+      </h2>
+      <p className="mt-5 flex max-w-[28rem] items-start gap-3 font-quote text-[0.95rem] font-light leading-roomy tracking-[0.03em] text-[#cfcfcf]">
+        <span className="mt-1 inline-block h-9 w-px shrink-0 bg-gold" aria-hidden />
+        <span>{subtitle}</span>
       </p>
 
-      <div className="relative border-y border-line py-16 sm:py-24">
-        <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.28em] text-gold">07 — Contact</p>
+      <a
+        href={mailto}
+        className="mt-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-gold transition hover:text-gold-bright"
+      >
+        {button}
+      </a>
 
-        <h2 className="max-w-4xl font-display text-[clamp(2.5rem,8vw,5.5rem)] font-extrabold uppercase leading-[0.95] tracking-[0.04em] text-white">
-          {title}
-        </h2>
-
-        <p className="mt-8 max-w-xl border-l border-gold/50 pl-5 font-inter text-[1rem] font-light leading-8 text-[#b8b8b8]">
-          {subtitle}
-        </p>
-
-        <div className="mt-14 flex flex-col gap-12 sm:flex-row sm:items-end sm:justify-between">
-          <a
-            href={mailto}
-            className="group inline-flex w-fit items-center gap-4 bg-gold px-10 py-5 font-display text-sm font-bold uppercase tracking-[0.16em] text-void transition hover:bg-white"
-          >
-            {button}
-            <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
-              →
-            </span>
-          </a>
-
-          <ul className="flex flex-wrap gap-x-10 gap-y-4 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            {socials.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  className="transition-colors hover:text-gold"
-                  target={s.href.startsWith('mailto:') ? undefined : '_blank'}
-                  rel={s.href.startsWith('mailto:') ? undefined : 'noreferrer'}
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+        {socials.map((s) => (
+          <li key={s.label}>
+            <a
+              href={s.href}
+              className="transition-colors hover:text-white"
+              target={s.href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={s.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+            >
+              {s.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

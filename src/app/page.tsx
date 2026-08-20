@@ -70,7 +70,8 @@ export default function Home() {
           <HeroSection />
         </HeroStage>
 
-        <div className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-8 sm:pb-24">
+        <div className="mx-auto max-w-[1280px] px-6 pb-16 pt-14 sm:px-10 sm:pb-24 sm:pt-16">
+          <div className="flex flex-col gap-20 sm:gap-24">
           {beyond && (
             <BeyondCodeSection
               title={beyond.title}
@@ -119,6 +120,7 @@ export default function Home() {
             button={contact?.button || 'Send your chaos →'}
             contacts={site.contacts}
           />
+          </div>
         </div>
       </div>
     </main>
