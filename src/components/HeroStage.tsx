@@ -62,11 +62,12 @@ export function HeroStage({ children }: { children: ReactNode }) {
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050505]/55 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/45 to-transparent"
           aria-hidden
         />
+        {/* Soft seam only — thin fade at the bottom edge of the photo */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/45 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#050505] to-transparent"
           aria-hidden
         />
         {children}

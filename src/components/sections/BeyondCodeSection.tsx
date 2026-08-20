@@ -39,7 +39,7 @@ export function BeyondCodeSection({
     <section
       id="beyond"
       ref={ref}
-      className={`mt-28 scroll-mt-24 transition-opacity duration-700 sm:mt-36 ${
+      className={`mt-10 scroll-mt-24 transition-opacity duration-700 sm:mt-14 ${
         visible ? 'opacity-100' : 'opacity-40'
       }`}
     >
