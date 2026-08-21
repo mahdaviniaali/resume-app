@@ -14,7 +14,7 @@ interface LeverageSectionProps {
   vibeText: string
 }
 
-/** Dual-field composition: AI noise vs aimed leverage — not Beyond tabs / Hero rail */
+/** Open dual-field — no nested glass window; composition lives in the section */
 export function LeverageSection({
   title,
   subtitle,
@@ -30,9 +30,9 @@ export function LeverageSection({
     <section id="leverage" className="scroll-mt-24">
       <SectionHeader index="03" kicker={subtitle} title={title} lead={lead} />
 
-      <div className="stage-panel leverage-panel">
-        <div className="leverage-nebula" aria-hidden />
-        <div className="leverage-nebula leverage-nebula-b" aria-hidden />
+      <div className="leverage-field">
+        <div className="leverage-wash" aria-hidden />
+        <div className="leverage-wash leverage-wash-b" aria-hidden />
 
         <div className="leverage-split">
           <div className="leverage-lane leverage-lane-noise">
