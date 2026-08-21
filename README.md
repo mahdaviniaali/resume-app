@@ -38,6 +38,12 @@ Copy `.env.example` → `.env` if needed. First API request also seeds the DB if
 
 Design rules (gold/yellow usage, headers): see [`docs/design.md`](docs/design.md).
 
+## Deploy (Vercel)
+
+Push to `main` — build runs `scripts/vercel-build.cjs` (Prisma generate + sqlite `deploy.db` + Next build). API routes are dynamic; on Vercel the DB is copied to `/tmp` and seeded on first request.
+
+Optional env on Vercel: `SECRET_KEY`, `ADMIN_USERNAME`, `ADMIN_PASSWORD` (defaults work for a first boot).
+
 ## Data
 
 - Seeded on first boot from `src/data/profile.json` (Ali) + placeholder teammates  
