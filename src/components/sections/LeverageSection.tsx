@@ -28,7 +28,7 @@ const NOISE = [
 ]
 
 const SIGNAL = [
-  { t: 'aim', x: 72, y: 16, d: 0.1 },
+  { t: 'direct', x: 72, y: 16, d: 0.1 },
   { t: 'arch', x: 84, y: 42, d: 0.25 },
   { t: 'ship', x: 76, y: 72, d: 0.4 },
 ]
@@ -69,10 +69,6 @@ export function LeverageSection({
 
         <div className="leverage-split">
           <div className="leverage-lane leverage-lane-noise">
-            <div className="leverage-copy">
-              <p className="leverage-lane-label">{leftLabel}</p>
-              <p className="leverage-lane-text">{leftText}</p>
-            </div>
             <div className="leverage-stage leverage-noise-field" aria-hidden>
               {NOISE.map((bit, i) => (
                 <span
@@ -99,6 +95,10 @@ export function LeverageSection({
                 ))}
               </div>
             </div>
+            <div className="leverage-copy">
+              <p className="leverage-lane-label">{leftLabel}</p>
+              <p className="leverage-lane-text">{leftText}</p>
+            </div>
           </div>
 
           <div className="leverage-hinge" aria-hidden>
@@ -109,10 +109,6 @@ export function LeverageSection({
           </div>
 
           <div className="leverage-lane leverage-lane-signal">
-            <div className="leverage-copy">
-              <p className="leverage-lane-label leverage-lane-label-on">{rightLabel}</p>
-              <p className="leverage-lane-text">{rightText}</p>
-            </div>
             <div className="leverage-stage leverage-signal-field" aria-hidden>
               <span className="leverage-signal-spine" />
               <span className="leverage-signal-pulse" />
@@ -144,6 +140,10 @@ export function LeverageSection({
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="leverage-copy">
+              <p className="leverage-lane-label leverage-lane-label-on">{rightLabel}</p>
+              <p className="leverage-lane-text">{rightText}</p>
             </div>
           </div>
         </div>

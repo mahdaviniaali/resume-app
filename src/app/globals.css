@@ -1928,7 +1928,7 @@
     display: none;
     position: relative;
     width: 1.5rem;
-    align-self: end;
+    align-self: start;
     height: 8.25rem;
   }
 
