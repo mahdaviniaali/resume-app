@@ -32,8 +32,9 @@ Hero keeps `>_` as its own chrome.
 1. Hero  
 2. Beyond (`BeyondCodeSection`)  
 3. Leverage (`LeverageSection`)  
-4. Selected work — open 2×2 lanes; gold only on phrase marks; CTA muted not gold  
+4. Selected work — Beyond-style stage (tabs + one glass window + visual); not a grid  
 5. Team  
 6. Contact  
 
 Do not add a separate “Method / process steps” section — Beyond + Leverage already carry that story.
+Do not lay out homepage work as bordered 2×2 cells — the site uses open fields and single stages.
