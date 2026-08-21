@@ -801,101 +801,205 @@
     animation: bv-pulse-core 2.2s ease-in-out infinite;
   }
 
-  /* Craft — eng + ui/ux network */
-  .bv-sys-halo {
+  /* Craft — full-bleed dual field (surface / hood) */
+  .bv-craft-sky {
     position: absolute;
-    right: 4%;
-    top: 18%;
-    width: 52%;
-    height: 68%;
-    border-radius: 40%;
+    inset: 0 0 48% 0;
     background:
-      radial-gradient(circle at 40% 40%, rgba(34, 211, 238, 0.26), transparent 62%),
-      radial-gradient(circle at 70% 60%, rgba(167, 139, 250, 0.2), transparent 60%);
+      radial-gradient(ellipse at 70% 30%, rgba(224, 242, 254, 0.16), transparent 55%),
+      linear-gradient(180deg, rgba(148, 163, 184, 0.08), transparent 70%);
     opacity: 0;
   }
 
-  .bv-act-system.is-on .bv-sys-halo {
-    animation: bv-pulse-core 3.2s ease-in-out infinite;
+  .bv-act-craft.is-on .bv-craft-sky {
+    animation: bv-fade-in 0.9s ease 0.05s forwards;
   }
 
-  .bv-net-svg {
+  .bv-craft-depth {
     position: absolute;
-    inset: 8% 2% 10% 36%;
-    width: auto;
-    height: auto;
-    overflow: visible;
-  }
-
-  .bv-net-grid {
+    inset: 48% 0 0 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(34, 211, 238, 0.28), transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(56, 189, 248, 0.14), transparent 50%),
+      linear-gradient(180deg, transparent, rgba(2, 20, 40, 0.45));
     opacity: 0;
   }
 
-  .bv-act-system.is-on .bv-net-grid {
-    animation: bv-fade-in 0.6s ease 0.05s forwards;
+  .bv-act-craft.is-on .bv-craft-depth {
+    animation: bv-fade-in 0.9s ease 0.05s forwards;
   }
 
-  .bv-net-arc {
-    stroke-dasharray: 80;
-    stroke-dashoffset: 80;
+  .bv-craft-shape {
+    position: absolute;
+    border-radius: 999px;
+    transform: translate(-50%, -50%) scaleX(0.4);
+    background: linear-gradient(90deg, rgba(236, 254, 255, 0.55), rgba(186, 230, 253, 0.12));
+    box-shadow: 0 0 16px rgba(186, 230, 253, 0.25);
     opacity: 0;
   }
 
-  .bv-act-system.is-on .bv-net-arc {
-    animation: bv-net-arc-draw 0.75s var(--beyond-ease) forwards;
+  .bv-act-craft.is-on .bv-craft-shape {
+    animation: bv-craft-shape-in 0.85s var(--beyond-ease) forwards;
   }
 
-  .bv-net-node {
-    opacity: 0;
-    transform-box: fill-box;
-    transform-origin: center;
-  }
-
-  .bv-act-system.is-on .bv-net-node {
-    animation: bv-net-node-pop 0.55s var(--beyond-ease) forwards;
-  }
-
-  .bv-net-glow {
-    opacity: 0.22;
-    filter: blur(1.4px);
-  }
-
-  .bv-net-core {
-    filter: drop-shadow(0 0 4px currentColor);
-  }
-
-  .bv-net-label {
-    font-family: var(--font-jetbrains), ui-monospace, monospace;
-    font-size: 2.5px;
+  .bv-craft-surf {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(0.78rem, 2vw, 1rem);
+    font-style: italic;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    color: #e0f2fe;
+    text-shadow: 0 0 16px rgba(186, 230, 253, 0.45);
+    opacity: 0;
+    white-space: nowrap;
+  }
+
+  .bv-act-craft.is-on .bv-craft-surf {
+    animation: bv-craft-drift-soft 3.4s ease-in-out infinite;
+  }
+
+  .bv-craft-hoodbit {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-jetbrains), ui-monospace, monospace;
+    font-size: clamp(0.72rem, 1.9vw, 0.92rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #67e8f9;
+    text-shadow: 0 0 14px rgba(34, 211, 238, 0.55);
+    opacity: 0;
+    white-space: nowrap;
+  }
+
+  .bv-act-craft.is-on .bv-craft-hoodbit {
+    animation: bv-craft-drift-deep 3.2s ease-in-out infinite;
+  }
+
+  .bv-craft-spark {
+    position: absolute;
+    border-radius: 999px;
+    background: #67e8f9;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+  }
+
+  .bv-act-craft.is-on .bv-craft-spark {
+    animation: bv-debris-fly 2.6s ease-in-out infinite;
+  }
+
+  .bv-craft-core {
+    position: absolute;
+    left: 62%;
+    top: 72%;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.4), transparent 70%);
+    opacity: 0;
+  }
+
+  .bv-act-craft.is-on .bv-craft-core {
+    animation: bv-pulse-core 2.4s ease-in-out 0.5s infinite;
+  }
+
+  .bv-craft-horizon {
+    position: absolute;
+    left: 18%;
+    right: 4%;
+    top: 48%;
+    height: 0;
+    z-index: 2;
+  }
+
+  .bv-craft-horizon-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, #67e8f9 18%, #e0f2fe 48%, #a5b4fc 78%, transparent);
+    opacity: 0;
+    transform: scaleX(0.25);
+    transform-origin: center;
+    box-shadow:
+      0 0 18px rgba(103, 232, 249, 0.55),
+      0 0 36px rgba(165, 180, 252, 0.25);
+  }
+
+  .bv-craft-horizon-soft {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: -7px;
+    height: 16px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, rgba(103, 232, 249, 0.2), transparent);
+    filter: blur(6px);
+    opacity: 0;
+  }
+
+  .bv-act-craft.is-on .bv-craft-horizon-line {
+    animation: bv-craft-seam-in 1s var(--beyond-ease) 0.35s forwards;
+  }
+
+  .bv-act-craft.is-on .bv-craft-horizon-soft {
+    animation: bv-fade-in 0.8s ease 0.5s forwards;
+  }
+
+  .bv-craft-horizon-mark {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    padding: 0.28rem 0.85rem;
+    font-family: var(--font-orbitron), var(--font-inter), sans-serif;
+    font-size: clamp(0.68rem, 1.7vw, 0.82rem);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #ecfeff;
+    background: rgba(6, 16, 32, 0.55);
+    border-radius: 999px;
+    opacity: 0;
+    white-space: nowrap;
+    text-shadow:
+      0 0 14px rgba(103, 232, 249, 0.55),
+      0 0 24px rgba(165, 180, 252, 0.3);
+  }
+
+  .bv-act-craft.is-on .bv-craft-horizon-mark {
+    animation: bv-fade-in 0.65s ease 0.75s forwards;
+  }
+
+  .bv-craft-caption {
+    position: absolute;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: clamp(0.58rem, 1.4vw, 0.68rem);
+    font-weight: 500;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     opacity: 0;
+    white-space: nowrap;
   }
 
-  .bv-act-system.is-on .bv-net-label {
-    animation: bv-fade-in 0.45s ease forwards;
+  .bv-craft-caption-top {
+    left: 36%;
+    top: 6%;
+    color: rgba(186, 230, 253, 0.7);
   }
 
-  .bv-sys-scan {
-    position: absolute;
-    left: 48%;
-    right: 8%;
-    top: 18%;
-    height: 18%;
-    border-radius: 999px;
-    background: linear-gradient(
-      180deg,
-      transparent,
-      rgba(165, 243, 252, 0.2),
-      transparent
-    );
-    opacity: 0;
-    pointer-events: none;
+  .bv-craft-caption-bot {
+    left: 36%;
+    bottom: 7%;
+    color: rgba(103, 232, 249, 0.7);
   }
 
-  .bv-act-system.is-on .bv-sys-scan {
-    animation: bv-sys-scan 2.8s ease-in-out 0.7s infinite;
+  .bv-act-craft.is-on .bv-craft-caption {
+    animation: bv-fade-in 0.7s ease 0.4s forwards;
   }
 
   /* Reach — luminous path + craft/marketing tags */
@@ -1314,6 +1418,52 @@
   to { opacity: 1; }
 }
 
+@keyframes bv-craft-shape-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scaleX(0.35);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+}
+
+@keyframes bv-craft-drift-soft {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(-5px);
+  }
+}
+
+@keyframes bv-craft-drift-deep {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(4px);
+  }
+}
+
+@keyframes bv-craft-seam-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0.25);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
 @keyframes bv-draw-line {
   to { stroke-dashoffset: 0; }
 }
@@ -1321,17 +1471,6 @@
 @keyframes bv-node-in {
   from { opacity: 0; transform: scale(0.4); }
   to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes bv-craft-bridge {
-  from {
-    opacity: 0;
-    transform: translateY(-50%) scaleX(0);
-  }
-  to {
-    opacity: 0.95;
-    transform: translateY(-50%) scaleX(1);
-  }
 }
 
 @keyframes bv-net-arc-draw {

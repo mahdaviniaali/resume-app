@@ -60,28 +60,39 @@ const DEBRIS = Array.from({ length: 16 }, (_, i) => ({
   d: (i % 8) * 0.12,
 }))
 
-/** Craft — eng + ui/ux as a live network */
-const NET_NODES = [
-  { id: 'craft', x: 72, y: 46, r: 6.5, c: '#67e8f9', label: 'craft', d: 0 },
-  { id: 'api', x: 56, y: 26, r: 4.2, c: '#22d3ee', label: 'api', d: 0.08 },
-  { id: 'logic', x: 88, y: 28, r: 4.2, c: '#38bdf8', label: 'logic', d: 0.12 },
-  { id: 'data', x: 52, y: 50, r: 4, c: '#2dd4bf', label: 'data', d: 0.16 },
-  { id: 'ui', x: 90, y: 52, r: 4, c: '#a78bfa', label: 'ui', d: 0.2 },
-  { id: 'flow', x: 60, y: 70, r: 3.8, c: '#818cf8', label: 'flow', d: 0.24 },
-  { id: 'path', x: 84, y: 72, r: 3.8, c: '#c4b5fd', label: 'ux', d: 0.28 },
+/** Craft — full-field: surface above, hood below, one craft at the seam */
+const SURFACE_BITS = [
+  { t: 'interfaces', x: 38, y: 14, d: 0.08 },
+  { t: 'guide', x: 62, y: 22, d: 0.16 },
+  { t: 'clarity', x: 78, y: 12, d: 0.24 },
+  { t: 'flow', x: 48, y: 30, d: 0.2 },
+  { t: 'path', x: 88, y: 28, d: 0.28 },
 ]
 
-const NET_ARCS = [
-  { x1: 56, y1: 26, x2: 72, y2: 46 },
-  { x1: 88, y1: 28, x2: 72, y2: 46 },
-  { x1: 52, y1: 50, x2: 72, y2: 46 },
-  { x1: 90, y1: 52, x2: 72, y2: 46 },
-  { x1: 60, y1: 70, x2: 72, y2: 46 },
-  { x1: 84, y1: 72, x2: 72, y2: 46 },
-  { x1: 56, y1: 26, x2: 88, y2: 28 },
-  { x1: 52, y1: 50, x2: 60, y2: 70 },
-  { x1: 90, y1: 52, x2: 84, y2: 72 },
+const SURFACE_SHAPES = [
+  { x: 42, y: 18, w: 14, h: 2.2, d: 0.1 },
+  { x: 58, y: 18, w: 8, h: 2.2, d: 0.18 },
+  { x: 70, y: 18, w: 11, h: 2.2, d: 0.26 },
+  { x: 46, y: 26, w: 18, h: 2.4, d: 0.14 },
+  { x: 68, y: 26, w: 16, h: 2.4, d: 0.22 },
+  { x: 52, y: 34, w: 22, h: 2.6, d: 0.3 },
 ]
+
+const HOOD_BITS = [
+  { t: 'systems', x: 40, y: 68, d: 0.1 },
+  { t: 'hold', x: 58, y: 74, d: 0.18 },
+  { t: '{api}', x: 74, y: 66, d: 0.26 },
+  { t: 'data', x: 48, y: 82, d: 0.22 },
+  { t: 'sync', x: 68, y: 84, d: 0.3 },
+  { t: 'power', x: 86, y: 76, d: 0.34 },
+]
+
+const HOOD_SPARKS = Array.from({ length: 14 }, (_, i) => ({
+  x: 32 + ((i * 19) % 62),
+  y: 58 + ((i * 11) % 34),
+  s: 2 + (i % 3),
+  d: (i % 7) * 0.1,
+}))
 
 /** Reach — craft + marketing on the lit path */
 const FLOW_DOTS = Array.from({ length: 12 }, (_, i) => ({
@@ -194,57 +205,81 @@ function StageVisual({ phase }: { phase: number }) {
         <div className="bv-chaos-core" />
       </div>
 
-      {/* CRAFT — eng + ui/ux network */}
-      <div className={`bv-act bv-act-system ${phase === 1 ? 'is-on' : ''}`}>
-        <div className="bv-sys-halo" />
-        <svg className="bv-net-svg" viewBox="0 0 100 100" fill="none" preserveAspectRatio="xMidYMid meet">
-          <defs>
-            <linearGradient id="netArc" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="#67e8f9" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.35" />
-            </linearGradient>
-          </defs>
-          <g className="bv-net-grid" opacity="0.22">
-            {[28, 46, 64].map((y) => (
-              <line key={`gh-${y}`} x1="48" y1={y} x2="96" y2={y} stroke="#67e8f9" strokeWidth="0.35" />
-            ))}
-            {[56, 72, 88].map((x) => (
-              <line key={`gv-${x}`} x1={x} y1="18" x2={x} y2="82" stroke="#67e8f9" strokeWidth="0.35" />
-            ))}
-          </g>
-          {NET_ARCS.map((a, i) => (
-            <line
-              key={`arc-${i}`}
-              className="bv-net-arc"
-              x1={a.x1}
-              y1={a.y1}
-              x2={a.x2}
-              y2={a.y2}
-              stroke="url(#netArc)"
-              strokeWidth="0.7"
-              strokeLinecap="round"
-              style={{ animationDelay: `${0.1 + i * 0.05}s` }}
-            />
-          ))}
-          {NET_NODES.map((n) => (
-            <g key={n.id} className="bv-net-node" style={{ animationDelay: `${0.18 + n.d}s` }}>
-              <circle className="bv-net-glow" cx={n.x} cy={n.y} r={n.r * 2.1} fill={n.c} />
-              <circle className="bv-net-core" cx={n.x} cy={n.y} r={n.r} fill={n.c} />
-              <text
-                className="bv-net-label"
-                x={n.x}
-                y={Math.min(96, n.y + n.r + 5)}
-                textAnchor="middle"
-                fill={n.c}
-                style={{ animationDelay: `${0.32 + n.d}s` }}
-              >
-                {n.label}
-              </text>
-            </g>
-          ))}
-        </svg>
-        <span className="bv-sys-scan" />
+      {/* CRAFT — full field: surface ↔ hood → one craft */}
+      <div className={`bv-act bv-act-craft ${phase === 1 ? 'is-on' : ''}`}>
+        <div className="bv-craft-sky" />
+        <div className="bv-craft-depth" />
+
+        {SURFACE_SHAPES.map((sh, i) => (
+          <span
+            key={`ss-${i}`}
+            className="bv-craft-shape"
+            style={
+              {
+                left: `${sh.x}%`,
+                top: `${sh.y}%`,
+                width: `${sh.w}%`,
+                height: `${sh.h}%`,
+                animationDelay: `${0.2 + sh.d}s`,
+              } as CSSProperties
+            }
+          />
+        ))}
+        {SURFACE_BITS.map((bit) => (
+          <span
+            key={`sf-${bit.t}`}
+            className="bv-craft-surf"
+            style={
+              {
+                left: `${bit.x}%`,
+                top: `${bit.y}%`,
+                animationDelay: `${0.25 + bit.d}s`,
+              } as CSSProperties
+            }
+          >
+            {bit.t}
+          </span>
+        ))}
+        <span className="bv-craft-caption bv-craft-caption-top">clarity on the surface</span>
+
+        <div className="bv-craft-horizon">
+          <span className="bv-craft-horizon-line" />
+          <span className="bv-craft-horizon-soft" />
+          <span className="bv-craft-horizon-mark">one craft</span>
+        </div>
+
+        {HOOD_SPARKS.map((p, i) => (
+          <span
+            key={`hs-${i}`}
+            className="bv-craft-spark"
+            style={
+              {
+                left: `${p.x}%`,
+                top: `${p.y}%`,
+                width: p.s,
+                height: p.s,
+                animationDelay: `${0.15 + p.d}s`,
+              } as CSSProperties
+            }
+          />
+        ))}
+        {HOOD_BITS.map((bit) => (
+          <span
+            key={`hd-${bit.t}`}
+            className="bv-craft-hoodbit"
+            style={
+              {
+                left: `${bit.x}%`,
+                top: `${bit.y}%`,
+                animationDelay: `${0.2 + bit.d}s`,
+              } as CSSProperties
+            }
+          >
+            {bit.t}
+          </span>
+        ))}
+        <div className="bv-craft-core" />
+        <span className="bv-craft-caption bv-craft-caption-bot">power under the hood</span>
       </div>
 
       {/* REACH — craft + marketing on the lit path */}
