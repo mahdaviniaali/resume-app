@@ -12,7 +12,7 @@ interface MethodSectionProps {
 export function MethodSection({ title, subtitle, steps }: MethodSectionProps) {
   return (
     <section id="method" className="scroll-mt-24">
-      <SectionHeader index="04" kicker={subtitle} title={title} />
+      <SectionHeader index="03" kicker={subtitle} title={title} />
 
       <div className="stage-panel method-panel">
         <div className="method-glow" aria-hidden />

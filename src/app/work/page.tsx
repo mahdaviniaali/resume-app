@@ -89,7 +89,7 @@ export default function WorkPage() {
             ))}
           </div>
 
-          <p className="mt-14 font-inter text-sm font-light tracking-[0.04em] text-[#cfcfcf]">
+          <p className="mt-14 font-inter text-sm font-light tracking-[0.04em] text-[rgba(180,190,205,0.9)]">
             Want the full path behind a build?{' '}
             <Link href="/#team" className="text-gold transition-colors hover:text-white">
               Meet the circle →

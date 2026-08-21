@@ -1,5 +1,6 @@
 'use client'
 
+import { useInView } from '@/hooks/useInView'
 import type { ContactLinks } from '@/lib/api'
 
 interface ContactSectionProps {
@@ -10,6 +11,8 @@ interface ContactSectionProps {
 }
 
 export function ContactSection({ title, subtitle, button, contacts }: ContactSectionProps) {
+  const { ref, visible } = useInView<HTMLElement>({ threshold: 0.22 })
+
   const mailto = contacts.email
     ? `mailto:${contacts.email}?subject=${encodeURIComponent('ISEMPTY')}`
     : '#team'
@@ -22,14 +25,11 @@ export function ContactSection({ title, subtitle, button, contacts }: ContactSec
   ].filter(Boolean) as { label: string; href: string }[]
 
   return (
-    <section id="contact" className="scroll-mt-24 pb-20 sm:pb-28">
-      <div className="stage-panel contact-panel">
-        <div className="contact-nebula" aria-hidden />
-        <div className="contact-nebula contact-nebula-b" aria-hidden />
-
+    <section id="contact" className="scroll-mt-24 pb-16 sm:pb-20" ref={ref}>
+      <div className={`contact-field ${visible ? 'is-live' : ''}`}>
         <div className="contact-copy">
-          <div className="mb-3 font-mono text-lg tracking-[0.14em] text-gold">
-            &gt;_<span className="ms-2 text-[10px] tracking-[0.2em] text-muted">07</span>
+          <div className="contact-prompt">
+            &gt;_<span className="contact-prompt-idx">06</span>
           </div>
           <h2 className="contact-title">{title}</h2>
           <p className="contact-lead">
@@ -41,20 +41,22 @@ export function ContactSection({ title, subtitle, button, contacts }: ContactSec
             {button}
           </a>
 
-          <ul className="contact-socials">
-            {socials.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  className="contact-social"
-                  target={s.href.startsWith('mailto:') ? undefined : '_blank'}
-                  rel={s.href.startsWith('mailto:') ? undefined : 'noreferrer'}
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {socials.length > 0 ? (
+            <ul className="contact-socials">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    className="contact-social"
+                    target={s.href.startsWith('mailto:') ? undefined : '_blank'}
+                    rel={s.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
     </section>

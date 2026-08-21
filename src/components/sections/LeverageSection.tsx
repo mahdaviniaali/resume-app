@@ -61,7 +61,7 @@ export function LeverageSection({
 
   return (
     <section id="leverage" className="scroll-mt-24" ref={ref}>
-      <SectionHeader index="03" kicker={subtitle} title={title} lead={lead} />
+      <SectionHeader index="02" kicker={subtitle} title={title} lead={lead} />
 
       <div className={`leverage-field ${live ? 'is-live' : ''}`}>
         <div className="leverage-wash" aria-hidden />

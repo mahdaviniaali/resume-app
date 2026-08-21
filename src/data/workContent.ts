@@ -16,7 +16,14 @@ export interface WorkItem {
   status?: 'live' | 'building'
 }
 
-/** Thin homepage strip — what we’ve done, not the full brief */
+/** Homepage section copy */
+export const workHome = {
+  title: 'Work we’ve done',
+  subtitle: 'Focus · Ship',
+  lead: 'Four lanes we keep returning to — systems that hold past the demo. Full cases on the list.',
+}
+
+/** Thin homepage focus lines — what we’ve done, not the full brief */
 export const workFocus: WorkFocus[] = [
   {
     id: 'agents',
