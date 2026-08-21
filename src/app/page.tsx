@@ -7,8 +7,7 @@ import { Vignette } from '@/components/Vignette'
 import { Navigation } from '@/components/Navigation'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { BeyondCodeSection } from '@/components/sections/BeyondCodeSection'
-import { VoidSection } from '@/components/sections/VoidSection'
-import { CrossingSection } from '@/components/sections/CrossingSection'
+import { LeverageSection } from '@/components/sections/LeverageSection'
 import { CapabilitiesSection } from '@/components/sections/CapabilitiesSection'
 import { MethodSection } from '@/components/sections/MethodSection'
 import { TeamSection } from '@/components/sections/TeamSection'
@@ -43,8 +42,7 @@ export default function Home() {
 
   const home = homeContent
   const beyond = home.beyond
-  const voidBlock = home.void
-  const crossing = home.crossing
+  const leverage = home.leverage
   const capabilities = home.capabilities
   const method = home.method
   const team = home.team
@@ -72,54 +70,56 @@ export default function Home() {
 
         <div className="mx-auto max-w-[1280px] px-6 pb-16 pt-14 sm:px-10 sm:pb-24 sm:pt-16">
           <div className="flex flex-col gap-20 sm:gap-24">
-          {beyond && (
-            <BeyondCodeSection
-              title={beyond.title}
-              subtitle={beyond.subtitle}
-              lead={beyond.lead}
-              stages={beyond.stages}
+            {beyond && (
+              <BeyondCodeSection
+                title={beyond.title}
+                subtitle={beyond.subtitle}
+                lead={beyond.lead}
+                stages={beyond.stages}
+              />
+            )}
+
+            {leverage && (
+              <LeverageSection
+                title={leverage.title}
+                subtitle={leverage.subtitle}
+                lead={leverage.lead}
+                leftLabel={leverage.leftLabel}
+                leftText={leverage.leftText}
+                rightLabel={leverage.rightLabel}
+                rightText={leverage.rightText}
+                vibeLabel={leverage.vibeLabel}
+                vibeText={leverage.vibeText}
+              />
+            )}
+
+            {capabilities && (
+              <CapabilitiesSection
+                title={capabilities.title}
+                subtitle={capabilities.subtitle}
+                cards={capabilities.cards}
+              />
+            )}
+
+            {method && (
+              <MethodSection title={method.title} subtitle={method.subtitle} steps={method.steps} />
+            )}
+
+            <TeamSection
+              title={team?.title || 'The circle'}
+              subtitle={team?.subtitle || 'Architects of idea, system, and experience'}
+              members={members}
             />
-          )}
 
-          {voidBlock && (
-            <VoidSection title={voidBlock.title} subtitle={voidBlock.subtitle} items={voidBlock.items} />
-          )}
-
-          {crossing && (
-            <CrossingSection
-              title={crossing.title}
-              subtitle={crossing.subtitle}
-              steps={crossing.steps}
+            <ContactSection
+              title={contact?.title || 'Got chaos? Good.'}
+              subtitle={
+                contact?.subtitle ||
+                'Half-built idea. Product users get lost in. System that fights you. Throw it our way — we’ll turn it into light.'
+              }
+              button={contact?.button || 'Send your chaos →'}
+              contacts={site.contacts}
             />
-          )}
-
-          {capabilities && (
-            <CapabilitiesSection
-              title={capabilities.title}
-              subtitle={capabilities.subtitle}
-              cards={capabilities.cards}
-            />
-          )}
-
-          {method && (
-            <MethodSection title={method.title} subtitle={method.subtitle} steps={method.steps} />
-          )}
-
-          <TeamSection
-            title={team?.title || 'The circle'}
-            subtitle={team?.subtitle || 'Architects of idea, system, and experience'}
-            members={members}
-          />
-
-          <ContactSection
-            title={contact?.title || 'Got chaos? Good.'}
-            subtitle={
-              contact?.subtitle ||
-              'Half-built idea. Lost users. System that fights you. Throw it our way.'
-            }
-            button={contact?.button || 'Send your chaos →'}
-            contacts={site.contacts}
-          />
           </div>
         </div>
       </div>

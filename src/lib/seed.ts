@@ -3,119 +3,9 @@ import path from 'path'
 
 import { hashPassword } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { homeContent } from '@/data/homeContent'
 
-export const DEFAULT_HOME = {
-  hero: {
-    eyebrow: '[ پروتکل جنسیس ]',
-    line1: 'از خلأ',
-    line2_prefix: 'از',
-    line2_stroke: 'خالی است',
-    line3_prefix: 'ما می‌سازیم',
-    line3_accent: 'نور',
-    description:
-      'سیستم‌های درهم و مسئله‌های سخت را به معماری شفاف تبدیل می‌کنیم — SaaS چندمستاجره، طراحی دامنه، و هسته‌های پرسرعت.',
-  },
-  void: {
-    title: 'خلأ',
-    subtitle: 'جایی که بیشتر محصول‌ها گیر می‌کنند',
-    items: [
-      {
-        label: '۰۱',
-        title: 'منطق پراکنده',
-        text: 'قواعد کسب‌وکار زیر UI، اسکریپت و دانش شفاهی دفن شده — چیزی برای تغییر امن نیست.',
-      },
-      {
-        label: '۰۲',
-        title: 'چندمستأجره‌ی شکننده',
-        text: 'فورک‌های سفارشی برای هر مشتری، به‌جای یک زیربنای واقعی چندمستاجره.',
-      },
-      {
-        label: '۰۳',
-        title: 'سیستم‌های مبهم',
-        text: 'بدون مرز، بدون رویداد، بدون مشاهده‌پذیری — فقط آتش‌نشانی.',
-      },
-    ],
-  },
-  crossing: {
-    title: 'گذار',
-    subtitle: 'از آشوب تا سیستمی که می‌ماند',
-    steps: [
-      { from: 'نیازمندی‌های درهم', to: 'مدل دامنه دقیق' },
-      { from: 'مونولیت شکننده', to: 'باندد کانتکست' },
-      { from: 'حالت خالی', to: 'جریان‌های روشن' },
-      { from: 'دیباگ قهرمانانه', to: 'پایپ‌لاین مشاهده‌پذیر' },
-    ],
-  },
-  capabilities: {
-    title: 'توانایی‌ها',
-    subtitle: 'آنچه می‌سازیم',
-    cards: [
-      {
-        icon: '۰۱ // چندمستاجره',
-        title: 'اکوسیستم SaaS',
-        description: 'زیرساخت ایزوله، امن و مقیاس‌پذیر — یک بنیاد، قلمروهای بسیار.',
-        span: 2,
-      },
-      {
-        icon: '۰۲ // DDD',
-        title: 'معماری سیستم',
-        description: 'نظم روی آشوب. کانتکست‌های خالص و مقیاس‌پذیر.',
-        span: 1,
-      },
-      {
-        icon: '۰۳ // محصول',
-        title: 'ذهنیت محصول',
-        description: 'هر خط کد برای نبض واقعی محصول است.',
-        span: 1,
-      },
-      {
-        icon: 'هسته منطق // پایتون و جنگو',
-        title: 'منطق کسب‌وکار',
-        description: 'منطق پیچیدهٔ چندمستاجره با سرعت آزموده‌شده.',
-        code: 'def create_reality(req):\n    if req.void.is_empty:\n        return Architect.build(SaaS())',
-        span: 2,
-      },
-      {
-        icon: 'هسته سیستم // Rust Async',
-        title: 'کارایی بالا',
-        description: 'انتزاع بدون هزینه؛ جایی که حافظه و سرعت حیاتی‌اند.',
-        code: 'async fn illuminate(s: &mut Void) {\n    s.extract_truth().await;\n    Light::from(s)\n}',
-        span: 2,
-      },
-    ],
-  },
-  method: {
-    title: 'روش',
-    subtitle: 'پروتکل کار ما',
-    steps: [
-      {
-        key: 'کشف',
-        text: 'نقشهٔ درهم‌ریختگی. مصاحبه با دامنه. نام‌گذاری آنچه واقعاً درد می‌کند.',
-      },
-      {
-        key: 'مدل',
-        text: 'رسم باندد کانتکست. جدا کردن مسیر نوشتن و خواندن وقتی مقیاس می‌طلبد.',
-      },
-      {
-        key: 'ساخت',
-        text: 'سرویس‌های ماژولار — جنگو برای سرعت محصول، Rust وقتی لبه تیز است.',
-      },
-      {
-        key: 'روشنی',
-        text: 'مستند، مشاهده‌پذیر، و تحویل سیستمی که تیم مالک آن باشد.',
-      },
-    ],
-  },
-  team: {
-    title: 'حلقه',
-    subtitle: 'معماران نادیده',
-  },
-  contact: {
-    title: 'بیایید نور را ببافیم.',
-    subtitle: 'آماده‌اید خلأ را پشت سر بگذارید؟ یک سیگنال بفرستید.',
-    button: 'ارسال سیگنال ←',
-  },
-}
+export const DEFAULT_HOME = homeContent
 
 export function emptyResume(
   nameEn: string,
@@ -144,7 +34,7 @@ export function emptyResume(
     certificates: [],
     languages: [],
     footer: {
-      text: { fa: 'Genesis', en: 'Genesis' },
+      text: { fa: 'ISEMPTY', en: 'ISEMPTY' },
       backToTop: { fa: 'بازگشت به بالا', en: 'Back to top' },
     },
   }
@@ -168,6 +58,7 @@ export async function ensureSeeded() {
   await seedPromise
   if (!rosterSynced) {
     await syncSecondMemberToMahan()
+    await syncAliFromProfile()
     rosterSynced = true
   }
 }
@@ -194,7 +85,7 @@ function buildMahanResume() {
   resume.experiences = [
     {
       title: { en: 'SEO & Marketing', fa: 'سئو و بازاریابی' },
-      location: { en: 'Genesis', fa: 'جنسیس' },
+      location: { en: 'ISEMPTY', fa: 'ISEMPTY' },
       date: { en: '2024 — Present', fa: '۱۴۰۳ — اکنون' },
       description: {
         en: 'Owns search visibility, content systems, and go-to-market messaging so architecture work reaches the right audience.',
@@ -203,6 +94,47 @@ function buildMahanResume() {
     },
   ]
   return resume
+}
+
+/** Keep Ali resume + bio aligned with profile.json / brand copy on existing DBs */
+async function syncAliFromProfile() {
+  const profilePath = path.join(process.cwd(), 'src', 'data', 'profile.json')
+  if (!existsSync(profilePath)) return
+
+  const raw = JSON.parse(readFileSync(profilePath, 'utf-8')) as {
+    resume?: Record<string, unknown>
+  }
+  if (!raw.resume || Object.keys(raw.resume).length === 0) return
+
+  const ali = await prisma.teamMember.findUnique({
+    where: { slug: 'ali-mahdavinia' },
+    include: { resume: true },
+  })
+  if (!ali) return
+
+  await prisma.teamMember.update({
+    where: { id: ali.id },
+    data: {
+      roleEn: 'Backend & System Architect',
+      roleFa: 'معمار سیستم و بک‌اند',
+      shortBioEn:
+        'Backend & systems — multi-tenant SaaS, domain architecture, and the path from messy idea to shippable light.',
+      shortBioFa:
+        'بک‌اند و سیستم — SaaS چندمستاجره، معماری دامنه، و مسیر از ایدهٔ مبهم تا نوری که قابل تحویل است.',
+    },
+  })
+
+  const resumeJson = JSON.stringify(raw.resume)
+  if (ali.resume) {
+    await prisma.resume.update({
+      where: { memberId: ali.id },
+      data: { dataJson: resumeJson },
+    })
+  } else {
+    await prisma.resume.create({
+      data: { memberId: ali.id, dataJson: resumeJson },
+    })
+  }
 }
 
 /** Replace legacy second teammate (Sara) with Mahan Tahmasbi on existing DBs */
@@ -332,7 +264,7 @@ async function seedIfEmpty() {
   rezaResume.experiences = [
     {
       title: { en: 'Frontend Engineer', fa: 'مهندس فرانت‌اند' },
-      location: { en: 'Genesis', fa: 'جنسیس' },
+      location: { en: 'ISEMPTY', fa: 'ISEMPTY' },
       date: { en: '2023 — Present', fa: '۱۴۰۲ — اکنون' },
       description: {
         en: 'Owns client shells for SaaS consoles, focusing on state clarity and fast paths for power users.',
@@ -352,8 +284,8 @@ async function seedIfEmpty() {
     if (!site) {
       await tx.siteSettings.create({
         data: {
-          brandName: 'جنسیس',
-          tagline: 'از خلأِ خالی است؛ ما نور را می‌سازیم.',
+          brandName: 'ISEMPTY',
+          tagline: 'From the void of is empty; We code the light.',
           email: emailClean,
           telegram: contacts.telegram,
           linkedin: contacts.linkedin,
@@ -376,9 +308,9 @@ async function seedIfEmpty() {
           roleEn: 'Backend & System Architect',
           roleFa: 'معمار سیستم و بک‌اند',
           shortBioEn:
-            'Leads multi-tenant SaaS and domain-driven backends — turning messy product ideas into durable systems.',
+            'Backend & systems — multi-tenant SaaS, domain architecture, and the path from messy idea to shippable light.',
           shortBioFa:
-            'رهبری بک‌اند SaaS چندمستاجره و معماری دامنه — تبدیل ایده‌های مبهم به سیستم‌های پایدار.',
+            'بک‌اند و سیستم — SaaS چندمستاجره، معماری دامنه، و مسیر از ایدهٔ مبهم تا نوری که قابل تحویل است.',
           avatarUrl: '',
           email: emailClean,
           github: contacts.github,

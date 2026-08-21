@@ -1,6 +1,8 @@
 .resumeRoot {
-  background: radial-gradient(1200px 600px at 10% 20%, rgba(46, 224, 106, 0.06), transparent),
-    linear-gradient(180deg, #0b0f12, #050607);
+  background:
+    radial-gradient(1100px 560px at 12% 8%, rgba(245, 179, 66, 0.08), transparent 55%),
+    radial-gradient(900px 480px at 90% 18%, rgba(56, 189, 248, 0.06), transparent 50%),
+    linear-gradient(180deg, #070b14, #04060c);
   min-height: 100vh;
   padding: 32px;
   color: #e6eef1;
@@ -14,8 +16,8 @@
 }
 
 .container[data-lang='en'] {
-  font-family: var(--font-montserrat), 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
   letter-spacing: 0.01em;
 }
 
@@ -171,17 +173,17 @@
 }
 
 .downloadMenuItemAccent {
-  background: rgba(46, 224, 106, 0.12);
-  color: #2ee06a;
+  background: rgba(245, 179, 66, 0.12);
+  color: #f5b342;
   font-weight: 600;
   margin-top: 4px;
-  border-top: 1px solid rgba(46, 224, 106, 0.2);
+  border-top: 1px solid rgba(245, 179, 66, 0.2);
   padding-top: 12px;
 }
 
 .downloadMenuItemAccent:hover,
 .downloadMenuItemAccent:active {
-  background: rgba(46, 224, 106, 0.2);
+  background: rgba(245, 179, 66, 0.2);
 }
 
 .downloadMenuDivider {
@@ -216,11 +218,15 @@
   flex-direction: column;
   gap: 20px;
   padding: 24px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  backdrop-filter: blur(6px);
-  box-shadow: 0 6px 30px rgba(2, 6, 8, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 1.75rem;
+  background: rgba(10, 16, 32, 0.55);
+  backdrop-filter: blur(28px) saturate(1.25);
+  -webkit-backdrop-filter: blur(28px) saturate(1.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 28px 60px rgba(0, 0, 0, 0.38);
+  border: 0;
 }
 
 .headerTop {
@@ -232,15 +238,17 @@
 .avatar {
   width: 80px;
   height: 80px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #2ee06a, #12b86a);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgba(245, 179, 66, 0.35), rgba(18, 28, 48, 0.9));
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-orbitron), system-ui, sans-serif;
   font-weight: 700;
-  color: #04140a;
+  color: #f5b342;
   font-size: 28px;
   flex-shrink: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .nameBlock {
@@ -250,9 +258,10 @@
 .nameBlock h1 {
   font-size: 24px;
   margin-bottom: 4px;
-  color: #2ee06a;
-  font-family: var(--font-playfair), 'Playfair Display', serif;
-  letter-spacing: 0.02em;
+  color: #f5b342;
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .nameBlock p {
@@ -268,13 +277,15 @@
 }
 
 .badge {
-  background: rgba(46, 224, 106, 0.12);
-  color: #2ee06a;
+  background: rgba(245, 179, 66, 0.1);
+  color: #f5b342;
   padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  font-family: var(--font-montserrat), 'Montserrat', system-ui, sans-serif;
+  border-radius: 0.35rem;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .contactInfo {
@@ -294,7 +305,7 @@
 .contactItem svg {
   width: 16px;
   height: 16px;
-  color: #2ee06a;
+  color: #f5b342;
 }
 
 .mainContent {
@@ -317,22 +328,26 @@
 
 .card {
   padding: 24px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  box-shadow: 0 8px 30px rgba(2, 6, 8, 0.5);
+  border-radius: 1.25rem;
+  background: rgba(10, 16, 32, 0.45);
+  border: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 16px 40px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px);
 }
 
 .sectionTitle {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2ee06a;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f5b342;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-montserrat), 'Montserrat', system-ui, sans-serif;
-  letter-spacing: 0.04em;
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .sectionTitle svg {
@@ -342,7 +357,7 @@
 
 .summary {
   font-size: 15px;
-  color: #cfe9d6;
+  color: #cfcfcf;
   white-space: pre-line;
 }
 
@@ -392,15 +407,15 @@
 
 .projectItem:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(46, 224, 106, 0.1);
+  box-shadow: 0 8px 20px rgba(245, 179, 66, 0.1);
 }
 
 .projectTitle {
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 6px;
-  font-family: var(--font-playfair), 'Playfair Display', serif;
-  letter-spacing: 0.01em;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  letter-spacing: 0.02em;
 }
 
 .projectTech {
@@ -411,11 +426,13 @@
 }
 
 .techTag {
-  background: rgba(46, 224, 106, 0.12);
-  color: #2ee06a;
+  background: rgba(245, 179, 66, 0.1);
+  color: #f5b342;
   padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
+  border-radius: 0.35rem;
+  font-size: 11px;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  letter-spacing: 0.04em;
 }
 
 .projectDescription {
@@ -438,7 +455,7 @@
 
 .projectFeature::before {
   content: '•';
-  color: #2ee06a;
+  color: #f5b342;
   font-size: 16px;
 }
 
@@ -454,7 +471,7 @@
 .projectLink {
   display: inline-flex;
   margin-top: 10px;
-  color: #2ee06a;
+  color: #f5b342;
   font-weight: 600;
 }
 
@@ -490,7 +507,7 @@
 
 .skillItem::before {
   content: '•';
-  color: #2ee06a;
+  color: #f5b342;
   font-size: 18px;
 }
 
@@ -555,7 +572,7 @@
 }
 
 .footerLink {
-  color: #2ee06a;
+  color: #f5b342;
   font-weight: 600;
 }
 

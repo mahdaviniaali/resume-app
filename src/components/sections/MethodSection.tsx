@@ -8,24 +8,31 @@ interface MethodSectionProps {
   steps: { key: string; text: string }[]
 }
 
+/** Engagement path — stations on a drawing track */
 export function MethodSection({ title, subtitle, steps }: MethodSectionProps) {
   return (
     <section id="method" className="scroll-mt-24">
       <SectionHeader index="05" kicker={subtitle} title={title} />
 
-      <ul className="flex flex-wrap gap-x-10 gap-y-8">
-        {steps.map((step, i) => (
-          <li key={step.key} className="max-w-[14rem] text-left">
-            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-gold">
-              {String(i + 1).padStart(2, '0')} // {step.key}
-            </p>
-            <div className="my-3 h-px w-7 bg-line/80" aria-hidden />
-            <p className="font-inter text-[10px] font-light uppercase leading-relaxed tracking-[0.1em] text-muted">
-              {step.text}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <div className="stage-panel method-panel">
+        <div className="method-glow" aria-hidden />
+        <div className="method-track" aria-hidden>
+          <span className="method-track-line" />
+        </div>
+        <ol className="method-stations">
+          {steps.map((step, i) => (
+            <li key={step.key} className="method-station" style={{ ['--i' as string]: i }}>
+              <span className="method-node" aria-hidden>
+                <span className="method-node-ring" />
+              </span>
+              <p className="method-key">
+                {String(i + 1).padStart(2, '0')} // {step.key}
+              </p>
+              <p className="method-text">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </section>
   )
 }

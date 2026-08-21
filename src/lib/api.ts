@@ -29,11 +29,24 @@ export interface HomeContent {
     lead: string
     stages: { label: string; text: string; highlight?: string }[]
   }
+  leverage?: {
+    title: string
+    subtitle: string
+    lead: string
+    leftLabel: string
+    leftText: string
+    rightLabel: string
+    rightText: string
+    vibeLabel: string
+    vibeText: string
+  }
+  /** @deprecated kept for older DB JSON */
   void?: {
     title: string
     subtitle: string
     items: { label: string; title: string; text: string }[]
   }
+  /** @deprecated kept for older DB JSON */
   crossing?: {
     title: string
     subtitle: string

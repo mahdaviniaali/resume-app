@@ -265,7 +265,7 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
       </main>
 
       <footer className={styles.footer}>
-        <span>{resume.footer ? t(resume.footer.text) : 'Genesis'}</span>
+        <span>{resume.footer ? t(resume.footer.text) : 'ISEMPTY'}</span>
         <a className={styles.footerLink} href="#about">
           {resume.footer ? t(resume.footer.backToTop) : lang === 'fa' ? 'بازگشت به بالا' : 'Back to top'}
         </a>

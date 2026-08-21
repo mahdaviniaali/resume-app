@@ -34,44 +34,24 @@ export const homeContent: HomeContent = {
       },
     ],
   },
-  void: {
-    title: 'The void',
-    subtitle: 'Where most products get stuck',
-    items: [
-      {
-        label: '01',
-        title: 'Blurry idea',
-        text: 'There’s energy, no edges. Everyone feels something is missing — nobody can say what should be built.',
-      },
-      {
-        label: '02',
-        title: 'Power without a path',
-        text: 'Strong backend. Confused users. Technical firepower without experience clarity is just expensive noise.',
-      },
-      {
-        label: '03',
-        title: 'Hidden logic',
-        text: 'Rules buried in code and hallway knowledge. Change becomes danger. The product stops breathing.',
-      },
-    ],
-  },
-  crossing: {
-    title: 'The crossing',
-    subtitle: 'From fog to a path people feel',
-    steps: [
-      { from: 'Raw idea', to: 'Shared product language' },
-      { from: 'Fuzzy requirements', to: 'Precise domain model' },
-      { from: 'Crowded UI', to: 'Clear user flow' },
-      { from: 'Dark system', to: 'Lit path you can own' },
-    ],
+  leverage: {
+    title: 'AI is loud. Output is rare.',
+    subtitle: 'Leverage',
+    lead: 'Models can generate almost anything. The hard part is turning that noise into a system you can ship — or rescuing a vibe-coded project that hit a wall.',
+    leftLabel: 'AI alone',
+    leftText: 'Fast drafts. Fragile structure. Demos that stall when real users and real constraints show up.',
+    rightLabel: 'With us',
+    rightText: 'We aim the model, own the architecture, and pull the best output into something durable.',
+    vibeLabel: 'Vibe coding dead-end?',
+    vibeText: 'Hand it over. We take stalled prototypes and make them shippable.',
   },
   capabilities: {
     title: 'What we bring',
-    subtitle: 'Idea, architecture, experience',
+    subtitle: 'Architecture, experience, systems',
     cards: [
       {
-        icon: '01 // IDEA',
-        title: 'Shape the idea',
+        icon: '01 // SCOPE',
+        title: 'Borders that hold',
         description:
           'We listen to the half-finished thought, draw the borders, and turn it into something the team can actually build.',
         span: 2,

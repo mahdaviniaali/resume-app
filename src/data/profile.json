@@ -47,8 +47,8 @@
         "en": "Ali Mahdavinia"
       },
       "tagline": {
-        "fa": "توسعه‌دهندهٔ بک‌اند — Python / Rust",
-        "en": "Backend Developer — Python / Rust"
+        "fa": "معمار بک‌اند و سیستم — از خلأ تا نور قابل تحویل",
+        "en": "Backend & System Architect — from void to shippable light"
       },
       "avatar": {
         "fa": "ع",
@@ -114,8 +114,8 @@
       }
     ],
     "summary": {
-      "fa": "توسعه‌دهندهٔ بک‌اند با درک قوی از معماری سیستم و تفکر محصول‌محور (Product Mindset).\n\nبه نرم‌افزار به چشم «یک سیستم در خدمت بیزینس» نگاه می‌کنم. تمرکزم روی مدل‌سازی دامنه، ساختار ماژولار و زیرساخت‌هایی است که برای نگهداری، رشد و تغییرات بلندمدت طراحی شده باشند.\n\nدر کنار مهندسی، در شکل‌دادن ایده‌های محصول همراه تیم هستم؛ کمک می‌کنم ایده‌های مبهم به نیازمندی‌های شفاف و راه‌حل‌های واقعی تبدیل شوند. سابقهٔ ساخت سرویس‌های آمادهٔ اتوماسیون را دارم و در حل چالش‌های واقعی از الگوهای توزیع‌شده (مثل CQRS، Saga و EDA) استفاده می‌کنم.\n\nتجربهٔ عملی در توسعه سیستم‌های Multi-tenant SaaS و یکپارچه‌سازی آن‌ها با هوش مصنوعی و Message Queueها دارم. علاوه بر پشتهٔ پایتون، با Rust و چارچوب‌های Axum و Tokio سرویس‌های async و پایش رویداد امنیتی (SIEM سبک) ساخته‌ام. برای من کد خوب کدی است که نه تنها از نظر معماری (DDD، TDD) مستحکم باشد، بلکه ارزش واقعی و پایداری خلق کند و مستندات (Technical Writing) دقیقی داشته باشد.",
-      "en": "Backend developer with a strong foundation in system architecture and a product-driven mindset.\n\nI treat software as a business-enabling system. My focus is on domain modeling, modular structures, and building infrastructure designed for long-term maintainability, growth, and adaptability.\n\nBeyond engineering, I actively collaborate in shaping product ideas—turning loosely defined concepts into clear requirements and production-ready solutions. I have built automation-ready services and apply distributed patterns (like CQRS, Saga, and EDA) to solve real-world challenges.\n\nI have practical experience developing Multi-tenant SaaS applications and integrating them with AI flows and Message Queues. Beyond Python, I ship async Rust services with Axum and Tokio, including a lightweight security-event monitoring (Mini SIEM) pipeline. For me, good code is not just architecturally sound (DDD, TDD), but sustainable, business-aligned, and well-documented (Technical Writing)."
+      "fa": "معمار بک‌اند در ISEMPTY — تمرکز روی تبدیل ایده‌های مبهم و سیستم‌های درهم به معماری قابل تحویل.\n\nبه نرم‌افزار به چشم «یک سیستم در خدمت بیزینس» نگاه می‌کنم. تمرکزم روی مدل‌سازی دامنه، ساختار ماژولار و زیرساخت‌هایی است که برای نگهداری، رشد و تغییرات بلندمدت طراحی شده باشند.\n\nدر کنار مهندسی، در شکل‌دادن ایده‌های محصول همراه تیم هستم؛ کمک می‌کنم ایده‌های مبهم به نیازمندی‌های شفاف و راه‌حل‌های واقعی تبدیل شوند. سابقهٔ ساخت سرویس‌های آمادهٔ اتوماسیون را دارم و در حل چالش‌های واقعی از الگوهای توزیع‌شده (مثل CQRS، Saga و EDA) استفاده می‌کنم.\n\nتجربهٔ عملی در توسعه سیستم‌های Multi-tenant SaaS و یکپارچه‌سازی آن‌ها با هوش مصنوعی و Message Queueها دارم. علاوه بر پشتهٔ پایتون، با Rust و چارچوب‌های Axum و Tokio سرویس‌های async و پایش رویداد امنیتی (SIEM سبک) ساخته‌ام. برای من کد خوب کدی است که نه تنها از نظر معماری (DDD، TDD) مستحکم باشد، بلکه ارزش واقعی و پایداری خلق کند و مستندات (Technical Writing) دقیقی داشته باشد.",
+      "en": "Backend & system architect at ISEMPTY — turning messy ideas and fragile systems into architecture you can ship.\n\nI treat software as a business-enabling system. My focus is on domain modeling, modular structures, and building infrastructure designed for long-term maintainability, growth, and adaptability.\n\nBeyond engineering, I actively collaborate in shaping product ideas—turning loosely defined concepts into clear requirements and production-ready solutions. I have built automation-ready services and apply distributed patterns (like CQRS, Saga, and EDA) to solve real-world challenges.\n\nI have practical experience developing Multi-tenant SaaS applications and integrating them with AI flows and Message Queues. Beyond Python, I ship async Rust services with Axum and Tokio, including a lightweight security-event monitoring (Mini SIEM) pipeline. For me, good code is not just architecturally sound (DDD, TDD), but sustainable, business-aligned, and well-documented (Technical Writing)."
     },
     "experiences": [
       {
@@ -536,8 +536,8 @@
     ],
     "footer": {
       "text": {
-        "fa": "طراحی شده با عشق — علی مهدوی‌نیا © ۱۴۰۵ · ",
-        "en": "Designed with love — Ali Mahdavinia © 2026 · "
+        "fa": "ISEMPTY — علی مهدوی‌نیا © ۱۴۰۵ · ",
+        "en": "ISEMPTY — Ali Mahdavinia © 2026 · "
       },
       "backToTop": {
         "fa": "بالا",
