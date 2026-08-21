@@ -14,8 +14,8 @@ export const homeContent: HomeContent = {
   },
   beyond: {
     title: 'More than code',
-    subtitle: 'Idea · System · Experience',
-    lead: 'We don’t just write backends. We shape the idea, forge the system, and design the experience so nobody gets lost inside what you build.',
+    subtitle: 'Idea · System · Clarity',
+    lead: 'We don’t just write backends. We take a raw idea, forge the system, and leave you with clarity you can ship — and own.',
     stages: [
       {
         label: 'Idea',
@@ -28,9 +28,9 @@ export const homeContent: HomeContent = {
         highlight: 'working architecture',
       },
       {
-        label: 'Experience',
-        text: 'We obsess over the path. Clear flows. Honest hierarchy. Users decide fast — and never disappear into the UI.',
-        highlight: 'never disappear',
+        label: 'Clarity',
+        text: 'The chaos settles. A lit path, a system you can run, and a product that finally earns its keep.',
+        highlight: 'finally earns its keep',
       },
     ],
   },
