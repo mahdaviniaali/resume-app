@@ -1,44 +1,52 @@
 'use client'
 
-/** Shared section header: >_ · Inter title · inter kicker · quote bar */
+/** Shared section header — matches Beyond: muted index+kicker eyebrow, gold only for phrase marks */
 export function SectionHeader({
   index,
   kicker,
   title,
   lead,
+  leadHighlight,
 }: {
   index?: string
   kicker: string
   title: string
   lead?: string
+  /** Optional phrase inside `lead` rendered in gold — never paint labels/chrome gold */
+  leadHighlight?: string
 }) {
+  const eyebrow = [index, formatKicker(kicker)].filter(Boolean).join(' — ')
+
   return (
-    <header className="mb-10 max-w-[560px] text-left sm:mb-12">
-      <div className="mb-3 font-mono text-lg tracking-[0.14em] text-gold">
-        &gt;_<span className="ms-2 text-[10px] tracking-[0.2em] text-muted">{index}</span>
-      </div>
-      <h2 className="font-inter text-[clamp(1.75rem,3.5vw,2.65rem)] font-semibold leading-[1.1] tracking-tight text-white">
+    <header className="mb-8 max-w-[560px] text-left sm:mb-10">
+      <p className="mb-3 font-inter text-[11px] font-medium uppercase tracking-[0.18em] text-[#8fa3c7]">
+        {eyebrow}
+      </p>
+      <h2 className="font-inter text-[clamp(1.9rem,4.2vw,2.85rem)] font-semibold leading-[1.1] tracking-tight text-white">
         {title}
       </h2>
-      <p className="mt-4 font-inter text-[0.85rem] font-light uppercase leading-roomy tracking-[0.14em] text-white/90">
-        {kicker.split(/[·•]/).map((part, i, arr) => {
-          const t = part.trim()
-          if (!t) return null
-          const accent = i === 1
-          return (
-            <span key={`${t}-${i}`}>
-              {accent ? <span className="text-gold">{t}</span> : t}
-              {i < arr.length - 1 ? <span className="text-white/90">. </span> : null}
-            </span>
-          )
-        })}
-      </p>
       {lead ? (
-        <p className="mt-5 flex max-w-[28rem] items-start gap-3 font-quote text-[0.95rem] font-light leading-roomy tracking-[0.03em] text-[#cfcfcf]">
-          <span className="mt-1 inline-block h-9 w-px shrink-0 bg-gold" aria-hidden />
-          <span>{lead}</span>
+        <p className="mt-5 max-w-[38rem] font-inter text-[1rem] font-light leading-[1.85] tracking-[0.01em] text-[#b8c2d4]">
+          {highlightPhrase(lead, leadHighlight)}
         </p>
       ) : null}
     </header>
+  )
+}
+
+function formatKicker(kicker: string) {
+  return kicker.replace(/·/g, ' / ')
+}
+
+function highlightPhrase(text: string, phrase?: string) {
+  if (!phrase) return text
+  const i = text.toLowerCase().indexOf(phrase.toLowerCase())
+  if (i < 0) return text
+  return (
+    <>
+      {text.slice(0, i)}
+      <em className="not-italic text-gold">{text.slice(i, i + phrase.length)}</em>
+      {text.slice(i + phrase.length)}
+    </>
   )
 }

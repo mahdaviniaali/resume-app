@@ -39,6 +39,19 @@ const CHECKS = [
   { label: 'shippable', d: 0.55 },
 ]
 
+function highlightPhrase(text: string, phrase?: string) {
+  if (!phrase) return text
+  const i = text.toLowerCase().indexOf(phrase.toLowerCase())
+  if (i < 0) return text
+  return (
+    <>
+      {text.slice(0, i)}
+      <em className="not-italic text-gold">{text.slice(i, i + phrase.length)}</em>
+      {text.slice(i + phrase.length)}
+    </>
+  )
+}
+
 /** Open dual-field — noise → aimed signal, then vibe rescue */
 export function LeverageSection({
   title,
@@ -61,7 +74,13 @@ export function LeverageSection({
 
   return (
     <section id="leverage" className="scroll-mt-24" ref={ref}>
-      <SectionHeader index="02" kicker={subtitle} title={title} lead={lead} />
+      <SectionHeader
+        index="02"
+        kicker={subtitle}
+        title={title}
+        lead={lead}
+        leadHighlight="system you can ship"
+      />
 
       <div className={`leverage-field ${live ? 'is-live' : ''}`}>
         <div className="leverage-wash" aria-hidden />
@@ -150,7 +169,7 @@ export function LeverageSection({
 
         <div className="leverage-vibe">
           <p className="leverage-vibe-label">{vibeLabel}</p>
-          <p className="leverage-vibe-text">{vibeText}</p>
+          <p className="leverage-vibe-text">{highlightPhrase(vibeText, 'make it shippable')}</p>
         </div>
       </div>
     </section>

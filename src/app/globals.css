@@ -1944,7 +1944,7 @@
     position: absolute;
     inset-block: 8%;
     width: 1px;
-    background: linear-gradient(180deg, transparent, rgba(245, 179, 66, 0.45), transparent);
+    background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.4), transparent);
   }
 
   .leverage-hinge-bead {
@@ -1953,8 +1953,8 @@
     width: 0.45rem;
     height: 0.45rem;
     border-radius: 999px;
-    background: #f5b342;
-    box-shadow: 0 0 16px rgba(245, 179, 66, 0.6);
+    background: rgba(103, 232, 249, 0.95);
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.45);
   }
 
   .leverage-field.is-live .leverage-hinge-bead {
@@ -1966,7 +1966,7 @@
     width: 3px;
     height: 3px;
     border-radius: 999px;
-    background: #f5b342;
+    background: rgba(103, 232, 249, 0.9);
     opacity: 0;
     left: 50%;
     top: 42%;
@@ -2026,7 +2026,7 @@
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #f5b342;
+    color: rgba(143, 163, 199, 0.95);
   }
 
   .leverage-vibe-text {
@@ -2074,8 +2074,8 @@
       box-shadow: none;
     }
     50% {
-      border-color: rgba(245, 179, 66, 0.45);
-      box-shadow: 0 0 10px rgba(245, 179, 66, 0.15);
+      border-color: rgba(200, 210, 230, 0.5);
+      box-shadow: 0 0 10px rgba(148, 163, 184, 0.12);
     }
   }
 
