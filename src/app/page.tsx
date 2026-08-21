@@ -93,7 +93,12 @@ export default function Home() {
             )}
 
             {method && (
-              <MethodSection title={method.title} subtitle={method.subtitle} steps={method.steps} />
+              <MethodSection
+                title={method.title}
+                subtitle={method.subtitle}
+                lead={method.lead}
+                steps={method.steps}
+              />
             )}
 
             <SelectedWorkSection />

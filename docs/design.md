@@ -32,7 +32,7 @@ Hero keeps `>_` as its own chrome.
 1. Hero  
 2. Beyond (`BeyondCodeSection`)  
 3. Leverage (`LeverageSection`)  
-4. Method  
+4. Method — open path; short kicker `Method`; gold only on lead phrase  
 5. Selected work  
 6. Team  
 7. Contact  

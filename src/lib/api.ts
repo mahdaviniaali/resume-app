@@ -67,6 +67,7 @@ export interface HomeContent {
   method?: {
     title: string
     subtitle: string
+    lead?: string
     steps: { key: string; text: string }[]
   }
   team?: { title: string; subtitle: string }

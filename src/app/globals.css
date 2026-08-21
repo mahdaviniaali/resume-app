@@ -2196,133 +2196,188 @@
     }
   }
 
-  /* ── Method: engagement track ── */
-  .method-panel {
-    --stage-glass: rgba(14, 12, 22, 0.56);
-    padding-bottom: 2rem;
+  /* ── Method: open path field (aligned with Beyond / Leverage) ── */
+  .method-field {
+    position: relative;
+    overflow: visible;
+    margin-inline: -0.25rem;
+    padding: 0.35rem 0 0.25rem;
   }
 
-  .method-glow {
+  .method-wash {
     pointer-events: none;
     position: absolute;
-    width: 18rem;
-    height: 10rem;
-    left: 20%;
-    bottom: -3rem;
+    width: min(26rem, 65vw);
+    height: 12rem;
     border-radius: 999px;
-    filter: blur(70px);
-    background: rgba(245, 179, 66, 0.12);
+    filter: blur(90px);
+    opacity: 0.22;
+    left: -6%;
+    top: 10%;
+    background: rgba(148, 163, 184, 0.28);
   }
 
-  .method-track {
-    display: none;
+  .method-wash-b {
+    left: auto;
+    right: -8%;
+    top: auto;
+    bottom: 0;
+    background: rgba(99, 102, 241, 0.16);
+    opacity: 0.2;
   }
 
-  @media (min-width: 768px) {
-    .method-track {
-      display: block;
-      position: absolute;
-      left: 2.5rem;
-      right: 2.5rem;
-      top: 3.15rem;
-      z-index: 0;
-      height: 1px;
-      overflow: hidden;
-    }
-
-    .method-track-line {
-      display: block;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(245, 179, 66, 0.45), transparent);
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: method-draw 1.6s ease forwards 0.2s;
-    }
+  .method-field.is-live .method-wash-b {
+    opacity: 0.36;
   }
 
-  .method-stations {
+  .method-path {
     position: relative;
     z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: grid;
     gap: 1.75rem;
   }
 
   @media (min-width: 768px) {
-    .method-stations {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      padding-top: 0.5rem;
+    .method-path {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+      padding-top: 0.35rem;
     }
   }
 
-  .method-station {
-    opacity: 0;
-    animation: caps-rise 0.65s ease forwards;
-    animation-delay: calc(var(--i, 0) * 0.15s + 0.35s);
-  }
-
-  .method-node {
+  .method-spine {
     display: none;
   }
 
   @media (min-width: 768px) {
-    .method-node {
+    .method-spine {
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      left: 0.15rem;
+      right: 0.15rem;
+      top: 0.95rem;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(143, 163, 199, 0.35) 12%,
+        rgba(143, 163, 199, 0.35) 88%,
+        transparent
+      );
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: 0;
+    }
+
+    .method-field.is-live .method-spine {
+      animation: method-spine-draw 1.35s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.15s;
+    }
+  }
+
+  .method-step {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 0.85rem;
+    align-items: start;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  @media (min-width: 768px) {
+    .method-step {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+  }
+
+  .method-field.is-live .method-step {
+    animation: method-step-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 0.12s + 0.28s);
+  }
+
+  .method-step-idx {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8fa3c7;
+    line-height: 1.6;
+    padding-top: 0.2rem;
+  }
+
+  @media (min-width: 768px) {
+    .method-step-idx {
       position: relative;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 0.75rem;
-      height: 0.75rem;
-      margin-bottom: 1.1rem;
+      width: 1.9rem;
+      height: 1.9rem;
+      padding: 0;
       border-radius: 999px;
-      background: #f5b342;
-      box-shadow: 0 0 12px rgba(245, 179, 66, 0.4);
-    }
-
-    .method-node-ring {
-      position: absolute;
-      width: 1.35rem;
-      height: 1.35rem;
-      border-radius: 999px;
-      border: 1px solid rgba(245, 179, 66, 0.35);
-      animation: method-ring 2.4s ease-out infinite;
-      animation-delay: calc(var(--i, 0) * 0.35s);
+      background: rgba(12, 16, 28, 0.92);
+      border: 1px solid rgba(143, 163, 199, 0.35);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      z-index: 1;
     }
   }
 
-  .method-key {
-    font-family: var(--font-jetbrains), ui-monospace, monospace;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #f5b342;
-  }
-
-  .method-text {
-    margin-top: 0.65rem;
+  .method-step-key {
+    margin: 0;
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 300;
-    line-height: 1.6;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(160, 170, 185, 0.95);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: #fff;
   }
 
-  @keyframes method-draw {
+  .method-step-text {
+    margin: 0.7rem 0 0;
+    max-width: 16.5rem;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+    color: #b8c2d4;
+    text-transform: none;
+  }
+
+  @keyframes method-spine-draw {
     to {
       transform: scaleX(1);
     }
   }
 
-  @keyframes method-ring {
-    0% {
-      transform: scale(0.7);
-      opacity: 0.7;
+  @keyframes method-step-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-    100% {
-      transform: scale(1.8);
-      opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .method-field.is-live .method-spine,
+    .method-field.is-live .method-step {
+      animation: none !important;
+    }
+
+    .method-field.is-live .method-spine {
+      transform: scaleX(1);
+    }
+
+    .method-field.is-live .method-step {
+      opacity: 1;
+      transform: none;
     }
   }
 

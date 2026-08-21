@@ -47,7 +47,8 @@ export const homeContent: HomeContent = {
   },
   method: {
     title: 'How we move',
-    subtitle: 'From thought to an experience that doesn’t lose anyone',
+    subtitle: 'Method',
+    lead: 'From thought to an experience that doesn’t lose anyone.',
     steps: [
       {
         key: 'Discover',
