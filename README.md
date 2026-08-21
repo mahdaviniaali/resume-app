@@ -32,10 +32,9 @@ Copy `.env.example` → `.env` if needed. First API request also seeds the DB if
 1. Hero — Genesis manifesto  
 2. Beyond — idea / craft / reach  
 3. Leverage — AI noise → shippable system  
-4. Method — discover → illuminate  
-5. Selected work  
-6. Team — members → individual resumes  
-7. Contact — real mailto / social links  
+4. Selected work  
+5. Team — members → individual resumes  
+6. Contact — real mailto / social links  
 
 Design rules (gold/yellow usage, headers): see [`docs/design.md`](docs/design.md).
 

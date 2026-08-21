@@ -29,7 +29,7 @@ export function ContactSection({ title, subtitle, button, contacts }: ContactSec
       <div className={`contact-field ${visible ? 'is-live' : ''}`}>
         <div className="contact-copy">
           <div className="contact-prompt">
-            &gt;_<span className="contact-prompt-idx">06</span>
+            &gt;_<span className="contact-prompt-idx">05</span>
           </div>
           <h2 className="contact-title">{title}</h2>
           <p className="contact-lead">

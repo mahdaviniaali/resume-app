@@ -6,7 +6,6 @@ import { useReveal } from '@/hooks/useReveal'
 const links = [
   { href: '/#beyond', label: 'Beyond' },
   { href: '/#leverage', label: 'Leverage' },
-  { href: '/#method', label: 'Method' },
   { href: '/work', label: 'Work' },
   { href: '/#team', label: 'Team' },
   { href: '/#contact', label: 'Contact' },

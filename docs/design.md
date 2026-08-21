@@ -32,7 +32,8 @@ Hero keeps `>_` as its own chrome.
 1. Hero  
 2. Beyond (`BeyondCodeSection`)  
 3. Leverage (`LeverageSection`)  
-4. Method — open path; short kicker `Method`; gold only on lead phrase  
-5. Selected work  
-6. Team  
-7. Contact  
+4. Selected work — open 2×2 lanes; gold only on phrase marks; CTA muted not gold  
+5. Team  
+6. Contact  
+
+Do not add a separate “Method / process steps” section — Beyond + Leverage already carry that story.

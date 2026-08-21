@@ -8,7 +8,6 @@ import { Navigation } from '@/components/Navigation'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { BeyondCodeSection } from '@/components/sections/BeyondCodeSection'
 import { LeverageSection } from '@/components/sections/LeverageSection'
-import { MethodSection } from '@/components/sections/MethodSection'
 import { SelectedWorkSection } from '@/components/sections/SelectedWorkSection'
 import { TeamSection } from '@/components/sections/TeamSection'
 import { ContactSection } from '@/components/sections/ContactSection'
@@ -43,7 +42,6 @@ export default function Home() {
   const home = homeContent
   const beyond = home.beyond
   const leverage = home.leverage
-  const method = home.method
   const team = home.team
   const contact = home.contact
 
@@ -89,15 +87,6 @@ export default function Home() {
                 rightText={leverage.rightText}
                 vibeLabel={leverage.vibeLabel}
                 vibeText={leverage.vibeText}
-              />
-            )}
-
-            {method && (
-              <MethodSection
-                title={method.title}
-                subtitle={method.subtitle}
-                lead={method.lead}
-                steps={method.steps}
               />
             )}
 

@@ -16,7 +16,7 @@ export function TeamSection({ title, subtitle, members }: TeamSectionProps) {
 
   return (
     <section id="team" className="scroll-mt-24" ref={ref}>
-      <SectionHeader index="05" kicker={subtitle} title={title} />
+      <SectionHeader index="04" kicker={subtitle} title={title} />
 
       <div className={`team-field ${visible ? 'is-live' : ''}`}>
         {members.length === 0 ? (

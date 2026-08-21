@@ -45,29 +45,6 @@ export const homeContent: HomeContent = {
     vibeLabel: 'Vibe coding dead-end?',
     vibeText: 'Hand it over. We take the stalled prototype and make it shippable.',
   },
-  method: {
-    title: 'How we move',
-    subtitle: 'Method',
-    lead: 'From thought to an experience that doesn’t lose anyone.',
-    steps: [
-      {
-        key: 'Discover',
-        text: 'We hear the idea — even unfinished. We name the real pain in the domain and the user.',
-      },
-      {
-        key: 'Model',
-        text: 'We build a shared language: domain, flows, and paths that the UI can feel too.',
-      },
-      {
-        key: 'Build',
-        text: 'Modular systems. Experiences arranged so the path stays lit the whole way.',
-      },
-      {
-        key: 'Illuminate',
-        text: 'We hand over clarity — documented, observable, owned by your team and your users.',
-      },
-    ],
-  },
   team: {
     title: 'The circle',
     subtitle: 'Architects of idea, system, and experience',
