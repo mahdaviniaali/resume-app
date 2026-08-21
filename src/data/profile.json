@@ -3,10 +3,10 @@
     "name": "Ali Mahdavinia",
     "tagline": "From the void of \"is empty\"; We code the light.",
     "skills": [
-      "Backend & Multi-tenant SaaS",
-      "System Architecture & DDD",
-      "Product-minded Engineering",
-      "Python, Django & Rust (async / systems)"
+      "AI Engineering & Agents",
+      "Enterprise RAG & Automation",
+      "Performance-minded Backend",
+      "Business-to-Architecture"
     ],
     "contacts": [
       {
@@ -32,7 +32,7 @@
       {
         "type": "whatsapp",
         "label": "WhatsApp",
-        "href": "https://wa.me/+989214746116"
+        "href": "https://wa.me/+989059272346"
       }
     ],
     "resumeLink": {
@@ -47,8 +47,8 @@
         "en": "Ali Mahdavinia"
       },
       "tagline": {
-        "fa": "معمار بک‌اند و سیستم — از خلأ تا نور قابل تحویل",
-        "en": "Backend & System Architect — from void to shippable light"
+        "fa": "معمار سیستم‌های هوش مصنوعی و بک‌اند — از نیاز کسب‌وکار تا معماری قابل تحویل",
+        "en": "AI Systems & Backend Architect — from business need to shippable architecture"
       },
       "avatar": {
         "fa": "ع",
@@ -66,28 +66,36 @@
       "email": "alimahdavinia125@gmail.com",
       "badges": [
         {
-          "fa": "Workflow Automation",
-          "en": "Workflow Automation"
+          "fa": "AI Engineering & Agents",
+          "en": "AI Engineering & Agents"
         },
         {
-          "fa": "SaaS & Multi-tenant",
-          "en": "SaaS & Multi-tenant"
+          "fa": "RAG & Automation",
+          "en": "RAG & Automation"
         },
         {
-          "fa": "Event-Driven & API-First",
-          "en": "Event-Driven & API-First"
+          "fa": "Performance Systems",
+          "en": "Performance Systems"
+        },
+        {
+          "fa": "Business Analysis & Design",
+          "en": "Business Analysis & Design"
         },
         {
           "fa": "System Architecture",
           "en": "System Architecture"
-        },
-        {
-          "fa": "Technical Writing",
-          "en": "Technical Writing"
         }
       ]
     },
     "contactsSecondary": [
+      {
+        "type": "website",
+        "href": "https://isempty.online",
+        "label": {
+          "fa": "وب‌سایت",
+          "en": "Website"
+        }
+      },
       {
         "type": "github",
         "href": "https://github.com/mahdaviniaali",
@@ -98,7 +106,7 @@
       },
       {
         "type": "linkedin",
-        "href": "https://linkedin.com/in/mahdaviniaali",
+        "href": "https://www.linkedin.com/in/mahdaviniaali/",
         "label": {
           "fa": "لینکدین",
           "en": "LinkedIn"
@@ -114,10 +122,28 @@
       }
     ],
     "summary": {
-      "fa": "معمار بک‌اند در ISEMPTY — تمرکز روی تبدیل ایده‌های مبهم و سیستم‌های درهم به معماری قابل تحویل.\n\nبه نرم‌افزار به چشم «یک سیستم در خدمت بیزینس» نگاه می‌کنم. تمرکزم روی مدل‌سازی دامنه، ساختار ماژولار و زیرساخت‌هایی است که برای نگهداری، رشد و تغییرات بلندمدت طراحی شده باشند.\n\nدر کنار مهندسی، در شکل‌دادن ایده‌های محصول همراه تیم هستم؛ کمک می‌کنم ایده‌های مبهم به نیازمندی‌های شفاف و راه‌حل‌های واقعی تبدیل شوند. سابقهٔ ساخت سرویس‌های آمادهٔ اتوماسیون را دارم و در حل چالش‌های واقعی از الگوهای توزیع‌شده (مثل CQRS، Saga و EDA) استفاده می‌کنم.\n\nتجربهٔ عملی در توسعه سیستم‌های Multi-tenant SaaS و یکپارچه‌سازی آن‌ها با هوش مصنوعی و Message Queueها دارم. علاوه بر پشتهٔ پایتون، با Rust و چارچوب‌های Axum و Tokio سرویس‌های async و پایش رویداد امنیتی (SIEM سبک) ساخته‌ام. برای من کد خوب کدی است که نه تنها از نظر معماری (DDD، TDD) مستحکم باشد، بلکه ارزش واقعی و پایداری خلق کند و مستندات (Technical Writing) دقیقی داشته باشد.",
-      "en": "Backend & system architect at ISEMPTY — turning messy ideas and fragile systems into architecture you can ship.\n\nI treat software as a business-enabling system. My focus is on domain modeling, modular structures, and building infrastructure designed for long-term maintainability, growth, and adaptability.\n\nBeyond engineering, I actively collaborate in shaping product ideas—turning loosely defined concepts into clear requirements and production-ready solutions. I have built automation-ready services and apply distributed patterns (like CQRS, Saga, and EDA) to solve real-world challenges.\n\nI have practical experience developing Multi-tenant SaaS applications and integrating them with AI flows and Message Queues. Beyond Python, I ship async Rust services with Axum and Tokio, including a lightweight security-event monitoring (Mini SIEM) pipeline. For me, good code is not just architecturally sound (DDD, TDD), but sustainable, business-aligned, and well-documented (Technical Writing)."
+      "fa": "توسعه‌دهنده ارشد، مدیر فنی و معمار سیستم‌های هوش مصنوعی — تمرکز روی تبدیل نیاز مبهم کسب‌وکار به سامانه‌هایی که زیر بار واقعی پایدار می‌مانند و قابل تحویل‌اند.\n\nدر نیازسنجی، تحلیل، طراحی پروژه و تحویل سازمانی تجربه دارم. نرم‌افزار را سیستم در خدمت کسب‌وکار می‌بینم، نه فهرست ابزار. اخیراً روی مهندسی ایجنت، RAG سازمانی، اتوماسیون هوشمند و بهینه‌سازی دقیق کارایی کار می‌کنم.\n\nپشته را بر اساس مسئله انتخاب می‌کنم: پایتون (Django، FastAPI و …)، Go، Rust و Elixir ابزارند، نه هویت. معماری خوب دامنه را درست مدل می‌کند، زیر فشار مقیاس می‌ماند و ارزش پایدار برای سازمان می‌سازد.",
+      "en": "Senior developer, technical manager, and AI systems architect — turning ambiguous business needs into systems that stay reliable under real load and actually ship.\n\nI work across needs assessment, analysis, project design, and enterprise delivery. I treat software as a business-enabling system, not a tool checklist. Recently I have focused on agent engineering, enterprise RAG, intelligent automation, and precise performance work.\n\nI choose the stack for the problem: Python (Django, FastAPI, and more), Go, Rust, and Elixir are tools—not identity. Strong architecture models the domain clearly, holds under pressure, and creates lasting organizational value."
     },
     "experiences": [
+      {
+        "title": {
+          "fa": "توسعه‌دهنده ارشد و مدیر فنی",
+          "en": "Senior Developer & Technical Manager"
+        },
+        "location": {
+          "fa": "عامر اندیش هوشمند",
+          "en": "Amer Andish Houshmand"
+        },
+        "date": {
+          "fa": "خرداد ۱۴۰۵ — اکنون",
+          "en": "May 2026 — Present"
+        },
+        "description": {
+          "fa": "توسعهٔ ارشد هم‌زمان با مدیریت فنی؛ هدایت طراحی و تحویل سامانه‌های سازمانی هوش مصنوعی روی پلتفرم chatbot.ir (RAG سازمانی، کرالر و جستجوی دانش، سازندهٔ ایجنت اختصاصی). تمرکز روی نیازسنجی کسب‌وکار، معماری و پایداری تحت بار اسناد و چندکاربری.",
+          "en": "Senior development with technical management—leading design and delivery of enterprise AI systems on chatbot.ir (enterprise RAG, knowledge crawler/search, custom agent builder). Focused on business needs assessment, architecture, and reliability under heavy document load and multi-user concurrency."
+        }
+      },
       {
         "title": {
           "fa": "توسعه‌دهنده",
@@ -128,12 +154,12 @@
           "en": "Agrin Pay"
         },
         "date": {
-          "fa": "اسفند ۱۴۰۳ — فروردین ۱۴۰۵",
-          "en": "Feb 2025 — Apr 2026"
+          "fa": "اردیبهشت ۱۴۰۴ — خرداد ۱۴۰۵",
+          "en": "May 2025 — May 2026"
         },
         "description": {
-          "fa": "توسعه و تحویل پروژه‌های برنامه‌نویسی برای سازمان؛ همکاری در نیازمندی‌یابی، پیاده‌سازی و نگهداری سامانه‌های وب.",
-          "en": "Delivered software development projects for the organization, contributing to requirements, implementation, and maintenance of web-based systems."
+          "fa": "حدود یک سال توسعه و تحویل پروژه‌های نرم‌افزاری برای سازمان؛ مشارکت در نیازمندی‌یابی، پیاده‌سازی و نگهداری سامانه‌های وب.",
+          "en": "About one year delivering software projects for the organization—contributing to requirements gathering, implementation, and maintenance of web systems."
         }
       },
       {
@@ -146,12 +172,12 @@
           "en": "Tehran"
         },
         "date": {
-          "fa": "آذر ۱۴۰۲ — اکنون",
+          "fa": "آذر ۱۴۰۱ — اکنون",
           "en": "Dec 2022 — Present"
         },
         "description": {
-          "fa": "توسعه و تحویل پروژه‌های وب با Django/DRF. تمرکز بر معماری‌های ماژولار و رویدادمحور، مستندسازی فنی، امنیت، تست‌پذیری (TDD) و درک نیازمندی‌های واقعی مشتریان.",
-          "en": "Delivering web projects with Django/DRF. Focused on modular and Event-Driven architectures, technical documentation, security, testability (TDD), and deeply understanding client requirements."
+          "fa": "نیازسنجی کسب‌وکار، طراحی و تحلیل پروژه، و تحویل سامانه‌های سازمانی و محصولی. انتخاب فریم‌ورک بر اساس مسئله (Django، FastAPI و …)؛ تمرکز روی معماری قابل نگهداری، امنیت، تست‌پذیری و اتوماسیون.",
+          "en": "Business needs assessment, project design and analysis, and delivery of enterprise and product systems. Framework choice follows the problem (Django, FastAPI, and more)—with focus on maintainable architecture, security, testability, and automation."
         }
       },
       {
@@ -168,8 +194,8 @@
           "en": "Mar 2023 — Sep 2023"
         },
         "description": {
-          "fa": "برگزاری دوره‌های رایگان پایتون برای علاقه‌مندان از شهرهای مختلف و mentoring پس از دوره.",
-          "en": "Organized free Python courses for learners across cities and continued mentoring after the program."
+          "fa": "برگزاری دوره‌های رایگان پایتون برای علاقه‌مندان از شهرهای مختلف و راهنمایی پس از دوره.",
+          "en": "Ran free Python courses for learners across cities and continued mentoring after the program."
         }
       }
     ],
@@ -177,185 +203,263 @@
       "major": [
         {
           "title": {
-            "fa": "پلتفرم اتوماسیون اینستاگرام (SaaS) — لید بک‌اند و معمار سیستم — در حال اجرا",
-            "en": "Smart Instagram Automation Platform (SaaS) — Lead Backend & System Architect — In Progress"
+            "fa": "RAG سازمانی — chatbot.ir",
+            "en": "Enterprise RAG — chatbot.ir"
           },
           "tech": [
-            "Python",
-            "Django/DRF",
+            "RAG Pipelines",
+            "Multi-user Concurrency",
+            "Document Ingestion",
+            "Performance under Load",
+            "Knowledge Retrieval"
+          ],
+          "description": {
+            "fa": "ماژول دانش سازمانی روی پلتفرم chatbot.ir (عامر اندیش هوشمند): طراحی و توسعه بک‌اند RAG برای حجم بالای اسناد، پایداری سرویس تحت بار، و دسترسی چندکاربره. کاربرد نمونه: پاسخ‌گویی مبتنی بر قوانین و مقررات سازمان.",
+            "en": "Enterprise knowledge module on the chatbot.ir platform (Amer Andish Houshmand): designed and built a RAG backend for large document volumes, service stability under load, and multi-user access. Example application: answers grounded in organizational regulations and policies."
+          },
+          "features": [
+            {
+              "fa": "ورود پایدار اسناد حجیم بدون از کار افتادن سرویس",
+              "en": "Stable ingestion for large document corpora without service downtime"
+            },
+            {
+              "fa": "جستجو و بازیابی دانش تحت بار چندکاربری",
+              "en": "Knowledge search and retrieval under multi-user load"
+            },
+            {
+              "fa": "ایزوله‌سازی و کنترل دسترسی در محیط سازمانی",
+              "en": "Access isolation and controls for enterprise multi-user use"
+            },
+            {
+              "fa": "پاسخ‌گویی مبتنی بر دانش مقررات و سیاست‌های سازمان",
+              "en": "Answers grounded in organizational regulations and policies"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: توسعه‌دهنده ارشد و مدیر فنی — عامر اندیش هوشمند",
+              "en": "Role: Senior Developer & Technical Manager — Amer Andish Houshmand"
+            },
+            "date": {
+              "fa": "۱۴۰۵ — در حال توسعه",
+              "en": "2026 — In development"
+            },
+            "link": "https://chatbot.ir/"
+          }
+        },
+        {
+          "title": {
+            "fa": "کرالر و جستجوی دانش — chatbot.ir",
+            "en": "Knowledge Crawler & Search — chatbot.ir"
+          },
+          "tech": [
+            "Web Crawling",
+            "Knowledge Extraction",
+            "Intelligent Search",
+            "Reference Linking"
+          ],
+          "description": {
+            "fa": "قابلیت سازمانی روی chatbot.ir: خزش سایت هدف، تبدیل محتوای پروژه به دانش قابل استفاده، جستجوی هوشمند، و بازگرداندن محصول یا منبع مرجع همراه لینک.",
+            "en": "Enterprise capability on chatbot.ir: crawl a target site, convert project content into usable knowledge, support intelligent search, and return reference products or sources with links."
+          },
+          "features": [
+            {
+              "fa": "خزش و استخراج ساختارمند از سایت هدف",
+              "en": "Structured crawl and extraction from a target site"
+            },
+            {
+              "fa": "تبدیل محتوای خام به دانش قابل بهره‌برداری در پلتفرم",
+              "en": "Transforms raw site content into platform-usable knowledge"
+            },
+            {
+              "fa": "جستجوی هوشمند روی دانش استخراج‌شده",
+              "en": "Intelligent search over extracted knowledge"
+            },
+            {
+              "fa": "بازیابی مرجع محصول یا منبع همراه با لینک",
+              "en": "Returns reference products or sources with citation links"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: توسعه‌دهنده ارشد و مدیر فنی — عامر اندیش هوشمند",
+              "en": "Role: Senior Developer & Technical Manager — Amer Andish Houshmand"
+            },
+            "date": {
+              "fa": "۱۴۰۵ — در حال توسعه",
+              "en": "2026 — In development"
+            },
+            "link": "https://chatbot.ir/"
+          }
+        },
+        {
+          "title": {
+            "fa": "سازندهٔ ایجنت اختصاصی — chatbot.ir",
+            "en": "Custom Agent Builder — chatbot.ir"
+          },
+          "tech": [
+            "Agent Orchestration",
+            "Self-serve Configuration",
+            "AI Automation",
+            "Multi-use-case Agents"
+          ],
+          "description": {
+            "fa": "محصول سازمانی روی chatbot.ir برای ساخت و پیکربندی ایجنت‌های اختصاصی توسط کسب‌وکارها؛ پوشش سناریوهای متنوع پاسخ‌گویی، فروش و پشتیبانی مبتنی بر هوش مصنوعی.",
+            "en": "Enterprise product on chatbot.ir for businesses to create and configure custom agents—covering diverse AI-powered sales, support, and response scenarios."
+          },
+          "features": [
+            {
+              "fa": "ساخت و پیکربندی خودخدمت ایجنت اختصاصی",
+              "en": "Self-serve creation and configuration of custom agents"
+            },
+            {
+              "fa": "پوشش سناریوهای متنوع کسب‌وکار روی یک پلتفرم",
+              "en": "Covers diverse business scenarios on one platform"
+            },
+            {
+              "fa": "هماهنگی و اتوماسیون بدون وابستگی به یک ابزار واحد",
+              "en": "Orchestration and automation without single-tool lock-in"
+            },
+            {
+              "fa": "مسیر از نیاز کسب‌وکار تا ایجنت قابل بهره‌برداری",
+              "en": "Path from business need to a production-ready agent"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: توسعه‌دهنده ارشد و مدیر فنی — عامر اندیش هوشمند",
+              "en": "Role: Senior Developer & Technical Manager — Amer Andish Houshmand"
+            },
+            "date": {
+              "fa": "۱۴۰۵ — در حال توسعه",
+              "en": "2026 — In development"
+            },
+            "link": "https://chatbot.ir/"
+          }
+        },
+        {
+          "title": {
+            "fa": "امرتون — سفارش اینستاگرام به فاکتور و پرداخت — در حال ساخت",
+            "en": "Amreton — Instagram Orders to Invoice & Payment — Building"
+          },
+          "tech": [
             "Multi-tenant SaaS",
-            "Event-Driven",
-            "CQRS / Saga",
-            "RabbitMQ / Redis"
+            "Order Lifecycle",
+            "Online Payments",
+            "SMS Tracking",
+            "Seller Dashboard"
           ],
           "description": {
-            "fa": "طراحی و توسعه بک‌اند یک پلتفرم SaaS چندمستاجره برای اتوماسیون هوشمند اینستاگرام با ساختار پیام‌محور (Message Queue) جهت یکپارچه‌سازی سرویس‌ها و هوش مصنوعی.",
-            "en": "Led backend architecture for a Multi-tenant SaaS platform focused on intelligent Instagram automation, utilizing Message Queues to integrate micro-services and AI workflows."
+            "fa": "سامانه‌ای برای تبدیل سفارش‌گیری پراکنده از دایرکت اینستاگرام به فاکتور آنلاین، پرداخت بانکی و سفارش قابل رهگیری — بدون نیاز به رمز عبور اینستاگرام.",
+            "en": "A system that turns fragmented Instagram DM order-taking into online invoices, bank payment, and trackable orders—without requiring an Instagram password."
           },
           "features": [
             {
-              "fa": "طراحی معماری Multi-tenant برای ایزوله‌سازی امن داده‌های کلاینت‌ها",
-              "en": "Multi-tenant architecture design for secure isolation of client data"
+              "fa": "ایجاد فاکتور و لینک اختصاصی برای فروشنده",
+              "en": "Invoice creation with a unique seller link"
             },
             {
-              "fa": "یکپارچه‌سازی جریان‌های پیام‌رسانی مبتنی بر هوش مصنوعی (AI-assisted workflows) و n8n",
-              "en": "Integrated AI-assisted messaging workflows and n8n automation flows"
+              "fa": "تسویه‌حساب مشتری: آدرس، پرداخت آنلاین و رهگیری",
+              "en": "Customer checkout: address, online payment, and tracking"
             },
             {
-              "fa": "ماژول‌های توسعه‌پذیر مبتنی بر DDD: کیف پول، رزرویشن، کمپین‌های پیامکی و CRM",
-              "en": "Extensible DDD-based modules: wallet, reservations, SMS campaigns, and CRM"
+              "fa": "مدیریت وضعیت سفارش و پیامک وضعیت",
+              "en": "Order status management with SMS updates"
             },
             {
-              "fa": "پیاده‌سازی Behavioral Guardrails برای حفظ امنیت اکانت‌ها و جلوگیری از مسدودی",
-              "en": "Implemented behavioral guardrails to protect accounts and prevent bans"
+              "fa": "معماری چندمستاجره برای فروشنده‌های جدا",
+              "en": "Multi-tenant architecture for isolated sellers"
             },
             {
-              "fa": "استفاده از الگوهای CQRS و Saga برای مدیریت تسک‌های توزیع‌شده و Event Sourcing برای لاگ‌ها",
-              "en": "Applied CQRS and Saga for distributed tasks, and Event Sourcing for precise logging"
-            },
-            {
-              "fa": "ردیابی کمپین‌های مارکتینگ با استفاده از UTM Tracking و یکپارچگی با موتور محتوا",
-              "en": "Marketing attribution via UTM tracking and Content Engine integration"
+              "fa": "شناسایی مشتری بازگشتی و تکمیل هوشمند اطلاعات",
+              "en": "Returning-customer recognition with smart autofill"
             }
           ],
           "meta": {
             "role": {
-              "fa": "نقش: بک‌اند و لید تیم",
-              "en": "Role: Backend & Team Lead"
+              "fa": "نقش: بک‌اند و معماری سیستم",
+              "en": "Role: Backend & System Architecture"
             },
             "date": {
-              "fa": "اسفند ۱۴۰۴",
-              "en": "Feb 2026"
-            }
+              "fa": "در حال ساخت",
+              "en": "Building"
+            },
+            "link": "https://amreton.com/"
           }
         },
         {
           "title": {
-            "fa": "مینی SIEM (سامانه پایش رویداد امنیتی)",
-            "en": "Mini SIEM (Security Event Monitoring System)"
+            "fa": "احداثینو — مناقصه معکوس مصالح ساختمانی",
+            "en": "Ehdasino — Reverse Auction for Construction Materials"
           },
           "tech": [
-            "Rust",
-            "Axum",
-            "Tokio",
-            "Redis",
-            "Docker",
-            "REST API"
+            "B2B Marketplace",
+            "RFQ / Proposals",
+            "Domain Architecture",
+            "PostgreSQL",
+            "TDD"
           ],
           "description": {
-            "fa": "سرویس سبک پایش امنیتی بلادرنگ که لاگ‌ها را از طریق REST API دریافت می‌کند، با Tokio به‌صورت ناهمزمان پردازش می‌کند و فعالیت مشکوک را با منطق تشخیص مبتنی بر قوانین شناسایی می‌کند. شامل صف رویداد داخلی، تولید هشدار، ذخیره‌سازی اختیاری با Redis و استقرار با Docker است.",
-            "en": "Developed a lightweight real-time security event monitoring service that ingests logs through a REST API, processes them asynchronously using Tokio, and detects suspicious activities based on rule-based detection logic. Implemented an internal event queue and alert generation system with optional Redis storage, containerized with Docker for easy deployment."
+            "fa": "پلتفرم خرید مصالح ساختمانی با رقابت تأمین‌کنندگان: ثبت درخواست خرید، دریافت پیشنهاد قیمت، و مقایسه شفاف قیمت، زمان تحویل و اعتبار.",
+            "en": "Construction-materials purchasing platform with real supplier competition: buyers post RFQs, suppliers send proposals, and compare price, delivery, and trust side by side."
           },
           "features": [
             {
-              "fa": "دریافت رویدادها از طریق REST API",
-              "en": "Log and event ingestion via a REST API"
+              "fa": "ثبت درخواست خرید و دریافت چند پیشنهاد از تأمین‌کنندگان مرتبط",
+              "en": "RFQ posting with multiple proposals from relevant suppliers"
             },
             {
-              "fa": "پردازش ناهمزمان با اکوسیستم Tokio",
-              "en": "Asynchronous processing using the Tokio runtime"
+              "fa": "مقایسه شفاف قیمت، زمان تحویل و شرایط",
+              "en": "Transparent comparison of price, delivery, and terms"
             },
             {
-              "fa": "تشخیص رفتار مشکوک با قوانین پیکربندی‌پذیر",
-              "en": "Rule-based detection for suspicious activity"
+              "fa": "احراز هویت OTP روی JWT با نقش خریدار و تأمین‌کننده",
+              "en": "OTP-on-JWT authentication with buyer and supplier roles"
             },
             {
-              "fa": "صف رویداد داخلی و تولید هشدار",
-              "en": "Internal event queue with an alert generation pipeline"
-            },
-            {
-              "fa": "ذخیره‌سازی اختیاری با Redis",
-              "en": "Optional Redis-backed storage for events or state"
-            },
-            {
-              "fa": "کانتینری‌سازی با Docker برای استقرار ساده",
-              "en": "Dockerized for straightforward deployment"
+              "fa": "معماری دامنه‌محور و تست‌پذیر، بدون وابستگی اجباری به یک فریم‌ورک",
+              "en": "Domain-driven, testable design without framework lock-in"
             }
           ],
           "meta": {
             "role": {
-              "fa": "نقش: توسعه‌دهنده (پروژه شخصی)",
-              "en": "Role: Developer — Personal project"
+              "fa": "نقش: بک‌اند و طراحی سیستم",
+              "en": "Role: Backend & System Design"
             },
-            "date": {
-              "fa": "آذر ۱۴۰۴ — اردیبهشت ۱۴۰۵",
-              "en": "Dec 2025 — May 2026"
-            }
+            "link": "http://ehdasino.ir/"
           }
         },
         {
           "title": {
-            "fa": "سامانه مناقصهٔ معکوس B2B (تأمین مصالح ساختمانی) — در حال اجرا",
-            "en": "Reverse Auction B2B System (Construction Materials Supply) — In Progress"
+            "fa": "فروشگاه اینترنتی پمپ صنعتی",
+            "en": "Industrial Pump E-commerce"
           },
           "tech": [
-            "Django",
-            "DRF",
-            "DDD Concepts",
-            "PostgreSQL",
-            "Celery",
-            "Docker"
-          ],
-          "description": {
-            "fa": "پلتفرم خرید سازمانی با طراحی سیستم از صفر: ثبت RFQ توسط خریداران و ارسال Proposal توسط فروشندگان. تمرکز بر معماری مستقل از فریم‌ورک و توسعه مبتنی بر تست (TDD).",
-            "en": "Corporate purchasing platform with full system design from scratch: RFQs from buyers, proposals from suppliers. Focused on framework-agnostic architecture and TDD."
-          },
-          "features": [
-            {
-              "fa": "طراحی مبتنی بر اصول Framework-agnostic و مفاهیم دامنه‌محور (DDD)",
-              "en": "Design driven by framework-agnostic principles and DDD concepts"
-            },
-            {
-              "fa": "تست‌پذیری بالا (High Testability) همراه با مستندسازی API با Swagger",
-              "en": "High testability (TDD) combined with Swagger API documentation"
-            },
-            {
-              "fa": "احراز هویت با OTP روی JWT و نقش‌بندی پویا (خریدار/تأمین‌کننده)",
-              "en": "OTP on JWT authentication with dynamic buyer/supplier role switching"
-            },
-            {
-              "fa": "پنل ادمین اختصاصی با اکشن‌ها و فیلترهای کاستوم برای مدیریت فرآیندها",
-              "en": "Custom admin panel with specific actions and dynamic filters"
-            },
-            {
-              "fa": "ایجاد و مدیریت اشخاص حقیقی و حقوقی همراه با پنل اختصاصی",
-              "en": "Creation and management of Individuals and Legal Entities with dedicated panels"
-            }
-            
-          ]
-        },
-        {
-          "title": {
-            "fa": "وب‌اپلیکیشن فروشگاهی (فروش پمپ صنعتی)",
-            "en": "E-commerce Web App (Industrial Pump Sales)"
-          },
-          "tech": [
-            "Django",
-            "PostgreSQL",
-            "Bootstrap",
+            "E-commerce",
+            "Order Management",
             "Payment Gateway",
-            "Cart System"
+            "PostgreSQL"
           ],
           "description": {
-            "fa": "فروشگاه اینترنتی محصولات پمپ صنعتی با ساختار کلاسیک فروشگاهی و سیستم مدیریت سفارشات پیشرفته.",
-            "en": "Online store for industrial pumps with a classic commerce structure and an advanced order management system."
+            "fa": "فروشگاه اینترنتی محصولات پمپ صنعتی با ساختار کلاسیک فروشگاهی و سامانه مدیریت سفارش.",
+            "en": "Online store for industrial pumps with a classic commerce structure and order management."
           },
           "features": [
             {
-              "fa": "طراحی سیستم Cart و سفارش با امکان پیگیری",
-              "en": "Cart and order system with tracking"
+              "fa": "سبد خرید و ثبت سفارش با امکان پیگیری",
+              "en": "Cart and order flow with tracking"
             },
             {
-              "fa": "نوتیفیکیشن‌های سمت کاربر (Customer-facing notifications) جهت اطلاع‌رسانی وضعیت سفارش",
-              "en": "Customer-facing notifications for real-time order status updates"
+              "fa": "اطلاع‌رسانی وضعیت سفارش به مشتری",
+              "en": "Customer order-status notifications"
             },
             {
-              "fa": "پیاده‌سازی درگاه پرداخت کارت‌به‌کارت اختصاصی",
+              "fa": "درگاه پرداخت کارت‌به‌کارت اختصاصی",
               "en": "Custom card-to-card payment gateway"
             },
             {
-              "fa": "پنل اختصاصی برای مدیریت سفارشات و دسته‌بندی‌های تخصصی",
-              "en": "Dedicated admin panel for order and specialized category management"
+              "fa": "پنل مدیریت سفارش‌ها و دسته‌بندی‌ها",
+              "en": "Admin panel for orders and specialized categories"
             }
           ],
           "meta": {
@@ -364,39 +468,39 @@
               "en": "Jan 2024"
             },
             "role": {
-              "fa": "نقش: Fullstack Developer",
-              "en": "Role: Fullstack Developer"
+              "fa": "نقش: توسعه‌دهنده تمام‌پشته",
+              "en": "Role: Full-stack Developer"
             },
             "link": "https://waterrisen.com"
           }
         },
         {
           "title": {
-            "fa": "سامانه سفارش‌گیری عمده‌فروشی (مسباره و تجهیزات)",
+            "fa": "سامانه سفارش‌گیری عمده‌فروشی (ساینده و تجهیزات)",
             "en": "Wholesale Ordering System (Abrasives and Equipment)"
           },
           "tech": [
-            "Django",
-            "PostgreSQL",
-            "Pricing System",
-            "B2B Order Management"
+            "B2B Ordering",
+            "Dynamic Pricing",
+            "Admin Workflow",
+            "PostgreSQL"
           ],
           "description": {
-            "fa": "سامانه سفارش‌گیری عمده‌فروشی (B2B) با سیستم قیمت‌گذاری پویا و کنترل کامل توسط ادمین.",
-            "en": "B2B wholesale ordering system with dynamic pricing and full admin control."
+            "fa": "سامانه سفارش‌گیری عمده‌فروشی با قیمت‌گذاری پویا و کنترل کامل توسط ادمین.",
+            "en": "B2B wholesale ordering with dynamic pricing and full admin control."
           },
           "features": [
             {
-              "fa": "سیستم ثبت سفارش بدون قیمت نهایی و تایید توسط ادمین",
-              "en": "Order capture without final price plus admin approval"
+              "fa": "ثبت سفارش بدون قیمت نهایی و تأیید ادمین",
+              "en": "Order capture without final price, plus admin approval"
             },
             {
-              "fa": "فرآیند سفارش‌گیری مرحله‌ای: ثبت → تایید → پرداخت",
-              "en": "Multi-stage ordering workflow: submit → approve → pay"
+              "fa": "فرآیند مرحله‌ای: ثبت ← تأیید ← پرداخت",
+              "en": "Staged workflow: submit → approve → pay"
             },
             {
-              "fa": "ارسال نوتیفیکیشن‌های تعاملی بین خریدار و ادمین",
-              "en": "Interactive notifications between buyers and administrators"
+              "fa": "اطلاع‌رسانی تعاملی بین خریدار و ادمین",
+              "en": "Interactive notifications between buyers and admins"
             }
           ],
           "meta": {
@@ -405,13 +509,29 @@
               "en": "Mar 2024"
             },
             "role": {
-              "fa": "نقش: Backend Developer",
+              "fa": "نقش: توسعه‌دهنده بک‌اند",
               "en": "Role: Backend Developer"
             }
           }
         }
       ],
       "small": [
+        {
+          "title": {
+            "fa": "مینی SIEM — پروژهٔ تمرینی",
+            "en": "Mini SIEM — Practice Project"
+          },
+          "tech": [
+            "Rust",
+            "Async REST",
+            "Redis",
+            "Docker"
+          ],
+          "description": {
+            "fa": "تمرین سبک پایش رویداد امنیتی: دریافت لاگ، پردازش ناهمزمان و هشدار مبتنی بر قانون.",
+            "en": "Lightweight practice in security-event monitoring: log ingestion, async processing, and rule-based alerts."
+          }
+        },
         {
           "title": {
             "fa": "سامانهٔ مدیریت دانشجویی",
@@ -426,40 +546,20 @@
             "fa": "سیستم مدیریت دانشجویان با انتخاب واحد، مدیریت دروس و گروه‌ها، و پنل‌های مجزا برای مدیر و دانشجو.",
             "en": "Student management platform with course selection, course/group management, and dedicated admin/student panels."
           }
-        },
-        {
-          "title": {
-            "fa": "ATM — پروژهٔ تمرینی",
-            "en": "ATM — Practice Project"
-          },
-          "tech": [
-            "Python"
-          ],
-          "description": {
-            "fa": "اولین پروژهٔ شخصی برای فهم اصول برنامه‌نویسی: مدیریت حساب، پنل مدیر و مشترکین، و فرآیند وام (Multi-Process).",
-            "en": "Early personal project covering account management, admin and customer panels, and a loan process (multi-process)."
-          }
         }
       ]
     },
-
     "skills": [
-      "Python, Django / DRF",
-      "Rust (Axum, Tokio), async REST services",
-      "Security tooling & SIEM-style log pipelines (rule-based detection, alerting)",
-      "System Architecture (DDD, TDD)",
-      "Distributed Systems (CQRS, Saga, Event Sourcing)",
-      "Multi-tenant SaaS & Event-Driven (EDA)",
-      "Message Queues (RabbitMQ, Redis)",
-      "PostgreSQL, MySQL, Elasticsearch",
-      "RESTful APIs, JWT / OTP",
-      "Docker, Linux, Git / CI-CD",
-      "Workflow Analysis & Orchestration (n8n)",
-      "Frontend Basics (React, Next.js, TypeScript, Tailwind)",
-      "Additional Skills (C++, Selenium, Web Scraping)"
+      "AI Engineering (agents, RAG, automation)",
+      "Performance engineering under heavy load",
+      "Business needs analysis, project design & delivery",
+      "System architecture (DDD, EDA, distributed workflows)",
+      "Multi-tenant / multi-user product backends",
+      "Backend polyglot: Python (Django, FastAPI, …), Go, Rust, Elixir",
+      "Data & messaging: PostgreSQL, Redis, RabbitMQ, Elasticsearch, Neo4j, Qdrant",
+      "APIs, auth (JWT / OTP), Docker / Linux / CI-CD",
+      "Frontend basics (React, Next.js, TypeScript, Tailwind)"
     ],
-
-
     "education": [
       {
         "degree": {

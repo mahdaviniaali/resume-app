@@ -115,12 +115,12 @@ async function syncAliFromProfile() {
   await prisma.teamMember.update({
     where: { id: ali.id },
     data: {
-      roleEn: 'Backend & System Architect',
-      roleFa: 'معمار سیستم و بک‌اند',
+      roleEn: 'AI Systems & Backend Architect',
+      roleFa: 'معمار سیستم‌های AI و بک‌اند',
       shortBioEn:
-        'Backend & systems — multi-tenant SaaS, domain architecture, and the path from messy idea to shippable light.',
+        'Senior development and technical leadership — enterprise RAG, agents on chatbot.ir, and turning business needs into shippable architecture.',
       shortBioFa:
-        'بک‌اند و سیستم — SaaS چندمستاجره، معماری دامنه، و مسیر از ایدهٔ مبهم تا نوری که قابل تحویل است.',
+        'توسعهٔ ارشد و مدیریت فنی — RAG سازمانی و ایجنت‌ها روی chatbot.ir، و تبدیل نیاز کسب‌وکار به معماری قابل تحویل.',
     },
   })
 
@@ -305,12 +305,12 @@ async function seedIfEmpty() {
           slug: 'ali-mahdavinia',
           nameEn: 'Ali Mahdavinia',
           nameFa: 'علی مهدوی‌نیا',
-          roleEn: 'Backend & System Architect',
-          roleFa: 'معمار سیستم و بک‌اند',
+          roleEn: 'AI Systems & Backend Architect',
+          roleFa: 'معمار سیستم‌های AI و بک‌اند',
           shortBioEn:
-            'Backend & systems — multi-tenant SaaS, domain architecture, and the path from messy idea to shippable light.',
+            'Senior development and technical leadership — enterprise RAG, agents on chatbot.ir, and turning business needs into shippable architecture.',
           shortBioFa:
-            'بک‌اند و سیستم — SaaS چندمستاجره، معماری دامنه، و مسیر از ایدهٔ مبهم تا نوری که قابل تحویل است.',
+            'توسعهٔ ارشد و مدیریت فنی — RAG سازمانی و ایجنت‌ها روی chatbot.ir، و تبدیل نیاز کسب‌وکار به معماری قابل تحویل.',
           avatarUrl: '',
           email: emailClean,
           github: contacts.github,
@@ -326,8 +326,8 @@ async function seedIfEmpty() {
                   : emptyResume(
                       'Ali Mahdavinia',
                       'علی مهدوی‌نیا',
-                      'Backend & System Architect',
-                      'معمار سیستم و بک‌اند',
+                      'AI Systems & Backend Architect',
+                      'معمار سیستم‌های AI و بک‌اند',
                       emailClean,
                     ),
               ),

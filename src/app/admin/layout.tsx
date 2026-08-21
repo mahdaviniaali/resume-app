@@ -32,7 +32,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <div className={styles.shell}>
       <aside className={styles.sidebar}>
-        <div className={styles.brand}>Genesis Admin</div>
+        <div className={styles.brand}>ISEMPTY Admin</div>
         {NAV.map((item) => (
           <Link
             key={item.href}

@@ -35,6 +35,22 @@ const baseIcons = {
 }
 
 const socialIcons = {
+  website: (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M3.6 9h16.8M3.6 15h16.8M12 3c2.5 2.7 3.8 5.8 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.8-3.8-9s1.3-6.3 3.8-9z"
+      />
+    </svg>
+  ),
   github: (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.77-1.35-1.77-1.1-.75.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.62-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.5.12-3.12 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.62.24 2.82.12 3.12.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.83.57A12 12 0 0 0 12 .5z" />
@@ -50,7 +66,7 @@ const socialIcons = {
       <path d="M9.04 15.05l-.38 5.33c.54 0 .77-.23 1.05-.5l2.52-2.42 5.23 3.83c.96.53 1.64.25 1.89-.89l3.43-16.08c.3-1.39-.5-1.94-1.43-1.6L1.3 9.9c-1.35.53-1.33 1.29-.23 1.62l5.95 1.86 13.8-8.7c.65-.39 1.23-.17.75.22" />
     </svg>
   ),
-}
+} as const
 
 const headings = {
   summary: { fa: 'خلاصه', en: 'Summary' },
@@ -176,6 +192,22 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
                               </div>
                             ))}
                           </div>
+                        )}
+                        {project.meta && (project.meta.role || project.meta.date) && (
+                          <div className={styles.projectMeta}>
+                            {project.meta.role && <span>{t(project.meta.role)}</span>}
+                            {project.meta.date && <span>{t(project.meta.date)}</span>}
+                          </div>
+                        )}
+                        {project.meta?.link && (
+                          <a
+                            className={styles.projectLink}
+                            href={project.meta.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {project.meta.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                          </a>
                         )}
                       </div>
                     ))}
@@ -342,7 +374,7 @@ export function ResumeView({ resume, memberName }: { resume: ResumeData; memberN
     <div className={styles.resumeRoot} data-print-mode={printMode}>
       <div className={styles.languageSwitcher}>
         <Link href="/#team" className={styles.languageBtn}>
-          ← Genesis
+          ← ISEMPTY
         </Link>
         {(['fa', 'en'] as Language[]).map((lang) => (
           <button
@@ -379,7 +411,7 @@ export function ResumeView({ resume, memberName }: { resume: ResumeData; memberN
 
       {memberName && (
         <p className={styles.screenOnly} style={{ textAlign: 'center', opacity: 0.6, marginBottom: 12 }}>
-          {memberName} · Genesis Team
+          {memberName} · ISEMPTY Team
         </p>
       )}
 

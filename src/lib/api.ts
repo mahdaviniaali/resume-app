@@ -111,7 +111,7 @@ export interface ResumeData {
     badges: LocalizedString[]
   }
   contactsSecondary: {
-    type: 'github' | 'linkedin' | 'telegram'
+    type: 'website' | 'github' | 'linkedin' | 'telegram'
     href: string
     label: LocalizedString
   }[]

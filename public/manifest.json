@@ -1,7 +1,7 @@
 {
-  "name": "Genesis",
-  "short_name": "Genesis",
-  "description": "Genesis — from messy systems to durable architecture",
+  "name": "ISEMPTY",
+  "short_name": "ISEMPTY",
+  "description": "ISEMPTY — from messy systems to durable architecture",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#050507",

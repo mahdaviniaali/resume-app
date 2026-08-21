@@ -27,8 +27,8 @@ export const workHome = {
 export const workFocus: WorkFocus[] = [
   {
     id: 'agents',
-    label: 'Enterprise agents & chatbots',
-    blurb: 'Stood up org agents and chat systems that hold in real workflows.',
+    label: 'Enterprise agents & RAG',
+    blurb: 'Agents, RAG, and self-serve builders that hold in real org workflows.',
   },
   {
     id: 'b2b',
@@ -42,8 +42,8 @@ export const workFocus: WorkFocus[] = [
   },
   {
     id: 'systems',
-    label: 'High-performance cores',
-    blurb: 'Rust / async where speed and load matter.',
+    label: 'Performance under load',
+    blurb: 'Heavy document pipelines and precise concurrency where uptime matters.',
   },
 ]
 
@@ -55,30 +55,53 @@ export const workPage = {
 
 export const workItems: WorkItem[] = [
   {
-    id: 'instagram-saas',
-    title: 'Smart Instagram Automation Platform',
+    id: 'enterprise-rag',
+    title: 'Enterprise RAG — chatbot.ir',
+    tag: 'AI · Enterprise',
+    summary:
+      'Enterprise knowledge module on chatbot.ir — scalable RAG for large document corpora, multi-user access, and regulation-grounded answers under load.',
+    tech: ['RAG Pipelines', 'Multi-user', 'Ingestion', 'Retrieval'],
+    href: 'https://chatbot.ir/',
+    status: 'building',
+  },
+  {
+    id: 'knowledge-crawler',
+    title: 'Knowledge Crawler & Search — chatbot.ir',
+    tag: 'AI · Discovery',
+    summary:
+      'Enterprise capability on chatbot.ir: crawl a target site, turn project content into usable knowledge, and return reference sources with links.',
+    tech: ['Crawling', 'Knowledge Extraction', 'Search'],
+    href: 'https://chatbot.ir/',
+    status: 'building',
+  },
+  {
+    id: 'agent-builder',
+    title: 'Custom Agent Builder — chatbot.ir',
+    tag: 'AI · Agents',
+    summary:
+      'Enterprise product on chatbot.ir for businesses to create and configure custom agents for sales, support, and AI response scenarios.',
+    tech: ['Agent Orchestration', 'Self-serve', 'Automation'],
+    href: 'https://chatbot.ir/',
+    status: 'building',
+  },
+  {
+    id: 'amreton',
+    title: 'Amreton',
     tag: 'Multi-tenant SaaS',
     summary:
-      'Backend and system architecture for a multi-tenant automation platform — message queues, AI-assisted flows, and modules that stay isolated under real client load.',
-    tech: ['Django/DRF', 'Multi-tenant', 'RabbitMQ', 'CQRS / Saga'],
+      'Turns fragmented Instagram DM order-taking into online invoices, bank payment, and trackable orders—no Instagram password required.',
+    tech: ['Order Lifecycle', 'Payments', 'Multi-tenant', 'SMS'],
+    href: 'https://amreton.com/',
     status: 'building',
   },
   {
-    id: 'reverse-auction',
-    title: 'Reverse Auction B2B System',
+    id: 'ehdasino',
+    title: 'Ehdasino',
     tag: 'B2B · Domain',
     summary:
-      'Corporate purchasing from scratch: RFQs, supplier proposals, OTP auth, and a framework-agnostic domain core built for testability.',
-    tech: ['Django', 'DDD', 'PostgreSQL', 'TDD'],
-    status: 'building',
-  },
-  {
-    id: 'mini-siem',
-    title: 'Mini SIEM',
-    tag: 'Rust · Real-time',
-    summary:
-      'Lightweight security event monitoring — async ingestion, rule-based detection, alert pipeline, containerized for straightforward deploy.',
-    tech: ['Rust', 'Axum', 'Tokio', 'Redis'],
+      'Construction-materials reverse auction: RFQs, supplier proposals, and transparent comparison of price and delivery.',
+    tech: ['RFQ / Proposals', 'B2B', 'Domain Architecture'],
+    href: 'http://ehdasino.ir/',
   },
   {
     id: 'waterrisen',
@@ -86,7 +109,7 @@ export const workItems: WorkItem[] = [
     tag: 'Commerce',
     summary:
       'Online store for industrial pumps with cart, order tracking, customer notifications, and a custom card-to-card payment flow.',
-    tech: ['Django', 'PostgreSQL', 'Payments'],
+    tech: ['E-commerce', 'PostgreSQL', 'Payments'],
     href: 'https://waterrisen.com',
     status: 'live',
   },
@@ -96,6 +119,6 @@ export const workItems: WorkItem[] = [
     tag: 'B2B operations',
     summary:
       'B2B ordering with dynamic pricing and a staged path: submit → approve → pay, plus interactive buyer–admin notifications.',
-    tech: ['Django', 'PostgreSQL', 'Pricing'],
+    tech: ['B2B Ordering', 'Pricing', 'Admin Workflow'],
   },
 ]

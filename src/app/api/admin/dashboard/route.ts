@@ -20,6 +20,6 @@ export async function GET(request: NextRequest) {
   return Response.json({
     members_count: members.length,
     published_count: members.filter((m) => m.isPublished).length,
-    brand_name: site?.brandName || 'Genesis',
+    brand_name: site?.brandName || 'ISEMPTY',
   })
 }

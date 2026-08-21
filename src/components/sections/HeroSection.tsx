@@ -4,41 +4,41 @@ import { type SVGProps } from 'react'
 
 const STACK = [
   {
-    title: 'Python / Django',
-    subtitle: 'Domain logic & APIs',
+    title: 'AI Engineering / Agents',
+    subtitle: 'Agents that ship',
     accent: true,
     icon: PythonIcon,
   },
   {
-    title: 'Rust / Async',
-    subtitle: 'Performance core',
+    title: 'RAG & Automation',
+    subtitle: 'Knowledge under load',
     accent: false,
     icon: GearIcon,
   },
   {
-    title: 'DDD / Clean Architecture',
+    title: 'Performance Systems',
+    subtitle: 'Precise under pressure',
+    accent: false,
+    icon: LayersIcon,
+  },
+  {
+    title: 'Domain Architecture',
     subtitle: 'Bounded contexts',
     accent: false,
     icon: CubeIcon,
   },
   {
-    title: 'SaaS / Multi-tenant',
+    title: 'Multi-tenant SaaS',
     subtitle: 'Isolated systems',
     accent: false,
     icon: CloudIcon,
   },
-  {
-    title: 'System Design / Scalability',
-    subtitle: 'Distributed thinking',
-    accent: false,
-    icon: LayersIcon,
-  },
 ] as const
 
 const ROLES = [
-  { label: 'System Architect', icon: HexagonIcon },
-  { label: 'DDD Enthusiast', icon: CubeIcon },
+  { label: 'AI Systems Architect', icon: HexagonIcon },
   { label: 'Backend Engineer', icon: BracesIcon },
+  { label: 'Solution Designer', icon: CubeIcon },
   { label: 'Builder of Digital Systems', icon: TerminalIcon },
 ] as const
 

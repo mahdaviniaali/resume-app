@@ -150,7 +150,7 @@ export function AuroraCanvas() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
 
-    // Classic Genesis palette — violet / cyber blue / magenta
+    // Classic ISEMPTY palette — violet / cyber blue / magenta
     const bands = [
       new AuroraBand({
         color: [138, 43, 226],

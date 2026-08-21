@@ -1,7 +1,7 @@
 {
   "name": "genesis-aurora",
   "version": "1.0.0",
-  "description": "Genesis — team brand site for SaaS architecture and systems engineering",
+  "description": "ISEMPTY — team brand site for SaaS architecture and systems engineering",
   "private": true,
   "scripts": {
     "dev": "next dev",

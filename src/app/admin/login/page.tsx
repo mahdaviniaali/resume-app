@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
   return (
     <div className={styles.loginWrap}>
       <div className={styles.loginCard}>
-        <h1 className={styles.loginTitle}>Genesis Admin</h1>
+        <h1 className={styles.loginTitle}>ISEMPTY Admin</h1>
         <form className={styles.form} onSubmit={onSubmit}>
           <label className={styles.label}>
             Username
