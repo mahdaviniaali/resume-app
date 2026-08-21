@@ -41,9 +41,9 @@ export const homeContent: HomeContent = {
     leftLabel: 'AI alone',
     leftText: 'Fast drafts. Fragile structure. Demos that stall when real users and real constraints show up.',
     rightLabel: 'With us',
-    rightText: 'We aim the model, own the architecture, and pull the best output into something durable.',
+    rightText: 'We aim the model, own the architecture, and pull the best output into something durable you can ship.',
     vibeLabel: 'Vibe coding dead-end?',
-    vibeText: 'Hand it over. We take stalled prototypes and make them shippable.',
+    vibeText: 'Hand it over. We take the stalled prototype and make it shippable.',
   },
   capabilities: {
     title: 'What we bring',
