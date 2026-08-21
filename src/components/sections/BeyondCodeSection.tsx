@@ -60,35 +60,38 @@ const DEBRIS = Array.from({ length: 16 }, (_, i) => ({
   d: (i % 8) * 0.12,
 }))
 
-/** Craft — full-field: surface above, hood below, one craft at the seam */
-const SURFACE_BITS = [
-  { t: 'interfaces', x: 40, y: 14, d: 0.08 },
-  { t: 'guide', x: 64, y: 20, d: 0.16 },
-  { t: 'clarity', x: 80, y: 12, d: 0.24 },
-  { t: 'flow', x: 50, y: 28, d: 0.2 },
+/** Craft — eng + ux streams collide across the whole field and sync as one */
+const CRAFT_ENG = [
+  { t: 'systems', x: 36, y: 58, r: -8, d: 0.05 },
+  { t: 'hold', x: 52, y: 72, r: 6, d: 0.14 },
+  { t: '{api}', x: 70, y: 64, r: -4, d: 0.22 },
+  { t: 'data', x: 44, y: 84, r: 10, d: 0.18 },
+  { t: 'sync', x: 78, y: 80, r: -12, d: 0.28 },
+  { t: 'power', x: 88, y: 56, r: 4, d: 0.34 },
+  { t: '::', x: 60, y: 48, r: 0, d: 0.1 },
 ]
 
-const SURFACE_SHAPES = [
-  { x: 44, y: 18, w: 13, h: 1.8, d: 0.1 },
-  { x: 60, y: 18, w: 7, h: 1.8, d: 0.18 },
-  { x: 72, y: 18, w: 10, h: 1.8, d: 0.26 },
-  { x: 48, y: 26, w: 16, h: 1.9, d: 0.14 },
-  { x: 70, y: 26, w: 14, h: 1.9, d: 0.22 },
+const CRAFT_UX = [
+  { t: 'interfaces', x: 42, y: 16, r: 6, d: 0.08 },
+  { t: 'guide', x: 62, y: 24, r: -8, d: 0.16 },
+  { t: 'clarity', x: 80, y: 14, r: 4, d: 0.24 },
+  { t: 'flow', x: 50, y: 34, r: -6, d: 0.2 },
+  { t: 'path', x: 74, y: 36, r: 8, d: 0.3 },
+  { t: 'surface', x: 88, y: 28, r: -4, d: 0.12 },
 ]
 
-const HOOD_BITS = [
-  { t: 'systems', x: 42, y: 66, d: 0.1 },
-  { t: 'hold', x: 60, y: 74, d: 0.18 },
-  { t: '{api}', x: 76, y: 64, d: 0.26 },
-  { t: 'data', x: 50, y: 82, d: 0.22 },
-  { t: 'power', x: 84, y: 78, d: 0.32 },
+const CRAFT_PANELS = [
+  { x: 48, y: 20, w: 18, h: 10, d: 0.15 },
+  { x: 70, y: 22, w: 14, h: 8, d: 0.25 },
+  { x: 58, y: 32, w: 22, h: 7, d: 0.35 },
 ]
 
-const HOOD_SPARKS = Array.from({ length: 10 }, (_, i) => ({
-  x: 36 + ((i * 19) % 54),
-  y: 60 + ((i * 13) % 28),
-  s: 2 + (i % 2),
-  d: (i % 6) * 0.1,
+const CRAFT_DUST = Array.from({ length: 18 }, (_, i) => ({
+  x: 28 + ((i * 17) % 68),
+  y: 12 + ((i * 23) % 76),
+  s: 2 + (i % 3),
+  kind: (i % 2 === 0 ? 'eng' : 'ux') as 'eng' | 'ux',
+  d: (i % 9) * 0.08,
 }))
 
 /** Reach — craft + marketing on the lit path */
@@ -202,36 +205,73 @@ function StageVisual({ phase }: { phase: number }) {
         <div className="bv-chaos-core" />
       </div>
 
-      {/* CRAFT — surface descends, hood rises, lock as one craft */}
+      {/* CRAFT — two languages flood the field, collide, sync as one */}
       <div className={`bv-act bv-act-craft ${phase === 1 ? 'is-on' : ''}`}>
         {phase === 1 ? (
           <>
-            <div className="bv-craft-sky" />
-            <div className="bv-craft-depth" />
+            <div className="bv-craft-field bv-craft-field-eng" />
+            <div className="bv-craft-field bv-craft-field-ux" />
+            <div className="bv-craft-wave" />
+            <div className="bv-craft-wave bv-craft-wave-delayed" />
 
-            {SURFACE_SHAPES.map((sh, i) => (
+            {CRAFT_PANELS.map((p, i) => (
               <span
-                key={`ss-${i}`}
-                className="bv-craft-shape"
+                key={`cp-${i}`}
+                className="bv-craft-panel"
                 style={
                   {
-                    left: `${sh.x}%`,
-                    top: `${sh.y}%`,
-                    width: `${sh.w}%`,
-                    height: `${sh.h}%`,
-                    animationDelay: `${0.15 + sh.d}s`,
+                    left: `${p.x}%`,
+                    top: `${p.y}%`,
+                    width: `${p.w}%`,
+                    height: `${p.h}%`,
+                    animationDelay: `${0.2 + p.d}s`,
                   } as CSSProperties
                 }
               />
             ))}
-            {SURFACE_BITS.map((bit) => (
+
+            {CRAFT_DUST.map((p, i) => (
               <span
-                key={`sf-${bit.t}`}
-                className="bv-craft-surf"
+                key={`cd-${i}`}
+                className={`bv-craft-dust bv-craft-dust-${p.kind}`}
+                style={
+                  {
+                    left: `${p.x}%`,
+                    top: `${p.y}%`,
+                    width: p.s,
+                    height: p.s,
+                    animationDelay: `${0.1 + p.d}s`,
+                  } as CSSProperties
+                }
+              />
+            ))}
+
+            {CRAFT_ENG.map((bit) => (
+              <span
+                key={`ce-${bit.t}`}
+                className="bv-craft-eng"
                 style={
                   {
                     left: `${bit.x}%`,
                     top: `${bit.y}%`,
+                    '--rot': `${bit.r}deg`,
+                    animationDelay: `${0.15 + bit.d}s`,
+                  } as CSSProperties
+                }
+              >
+                {bit.t}
+              </span>
+            ))}
+
+            {CRAFT_UX.map((bit) => (
+              <span
+                key={`cu-${bit.t}`}
+                className="bv-craft-ux"
+                style={
+                  {
+                    left: `${bit.x}%`,
+                    top: `${bit.y}%`,
+                    '--rot': `${bit.r}deg`,
                     animationDelay: `${0.2 + bit.d}s`,
                   } as CSSProperties
                 }
@@ -239,47 +279,10 @@ function StageVisual({ phase }: { phase: number }) {
                 {bit.t}
               </span>
             ))}
-            <span className="bv-craft-caption bv-craft-caption-top">clarity on the surface</span>
 
-            <div className="bv-craft-horizon">
-              <span className="bv-craft-horizon-line" />
-              <span className="bv-craft-horizon-soft" />
-              <span className="bv-craft-runner bv-craft-runner-a" />
-              <span className="bv-craft-runner bv-craft-runner-b" />
-              <span className="bv-craft-horizon-mark">one craft</span>
-            </div>
-
-            {HOOD_SPARKS.map((p, i) => (
-              <span
-                key={`hs-${i}`}
-                className="bv-craft-spark"
-                style={
-                  {
-                    left: `${p.x}%`,
-                    top: `${p.y}%`,
-                    width: p.s,
-                    height: p.s,
-                    animationDelay: `${0.12 + p.d}s`,
-                  } as CSSProperties
-                }
-              />
-            ))}
-            {HOOD_BITS.map((bit) => (
-              <span
-                key={`hd-${bit.t}`}
-                className="bv-craft-hoodbit"
-                style={
-                  {
-                    left: `${bit.x}%`,
-                    top: `${bit.y}%`,
-                    animationDelay: `${0.18 + bit.d}s`,
-                  } as CSSProperties
-                }
-              >
-                {bit.t}
-              </span>
-            ))}
-            <span className="bv-craft-caption bv-craft-caption-bot">power under the hood</span>
+            <span className="bv-craft-phrase bv-craft-phrase-hood">power under the hood</span>
+            <span className="bv-craft-phrase bv-craft-phrase-surface">clarity on the surface</span>
+            <span className="bv-craft-title">one craft</span>
           </>
         ) : null}
       </div>
