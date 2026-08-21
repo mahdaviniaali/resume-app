@@ -21,21 +21,22 @@ const CYCLE_MS = 7500
 const defaultStages: Stage[] = [
   {
     label: 'Idea',
-    text: 'Bring the unfinished thought. We pressure-test it and turn fog into something buildable.',
-    highlight: 'fog into something buildable',
+    text: 'Every build starts as two questions at once: what should exist, and who will care. We hold both — product spark and market itch — before craft freezes the wrong answer.',
+    highlight: 'who will care',
   },
   {
-    label: 'System',
-    text: 'Abstract thinking becomes working architecture — clean enough to own, sharp enough to scale.',
-    highlight: 'working architecture',
+    label: 'Craft',
+    text: 'Then engineering and UI/UX move as one craft. Systems that hold, interfaces that guide — power under the hood, clarity on the surface.',
+    highlight: 'move as one craft',
   },
   {
-    label: 'Clarity',
-    text: 'The chaos settles. A lit path, a system you can run, and a product that finally earns its keep.',
-    highlight: 'finally earns its keep',
+    label: 'Reach',
+    text: 'Marketing only works when the product can carry it. We braid shippable craft with a clear story — so attention lands on something real.',
+    highlight: 'something real',
   },
 ]
 
+/** Idea — colorful chaos (restored from first in-panel animation) */
 const CHAOS_BITS = [
   { t: '{', x: 12, y: 22, r: -22, c: '#ff8b6a', d: 0 },
   { t: '}', x: 78, y: 18, r: 18, c: '#7dd3fc', d: 0.1 },
@@ -59,7 +60,7 @@ const DEBRIS = Array.from({ length: 16 }, (_, i) => ({
   d: (i % 8) * 0.12,
 }))
 
-/** System — same code energy as Idea, but snapped into order */
+/** Craft — ordered stack (same in-panel language as Idea chaos) */
 const SYS_STACK = [
   { t: '{', x: 52, y: 24, c: '#67e8f9', d: 0 },
   { t: 'domain', x: 64, y: 24, c: '#22d3ee', d: 0.06 },
@@ -76,7 +77,7 @@ const SYS_STACK = [
 
 const SYS_RAILS = [24, 42, 60, 76]
 
-/** Clarity — signal reaches value */
+/** Reach — luminous path to value */
 const FLOW_DOTS = Array.from({ length: 12 }, (_, i) => ({
   d: i * 0.22,
   c: i > 8 ? '#f5b342' : i > 4 ? '#e0f2fe' : '#38bdf8',
@@ -102,11 +103,11 @@ function highlightPhrase(text: string, phrase?: string) {
 }
 
 function HighlightedLead({ text }: { text: string }) {
-  const parts = text.split(/(idea|system|clarity)/gi)
+  const parts = text.split(/(idea|craft|reach|engineering|ui\/ux|marketing)/gi)
   return (
     <>
       {parts.map((part, i) =>
-        /^(idea|system|clarity)$/i.test(part) ? (
+        /^(idea|craft|reach|engineering|ui\/ux|marketing)$/i.test(part) ? (
           <em key={`${part}-${i}`} className="beyond-mark">
             {part}
           </em>
@@ -118,7 +119,6 @@ function HighlightedLead({ text }: { text: string }) {
   )
 }
 
-/** Atmosphere stays inside the glass stage — behind the copy */
 function StageVisual({ phase }: { phase: number }) {
   return (
     <div className="beyond-visual" data-phase={phase} aria-hidden>
@@ -141,7 +141,7 @@ function StageVisual({ phase }: { phase: number }) {
         ))}
       </div>
 
-      {/* IDEA */}
+      {/* IDEA — colorful chaos (restored) */}
       <div className={`bv-act bv-act-chaos ${phase === 0 ? 'is-on' : ''}`}>
         <div className="bv-glitch bv-glitch-1" />
         <div className="bv-glitch bv-glitch-2" />
@@ -181,7 +181,7 @@ function StageVisual({ phase }: { phase: number }) {
         <div className="bv-chaos-core" />
       </div>
 
-      {/* SYSTEM — glyphs lock into ordered stack */}
+      {/* CRAFT — glyphs lock into ordered stack */}
       <div className={`bv-act bv-act-system ${phase === 1 ? 'is-on' : ''}`}>
         <div className="bv-sys-halo" />
         <span className="bv-sys-spine" />
@@ -211,7 +211,7 @@ function StageVisual({ phase }: { phase: number }) {
         <span className="bv-sys-scan" />
       </div>
 
-      {/* CLARITY — path reaches value */}
+      {/* REACH — luminous path */}
       <div className={`bv-act bv-act-clarity ${phase === 2 ? 'is-on' : ''}`}>
         <div className="bv-clarity-track">
           <span className="bv-clarity-rail" />
@@ -236,7 +236,7 @@ function StageVisual({ phase }: { phase: number }) {
           <span />
           <span />
         </div>
-        <span className="bv-clarity-mark">value</span>
+        <span className="bv-clarity-mark">result</span>
       </div>
     </div>
   )
@@ -244,7 +244,7 @@ function StageVisual({ phase }: { phase: number }) {
 
 export function BeyondCodeSection({
   title = 'More than code',
-  subtitle = 'Idea · System · Clarity',
+  subtitle = 'Idea · Craft · Reach',
   lead,
   stages = defaultStages,
 }: BeyondCodeSectionProps) {
@@ -318,7 +318,7 @@ export function BeyondCodeSection({
           {title}
         </h2>
         {lead ? (
-          <p className="beyond-lead mt-5 max-w-[36rem] font-inter text-[1rem] font-light leading-[1.85] tracking-[0.01em] text-[#b8c2d4]">
+          <p className="beyond-lead mt-5 max-w-[38rem] font-inter text-[1rem] font-light leading-[1.85] tracking-[0.01em] text-[#b8c2d4]">
             <HighlightedLead text={lead} />
           </p>
         ) : null}
@@ -358,7 +358,6 @@ export function BeyondCodeSection({
         <div className="beyond-blob beyond-blob-a" aria-hidden />
         <div className="beyond-blob beyond-blob-b" aria-hidden />
 
-        {/* Animation lives inside the stage — not a separate column */}
         <StageVisual phase={active} />
 
         <div className="beyond-panel-inner">

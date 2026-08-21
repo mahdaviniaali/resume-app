@@ -14,23 +14,23 @@ export const homeContent: HomeContent = {
   },
   beyond: {
     title: 'More than code',
-    subtitle: 'Idea · System · Clarity',
-    lead: 'We don’t just write backends. We take a raw idea, forge the system, and leave you with clarity you can ship — and own.',
+    subtitle: 'Idea · Craft · Reach',
+    lead: 'We don’t pick a lane. Engineering, UI/UX, and marketing move as one — from raw idea, through craft you can ship, to reach that actually lands.',
     stages: [
       {
         label: 'Idea',
-        text: 'Bring the unfinished thought. We pressure-test it, name the real problem, and turn fog into something buildable.',
-        highlight: 'fog into something buildable',
+        text: 'Every build starts as two questions at once: what should exist, and who will care. We hold both — product spark and market itch — before craft freezes the wrong answer.',
+        highlight: 'who will care',
       },
       {
-        label: 'System',
-        text: 'Abstract thinking becomes working architecture — domain, services, data — clean enough to own, sharp enough to scale.',
-        highlight: 'working architecture',
+        label: 'Craft',
+        text: 'Then engineering and UI/UX move as one craft. Systems that hold, interfaces that guide — power under the hood, clarity on the surface.',
+        highlight: 'move as one craft',
       },
       {
-        label: 'Clarity',
-        text: 'The chaos settles. A lit path, a system you can run, and a product that finally earns its keep.',
-        highlight: 'finally earns its keep',
+        label: 'Reach',
+        text: 'Marketing only works when the product can carry it. We braid shippable craft with a clear story — so attention lands on something real.',
+        highlight: 'something real',
       },
     ],
   },
