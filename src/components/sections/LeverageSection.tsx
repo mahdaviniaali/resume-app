@@ -17,25 +17,20 @@ interface LeverageSectionProps {
 }
 
 const NOISE = [
-  { t: 'gen', x: 8, y: 14, d: 0 },
-  { t: '??', x: 42, y: 10, d: 0.15 },
-  { t: 'tmp', x: 68, y: 22, d: 0.3 },
-  { t: 'vibe', x: 18, y: 38, d: 0.45 },
-  { t: '…', x: 52, y: 44, d: 0.2 },
-  { t: 'ok?', x: 78, y: 48, d: 0.55 },
-  { t: 'draft', x: 28, y: 62, d: 0.35 },
-  { t: 'NaN', x: 60, y: 68, d: 0.5 },
-  { t: 'hack', x: 12, y: 78, d: 0.65 },
-  { t: 'todo', x: 74, y: 76, d: 0.4 },
+  { t: 'gen', x: 6, y: 18, d: 0 },
+  { t: '??', x: 38, y: 12, d: 0.15 },
+  { t: 'tmp', x: 70, y: 22, d: 0.3 },
+  { t: 'vibe', x: 16, y: 48, d: 0.45 },
+  { t: '…', x: 52, y: 42, d: 0.2 },
+  { t: 'ok?', x: 78, y: 52, d: 0.55 },
+  { t: 'draft', x: 28, y: 72, d: 0.35 },
+  { t: 'NaN', x: 62, y: 78, d: 0.5 },
 ]
 
 const SIGNAL = [
-  { t: 'aim', x: 10, y: 18, d: 0.1 },
-  { t: 'arch', x: 38, y: 14, d: 0.25 },
-  { t: 'ship', x: 66, y: 20, d: 0.4 },
-  { t: 'own', x: 22, y: 48, d: 0.55 },
-  { t: 'hold', x: 54, y: 52, d: 0.7 },
-  { t: 'scale', x: 78, y: 58, d: 0.85 },
+  { t: 'aim', x: 72, y: 16, d: 0.1 },
+  { t: 'arch', x: 84, y: 42, d: 0.25 },
+  { t: 'ship', x: 76, y: 72, d: 0.4 },
 ]
 
 const CHECKS = [
@@ -57,31 +52,28 @@ export function LeverageSection({
   vibeText,
 }: LeverageSectionProps) {
   const { ref, visible } = useInView<HTMLElement>({ threshold: 0.22 })
-  const [phase, setPhase] = useState(0)
+  const [live, setLive] = useState(false)
 
   useEffect(() => {
     if (!visible) return
-    setPhase(1)
-    const t2 = window.setTimeout(() => setPhase(2), 900)
-    const t3 = window.setTimeout(() => setPhase(3), 1900)
-    return () => {
-      window.clearTimeout(t2)
-      window.clearTimeout(t3)
-    }
+    setLive(true)
   }, [visible])
 
   return (
-    <section id="leverage" className="scroll-mt-24" ref={ref} data-phase={phase}>
+    <section id="leverage" className="scroll-mt-24" ref={ref}>
       <SectionHeader index="03" kicker={subtitle} title={title} lead={lead} />
 
-      <div className={`leverage-field ${visible ? 'is-live' : ''}`}>
+      <div className={`leverage-field ${live ? 'is-live' : ''}`}>
         <div className="leverage-wash" aria-hidden />
         <div className="leverage-wash leverage-wash-b" aria-hidden />
 
         <div className="leverage-split">
-          {/* AI alone — hollow ticks + noise */}
           <div className="leverage-lane leverage-lane-noise">
-            <div className="leverage-noise-field" aria-hidden>
+            <div className="leverage-copy">
+              <p className="leverage-lane-label">{leftLabel}</p>
+              <p className="leverage-lane-text">{leftText}</p>
+            </div>
+            <div className="leverage-stage leverage-noise-field" aria-hidden>
               {NOISE.map((bit, i) => (
                 <span
                   key={`${bit.t}-${i}`}
@@ -107,8 +99,6 @@ export function LeverageSection({
                 ))}
               </div>
             </div>
-            <p className="leverage-lane-label">{leftLabel}</p>
-            <p className="leverage-lane-text">{leftText}</p>
           </div>
 
           <div className="leverage-hinge" aria-hidden>
@@ -118,9 +108,12 @@ export function LeverageSection({
             <span className="leverage-hinge-spark leverage-hinge-spark-b" />
           </div>
 
-          {/* With us — filled ticks + ordered signal */}
           <div className="leverage-lane leverage-lane-signal">
-            <div className="leverage-signal-field" aria-hidden>
+            <div className="leverage-copy">
+              <p className="leverage-lane-label leverage-lane-label-on">{rightLabel}</p>
+              <p className="leverage-lane-text">{rightText}</p>
+            </div>
+            <div className="leverage-stage leverage-signal-field" aria-hidden>
               <span className="leverage-signal-spine" />
               <span className="leverage-signal-pulse" />
               <span className="leverage-signal-pulse leverage-signal-pulse-delay" />
@@ -152,34 +145,12 @@ export function LeverageSection({
                 ))}
               </ul>
             </div>
-            <p className="leverage-lane-label leverage-lane-label-on">{rightLabel}</p>
-            <p className="leverage-lane-text">{rightText}</p>
           </div>
         </div>
 
-        {/* Vibe rescue — empty tick → filled */}
-        <div className={`leverage-vibe ${phase >= 3 ? 'is-rescued' : ''}`}>
-          <div className="leverage-vibe-visual" aria-hidden>
-            <div className="leverage-vibe-stall">
-              <span className="leverage-vibe-tick leverage-vibe-tick-empty" />
-              <span className="leverage-vibe-frag">broken</span>
-              <span className="leverage-vibe-frag leverage-vibe-frag-2">stuck</span>
-              <span className="leverage-vibe-crack" />
-            </div>
-            <div className="leverage-vibe-flow">
-              <span className="leverage-vibe-dot" />
-              <span className="leverage-vibe-dot" />
-              <span className="leverage-vibe-dot" />
-            </div>
-            <div className="leverage-vibe-fix">
-              <span className="leverage-vibe-tick leverage-vibe-tick-full" />
-              <span className="leverage-vibe-ok">ship</span>
-            </div>
-          </div>
-          <div className="leverage-vibe-copy">
-            <p className="leverage-vibe-label">{vibeLabel}</p>
-            <p className="leverage-vibe-text">{vibeText}</p>
-          </div>
+        <div className="leverage-vibe">
+          <p className="leverage-vibe-label">{vibeLabel}</p>
+          <p className="leverage-vibe-text">{vibeText}</p>
         </div>
       </div>
     </section>
