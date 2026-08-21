@@ -406,7 +406,7 @@ export function BeyondCodeSection({
         <p className="beyond-eyebrow mb-3 font-inter text-[11px] font-medium uppercase tracking-[0.18em] text-[#8fa3c7]">
           01 — {subtitle.replace(/·/g, ' / ')}
         </p>
-        <h2 className="beyond-title font-display text-[clamp(1.9rem,4.2vw,2.85rem)] font-bold uppercase leading-[1.05] tracking-[0.08em] text-white">
+        <h2 className="beyond-title font-inter text-[clamp(1.9rem,4.2vw,2.85rem)] font-semibold leading-[1.1] tracking-tight text-white">
           {title}
         </h2>
         {lead ? (
@@ -454,7 +454,7 @@ export function BeyondCodeSection({
 
         <div className="beyond-panel-inner">
           <div key={current.label} className="beyond-copy-swap">
-            <p className={`beyond-stage-word beyond-word-${active} font-display font-bold uppercase tracking-[0.06em]`}>
+            <p className={`beyond-stage-word beyond-word-${active} font-inter font-semibold tracking-tight`}>
               {current.label}
             </p>
             <p className="beyond-stage-copy mt-4 max-w-md font-inter text-[0.95rem] font-light leading-[1.9] text-[#c2cad8]">

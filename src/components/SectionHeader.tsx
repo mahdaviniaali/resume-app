@@ -1,6 +1,6 @@
 'use client'
 
-/** Same DNA as HeroSection: >_ · display title · inter uppercase · quote bar */
+/** Shared section header: >_ · Inter title · inter kicker · quote bar */
 export function SectionHeader({
   index,
   kicker,
@@ -17,7 +17,7 @@ export function SectionHeader({
       <div className="mb-3 font-mono text-lg tracking-[0.14em] text-gold">
         &gt;_<span className="ms-2 text-[10px] tracking-[0.2em] text-muted">{index}</span>
       </div>
-      <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.65rem)] font-extrabold uppercase leading-[1.05] tracking-[0.14em] text-white">
+      <h2 className="font-inter text-[clamp(1.75rem,3.5vw,2.65rem)] font-semibold leading-[1.1] tracking-tight text-white">
         {title}
       </h2>
       <p className="mt-4 font-inter text-[0.85rem] font-light uppercase leading-roomy tracking-[0.14em] text-white/90">

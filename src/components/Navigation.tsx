@@ -23,7 +23,7 @@ export function Navigation({ brandName = 'ISEMPTY' }: { brandName?: string }) {
     <nav ref={ref} className="flex items-center justify-between gap-6 py-4">
       <a
         href="#hero"
-        className="shrink-0 font-display text-base font-extrabold uppercase tracking-[0.22em] text-white"
+        className="shrink-0 font-inter text-base font-semibold uppercase tracking-[0.14em] text-white"
       >
         <span className="me-2 font-mono font-normal tracking-normal text-gold">&gt;_</span>
         {brand}
