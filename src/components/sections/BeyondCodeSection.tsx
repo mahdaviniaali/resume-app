@@ -36,20 +36,20 @@ const defaultStages: Stage[] = [
   },
 ]
 
-/** Idea — colorful chaos (restored from first in-panel animation) */
-const CHAOS_BITS = [
-  { t: '{', x: 12, y: 22, r: -22, c: '#ff8b6a', d: 0 },
-  { t: '}', x: 78, y: 18, r: 18, c: '#7dd3fc', d: 0.1 },
-  { t: '</>', x: 40, y: 36, r: 10, c: '#fbbf24', d: 0.2 },
-  { t: 'err', x: 68, y: 44, r: -14, c: '#fb7185', d: 0.15 },
-  { t: '=>', x: 18, y: 56, r: 16, c: '#67e8f9', d: 0.25 },
-  { t: '??', x: 52, y: 60, r: -8, c: '#c4b5fd', d: 0.3 },
-  { t: 'fn', x: 82, y: 64, r: 12, c: '#86efac', d: 0.18 },
-  { t: '[]', x: 28, y: 74, r: -20, c: '#fda4af', d: 0.35 },
-  { t: '::', x: 58, y: 80, r: 8, c: '#93c5fd', d: 0.22 },
-  { t: 'NaN', x: 44, y: 20, r: -6, c: '#fcd34d', d: 0.4 },
-  { t: '0x', x: 8, y: 42, r: 24, c: '#5eead4', d: 0.12 },
-  { t: '//', x: 88, y: 36, r: -16, c: '#a5b4fc', d: 0.28 },
+/** Idea — code chaos + product/market concepts mixed */
+const CHAOS_BITS: { t: string; x: number; y: number; r: number; c: string; d: number; kind: 'code' | 'idea' }[] = [
+  { t: '{', x: 12, y: 22, r: -22, c: '#ff8b6a', d: 0, kind: 'code' },
+  { t: 'why?', x: 72, y: 16, r: -8, c: '#fdba74', d: 0.08, kind: 'idea' },
+  { t: '</>', x: 40, y: 36, r: 10, c: '#fbbf24', d: 0.2, kind: 'code' },
+  { t: 'user', x: 86, y: 30, r: 6, c: '#f9a8d4', d: 0.12, kind: 'idea' },
+  { t: '=>', x: 18, y: 56, r: 16, c: '#67e8f9', d: 0.25, kind: 'code' },
+  { t: 'offer', x: 58, y: 48, r: -6, c: '#fda4af', d: 0.18, kind: 'idea' },
+  { t: 'fn', x: 82, y: 64, r: 12, c: '#86efac', d: 0.28, kind: 'code' },
+  { t: '??', x: 32, y: 68, r: -10, c: '#c4b5fd', d: 0.32, kind: 'code' },
+  { t: 'market', x: 68, y: 76, r: 4, c: '#fde68a', d: 0.22, kind: 'idea' },
+  { t: 'NaN', x: 44, y: 20, r: -6, c: '#fcd34d', d: 0.4, kind: 'code' },
+  { t: '0x', x: 8, y: 42, r: 24, c: '#5eead4', d: 0.12, kind: 'code' },
+  { t: 'spark', x: 52, y: 58, r: -12, c: '#fb923c', d: 0.35, kind: 'idea' },
 ]
 
 const DEBRIS = Array.from({ length: 16 }, (_, i) => ({
@@ -60,28 +60,41 @@ const DEBRIS = Array.from({ length: 16 }, (_, i) => ({
   d: (i % 8) * 0.12,
 }))
 
-/** Craft — ordered stack (same in-panel language as Idea chaos) */
-const SYS_STACK = [
-  { t: '{', x: 52, y: 24, c: '#67e8f9', d: 0 },
-  { t: 'domain', x: 64, y: 24, c: '#22d3ee', d: 0.06 },
-  { t: 'bound', x: 80, y: 24, c: '#a5b4fc', d: 0.12 },
-  { t: 'api', x: 54, y: 42, c: '#38bdf8', d: 0.18 },
-  { t: 'auth', x: 68, y: 42, c: '#818cf8', d: 0.24 },
-  { t: 'queue', x: 84, y: 42, c: '#5eead4', d: 0.3 },
-  { t: 'data', x: 56, y: 60, c: '#2dd4bf', d: 0.36 },
-  { t: 'sync', x: 70, y: 60, c: '#7dd3fc', d: 0.42 },
-  { t: '}', x: 84, y: 60, c: '#93c5fd', d: 0.48 },
-  { t: '::', x: 62, y: 76, c: '#67e8f9', d: 0.54 },
-  { t: 'ready', x: 76, y: 76, c: '#a5f3fc', d: 0.6 },
+/** Craft — eng + ui/ux as a live network */
+const NET_NODES = [
+  { id: 'craft', x: 72, y: 46, r: 6.5, c: '#67e8f9', label: 'craft', d: 0 },
+  { id: 'api', x: 56, y: 26, r: 4.2, c: '#22d3ee', label: 'api', d: 0.08 },
+  { id: 'logic', x: 88, y: 28, r: 4.2, c: '#38bdf8', label: 'logic', d: 0.12 },
+  { id: 'data', x: 52, y: 50, r: 4, c: '#2dd4bf', label: 'data', d: 0.16 },
+  { id: 'ui', x: 90, y: 52, r: 4, c: '#a78bfa', label: 'ui', d: 0.2 },
+  { id: 'flow', x: 60, y: 70, r: 3.8, c: '#818cf8', label: 'flow', d: 0.24 },
+  { id: 'path', x: 84, y: 72, r: 3.8, c: '#c4b5fd', label: 'ux', d: 0.28 },
 ]
 
-const SYS_RAILS = [24, 42, 60, 76]
+const NET_ARCS = [
+  { x1: 56, y1: 26, x2: 72, y2: 46 },
+  { x1: 88, y1: 28, x2: 72, y2: 46 },
+  { x1: 52, y1: 50, x2: 72, y2: 46 },
+  { x1: 90, y1: 52, x2: 72, y2: 46 },
+  { x1: 60, y1: 70, x2: 72, y2: 46 },
+  { x1: 84, y1: 72, x2: 72, y2: 46 },
+  { x1: 56, y1: 26, x2: 88, y2: 28 },
+  { x1: 52, y1: 50, x2: 60, y2: 70 },
+  { x1: 90, y1: 52, x2: 84, y2: 72 },
+]
 
-/** Reach — luminous path to value */
+/** Reach — craft + marketing on the lit path */
 const FLOW_DOTS = Array.from({ length: 12 }, (_, i) => ({
   d: i * 0.22,
   c: i > 8 ? '#f5b342' : i > 4 ? '#e0f2fe' : '#38bdf8',
 }))
+
+const REACH_TAGS = [
+  { t: 'product', x: 42, y: 38, c: '#7dd3fc', d: 0.1, kind: 'craft' as const },
+  { t: 'ux', x: 50, y: 68, c: '#67e8f9', d: 0.2, kind: 'craft' as const },
+  { t: 'story', x: 78, y: 36, c: '#fde68a', d: 0.15, kind: 'mkt' as const },
+  { t: 'signal', x: 86, y: 66, c: '#fbbf24', d: 0.25, kind: 'mkt' as const },
+]
 
 const STARS = Array.from({ length: 22 }, (_, i) => [
   6 + ((i * 13) % 88),
@@ -141,7 +154,7 @@ function StageVisual({ phase }: { phase: number }) {
         ))}
       </div>
 
-      {/* IDEA — colorful chaos (restored) */}
+      {/* IDEA — code + concept chaos */}
       <div className={`bv-act bv-act-chaos ${phase === 0 ? 'is-on' : ''}`}>
         <div className="bv-glitch bv-glitch-1" />
         <div className="bv-glitch bv-glitch-2" />
@@ -164,7 +177,7 @@ function StageVisual({ phase }: { phase: number }) {
         {CHAOS_BITS.map((bit, i) => (
           <span
             key={`${bit.t}-${i}`}
-            className="bv-glyph"
+            className={`bv-glyph bv-glyph-${bit.kind}`}
             style={
               {
                 left: `${bit.x}%`,
@@ -181,38 +194,77 @@ function StageVisual({ phase }: { phase: number }) {
         <div className="bv-chaos-core" />
       </div>
 
-      {/* CRAFT — glyphs lock into ordered stack */}
+      {/* CRAFT — eng + ui/ux network */}
       <div className={`bv-act bv-act-system ${phase === 1 ? 'is-on' : ''}`}>
         <div className="bv-sys-halo" />
-        <span className="bv-sys-spine" />
-        {SYS_RAILS.map((y, i) => (
-          <span
-            key={`rail-${y}`}
-            className="bv-sys-rail"
-            style={{ top: `${y}%`, animationDelay: `${0.08 + i * 0.1}s` }}
-          />
-        ))}
-        {SYS_STACK.map((bit, i) => (
-          <span
-            key={`sys-${bit.t}-${i}`}
-            className="bv-sys-glyph"
-            style={
-              {
-                left: `${bit.x}%`,
-                top: `${bit.y}%`,
-                color: bit.c,
-                animationDelay: `${0.15 + bit.d}s`,
-              } as CSSProperties
-            }
-          >
-            {bit.t}
-          </span>
-        ))}
+        <svg className="bv-net-svg" viewBox="0 0 100 100" fill="none" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="netArc" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.2" />
+              <stop offset="50%" stopColor="#67e8f9" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.35" />
+            </linearGradient>
+          </defs>
+          <g className="bv-net-grid" opacity="0.22">
+            {[28, 46, 64].map((y) => (
+              <line key={`gh-${y}`} x1="48" y1={y} x2="96" y2={y} stroke="#67e8f9" strokeWidth="0.35" />
+            ))}
+            {[56, 72, 88].map((x) => (
+              <line key={`gv-${x}`} x1={x} y1="18" x2={x} y2="82" stroke="#67e8f9" strokeWidth="0.35" />
+            ))}
+          </g>
+          {NET_ARCS.map((a, i) => (
+            <line
+              key={`arc-${i}`}
+              className="bv-net-arc"
+              x1={a.x1}
+              y1={a.y1}
+              x2={a.x2}
+              y2={a.y2}
+              stroke="url(#netArc)"
+              strokeWidth="0.7"
+              strokeLinecap="round"
+              style={{ animationDelay: `${0.1 + i * 0.05}s` }}
+            />
+          ))}
+          {NET_NODES.map((n) => (
+            <g key={n.id} className="bv-net-node" style={{ animationDelay: `${0.18 + n.d}s` }}>
+              <circle className="bv-net-glow" cx={n.x} cy={n.y} r={n.r * 2.1} fill={n.c} />
+              <circle className="bv-net-core" cx={n.x} cy={n.y} r={n.r} fill={n.c} />
+              <text
+                className="bv-net-label"
+                x={n.x}
+                y={Math.min(96, n.y + n.r + 5)}
+                textAnchor="middle"
+                fill={n.c}
+                style={{ animationDelay: `${0.32 + n.d}s` }}
+              >
+                {n.label}
+              </text>
+            </g>
+          ))}
+        </svg>
         <span className="bv-sys-scan" />
       </div>
 
-      {/* REACH — luminous path */}
+      {/* REACH — craft + marketing on the lit path */}
       <div className={`bv-act bv-act-clarity ${phase === 2 ? 'is-on' : ''}`}>
+        {REACH_TAGS.map((tag) => (
+          <span
+            key={tag.t}
+            className={`bv-reach-tag bv-reach-tag-${tag.kind}`}
+            style={
+              {
+                left: `${tag.x}%`,
+                top: `${tag.y}%`,
+                color: tag.c,
+                animationDelay: `${tag.d}s`,
+              } as CSSProperties
+            }
+          >
+            {tag.t}
+          </span>
+        ))}
         <div className="bv-clarity-track">
           <span className="bv-clarity-rail" />
           <span className="bv-clarity-rail bv-clarity-rail-soft" />
