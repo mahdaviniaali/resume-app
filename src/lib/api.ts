@@ -52,6 +52,7 @@ export interface HomeContent {
     subtitle: string
     steps: { from: string; to: string }[]
   }
+  /** @deprecated kept for older DB JSON — section removed from homepage */
   capabilities?: {
     title: string
     subtitle: string

@@ -45,51 +45,6 @@ export const homeContent: HomeContent = {
     vibeLabel: 'Vibe coding dead-end?',
     vibeText: 'Hand it over. We take the stalled prototype and make it shippable.',
   },
-  capabilities: {
-    title: 'What we bring',
-    subtitle: 'Architecture, experience, systems',
-    cards: [
-      {
-        icon: '01 // SCOPE',
-        title: 'Borders that hold',
-        description:
-          'We listen to the half-finished thought, draw the borders, and turn it into something the team can actually build.',
-        span: 2,
-      },
-      {
-        icon: '02 // EXPERIENCE',
-        title: 'UX that doesn’t lose people',
-        description: 'Paths, hierarchy, clarity — so nobody gets trapped inside your product.',
-        span: 1,
-      },
-      {
-        icon: '03 // DOMAIN',
-        title: 'System architecture',
-        description: 'Order on chaos. Clean contexts. Structures that scale without collapsing.',
-        span: 1,
-      },
-      {
-        icon: '04 // MULTI-TENANT',
-        title: 'SaaS ecosystems',
-        description: 'Isolated, secure, scalable — one foundation, many territories.',
-        span: 2,
-      },
-      {
-        icon: 'CORE // PYTHON & DJANGO',
-        title: 'Business logic',
-        description: 'Complex multi-tenant logic with battle-tested speed.',
-        code: 'def create_reality(req):\n    if req.void.is_empty:\n        return Architect.build(SaaS())',
-        span: 2,
-      },
-      {
-        icon: 'CORE // RUST ASYNC',
-        title: 'High performance',
-        description: 'Zero-cost abstraction where memory and speed actually matter.',
-        code: 'async fn illuminate(s: &mut Void) {\n    s.extract_truth().await;\n    Light::from(s)\n}',
-        span: 2,
-      },
-    ],
-  },
   method: {
     title: 'How we move',
     subtitle: 'From thought to an experience that doesn’t lose anyone',
