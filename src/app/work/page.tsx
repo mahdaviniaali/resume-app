@@ -71,9 +71,7 @@ export default function WorkPage() {
       <Vignette />
 
       <div className="relative z-10">
-        <div className="mx-auto max-w-[1280px] px-6 pt-6 sm:px-10">
-          <Navigation brandName={site.brand_name} />
-        </div>
+        <Navigation brandName={site.brand_name} />
 
         <div className="mx-auto max-w-[1280px] px-6 pb-20 pt-10 sm:px-10 sm:pb-28 sm:pt-14">
           <SectionHeader
