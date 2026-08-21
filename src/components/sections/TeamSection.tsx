@@ -13,7 +13,7 @@ interface TeamSectionProps {
 export function TeamSection({ title, subtitle, members }: TeamSectionProps) {
   return (
     <section id="team" className="scroll-mt-24">
-      <SectionHeader index="05" kicker={subtitle} title={title} />
+      <SectionHeader index="06" kicker={subtitle} title={title} />
 
       <div className="stage-panel team-panel">
         <div className="team-orbit" aria-hidden />

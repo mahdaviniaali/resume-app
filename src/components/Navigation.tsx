@@ -4,11 +4,12 @@ import { useRef } from 'react'
 import { useReveal } from '@/hooks/useReveal'
 
 const links = [
-  { href: '#beyond', label: 'Beyond' },
-  { href: '#leverage', label: 'Leverage' },
-  { href: '#method', label: 'Method' },
-  { href: '#team', label: 'Team' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#beyond', label: 'Beyond' },
+  { href: '/#leverage', label: 'Leverage' },
+  { href: '/#method', label: 'Method' },
+  { href: '/work', label: 'Work' },
+  { href: '/#team', label: 'Team' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export function Navigation({ brandName = 'ISEMPTY' }: { brandName?: string }) {
@@ -21,7 +22,7 @@ export function Navigation({ brandName = 'ISEMPTY' }: { brandName?: string }) {
   return (
     <nav ref={ref} className="flex items-center justify-between gap-6 py-4">
       <a
-        href="#hero"
+        href="/#hero"
         className="shrink-0 font-inter text-base font-semibold uppercase tracking-[0.14em] text-white"
       >
         <span className="me-2 font-mono font-normal tracking-normal text-gold">&gt;_</span>

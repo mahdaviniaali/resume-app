@@ -9,6 +9,7 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { BeyondCodeSection } from '@/components/sections/BeyondCodeSection'
 import { LeverageSection } from '@/components/sections/LeverageSection'
 import { MethodSection } from '@/components/sections/MethodSection'
+import { SelectedWorkSection } from '@/components/sections/SelectedWorkSection'
 import { TeamSection } from '@/components/sections/TeamSection'
 import { ContactSection } from '@/components/sections/ContactSection'
 import { homeContent } from '@/data/homeContent'
@@ -94,6 +95,8 @@ export default function Home() {
             {method && (
               <MethodSection title={method.title} subtitle={method.subtitle} steps={method.steps} />
             )}
+
+            <SelectedWorkSection />
 
             <TeamSection
               title={team?.title || 'The circle'}
