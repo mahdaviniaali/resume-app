@@ -24,4 +24,6 @@ function run(command, args) {
 
 run('npx', ['prisma', 'generate'])
 run('npx', ['prisma', 'db', 'push', '--skip-generate', '--accept-data-loss'])
+// Bake current profile JSON into deploy.db so first request isn't stale.
+run('node', ['scripts/seed-profiles.cjs'])
 run('npx', ['next', 'build'])

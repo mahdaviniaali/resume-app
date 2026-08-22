@@ -4,6 +4,7 @@ import path from 'path'
 import { hashPassword } from '@/lib/auth'
 import { prisma } from '@/lib/db'
 import { homeContent } from '@/data/homeContent'
+import { syncProfileResumes } from '@/lib/profileSync'
 
 export const DEFAULT_HOME = homeContent
 
@@ -40,167 +41,57 @@ export function emptyResume(
   }
 }
 
-let seeded = false
-let rosterSynced = false
 let seedPromise: Promise<void> | null = null
 
 export async function ensureSeeded() {
   if (!seedPromise) {
-    seedPromise = seedIfEmpty()
-      .then(() => {
-        seeded = true
-      })
-      .catch((err) => {
-        seedPromise = null
-        throw err
-      })
+    seedPromise = seedIfEmpty().catch((err) => {
+      seedPromise = null
+      throw err
+    })
   }
   await seedPromise
-  if (!rosterSynced) {
-    await syncSecondMemberToMahan()
-    await syncAliFromProfile()
-    rosterSynced = true
-  }
+  // Profile JSON is source of truth — keep DB resumes aligned after every API boot path.
+  await syncProfileResumes()
 }
 
-function buildMahanResume() {
-  const resume = emptyResume(
-    'Mahan Tahmasbi',
-    'ماهان طهماسبی',
-    'SEO & Marketing',
-    'سئو و بازاریابی',
-    'mahan@genesis.dev',
-  )
-  resume.summary = {
-    en: 'SEO and growth marketer — turns product clarity into discoverable presence and durable acquisition loops.',
-    fa: 'سئو و بازاریابی رشد — وضوح محصول را به دیده شدن و حلقه‌های پایدار جذب تبدیل می‌کند.',
-  }
-  resume.skills = [
-    'SEO Strategy',
-    'Content Marketing',
-    'Growth Marketing',
-    'Analytics',
-    'Conversion Optimization',
-  ]
-  resume.experiences = [
-    {
-      title: { en: 'SEO & Marketing', fa: 'سئو و بازاریابی' },
-      location: { en: 'ISEMPTY', fa: 'ISEMPTY' },
-      date: { en: '2024 — Present', fa: '۱۴۰۳ — اکنون' },
-      description: {
-        en: 'Owns search visibility, content systems, and go-to-market messaging so architecture work reaches the right audience.',
-        fa: 'مالک دیده شدن در جستجو، سیستم محتوا و پیام go-to-market تا کار معماری به مخاطب درست برسد.',
-      },
-    },
-  ]
-  return resume
-}
-
-/** Keep Ali resume + bio aligned with profile.json / brand copy on existing DBs */
-async function syncAliFromProfile() {
-  const profilePath = path.join(process.cwd(), 'src', 'data', 'profile.json')
-  if (!existsSync(profilePath)) return
-
+function loadMahanResumeFromProfile(): Record<string, unknown> | null {
+  const profilePath = path.join(process.cwd(), 'src', 'data', 'mahanProfile.json')
+  if (!existsSync(profilePath)) return null
   const raw = JSON.parse(readFileSync(profilePath, 'utf-8')) as {
     resume?: Record<string, unknown>
   }
-  if (!raw.resume || Object.keys(raw.resume).length === 0) return
-
-  const ali = await prisma.teamMember.findUnique({
-    where: { slug: 'ali-mahdavinia' },
-    include: { resume: true },
-  })
-  if (!ali) return
-
-  await prisma.teamMember.update({
-    where: { id: ali.id },
-    data: {
-      roleEn: 'AI Systems & Backend Architect',
-      roleFa: 'معمار سیستم‌های AI و بک‌اند',
-      shortBioEn:
-        'Senior development and technical leadership — enterprise RAG, agents on chatbot.ir, and turning business needs into shippable architecture.',
-      shortBioFa:
-        'توسعهٔ ارشد و مدیریت فنی — RAG سازمانی و ایجنت‌ها روی chatbot.ir، و تبدیل نیاز کسب‌وکار به معماری قابل تحویل.',
-    },
-  })
-
-  const resumeJson = JSON.stringify(raw.resume)
-  if (ali.resume) {
-    await prisma.resume.update({
-      where: { memberId: ali.id },
-      data: { dataJson: resumeJson },
-    })
-  } else {
-    await prisma.resume.create({
-      data: { memberId: ali.id, dataJson: resumeJson },
-    })
-  }
+  if (!raw.resume || Object.keys(raw.resume).length === 0) return null
+  return raw.resume
 }
 
-/** Replace legacy second teammate (Sara) with Mahan Tahmasbi on existing DBs */
-async function syncSecondMemberToMahan() {
-  const mahanData = {
-    slug: 'mahan-tahmasbi',
-    nameEn: 'Mahan Tahmasbi',
-    nameFa: 'ماهان طهماسبی',
-    roleEn: 'SEO & Marketing',
-    roleFa: 'سئو و بازاریابی',
-    shortBioEn:
-      'SEO and marketing — grows discoverability and demand around products the team architects.',
-    shortBioFa: 'سئو و بازاریابی — دیده شدن و تقاضای محصولاتی که تیم معماری می‌کند را رشد می‌دهد.',
-    email: 'mahan@genesis.dev',
-    sortOrder: 1,
-    isPublished: true,
-  }
-  const resumeJson = JSON.stringify(buildMahanResume())
+function buildMahanResume() {
+  const fromFile = loadMahanResumeFromProfile()
+  if (fromFile) return fromFile
 
-  const sara = await prisma.teamMember.findUnique({
-    where: { slug: 'sara-nokhavat' },
-    include: { resume: true },
-  })
-  if (sara) {
-    await prisma.teamMember.update({
-      where: { id: sara.id },
-      data: mahanData,
-    })
-    if (sara.resume) {
-      await prisma.resume.update({
-        where: { memberId: sara.id },
-        data: { dataJson: resumeJson },
-      })
-    } else {
-      await prisma.resume.create({
-        data: { memberId: sara.id, dataJson: resumeJson },
-      })
-    }
-    return
-  }
-
-  const mahan = await prisma.teamMember.findUnique({
-    where: { slug: 'mahan-tahmasbi' },
-    include: { resume: true },
-  })
-  if (mahan) {
-    await prisma.teamMember.update({
-      where: { id: mahan.id },
-      data: mahanData,
-    })
-    if (mahan.resume) {
-      await prisma.resume.update({
-        where: { memberId: mahan.id },
-        data: { dataJson: resumeJson },
-      })
-    }
-    return
-  }
-
-  await prisma.teamMember.create({
-    data: {
-      ...mahanData,
-      resume: { create: { dataJson: resumeJson } },
-    },
-  })
+  return emptyResume(
+    'Mahan Tahmasbi',
+    'ماهان طهماسبی',
+    'Backend Developer & System Architect',
+    'توسعه‌دهنده بک‌اند و معمار سیستم',
+    'mahan.tahmasbi85@gmail.com',
+  )
 }
+
+const MAHAN_MEMBER = {
+  slug: 'mahan-tahmasbi',
+  nameEn: 'Mahan Tahmasbi',
+  nameFa: 'ماهان طهماسبی',
+  roleEn: 'Backend Developer & System Architect',
+  roleFa: 'توسعه‌دهنده بک‌اند و معمار سیستم',
+  shortBioEn:
+    'Backend and systems — scalable APIs, DDD, and taking products from build to market with SEO and tech sales.',
+  shortBioFa:
+    'بک‌اند و سیستم — API مقیاس‌پذیر، DDD، و رساندن محصول از ساخت تا بازار با سئو و فروش فنی.',
+  email: 'mahan.tahmasbi85@gmail.com',
+  sortOrder: 1,
+  isPublished: true,
+} as const
 
 async function seedIfEmpty() {
   const [existingAdmin, members] = await Promise.all([
@@ -340,18 +231,7 @@ async function seedIfEmpty() {
     if (!existingSlugsInTx.has('mahan-tahmasbi')) {
       await tx.teamMember.create({
         data: {
-          slug: 'mahan-tahmasbi',
-          nameEn: 'Mahan Tahmasbi',
-          nameFa: 'ماهان طهماسبی',
-          roleEn: 'SEO & Marketing',
-          roleFa: 'سئو و بازاریابی',
-          shortBioEn:
-            'SEO and marketing — grows discoverability and demand around products the team architects.',
-          shortBioFa:
-            'سئو و بازاریابی — دیده شدن و تقاضای محصولاتی که تیم معماری می‌کند را رشد می‌دهد.',
-          sortOrder: 1,
-          isPublished: true,
-          email: 'mahan@genesis.dev',
+          ...MAHAN_MEMBER,
           resume: { create: { dataJson: JSON.stringify(mahanResume) } },
         },
       })

@@ -1,0 +1,368 @@
+{
+  "resume": {
+    "personal": {
+      "name": {
+        "fa": "ماهان طهماسبی",
+        "en": "Mahan Tahmasbi"
+      },
+      "tagline": {
+        "fa": "توسعه‌دهنده بک‌اند و معمار سیستم — با نگاه فروش و بازاریابی فنی",
+        "en": "Backend Developer & System Architect — with a tech sales & marketing mindset"
+      },
+      "avatar": {
+        "fa": "م",
+        "en": "M"
+      },
+      "location": {
+        "fa": "تهران",
+        "en": "Tehran, Iran"
+      },
+      "phone": {
+        "fa": "۰۹۱۰۵۹۷۲۷۲۵",
+        "en": "+98 910 597 2725"
+      },
+      "phoneHref": "tel:+989105972725",
+      "email": "mahan.tahmasbi85@gmail.com",
+      "badges": [
+        {
+          "fa": "Backend & APIs",
+          "en": "Backend & APIs"
+        },
+        {
+          "fa": "System Architecture",
+          "en": "System Architecture"
+        },
+        {
+          "fa": "Microservices & Async",
+          "en": "Microservices & Async"
+        },
+        {
+          "fa": "SEO & Content",
+          "en": "SEO & Content"
+        },
+        {
+          "fa": "Tech Sales",
+          "en": "Tech Sales"
+        }
+      ]
+    },
+    "contactsSecondary": [],
+    "summary": {
+      "fa": "توسعه‌دهنده بک‌اند با ترکیب تخصص فنی و نگاه کسب‌وکارمحور. در ساخت سامانه‌های مقیاس‌پذیر، معماری میکروسرویس و ابزارهایی مثل Redis، Celery، RabbitMQ و Docker تجربه دارم؛ در کنار آن با سئو، بازاریابی محتوا و فروش فنی کار کرده‌ام.\n\nروی پروژه‌های متنوعی کار کرده‌ام — از سامانه‌های Agentic AI برای مدیریت کسب‌وکار اینستاگرام تا پلتفرم مناقصه مصالح ساختمانی. هم‌اکنون هم‌بنیان‌گذار استارتاپ هستم و چرخهٔ کامل محصول را از ایده و توسعهٔ بک‌اند تا بازاریابی و فروش مدیریت می‌کنم. باور دارم یک توسعه‌دهندهٔ خوب فقط نمی‌سازد؛ باید بداند چطور محصول را به بازار برساند.",
+      "en": "Backend developer with a blend of deep technical expertise and a business-driven mindset. Experienced in building scalable systems and microservices, working with Redis, Celery, RabbitMQ, and Docker—complemented by hands-on SEO, content marketing, and technical sales.\n\nI have worked across diverse projects—from agentic AI systems for Instagram business management to a tendering platform for construction materials. I am currently co-founding a startup and managing the full product lifecycle from ideation and backend development to marketing and sales. A strong developer should not only build products, but also know how to take them to market."
+    },
+    "experiences": [
+      {
+        "title": {
+          "fa": "توسعه‌دهنده بک‌اند (تمام‌وقت)",
+          "en": "Backend Developer (Full-Time)"
+        },
+        "location": {
+          "fa": "NRTechnology",
+          "en": "NRTechnology"
+        },
+        "date": {
+          "fa": "آذر ۱۴۰۳ — اکنون",
+          "en": "Dec 2024 — Present"
+        },
+        "description": {
+          "fa": "طراحی و پیاده‌سازی APIهای REST بهینه‌شده با زمان پاسخ زیر ۱۰۰ میلی‌ثانیه. کاهش حدود ۴۰٪ زمان استقرار با CI/CD مبتنی بر GitLab CI و Docker. پیاده‌سازی معماری میکروسرویس با Redis، Celery و RabbitMQ برای پردازش ناهمزمان. به‌کارگیری اصول DDD برای سامانه‌های مقیاس‌پذیر، قابل نگهداری و تست‌پذیر.",
+          "en": "Designed and implemented highly optimized RESTful APIs with sub-100ms response times. Reduced deployment time by about 40% with GitLab CI and Docker-based CI/CD. Built microservices using Redis, Celery, and RabbitMQ for robust async task processing. Applied Domain-Driven Design (DDD) for scalable, maintainable, and testable systems."
+        }
+      },
+      {
+        "title": {
+          "fa": "هم‌بنیان‌گذار و لید توسعه‌دهنده",
+          "en": "Co-Founder & Lead Developer"
+        },
+        "location": {
+          "fa": "ISEMPTY",
+          "en": "ISEMPTY"
+        },
+        "date": {
+          "fa": "۱۴۰۳ — اکنون",
+          "en": "2024 — Present"
+        },
+        "description": {
+          "fa": "هم‌بنیان‌گذاری با تیم دونفره و مدیریت چرخهٔ کامل محصول از ایده تا ورود به بازار. لید بک‌اند با Django، DRF، PostgreSQL، Redis و Docker و معماری مبتنی بر DDD. پیشبرد جذب مشتری از طریق استراتژی سئو، بازاریابی محتوا و طراحی قیف فروش.",
+          "en": "Co-founding with a two-person team and managing the full product lifecycle from ideation to market launch. Leading backend development with Django, DRF, PostgreSQL, Redis, and Docker, applying DDD for stable architecture. Driving customer acquisition through SEO strategy, content marketing, and sales-funnel design."
+        }
+      },
+      {
+        "title": {
+          "fa": "مشاور یادگیری / منتور",
+          "en": "Learning Advisor / Mentor"
+        },
+        "location": {
+          "fa": "NRTech Academy",
+          "en": "NRTech Academy"
+        },
+        "date": {
+          "fa": "دی ۱۴۰۲ — آذر ۱۴۰۳",
+          "en": "Jan 2024 — Dec 2024"
+        },
+        "description": {
+          "fa": "راهنمایی دانشجویان در دوره‌های طراحی الگوریتم، پایتون (مقدماتی تا پیشرفته)، OOP، Git، پایگاه‌داده (MySQL، PostgreSQL)، وبمستر (HTML/CSS/JS) و Django. بررسی کد، بازخورد سازنده و کمک در رفع مسائل معماری پیچیده.",
+          "en": "Mentored students through courses including Algorithm Design, Python (fundamentals to advanced), OOP, Git, databases (MySQL, PostgreSQL), webmaster (HTML/CSS/JS), and Django. Reviewed student code, gave constructive feedback, and helped troubleshoot complex architectural issues."
+        }
+      },
+      {
+        "title": {
+          "fa": "کارآموز توسعه‌دهنده بک‌اند (ریموت)",
+          "en": "Intern — Backend Developer (Remote)"
+        },
+        "location": {
+          "fa": "NRTech Academy Web App",
+          "en": "NRTech Academy Web App"
+        },
+        "date": {
+          "fa": "آبان ۱۴۰۲ — دی ۱۴۰۲",
+          "en": "Nov 2023 — Jan 2024"
+        },
+        "description": {
+          "fa": "همکاری در توسعهٔ بک‌اند، رفع باگ و پیاده‌سازی فیچر زیر نظارت توسعه‌دهندهٔ ارشد.",
+          "en": "Assisted with backend development, bug fixing, and feature implementation under senior developer supervision."
+        }
+      }
+    ],
+    "projects": {
+      "major": [
+        {
+          "title": {
+            "fa": "سامانه Agentic AI برای مدیریت کسب‌وکار اینستاگرام",
+            "en": "Agentic AI System for Instagram Business Management"
+          },
+          "tech": [
+            "Python",
+            "Django",
+            "DRF",
+            "Celery",
+            "Redis",
+            "PostgreSQL"
+          ],
+          "description": {
+            "fa": "پلتفرم مبتنی بر ایجنت هوش مصنوعی برای خودکارسازی کارهای اداری و مدیریتی صفحات کسب‌وکار اینستاگرام؛ افزایش بهره‌وری ادمین و ساده‌سازی فرآیندهای تکراری.",
+            "en": "AI agent-based platform to automate administrative and management tasks for Instagram business pages—improving admin productivity and streamlining repetitive processes."
+          },
+          "features": [
+            {
+              "fa": "اتوماسیون وظایف مدیریتی و اداری صفحات کسب‌وکار",
+              "en": "Automation of administrative and management tasks for business pages"
+            },
+            {
+              "fa": "معماری مبتنی بر ایجنت برای فرآیندهای تکراری",
+              "en": "Agent-based architecture for repetitive workflows"
+            },
+            {
+              "fa": "پردازش ناهمزمان با Celery و Redis",
+              "en": "Async processing with Celery and Redis"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: توسعه‌دهنده تیم",
+              "en": "Role: Team Developer"
+            }
+          }
+        },
+        {
+          "title": {
+            "fa": "احداثینو — پلتفرم مناقصه مصالح ساختمانی",
+            "en": "Ehdasino — Tendering Platform for Construction Materials"
+          },
+          "tech": [
+            "Python",
+            "Django",
+            "DRF",
+            "MySQL"
+          ],
+          "description": {
+            "fa": "همکاری در پلتفرم آنلاین مناقصه برای مصالح و تجهیزات ساختمانی؛ پیاده‌سازی منطق اصلی مناقصه و ماژول‌های مدیریت امن کاربر.",
+            "en": "Collaborated on an online tendering platform for construction materials and equipment. Implemented core tendering logic and secure user-management modules."
+          },
+          "features": [
+            {
+              "fa": "منطق اصلی سامانه مناقصه",
+              "en": "Core tendering system logic"
+            },
+            {
+              "fa": "مدیریت امن کاربران و دسترسی‌ها",
+              "en": "Secure user management and access control"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: همکار بک‌اند",
+              "en": "Role: Backend Collaborator"
+            },
+            "link": "http://ehdasino.ir/"
+          }
+        },
+        {
+          "title": {
+            "fa": "فروشگاه اینترنتی با Django",
+            "en": "Django E-Commerce Store"
+          },
+          "tech": [
+            "Django",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "JavaScript",
+            "AJAX"
+          ],
+          "description": {
+            "fa": "فروشگاه آنلاین کامل با سبد خرید، درگاه پرداخت، احراز هویت کاربر و پنل ادمین پویا.",
+            "en": "Fully functional online store with shopping cart, integrated payment gateway, user authentication, and a dynamic admin panel."
+          },
+          "features": [
+            {
+              "fa": "سبد خرید و جریان سفارش",
+              "en": "Shopping cart and order flow"
+            },
+            {
+              "fa": "یکپارچه‌سازی درگاه پرداخت",
+              "en": "Integrated payment gateway"
+            },
+            {
+              "fa": "احراز هویت کاربر و پنل ادمین",
+              "en": "User authentication and dynamic admin panel"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: توسعه‌دهنده انفرادی",
+              "en": "Role: Solo Developer"
+            }
+          }
+        }
+      ],
+      "small": []
+    },
+    "skills": [
+      "Python (Advanced), Algorithm Design, OOP, SOLID",
+      "Django & Django REST Framework (Advanced), FastAPI (Familiar)",
+      "PostgreSQL (Advanced), MySQL, MariaDB, MongoDB",
+      "Microservices, Event-Driven Architecture, DDD, Design Patterns",
+      "Docker, Docker Compose, Git, GitHub, GitLab CI/CD",
+      "Redis, Celery, RabbitMQ",
+      "SEO: keyword research, technical SEO, content strategy, link building",
+      "Sales: B2B persuasion, value proposition, sales funnel, conversion optimization"
+    ],
+    "education": [
+      {
+        "degree": {
+          "fa": "کارشناسی مهندسی کامپیوتر",
+          "en": "Bachelor's in Computer Engineering"
+        },
+        "school": {
+          "fa": "دانشگاه آزاد اسلامی — واحد تهران غرب",
+          "en": "Islamic Azad University, West Tehran Branch"
+        },
+        "date": {
+          "fa": "۱۴۰۲ — اکنون",
+          "en": "2023 — Present"
+        },
+        "details": {
+          "fa": "در حال تحصیل",
+          "en": "In progress"
+        }
+      }
+    ],
+    "certificates": [
+      {
+        "title": {
+          "fa": "مهندسی جامع برنامه‌نویسی پایتون",
+          "en": "Comprehensive Python Engineering"
+        },
+        "issuer": {
+          "fa": "آکادمی دوران",
+          "en": "Douran Academy"
+        }
+      },
+      {
+        "title": {
+          "fa": "توسعه بک‌اند با Django",
+          "en": "Backend Development with Django"
+        },
+        "issuer": {
+          "fa": "آکادمی دوران",
+          "en": "Douran Academy"
+        }
+      },
+      {
+        "title": {
+          "fa": "Django Web Framework",
+          "en": "Django Web Framework"
+        },
+        "issuer": {
+          "fa": "Meta",
+          "en": "Meta"
+        }
+      },
+      {
+        "title": {
+          "fa": "تسلط بر Django و Django REST Framework",
+          "en": "Mastering Django & Django REST Framework"
+        },
+        "issuer": {
+          "fa": "Codio",
+          "en": "Codio"
+        }
+      },
+      {
+        "title": {
+          "fa": "Linux Essentials / LPIC-1",
+          "en": "Linux Essentials / LPIC-1"
+        },
+        "issuer": {
+          "fa": "آکادمی دوران",
+          "en": "Douran Academy"
+        }
+      },
+      {
+        "title": {
+          "fa": "Network+",
+          "en": "Network+"
+        },
+        "issuer": {
+          "fa": "آکادمی دوران",
+          "en": "Douran Academy"
+        }
+      }
+    ],
+    "languages": [
+      {
+        "name": {
+          "fa": "فارسی",
+          "en": "Persian"
+        },
+        "level": {
+          "fa": "زبان مادری",
+          "en": "Native"
+        }
+      },
+      {
+        "name": {
+          "fa": "انگلیسی",
+          "en": "English"
+        },
+        "level": {
+          "fa": "متوسط (در حال تقویت)",
+          "en": "Intermediate (actively improving)"
+        }
+      }
+    ],
+    "footer": {
+      "text": {
+        "fa": "ISEMPTY — ماهان طهماسبی © ۱۴۰۵ · ",
+        "en": "ISEMPTY — Mahan Tahmasbi © 2026 · "
+      },
+      "backToTop": {
+        "fa": "بالا",
+        "en": "Top"
+      }
+    }
+  }
+}
