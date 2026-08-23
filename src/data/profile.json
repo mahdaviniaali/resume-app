@@ -140,8 +140,8 @@
           "en": "May 2026 — Present"
         },
         "description": {
-          "fa": "توسعهٔ ارشد هم‌زمان با مدیریت فنی؛ هدایت طراحی و تحویل سامانه‌های سازمانی هوش مصنوعی روی پلتفرم chatbot.ir (RAG سازمانی، کرالر و جستجوی دانش، سازندهٔ ایجنت اختصاصی). تمرکز روی نیازسنجی کسب‌وکار، معماری و پایداری تحت بار اسناد و چندکاربری.",
-          "en": "Senior development with technical management—leading design and delivery of enterprise AI systems on chatbot.ir (enterprise RAG, knowledge crawler/search, custom agent builder). Focused on business needs assessment, architecture, and reliability under heavy document load and multi-user concurrency."
+          "fa": "توسعهٔ ارشد هم‌زمان با مدیریت فنی؛ هدایت طراحی و تحویل پلتفرم سازمانی chatbot.ir — RAG و نالج اسناد/سایت، صف و تلاش دوبارهٔ وابسته به منابع، و ایجنت چندمستاجره. تمرکز روی نیازسنجی کسب‌وکار، معماری مقیاس‌پذیر و پایداری زیر بار واقعی.",
+          "en": "Senior development with technical management—leading design and delivery of the chatbot.ir enterprise platform: RAG and knowledge from docs/sites, resource-aware queues and retries, and multi-tenant agents. Focused on business needs assessment, scalable architecture, and reliability under real load."
         }
       },
       {
@@ -203,126 +203,36 @@
       "major": [
         {
           "title": {
-            "fa": "RAG سازمانی — chatbot.ir",
-            "en": "Enterprise RAG — chatbot.ir"
+            "fa": "پلتفرم هوش مصنوعی سازمانی — chatbot.ir",
+            "en": "Enterprise AI Platform — chatbot.ir"
           },
           "tech": [
-            "RAG Pipelines",
-            "Multi-user Concurrency",
-            "Document Ingestion",
-            "Performance under Load",
-            "Knowledge Retrieval"
+            "Enterprise RAG",
+            "Knowledge Crawling",
+            "Multi-tenant Agents",
+            "Resource-aware Queues",
+            "Document Ingestion at Scale"
           ],
           "description": {
-            "fa": "ماژول دانش سازمانی روی پلتفرم chatbot.ir (عامر اندیش هوشمند): طراحی و توسعه بک‌اند RAG برای حجم بالای اسناد، پایداری سرویس تحت بار، و دسترسی چندکاربره. کاربرد نمونه: پاسخ‌گویی مبتنی بر قوانین و مقررات سازمان.",
-            "en": "Enterprise knowledge module on the chatbot.ir platform (Amer Andish Houshmand): designed and built a RAG backend for large document volumes, service stability under load, and multi-user access. Example application: answers grounded in organizational regulations and policies."
+            "fa": "طراحی و توسعهٔ پلتفرم سازمانی chatbot.ir (عامر اندیش هوشمند): RAG دانش، کرالر و استخراج محتوا، و سازندهٔ ایجنت چندمستاجره — از ورود اسناد حجیم تا پاسخ‌گویی مبتنی بر قوانین سازمان.",
+            "en": "Designed and built the chatbot.ir enterprise platform (Amer Andish Houshmand): knowledge RAG, crawl/extraction, and a multi-tenant agent builder—from large-scale document ingestion to regulation-grounded answers."
           },
           "features": [
             {
-              "fa": "ورود پایدار اسناد حجیم بدون از کار افتادن سرویس",
-              "en": "Stable ingestion for large document corpora without service downtime"
+              "fa": "هندل کردن حجم زیاد دیتا در مقیاس فضای دیسک، بدون از کار افتادن سرویس",
+              "en": "Handles disk-scale data volumes without taking the service down"
             },
             {
-              "fa": "جستجو و بازیابی دانش تحت بار چندکاربری",
-              "en": "Knowledge search and retrieval under multi-user load"
+              "fa": "صف‌بندی و تلاش دوبارهٔ هوشمند بر اساس آزاد بودن منابع سیستم",
+              "en": "Intelligent queuing and retry based on available system resources"
             },
             {
-              "fa": "ایزوله‌سازی و کنترل دسترسی در محیط سازمانی",
-              "en": "Access isolation and controls for enterprise multi-user use"
+              "fa": "نالج کردن انواع سایت و سند با دقت حدود ۹۰٪ نسبت به قوانین و ضوابط سازمانی",
+              "en": "Turns sites and documents into knowledge at ~90% accuracy against organizational rules and policies"
             },
             {
-              "fa": "پاسخ‌گویی مبتنی بر دانش مقررات و سیاست‌های سازمان",
-              "en": "Answers grounded in organizational regulations and policies"
-            }
-          ],
-          "meta": {
-            "role": {
-              "fa": "نقش: توسعه‌دهنده ارشد و مدیر فنی — عامر اندیش هوشمند",
-              "en": "Role: Senior Developer & Technical Manager — Amer Andish Houshmand"
-            },
-            "date": {
-              "fa": "۱۴۰۵ — در حال توسعه",
-              "en": "2026 — In development"
-            },
-            "link": "https://chatbot.ir/"
-          }
-        },
-        {
-          "title": {
-            "fa": "کرالر و جستجوی دانش — chatbot.ir",
-            "en": "Knowledge Crawler & Search — chatbot.ir"
-          },
-          "tech": [
-            "Web Crawling",
-            "Knowledge Extraction",
-            "Intelligent Search",
-            "Reference Linking"
-          ],
-          "description": {
-            "fa": "قابلیت سازمانی روی chatbot.ir: خزش سایت هدف، تبدیل محتوای پروژه به دانش قابل استفاده، جستجوی هوشمند، و بازگرداندن محصول یا منبع مرجع همراه لینک.",
-            "en": "Enterprise capability on chatbot.ir: crawl a target site, convert project content into usable knowledge, support intelligent search, and return reference products or sources with links."
-          },
-          "features": [
-            {
-              "fa": "خزش و استخراج ساختارمند از سایت هدف",
-              "en": "Structured crawl and extraction from a target site"
-            },
-            {
-              "fa": "تبدیل محتوای خام به دانش قابل بهره‌برداری در پلتفرم",
-              "en": "Transforms raw site content into platform-usable knowledge"
-            },
-            {
-              "fa": "جستجوی هوشمند روی دانش استخراج‌شده",
-              "en": "Intelligent search over extracted knowledge"
-            },
-            {
-              "fa": "بازیابی مرجع محصول یا منبع همراه با لینک",
-              "en": "Returns reference products or sources with citation links"
-            }
-          ],
-          "meta": {
-            "role": {
-              "fa": "نقش: توسعه‌دهنده ارشد و مدیر فنی — عامر اندیش هوشمند",
-              "en": "Role: Senior Developer & Technical Manager — Amer Andish Houshmand"
-            },
-            "date": {
-              "fa": "۱۴۰۵ — در حال توسعه",
-              "en": "2026 — In development"
-            },
-            "link": "https://chatbot.ir/"
-          }
-        },
-        {
-          "title": {
-            "fa": "سازندهٔ ایجنت اختصاصی — chatbot.ir",
-            "en": "Custom Agent Builder — chatbot.ir"
-          },
-          "tech": [
-            "Agent Orchestration",
-            "Self-serve Configuration",
-            "AI Automation",
-            "Multi-use-case Agents"
-          ],
-          "description": {
-            "fa": "محصول سازمانی روی chatbot.ir برای ساخت و پیکربندی ایجنت‌های اختصاصی توسط کسب‌وکارها؛ پوشش سناریوهای متنوع پاسخ‌گویی، فروش و پشتیبانی مبتنی بر هوش مصنوعی.",
-            "en": "Enterprise product on chatbot.ir for businesses to create and configure custom agents—covering diverse AI-powered sales, support, and response scenarios."
-          },
-          "features": [
-            {
-              "fa": "ساخت و پیکربندی خودخدمت ایجنت اختصاصی",
-              "en": "Self-serve creation and configuration of custom agents"
-            },
-            {
-              "fa": "پوشش سناریوهای متنوع کسب‌وکار روی یک پلتفرم",
-              "en": "Covers diverse business scenarios on one platform"
-            },
-            {
-              "fa": "هماهنگی و اتوماسیون بدون وابستگی به یک ابزار واحد",
-              "en": "Orchestration and automation without single-tool lock-in"
-            },
-            {
-              "fa": "مسیر از نیاز کسب‌وکار تا ایجنت قابل بهره‌برداری",
-              "en": "Path from business need to a production-ready agent"
+              "fa": "طراحی و توسعهٔ ایجنت چندمستاجره با دقت و پاسخ‌گویی بالا",
+              "en": "Designed and built multi-tenant agents with high accuracy and responsiveness"
             }
           ],
           "meta": {
@@ -632,6 +542,24 @@
           "fa": "آشنایی نسبی",
           "en": "Basic"
         }
+      }
+    ],
+    "references": [
+      {
+        "name": {
+          "fa": "علی نوروزی",
+          "en": "Ali Norouzi"
+        },
+        "phone": "+989224720635",
+        "phoneHref": "tel:+989224720635"
+      },
+      {
+        "name": {
+          "fa": "امیرمهدی پرویزی",
+          "en": "Amirmehdi Parvizi"
+        },
+        "phone": "+989196242371",
+        "phoneHref": "tel:+989196242371"
       }
     ],
     "footer": {

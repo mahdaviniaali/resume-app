@@ -354,6 +354,24 @@
         }
       }
     ],
+    "references": [
+      {
+        "name": {
+          "fa": "علی نوروزی",
+          "en": "Ali Norouzi"
+        },
+        "phone": "+989224720635",
+        "phoneHref": "tel:+989224720635"
+      },
+      {
+        "name": {
+          "fa": "امیرمهدی پرویزی",
+          "en": "Amirmehdi Parvizi"
+        },
+        "phone": "+989196242371",
+        "phoneHref": "tel:+989196242371"
+      }
+    ],
     "footer": {
       "text": {
         "fa": "ISEMPTY — ماهان طهماسبی © ۱۴۰۵ · ",

@@ -34,6 +34,7 @@ export function emptyResume(
     education: [],
     certificates: [],
     languages: [],
+    references: [],
     footer: {
       text: { fa: 'ISEMPTY', en: 'ISEMPTY' },
       backToTop: { fa: 'بازگشت به بالا', en: 'Back to top' },

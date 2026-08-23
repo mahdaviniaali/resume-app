@@ -77,6 +77,7 @@ const headings = {
   education: { fa: 'تحصیلات', en: 'Education' },
   certificates: { fa: 'گواهینامه‌ها', en: 'Certificates' },
   languages: { fa: 'زبان‌ها', en: 'Languages' },
+  references: { fa: 'معرف‌ها', en: 'References' },
 }
 
 const waitForRender = () =>
@@ -291,6 +292,24 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
                   </div>
                 ))}
               </div>
+            </section>
+          )}
+
+          {(resume.references || []).length > 0 && (
+            <section className={styles.card} id="references">
+              <h2 className={styles.sectionTitle}>{t(headings.references)}</h2>
+              {resume.references!.map((ref) => (
+                <div key={t(ref.name)} className={styles.referenceItem}>
+                  <div className={styles.referenceName}>{t(ref.name)}</div>
+                  <a
+                    className={styles.referencePhone}
+                    href={ref.phoneHref || `tel:${ref.phone}`}
+                    dir="ltr"
+                  >
+                    {ref.phone}
+                  </a>
+                </div>
+              ))}
             </section>
           )}
         </aside>

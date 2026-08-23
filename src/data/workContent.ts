@@ -55,32 +55,12 @@ export const workPage = {
 
 export const workItems: WorkItem[] = [
   {
-    id: 'enterprise-rag',
-    title: 'Enterprise RAG — chatbot.ir',
+    id: 'chatbot-ir',
+    title: 'Enterprise AI Platform — chatbot.ir',
     tag: 'AI · Enterprise',
     summary:
-      'Enterprise knowledge module on chatbot.ir — scalable RAG for large document corpora, multi-user access, and regulation-grounded answers under load.',
-    tech: ['RAG Pipelines', 'Multi-user', 'Ingestion', 'Retrieval'],
-    href: 'https://chatbot.ir/',
-    status: 'building',
-  },
-  {
-    id: 'knowledge-crawler',
-    title: 'Knowledge Crawler & Search — chatbot.ir',
-    tag: 'AI · Discovery',
-    summary:
-      'Enterprise capability on chatbot.ir: crawl a target site, turn project content into usable knowledge, and return reference sources with links.',
-    tech: ['Crawling', 'Knowledge Extraction', 'Search'],
-    href: 'https://chatbot.ir/',
-    status: 'building',
-  },
-  {
-    id: 'agent-builder',
-    title: 'Custom Agent Builder — chatbot.ir',
-    tag: 'AI · Agents',
-    summary:
-      'Enterprise product on chatbot.ir for businesses to create and configure custom agents for sales, support, and AI response scenarios.',
-    tech: ['Agent Orchestration', 'Self-serve', 'Automation'],
+      'Enterprise platform on chatbot.ir: disk-scale ingestion, resource-aware queues/retries, ~90% accurate knowledge from sites and docs against org rules, and multi-tenant agents with high accuracy and responsiveness.',
+    tech: ['Enterprise RAG', 'Crawling', 'Multi-tenant Agents', 'Resource-aware Queues'],
     href: 'https://chatbot.ir/',
     status: 'building',
   },

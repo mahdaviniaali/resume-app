@@ -562,6 +562,29 @@
   color: #98a0a6;
 }
 
+.referenceItem {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.referenceName {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.referencePhone {
+  font-size: 13px;
+  color: #98a0a6;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.referencePhone:hover {
+  color: #f5b342;
+}
+
 .footer {
   text-align: center;
   color: #98a0a6;
