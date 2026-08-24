@@ -133,7 +133,7 @@ async function syncAli() {
       shortBioEn:
         'Senior backend work on enterprise RAG, organizational permissioning, and agents on chatbot.ir — from business need to reliable delivery.',
       shortBioFa:
-        'توسعهٔ ارشد بک‌اند روی RAG سازمانی، پرمیشن‌بندی و ایجنت‌ها در chatbot.ir — از نیاز کسب‌وکار تا تحویل پایدار.',
+        'توسعهٔ ارشد بک‌اند روی RAG سازمانی، کنترل دسترسی و ایجنت‌ها در chatbot.ir — از نیاز کسب‌وکار تا سامانه‌ای که واقعاً کار می‌کند.',
     },
   )
 }

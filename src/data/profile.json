@@ -47,8 +47,8 @@
         "en": "Ali Mahdavinia"
       },
       "tagline": {
-        "fa": "توسعه‌دهنده ارشد بک‌اند و سیستم‌های هوش مصنوعی — از نیاز کسب‌وکار تا تحویل پایدار",
-        "en": "Senior Backend & AI Systems Developer — from business need to reliable delivery"
+        "fa": "توسعه‌دهنده ارشد بک‌اند و سیستم‌های هوش مصنوعی — از ایدهٔ کسب‌وکار تا سامانه‌ای که واقعاً کار می‌کند",
+        "en": "Senior Backend & AI Systems Developer — from a business idea to software that actually works"
       },
       "avatar": {
         "fa": "ع",
@@ -66,23 +66,23 @@
       "email": "alimahdavinia125@gmail.com",
       "badges": [
         {
-          "fa": "AI Engineering & Agents",
+          "fa": "مهندسی AI و ایجنت",
           "en": "AI Engineering & Agents"
         },
         {
-          "fa": "RAG & Automation",
+          "fa": "RAG و اتوماسیون",
           "en": "RAG & Automation"
         },
         {
-          "fa": "Performance Systems",
+          "fa": "سیستم‌های پربازده",
           "en": "Performance Systems"
         },
         {
-          "fa": "Business Analysis & Design",
+          "fa": "تحلیل و طراحی کسب‌وکار",
           "en": "Business Analysis & Design"
         },
         {
-          "fa": "System Architecture",
+          "fa": "معماری سیستم",
           "en": "System Architecture"
         }
       ]
@@ -122,8 +122,8 @@
       }
     ],
     "summary": {
-      "fa": "توسعه‌دهنده ارشد بک‌اند با تمرکز روی سیستم‌های هوش مصنوعی سازمانی — تبدیل نیاز مبهم کسب‌وکار به سامانه‌هایی که زیر بار واقعی پایدار می‌مانند و قابل تحویل‌اند.\n\nدر نیازسنجی، تحلیل، طراحی و تحویل تجربه دارم. نرم‌افزار را سیستم در خدمت کسب‌وکار می‌بینم، نه فهرست ابزار. اخیراً روی مهندسی ایجنت، RAG سازمانی، پرمیشن‌بندی سازمانی، اتوماسیون هوشمند و بهینه‌سازی کارایی کار می‌کنم.\n\nپشته را بر اساس مسئله انتخاب می‌کنم: پایتون (Django، FastAPI و …)، Go، Rust و Elixir ابزارند، نه هویت. معماری خوب دامنه را درست مدل می‌کند، زیر فشار مقیاس می‌ماند و ارزش پایدار برای سازمان می‌سازد.",
-      "en": "Senior backend developer focused on enterprise AI systems — turning ambiguous business needs into systems that stay reliable under real load and actually ship.\n\nI work across needs assessment, analysis, design, and delivery. I treat software as a business-enabling system, not a tool checklist. Recently I have focused on agent engineering, enterprise RAG, organizational permissioning, intelligent automation, and performance work.\n\nI choose the stack for the problem: Python (Django, FastAPI, and more), Go, Rust, and Elixir are tools—not identity. Strong architecture models the domain clearly, holds under pressure, and creates lasting organizational value."
+      "fa": "توسعه‌دهنده ارشد بک‌اند با تمرکز بر AI Engineering و سامانه‌های هوش مصنوعی سازمانی. در طراحی و ساخت سیستم‌هایی فعالیت می‌کنم که از یک نیاز پیچیده کسب‌وکار شروع می‌شوند و تا اجرای پایدار در محیط واقعی پیش می‌روند.\n\nحوزه تمرکزم شامل Agent Engineering، Enterprise RAG، کنترل دسترسی و امنیت، اتوماسیون هوشمند و Performance Engineering است. در معماری، ابتدا مسئله و دامنه کسب‌وکار را می‌فهمم و سپس تکنولوژی مناسب را انتخاب می‌کنم؛ از Python و Go تا Rust و Elixir، زبان و فریم‌ورک برای من ابزار هستند، نه هدف.\n\nتلاشم این است که سیستم‌هایی بسازم که فقط در دمو خوب کار نکنند؛ بلکه قابل نگهداری، قابل توسعه و قابل اتکا در مقیاس واقعی باشند.",
+      "en": "Senior backend developer focused on AI engineering and enterprise AI systems. I design and build systems that start from a hard business problem and make it all the way to stable execution in production.\n\nMy work sits at the intersection of agent engineering, enterprise RAG, access control and security, intelligent automation, and performance engineering. In architecture I begin with the problem and the domain—then pick the right tools. Python, Go, Rust, Elixir: languages and frameworks are instruments, not the destination.\n\nI aim to ship systems that hold up beyond a demo—maintainable, extensible, and dependable at real scale."
     },
     "experiences": [
       {
@@ -140,8 +140,8 @@
           "en": "May 2026 — Present"
         },
         "description": {
-          "fa": "طراحی و توسعهٔ پلتفرم سازمانی chatbot.ir: RAG و نالج اسناد/سایت، پرمیشن‌بندی سازمانی، صف و تلاش دوبارهٔ وابسته به منابع، و ایجنت چندمستاجره. تمرکز روی نیازسنجی کسب‌وکار، معماری مقیاس‌پذیر و پایداری زیر بار واقعی.",
-          "en": "Designing and building the chatbot.ir enterprise platform: RAG and knowledge from docs/sites, organizational permissioning, resource-aware queues and retries, and multi-tenant agents. Focused on business needs assessment, scalable architecture, and reliability under real load."
+          "fa": "روی پلتفرم سازمانی chatbot.ir کار می‌کنم: RAG و دانش‌سازی از اسناد و سایت‌ها، کنترل دسترسی سازمانی، صف و تلاش‌مجدد هوشمند بر اساس منابع سیستم، و ایجنت چندمستاجره. هدفم این است که نیاز کسب‌وکار به معماری‌ای برسد که مقیاس‌پذیر باشد و زیر بار واقعی سر پا بماند.",
+          "en": "Building the chatbot.ir enterprise platform end to end: RAG over documents and sites, org-level access control, resource-aware queues and retries, and multi-tenant agents. The goal is simple—take a real business need and land it in an architecture that scales and stays up under real load."
         }
       },
       {
@@ -158,8 +158,8 @@
           "en": "May 2025 — May 2026"
         },
         "description": {
-          "fa": "یک سال همکاری پروژه‌ای برای طراحی و توسعهٔ پلتفرم احداثینو (مناقصه معکوس مصالح ساختمانی): نیازسنجی دامنه B2B، معماری بک‌اند، احراز هویت OTP/JWT با نقش خریدار و تأمین‌کننده، و تحویل سامانهٔ قابل تست.",
-          "en": "One-year project engagement to design and build Ehdasino (reverse auction for construction materials): B2B domain discovery, backend architecture, OTP/JWT auth with buyer and supplier roles, and a testable delivery."
+          "fa": "حدود یک سال همکاری پروژه‌ای برای ساخت احداثینو — پلتفرم مناقصه معکوس مصالح ساختمانی. کارم از فهم دامنهٔ B2B شروع شد تا معماری بک‌اند، احراز هویت OTP و JWT با نقش خریدار و تأمین‌کننده، و تحویل سامانه‌ای که قابل تست و نگهداری باشد.",
+          "en": "Spent about a year on a project engagement building Ehdasino—a reverse-auction platform for construction materials. Started with the B2B domain, then owned backend architecture, OTP/JWT auth for buyers and suppliers, and a delivery that stays testable and maintainable."
         }
       },
       {
@@ -176,8 +176,8 @@
           "en": "Dec 2022 — Present"
         },
         "description": {
-          "fa": "همکاری پروژه‌ای و پاره‌وقت در کنار سایر نقش‌ها: نیازسنجی کسب‌وکار، طراحی و تحلیل، و تحویل سامانه‌های سازمانی و محصولی. انتخاب فریم‌ورک بر اساس مسئله (Django، FastAPI و …)؛ تمرکز روی معماری قابل نگهداری، امنیت، تست‌پذیری و اتوماسیون.",
-          "en": "Project-based and part-time work alongside other roles: business needs assessment, design and analysis, and delivery of enterprise and product systems. Framework choice follows the problem (Django, FastAPI, and more)—with focus on maintainable architecture, security, testability, and automation."
+          "fa": "کار پروژه‌ای و پاره‌وقت، در کنار سایر نقش‌ها: از نیازسنجی و طراحی تا تحویل سامانه‌های سازمانی و محصولی. فریم‌ورک را بر اساس مسئله برمی‌گزینم (Django، FastAPI و …) و روی معماری تمیز، امنیت، تست‌پذیری و اتوماسیون حساس‌ام.",
+          "en": "Side project and part-time work alongside other roles—from discovery and design through shipping enterprise and product systems. I pick the framework for the problem (Django, FastAPI, and similar), and I care a lot about clean architecture, security, testability, and automation."
         }
       },
       {
@@ -194,8 +194,8 @@
           "en": "Mar 2023 — Sep 2023"
         },
         "description": {
-          "fa": "برگزاری دوره‌های رایگان پایتون برای علاقه‌مندان از شهرهای مختلف و راهنمایی پس از دوره.",
-          "en": "Ran free Python courses for learners across cities and continued mentoring after the program."
+          "fa": "دوره‌های رایگان پایتون برای علاقه‌مندان از شهرهای مختلف برگزار کردم و بعد از دوره هم راهنمایی‌شان را ادامه دادم.",
+          "en": "Taught free Python courses for learners from different cities, and kept mentoring them after the sessions ended."
         }
       }
     ],
@@ -215,29 +215,29 @@
             "Document Ingestion"
           ],
           "description": {
-            "fa": "طراحی و توسعهٔ پلتفرم سازمانی chatbot.ir (عامر اندیش هوشمند): RAG دانش، کرالر و استخراج محتوا، پرمیشن‌بندی سازمانی، و سازندهٔ ایجنت چندمستاجره — از ورود اسناد تا پاسخ‌گویی مبتنی بر قوانین سازمان. هنوز در حال توسعه و استقرار کامل است.",
-            "en": "Designed and built the chatbot.ir enterprise platform (Amer Andish Houshmand): knowledge RAG, crawl/extraction, organizational permissioning, and a multi-tenant agent builder—from document ingestion to regulation-grounded answers. Still in active development toward full production."
+            "fa": "پلتفرم سازمانی chatbot.ir را برای عامر اندیش هوشمند طراحی و پیاده کرده‌ام: RAG دانش، خزش و استخراج محتوا، کنترل دسترسی سازمانی و سازندهٔ ایجنت چندمستاجره — از ورود اسناد تا پاسخی که به قوانین سازمان پایبند بماند. هنوز در حال توسعه است و به استقرار کامل نرسیده.",
+            "en": "Designed and implemented chatbot.ir for Amer Andish Houshmand—an enterprise platform for knowledge RAG, crawl and extraction, org-level access control, and a multi-tenant agent builder. Covers the path from document intake to answers that respect organizational rules. Still in development; not fully in production yet."
           },
           "features": [
             {
               "fa": "طراحی RAG با دقت حدود ۹۰٪ نسبت به قوانین و ضوابط سازمانی",
-              "en": "RAG design at ~90% accuracy against organizational rules and policies"
+              "en": "RAG design tuned to ~90% accuracy against organizational rules and policies"
             },
             {
-              "fa": "پرمیشن‌بندی سازمانی برای کنترل دسترسی به دانش و قابلیت‌های ایجنت",
-              "en": "Organizational permissioning for access control over knowledge and agent capabilities"
+              "fa": "کنترل دسترسی سازمانی روی دانش و قابلیت‌های ایجنت",
+              "en": "Org-level access control over knowledge and agent capabilities"
             },
             {
-              "fa": "پایداری زیر بار ورودی تا حدود ۲۰ گیگابایت داده در مسیر RAG، بدون از کار افتادن سرویس",
-              "en": "Stayed stable under ~20GB data loads in the RAG path without taking the service down"
+              "fa": "تحمل بار ورودی تا حدود ۲۰ گیگابایت در مسیر RAG، بدون از کار افتادن سرویس",
+              "en": "Handled ~20GB input loads on the RAG path without taking the service down"
             },
             {
-              "fa": "صف‌بندی و تلاش دوبارهٔ هوشمند بر اساس آزاد بودن منابع سیستم",
-              "en": "Intelligent queuing and retry based on available system resources"
+              "fa": "صف و تلاش‌مجدد هوشمند، وقتی منابع سیستم آزاد باشد",
+              "en": "Smart queuing and retries that wait for free system resources"
             },
             {
-              "fa": "ایجنت چندمستاجره با تمرکز روی دقت و پاسخ‌گویی",
-              "en": "Multi-tenant agents focused on accuracy and responsiveness"
+              "fa": "ایجنت چندمستاجره با تمرکز روی دقت و سرعت پاسخ",
+              "en": "Multi-tenant agents built for accuracy and fast responses"
             }
           ],
           "meta": {
@@ -265,35 +265,35 @@
             "Seller Dashboard"
           ],
           "description": {
-            "fa": "سامانه‌ای برای تبدیل سفارش‌گیری پراکنده از دایرکت اینستاگرام به فاکتور آنلاین، پرداخت بانکی و سفارش قابل رهگیری — بدون نیاز به رمز عبور اینستاگرام.",
-            "en": "A system that turns fragmented Instagram DM order-taking into online invoices, bank payment, and trackable orders—without requiring an Instagram password."
+            "fa": "سفارش‌هایی که در دایرکت اینستاگرام پخش‌وپلا می‌شوند را به فاکتور آنلاین، پرداخت بانکی و سفارش قابل رهگیری تبدیل می‌کند — بدون اینکه رمز اینستاگرام کسی لازم باشد.",
+            "en": "Turns messy Instagram DM orders into online invoices, bank payments, and trackable orders—without ever asking for an Instagram password."
           },
           "features": [
             {
               "fa": "ایجاد فاکتور و لینک اختصاصی برای فروشنده",
-              "en": "Invoice creation with a unique seller link"
+              "en": "Invoices with a unique link per seller"
             },
             {
               "fa": "تسویه‌حساب مشتری: آدرس، پرداخت آنلاین و رهگیری",
-              "en": "Customer checkout: address, online payment, and tracking"
+              "en": "Customer checkout with address, online payment, and tracking"
             },
             {
               "fa": "مدیریت وضعیت سفارش و پیامک وضعیت",
-              "en": "Order status management with SMS updates"
+              "en": "Order status updates, including SMS"
             },
             {
               "fa": "معماری چندمستاجره برای فروشنده‌های جدا",
-              "en": "Multi-tenant architecture for isolated sellers"
+              "en": "Multi-tenant setup so sellers stay isolated"
             },
             {
               "fa": "شناسایی مشتری بازگشتی و تکمیل هوشمند اطلاعات",
-              "en": "Returning-customer recognition with smart autofill"
+              "en": "Recognizes returning customers and autofills what it can"
             }
           ],
           "meta": {
             "role": {
               "fa": "نقش: بک‌اند و معماری سیستم",
-              "en": "Role: Backend & System Architecture"
+              "en": "Role: Backend & system design"
             },
             "date": {
               "fa": "در حال ساخت",
@@ -315,31 +315,31 @@
             "TDD"
           ],
           "description": {
-            "fa": "پلتفرم خرید مصالح ساختمانی با رقابت تأمین‌کنندگان: ثبت درخواست خرید، دریافت پیشنهاد قیمت، و مقایسه شفاف قیمت، زمان تحویل و اعتبار.",
-            "en": "Construction-materials purchasing platform with real supplier competition: buyers post RFQs, suppliers send proposals, and compare price, delivery, and trust side by side."
+            "fa": "پلتفرم خرید مصالح ساختمانی با رقابت واقعی تأمین‌کنندگان: خریدار درخواست می‌زند، چند پیشنهاد می‌گیرد و قیمت، زمان تحویل و اعتبار را شفاف مقایسه می‌کند.",
+            "en": "A construction-materials marketplace where suppliers actually compete: buyers post a request, collect several bids, and compare price, delivery time, and trust in one place."
           },
           "features": [
             {
               "fa": "ثبت درخواست خرید و دریافت چند پیشنهاد از تأمین‌کنندگان مرتبط",
-              "en": "RFQ posting with multiple proposals from relevant suppliers"
+              "en": "Buyers post RFQs and get multiple bids from relevant suppliers"
             },
             {
               "fa": "مقایسه شفاف قیمت، زمان تحویل و شرایط",
-              "en": "Transparent comparison of price, delivery, and terms"
+              "en": "Side-by-side comparison of price, delivery, and terms"
             },
             {
               "fa": "احراز هویت OTP روی JWT با نقش خریدار و تأمین‌کننده",
-              "en": "OTP-on-JWT authentication with buyer and supplier roles"
+              "en": "OTP-backed JWT auth with separate buyer and supplier roles"
             },
             {
               "fa": "معماری دامنه‌محور و تست‌پذیر، بدون وابستگی اجباری به یک فریم‌ورک",
-              "en": "Domain-driven, testable design without framework lock-in"
+              "en": "Domain-driven and testable design—no hard lock-in to one framework"
             }
           ],
           "meta": {
             "role": {
               "fa": "نقش: بک‌اند و طراحی سیستم — همکاری پروژه‌ای با اگرین پی",
-              "en": "Role: Backend & System Design — project engagement with Agrin Pay"
+              "en": "Role: Backend & system design — project work with Agrin Pay"
             },
             "date": {
               "fa": "۱۴۰۴ — ۱۴۰۵",
@@ -361,24 +361,24 @@
           ],
           "description": {
             "fa": "فروشگاه اینترنتی محصولات پمپ صنعتی با ساختار کلاسیک فروشگاهی و سامانه مدیریت سفارش.",
-            "en": "Online store for industrial pumps with a classic commerce structure and order management."
+            "en": "E-commerce store for industrial pumps—classic shop flow with a full order-management system."
           },
           "features": [
             {
               "fa": "سبد خرید و ثبت سفارش با امکان پیگیری",
-              "en": "Cart and order flow with tracking"
+              "en": "Cart, checkout, and order tracking"
             },
             {
               "fa": "اطلاع‌رسانی وضعیت سفارش به مشتری",
-              "en": "Customer order-status notifications"
+              "en": "Order-status notifications for customers"
             },
             {
               "fa": "درگاه پرداخت کارت‌به‌کارت اختصاصی",
-              "en": "Custom card-to-card payment gateway"
+              "en": "Custom card-to-card payment flow"
             },
             {
               "fa": "پنل مدیریت سفارش‌ها و دسته‌بندی‌ها",
-              "en": "Admin panel for orders and specialized categories"
+              "en": "Admin panel for orders and product categories"
             }
           ],
           "meta": {
@@ -388,7 +388,7 @@
             },
             "role": {
               "fa": "نقش: توسعه‌دهنده تمام‌پشته",
-              "en": "Role: Full-stack Developer"
+              "en": "Role: Full-stack developer"
             },
             "link": "https://waterrisen.com"
           }
@@ -406,20 +406,20 @@
           ],
           "description": {
             "fa": "سامانه سفارش‌گیری عمده‌فروشی با قیمت‌گذاری پویا و کنترل کامل توسط ادمین.",
-            "en": "B2B wholesale ordering with dynamic pricing and full admin control."
+            "en": "Wholesale ordering system with dynamic pricing and full admin control over the flow."
           },
           "features": [
             {
               "fa": "ثبت سفارش بدون قیمت نهایی و تأیید ادمین",
-              "en": "Order capture without final price, plus admin approval"
+              "en": "Orders can be placed before a final price, then approved by admin"
             },
             {
               "fa": "فرآیند مرحله‌ای: ثبت ← تأیید ← پرداخت",
-              "en": "Staged workflow: submit → approve → pay"
+              "en": "Staged flow: submit → approve → pay"
             },
             {
               "fa": "اطلاع‌رسانی تعاملی بین خریدار و ادمین",
-              "en": "Interactive notifications between buyers and admins"
+              "en": "Two-way notifications between buyers and admins"
             }
           ],
           "meta": {
@@ -429,7 +429,7 @@
             },
             "role": {
               "fa": "نقش: توسعه‌دهنده بک‌اند",
-              "en": "Role: Backend Developer"
+              "en": "Role: Backend developer"
             }
           }
         }
@@ -448,7 +448,7 @@
           ],
           "description": {
             "fa": "تمرین سبک پایش رویداد امنیتی: دریافت لاگ، پردازش ناهمزمان و هشدار مبتنی بر قانون.",
-            "en": "Lightweight practice in security-event monitoring: log ingestion, async processing, and rule-based alerts."
+            "en": "A small security-event practice project: ingest logs, process them asynchronously, and fire rule-based alerts."
           }
         },
         {
@@ -463,7 +463,7 @@
           ],
           "description": {
             "fa": "سیستم مدیریت دانشجویان با انتخاب واحد، مدیریت دروس و گروه‌ها، و پنل‌های مجزا برای مدیر و دانشجو.",
-            "en": "Student management platform with course selection, course/group management, and dedicated admin/student panels."
+            "en": "Student management system with course enrollment, course and group admin, and separate panels for admins and students."
           }
         }
       ]
@@ -494,8 +494,8 @@
           "en": "Sep 2022 — Present"
         },
         "details": {
-          "fa": "کمک داوطلبانه به دانشجویان در دروس فنی (مبانی برنامه‌نویسی، ساختار داده، پایگاه داده، مهندسی نرم‌افزار و...). عضو انجمن علمی یک ترم و همکاری پژوهشی با یکی از اساتید.",
-          "en": "Volunteered to help peers in technical courses (programming fundamentals, data structures, databases, software engineering, etc.), joined the scientific association for a semester, and collaborated on research."
+          "fa": "داوطلبانه به هم‌کلاسی‌ها در دروس فنی کمک کردم (مبانی برنامه‌نویسی، ساختار داده، پایگاه‌داده، مهندسی نرم‌افزار و …). یک ترم عضو انجمن علمی بودم و با یکی از اساتید روی کار پژوهشی همکاری داشتم.",
+          "en": "Volunteered to help classmates with technical courses—programming fundamentals, data structures, databases, software engineering, and more. Spent a semester in the scientific association and collaborated with a professor on research."
         }
       }
     ],
