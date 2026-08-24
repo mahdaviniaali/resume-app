@@ -128,12 +128,12 @@ async function syncAli() {
     'ali-mahdavinia',
     resume,
     {
-      roleEn: 'AI Systems & Backend Architect',
-      roleFa: 'معمار سیستم‌های AI و بک‌اند',
+      roleEn: 'Senior Backend & AI Systems Developer',
+      roleFa: 'توسعه‌دهنده ارشد بک‌اند و سیستم‌های AI',
       shortBioEn:
-        'Senior development and technical leadership — enterprise RAG, agents on chatbot.ir, and turning business needs into shippable architecture.',
+        'Senior backend work on enterprise RAG, organizational permissioning, and agents on chatbot.ir — from business need to reliable delivery.',
       shortBioFa:
-        'توسعهٔ ارشد و مدیریت فنی — RAG سازمانی و ایجنت‌ها روی chatbot.ir، و تبدیل نیاز کسب‌وکار به معماری قابل تحویل.',
+        'توسعهٔ ارشد بک‌اند روی RAG سازمانی، پرمیشن‌بندی و ایجنت‌ها در chatbot.ir — از نیاز کسب‌وکار تا تحویل پایدار.',
     },
   )
 }

@@ -47,16 +47,16 @@
         "en": "Ali Mahdavinia"
       },
       "tagline": {
-        "fa": "معمار سیستم‌های هوش مصنوعی و بک‌اند — از نیاز کسب‌وکار تا معماری قابل تحویل",
-        "en": "AI Systems & Backend Architect — from business need to shippable architecture"
+        "fa": "توسعه‌دهنده ارشد بک‌اند و سیستم‌های هوش مصنوعی — از نیاز کسب‌وکار تا تحویل پایدار",
+        "en": "Senior Backend & AI Systems Developer — from business need to reliable delivery"
       },
       "avatar": {
         "fa": "ع",
         "en": "A"
       },
       "location": {
-        "fa": "تهران، نارمک",
-        "en": "Tehran, Narmak"
+        "fa": "تهران",
+        "en": "Tehran"
       },
       "phone": {
         "fa": "۰۹۰۵۹۲۷۲۳۴۶",
@@ -122,14 +122,14 @@
       }
     ],
     "summary": {
-      "fa": "توسعه‌دهنده ارشد، مدیر فنی و معمار سیستم‌های هوش مصنوعی — تمرکز روی تبدیل نیاز مبهم کسب‌وکار به سامانه‌هایی که زیر بار واقعی پایدار می‌مانند و قابل تحویل‌اند.\n\nدر نیازسنجی، تحلیل، طراحی پروژه و تحویل سازمانی تجربه دارم. نرم‌افزار را سیستم در خدمت کسب‌وکار می‌بینم، نه فهرست ابزار. اخیراً روی مهندسی ایجنت، RAG سازمانی، اتوماسیون هوشمند و بهینه‌سازی دقیق کارایی کار می‌کنم.\n\nپشته را بر اساس مسئله انتخاب می‌کنم: پایتون (Django، FastAPI و …)، Go، Rust و Elixir ابزارند، نه هویت. معماری خوب دامنه را درست مدل می‌کند، زیر فشار مقیاس می‌ماند و ارزش پایدار برای سازمان می‌سازد.",
-      "en": "Senior developer, technical manager, and AI systems architect — turning ambiguous business needs into systems that stay reliable under real load and actually ship.\n\nI work across needs assessment, analysis, project design, and enterprise delivery. I treat software as a business-enabling system, not a tool checklist. Recently I have focused on agent engineering, enterprise RAG, intelligent automation, and precise performance work.\n\nI choose the stack for the problem: Python (Django, FastAPI, and more), Go, Rust, and Elixir are tools—not identity. Strong architecture models the domain clearly, holds under pressure, and creates lasting organizational value."
+      "fa": "توسعه‌دهنده ارشد بک‌اند با تمرکز روی سیستم‌های هوش مصنوعی سازمانی — تبدیل نیاز مبهم کسب‌وکار به سامانه‌هایی که زیر بار واقعی پایدار می‌مانند و قابل تحویل‌اند.\n\nدر نیازسنجی، تحلیل، طراحی و تحویل تجربه دارم. نرم‌افزار را سیستم در خدمت کسب‌وکار می‌بینم، نه فهرست ابزار. اخیراً روی مهندسی ایجنت، RAG سازمانی، پرمیشن‌بندی سازمانی، اتوماسیون هوشمند و بهینه‌سازی کارایی کار می‌کنم.\n\nپشته را بر اساس مسئله انتخاب می‌کنم: پایتون (Django، FastAPI و …)، Go، Rust و Elixir ابزارند، نه هویت. معماری خوب دامنه را درست مدل می‌کند، زیر فشار مقیاس می‌ماند و ارزش پایدار برای سازمان می‌سازد.",
+      "en": "Senior backend developer focused on enterprise AI systems — turning ambiguous business needs into systems that stay reliable under real load and actually ship.\n\nI work across needs assessment, analysis, design, and delivery. I treat software as a business-enabling system, not a tool checklist. Recently I have focused on agent engineering, enterprise RAG, organizational permissioning, intelligent automation, and performance work.\n\nI choose the stack for the problem: Python (Django, FastAPI, and more), Go, Rust, and Elixir are tools—not identity. Strong architecture models the domain clearly, holds under pressure, and creates lasting organizational value."
     },
     "experiences": [
       {
         "title": {
-          "fa": "توسعه‌دهنده ارشد و مدیر فنی",
-          "en": "Senior Developer & Technical Manager"
+          "fa": "توسعه‌دهنده ارشد بک‌اند",
+          "en": "Senior Backend Developer"
         },
         "location": {
           "fa": "عامر اندیش هوشمند",
@@ -140,32 +140,32 @@
           "en": "May 2026 — Present"
         },
         "description": {
-          "fa": "توسعهٔ ارشد هم‌زمان با مدیریت فنی؛ هدایت طراحی و تحویل پلتفرم سازمانی chatbot.ir — RAG و نالج اسناد/سایت، صف و تلاش دوبارهٔ وابسته به منابع، و ایجنت چندمستاجره. تمرکز روی نیازسنجی کسب‌وکار، معماری مقیاس‌پذیر و پایداری زیر بار واقعی.",
-          "en": "Senior development with technical management—leading design and delivery of the chatbot.ir enterprise platform: RAG and knowledge from docs/sites, resource-aware queues and retries, and multi-tenant agents. Focused on business needs assessment, scalable architecture, and reliability under real load."
+          "fa": "طراحی و توسعهٔ پلتفرم سازمانی chatbot.ir: RAG و نالج اسناد/سایت، پرمیشن‌بندی سازمانی، صف و تلاش دوبارهٔ وابسته به منابع، و ایجنت چندمستاجره. تمرکز روی نیازسنجی کسب‌وکار، معماری مقیاس‌پذیر و پایداری زیر بار واقعی.",
+          "en": "Designing and building the chatbot.ir enterprise platform: RAG and knowledge from docs/sites, organizational permissioning, resource-aware queues and retries, and multi-tenant agents. Focused on business needs assessment, scalable architecture, and reliability under real load."
         }
       },
       {
         "title": {
-          "fa": "توسعه‌دهنده",
-          "en": "Developer"
+          "fa": "توسعه‌دهنده پروژه‌ای",
+          "en": "Project Developer"
         },
         "location": {
-          "fa": "شرکت اگرین پی",
-          "en": "Agrin Pay"
+          "fa": "اگرین پی — پروژهٔ احداثینو",
+          "en": "Agrin Pay — Ehdasino project"
         },
         "date": {
           "fa": "اردیبهشت ۱۴۰۴ — خرداد ۱۴۰۵",
           "en": "May 2025 — May 2026"
         },
         "description": {
-          "fa": "حدود یک سال توسعه و تحویل پروژه‌های نرم‌افزاری برای سازمان؛ مشارکت در نیازمندی‌یابی، پیاده‌سازی و نگهداری سامانه‌های وب.",
-          "en": "About one year delivering software projects for the organization—contributing to requirements gathering, implementation, and maintenance of web systems."
+          "fa": "یک سال همکاری پروژه‌ای برای طراحی و توسعهٔ پلتفرم احداثینو (مناقصه معکوس مصالح ساختمانی): نیازسنجی دامنه B2B، معماری بک‌اند، احراز هویت OTP/JWT با نقش خریدار و تأمین‌کننده، و تحویل سامانهٔ قابل تست.",
+          "en": "One-year project engagement to design and build Ehdasino (reverse auction for construction materials): B2B domain discovery, backend architecture, OTP/JWT auth with buyer and supplier roles, and a testable delivery."
         }
       },
       {
         "title": {
-          "fa": "برنامه‌نویس فریلنسر",
-          "en": "Freelance Developer"
+          "fa": "توسعه‌دهنده مستقل (پروژه‌ای)",
+          "en": "Independent Developer (Project-based)"
         },
         "location": {
           "fa": "تهران",
@@ -176,8 +176,8 @@
           "en": "Dec 2022 — Present"
         },
         "description": {
-          "fa": "نیازسنجی کسب‌وکار، طراحی و تحلیل پروژه، و تحویل سامانه‌های سازمانی و محصولی. انتخاب فریم‌ورک بر اساس مسئله (Django، FastAPI و …)؛ تمرکز روی معماری قابل نگهداری، امنیت، تست‌پذیری و اتوماسیون.",
-          "en": "Business needs assessment, project design and analysis, and delivery of enterprise and product systems. Framework choice follows the problem (Django, FastAPI, and more)—with focus on maintainable architecture, security, testability, and automation."
+          "fa": "همکاری پروژه‌ای و پاره‌وقت در کنار سایر نقش‌ها: نیازسنجی کسب‌وکار، طراحی و تحلیل، و تحویل سامانه‌های سازمانی و محصولی. انتخاب فریم‌ورک بر اساس مسئله (Django، FastAPI و …)؛ تمرکز روی معماری قابل نگهداری، امنیت، تست‌پذیری و اتوماسیون.",
+          "en": "Project-based and part-time work alongside other roles: business needs assessment, design and analysis, and delivery of enterprise and product systems. Framework choice follows the problem (Django, FastAPI, and more)—with focus on maintainable architecture, security, testability, and automation."
         }
       },
       {
@@ -208,37 +208,42 @@
           },
           "tech": [
             "Enterprise RAG",
+            "Organizational Permissions",
             "Knowledge Crawling",
             "Multi-tenant Agents",
             "Resource-aware Queues",
-            "Document Ingestion at Scale"
+            "Document Ingestion"
           ],
           "description": {
-            "fa": "طراحی و توسعهٔ پلتفرم سازمانی chatbot.ir (عامر اندیش هوشمند): RAG دانش، کرالر و استخراج محتوا، و سازندهٔ ایجنت چندمستاجره — از ورود اسناد حجیم تا پاسخ‌گویی مبتنی بر قوانین سازمان.",
-            "en": "Designed and built the chatbot.ir enterprise platform (Amer Andish Houshmand): knowledge RAG, crawl/extraction, and a multi-tenant agent builder—from large-scale document ingestion to regulation-grounded answers."
+            "fa": "طراحی و توسعهٔ پلتفرم سازمانی chatbot.ir (عامر اندیش هوشمند): RAG دانش، کرالر و استخراج محتوا، پرمیشن‌بندی سازمانی، و سازندهٔ ایجنت چندمستاجره — از ورود اسناد تا پاسخ‌گویی مبتنی بر قوانین سازمان. هنوز در حال توسعه و استقرار کامل است.",
+            "en": "Designed and built the chatbot.ir enterprise platform (Amer Andish Houshmand): knowledge RAG, crawl/extraction, organizational permissioning, and a multi-tenant agent builder—from document ingestion to regulation-grounded answers. Still in active development toward full production."
           },
           "features": [
             {
-              "fa": "هندل کردن حجم زیاد دیتا در مقیاس فضای دیسک، بدون از کار افتادن سرویس",
-              "en": "Handles disk-scale data volumes without taking the service down"
+              "fa": "طراحی RAG با دقت حدود ۹۰٪ نسبت به قوانین و ضوابط سازمانی",
+              "en": "RAG design at ~90% accuracy against organizational rules and policies"
+            },
+            {
+              "fa": "پرمیشن‌بندی سازمانی برای کنترل دسترسی به دانش و قابلیت‌های ایجنت",
+              "en": "Organizational permissioning for access control over knowledge and agent capabilities"
+            },
+            {
+              "fa": "پایداری زیر بار ورودی تا حدود ۲۰ گیگابایت داده در مسیر RAG، بدون از کار افتادن سرویس",
+              "en": "Stayed stable under ~20GB data loads in the RAG path without taking the service down"
             },
             {
               "fa": "صف‌بندی و تلاش دوبارهٔ هوشمند بر اساس آزاد بودن منابع سیستم",
               "en": "Intelligent queuing and retry based on available system resources"
             },
             {
-              "fa": "نالج کردن انواع سایت و سند با دقت حدود ۹۰٪ نسبت به قوانین و ضوابط سازمانی",
-              "en": "Turns sites and documents into knowledge at ~90% accuracy against organizational rules and policies"
-            },
-            {
-              "fa": "طراحی و توسعهٔ ایجنت چندمستاجره با دقت و پاسخ‌گویی بالا",
-              "en": "Designed and built multi-tenant agents with high accuracy and responsiveness"
+              "fa": "ایجنت چندمستاجره با تمرکز روی دقت و پاسخ‌گویی",
+              "en": "Multi-tenant agents focused on accuracy and responsiveness"
             }
           ],
           "meta": {
             "role": {
-              "fa": "نقش: توسعه‌دهنده ارشد و مدیر فنی — عامر اندیش هوشمند",
-              "en": "Role: Senior Developer & Technical Manager — Amer Andish Houshmand"
+              "fa": "نقش: توسعه‌دهنده ارشد بک‌اند — عامر اندیش هوشمند",
+              "en": "Role: Senior Backend Developer — Amer Andish Houshmand"
             },
             "date": {
               "fa": "۱۴۰۵ — در حال توسعه",
@@ -333,8 +338,12 @@
           ],
           "meta": {
             "role": {
-              "fa": "نقش: بک‌اند و طراحی سیستم",
-              "en": "Role: Backend & System Design"
+              "fa": "نقش: بک‌اند و طراحی سیستم — همکاری پروژه‌ای با اگرین پی",
+              "en": "Role: Backend & System Design — project engagement with Agrin Pay"
+            },
+            "date": {
+              "fa": "۱۴۰۴ — ۱۴۰۵",
+              "en": "2025 — 2026"
             },
             "link": "http://ehdasino.ir/"
           }
@@ -467,7 +476,7 @@
       "Multi-tenant / multi-user product backends",
       "Backend polyglot: Python (Django, FastAPI, …), Go, Rust, Elixir",
       "Data & messaging: PostgreSQL, Redis, RabbitMQ, Elasticsearch, Neo4j, Qdrant",
-      "APIs, auth (JWT / OTP), Docker / Linux / CI-CD",
+      "APIs (REST, GraphQL, gRPC), auth (JWT / OTP), Docker / Linux / CI-CD",
       "Frontend basics (React, Next.js, TypeScript, Tailwind)"
     ],
     "education": [
@@ -497,7 +506,7 @@
           "en": "Comprehensive Python Programming Engineering"
         },
         "issuer": {
-          "fa": "آکادمی دوران — فروردین ۱۴۰۳",
+          "fa": "آکادمی دوران — فروردین ۱۴۰۲",
           "en": "Doran Academy — Mar 2023"
         }
       },
@@ -507,7 +516,7 @@
           "en": "Backend Develop with Django"
         },
         "issuer": {
-          "fa": "آکادمی دوران — اسفند ۱۴۰۳",
+          "fa": "آکادمی دوران — اسفند ۱۴۰۲",
           "en": "Doran Academy — Feb 2024"
         }
       }
@@ -550,16 +559,20 @@
           "fa": "علی نوروزی",
           "en": "Ali Norouzi"
         },
-        "phone": "+989224720635",
-        "phoneHref": "tel:+989224720635"
+        "note": {
+          "fa": "در صورت درخواست",
+          "en": "Available upon request"
+        }
       },
       {
         "name": {
           "fa": "امیرمهدی پرویزی",
           "en": "Amirmehdi Parvizi"
         },
-        "phone": "+989196242371",
-        "phoneHref": "tel:+989196242371"
+        "note": {
+          "fa": "در صورت درخواست",
+          "en": "Available upon request"
+        }
       }
     ],
     "footer": {

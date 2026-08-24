@@ -301,13 +301,17 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
               {resume.references!.map((ref) => (
                 <div key={t(ref.name)} className={styles.referenceItem}>
                   <div className={styles.referenceName}>{t(ref.name)}</div>
-                  <a
-                    className={styles.referencePhone}
-                    href={ref.phoneHref || `tel:${ref.phone}`}
-                    dir="ltr"
-                  >
-                    {ref.phone}
-                  </a>
+                  {ref.phone ? (
+                    <a
+                      className={styles.referencePhone}
+                      href={ref.phoneHref || `tel:${ref.phone}`}
+                      dir="ltr"
+                    >
+                      {ref.phone}
+                    </a>
+                  ) : ref.note ? (
+                    <div className={styles.referencePhone}>{t(ref.note)}</div>
+                  ) : null}
                 </div>
               ))}
             </section>

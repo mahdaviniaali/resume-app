@@ -143,8 +143,9 @@ export interface ResumeData {
   }[]
   references?: {
     name: LocalizedString
-    phone: string
+    phone?: string
     phoneHref?: string
+    note?: LocalizedString
   }[]
   footer: {
     text: LocalizedString
