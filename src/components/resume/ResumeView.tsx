@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { flushSync } from 'react-dom'
 import styles from './resume.module.css'
 import { resolveText, type Language, type ResumeData } from '@/lib/api'
 
@@ -89,13 +90,21 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
   const projects = resume.projects || { major: [], small: [] }
 
   return (
-    <div className={styles.container} data-lang={lang}>
+    <article className={styles.container} data-lang={lang}>
+      <div className={styles.printMasthead} aria-hidden="true">
+        <span className={styles.printBrand}>ISEMPTY</span>
+        <span className={styles.printMastheadRule} />
+        <span className={styles.printDocLabel}>{lang === 'fa' ? 'رزومه' : 'Resume'}</span>
+      </div>
+
       <header className={styles.header}>
         <div className={styles.headerTop}>
-          <div className={styles.avatar}>{t(personal.avatar)}</div>
+          <div className={styles.avatar} aria-hidden="true">
+            {t(personal.avatar)}
+          </div>
           <div className={styles.nameBlock}>
             <h1>{t(personal.name)}</h1>
-            <p>{t(personal.tagline)}</p>
+            <p className={styles.tagline}>{t(personal.tagline)}</p>
             <div className={styles.badges}>
               {(personal.badges || []).map((badge) => (
                 <span key={t(badge)} className={styles.badge}>
@@ -105,39 +114,45 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
             </div>
           </div>
         </div>
-        <div className={styles.contactInfo}>
-          {personal.location && (
-            <div className={styles.contactItem}>
-              {baseIcons.location}
-              <span>{t(personal.location)}</span>
-            </div>
-          )}
-          {personal.phone && t(personal.phone) && (
-            <div className={styles.contactItem}>
-              {baseIcons.phone}
-              <a href={personal.phoneHref || undefined}>{t(personal.phone)}</a>
-            </div>
-          )}
-          {personal.email && (
-            <div className={styles.contactItem}>
-              {baseIcons.email}
-              <a href={`mailto:${personal.email}`}>{personal.email}</a>
-            </div>
-          )}
-        </div>
-        <div className={styles.contactInfo}>
-          {(resume.contactsSecondary || []).map((contact) => (
-            <a
-              key={contact.type}
-              className={styles.contactItem}
-              href={contact.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {socialIcons[contact.type]}
-              {t(contact.label)}
-            </a>
-          ))}
+
+        <div className={styles.contactStrip}>
+          <div className={styles.contactInfo}>
+            {personal.location && (
+              <div className={styles.contactItem}>
+                {baseIcons.location}
+                <span>{t(personal.location)}</span>
+              </div>
+            )}
+            {personal.phone && t(personal.phone) && (
+              <div className={styles.contactItem}>
+                {baseIcons.phone}
+                <a href={personal.phoneHref || undefined}>{t(personal.phone)}</a>
+              </div>
+            )}
+            {personal.email && (
+              <div className={styles.contactItem}>
+                {baseIcons.email}
+                <a href={`mailto:${personal.email}`}>{personal.email}</a>
+              </div>
+            )}
+          </div>
+          <div className={styles.contactInfo}>
+            {(resume.contactsSecondary || []).map((contact) => (
+              <a
+                key={contact.type}
+                className={styles.contactItem}
+                href={contact.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {socialIcons[contact.type]}
+                <span className={styles.contactLabel}>{t(contact.label)}</span>
+                <span className={styles.contactHref} dir="ltr">
+                  {contact.href.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </header>
 
@@ -156,11 +171,11 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
               <div className={styles.experienceList}>
                 {resume.experiences.map((exp) => (
                   <div key={t(exp.title)} className={styles.experienceItem}>
-                    <div className={styles.experienceTitle}>{t(exp.title)}</div>
-                    <div className={styles.experienceMeta}>
-                      <span>{t(exp.location)}</span>
-                      <span>{t(exp.date)}</span>
+                    <div className={styles.experienceHead}>
+                      <div className={styles.experienceTitle}>{t(exp.title)}</div>
+                      <div className={styles.experienceDate}>{t(exp.date)}</div>
                     </div>
+                    <div className={styles.experiencePlace}>{t(exp.location)}</div>
                     <p className={styles.experienceDescription}>{t(exp.description)}</p>
                   </div>
                 ))}
@@ -169,7 +184,7 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
           )}
 
           {((projects.major || []).length > 0 || (projects.small || []).length > 0) && (
-            <section className={styles.card} id="projects">
+            <section className={`${styles.card} ${styles.projectsSection}`} id="projects">
               {(projects.major || []).length > 0 && (
                 <>
                   <h2 className={styles.sectionTitle}>{t(headings.projectsMain)}</h2>
@@ -186,13 +201,13 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
                         </div>
                         <p className={styles.projectDescription}>{t(project.description)}</p>
                         {project.features && (
-                          <div className={styles.projectFeatures}>
+                          <ul className={styles.projectFeatures}>
                             {project.features.map((feature) => (
-                              <div key={t(feature)} className={styles.projectFeature}>
+                              <li key={t(feature)} className={styles.projectFeature}>
                                 {t(feature)}
-                              </div>
+                              </li>
                             ))}
-                          </div>
+                          </ul>
                         )}
                         {project.meta && (project.meta.role || project.meta.date) && (
                           <div className={styles.projectMeta}>
@@ -222,7 +237,7 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
                   <h2 className={styles.sectionTitle}>{t(headings.projectsSmall)}</h2>
                   <div className={styles.projectsList}>
                     {projects.small.map((project) => (
-                      <div key={t(project.title)} className={styles.projectItem}>
+                      <div key={t(project.title)} className={`${styles.projectItem} ${styles.projectItemCompact}`}>
                         <div className={styles.projectTitle}>{t(project.title)}</div>
                         <div className={styles.projectTech}>
                           {(project.tech || []).map((tech) => (
@@ -325,13 +340,13 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
           {resume.footer ? t(resume.footer.backToTop) : lang === 'fa' ? 'بازگشت به بالا' : 'Back to top'}
         </a>
       </footer>
-    </div>
+    </article>
   )
 }
 
 export function ResumeView({ resume, memberName }: { resume: ResumeData; memberName?: string }) {
   const [language, setLanguage] = useState<Language>('fa')
-  const [printMode, setPrintMode] = useState<'view' | 'dual' | 'simple'>('view')
+  const [printMode, setPrintMode] = useState<'view' | 'dual' | 'fa' | 'en' | 'simple'>('view')
   const [downloadMenuOpen, setDownloadMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -368,29 +383,49 @@ export function ResumeView({ resume, memberName }: { resume: ResumeData; memberN
     setDownloadMenuOpen(false)
     const previous = language
     const previousPrintMode = printMode
-    if (mode === 'simple') {
-      setPrintMode('simple')
-      await waitForRender()
-      window.print()
-      setPrintMode(previousPrintMode)
-      return
+
+    const prepare = (nextMode: typeof printMode) => {
+      flushSync(() => {
+        setPrintMode(nextMode)
+      })
     }
-    if (mode === 'both') {
-      setPrintMode('dual')
+
+    const runPrint = async () => {
       await waitForRender()
-      window.print()
-      setPrintMode(previousPrintMode)
-      return
+      await new Promise<void>((resolve) => setTimeout(resolve, 100))
+      await new Promise<void>((resolve) => {
+        let settled = false
+        const finish = () => {
+          if (settled) return
+          settled = true
+          window.removeEventListener('afterprint', finish)
+          resolve()
+        }
+        window.addEventListener('afterprint', finish)
+        window.print()
+        setTimeout(finish, 2000)
+      })
     }
-    if (language !== mode) {
-      setLanguage(mode)
-      await waitForRender()
-      window.print()
-      setLanguage(previous)
-      return
+
+    try {
+      if (mode === 'both') {
+        prepare('dual')
+        await runPrint()
+        return
+      }
+      if (mode === 'simple') {
+        prepare('simple')
+        await runPrint()
+        return
+      }
+      prepare(mode)
+      await runPrint()
+    } finally {
+      flushSync(() => {
+        setLanguage(previous)
+        setPrintMode(previousPrintMode)
+      })
     }
-    await waitForRender()
-    window.print()
   }
 
   return (
@@ -422,18 +457,21 @@ export function ResumeView({ resume, memberName }: { resume: ResumeData; memberN
             <button className={styles.downloadMenuItem} onClick={() => handleDownload('en')}>
               Download English
             </button>
-            <button className={styles.downloadMenuItemAccent} onClick={() => handleDownload('both')}>
+            <button className={styles.downloadMenuItem} onClick={() => handleDownload('both')}>
               Dual-Language
             </button>
-            <button className={styles.downloadMenuItem} onClick={() => handleDownload('simple')}>
-              {language === 'fa' ? 'نسخه چاپی' : 'Print Version'}
+            <button className={styles.downloadMenuItemAccent} onClick={() => handleDownload('simple')}>
+              {language === 'fa' ? 'نسخه چاپی (PDF)' : 'Print / PDF'}
             </button>
           </div>
         )}
       </div>
 
       {memberName && (
-        <p className={styles.screenOnly} style={{ textAlign: 'center', opacity: 0.6, marginBottom: 12 }}>
+        <p
+          className={`${styles.screenOnly} ${styles.memberBanner}`}
+          style={{ textAlign: 'center', opacity: 0.6, marginBottom: 12 }}
+        >
           {memberName} · ISEMPTY Team
         </p>
       )}
@@ -442,11 +480,20 @@ export function ResumeView({ resume, memberName }: { resume: ResumeData; memberN
         <ResumeContent lang={language} resume={resume} />
       </div>
 
-      {printMode === 'dual' && (
+      {printMode !== 'view' && (
         <div className={styles.printOnly} aria-hidden="true">
-          <ResumeContent lang="fa" resume={resume} />
-          <div className={styles.pageBreak} />
-          <ResumeContent lang="en" resume={resume} />
+          {printMode === 'dual' ? (
+            <>
+              <ResumeContent lang="fa" resume={resume} />
+              <div className={styles.pageBreak} />
+              <ResumeContent lang="en" resume={resume} />
+            </>
+          ) : (
+            <ResumeContent
+              lang={printMode === 'fa' || printMode === 'en' ? printMode : language}
+              resume={resume}
+            />
+          )}
         </div>
       )}
     </div>

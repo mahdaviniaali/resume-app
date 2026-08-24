@@ -1,39 +1,30 @@
-'use client'
-
-import { useEffect, useState } from 'react'
+import { notFound } from 'next/navigation'
 import { ResumeView } from '@/components/resume/ResumeView'
-import { fetchMember, type ResumeData, type TeamMember } from '@/lib/api'
+import { prisma } from '@/lib/db'
+import type { ResumeData } from '@/lib/api'
+import { ensureSeeded } from '@/lib/seed'
+import { memberToDetail } from '@/lib/serializers'
 
-export default function TeamMemberPage({ params }: { params: { slug: string } }) {
-  const [member, setMember] = useState<TeamMember | null>(null)
-  const [error, setError] = useState('')
+export const dynamic = 'force-dynamic'
 
-  useEffect(() => {
-    fetchMember(params.slug)
-      .then(setMember)
-      .catch(() => setError('Member not found or API offline'))
-  }, [params.slug])
+export default async function TeamMemberPage({ params }: { params: { slug: string } }) {
+  await ensureSeeded()
 
-  if (error) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#050607] text-[#ccc]">
-        {error}
-      </div>
-    )
-  }
+  const member = await prisma.teamMember.findFirst({
+    where: { slug: params.slug, isPublished: true },
+    include: { resume: true },
+  })
 
-  if (!member || !member.resume) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#050607] text-[#888]">
-        Loading…
-      </div>
-    )
-  }
+  if (!member?.resume) notFound()
+
+  const detail = memberToDetail(member)
+  const resume = detail.resume as ResumeData | null
+  if (!resume || Object.keys(resume).length === 0) notFound()
 
   return (
     <ResumeView
-      resume={member.resume as ResumeData}
-      memberName={member.name_en || member.name_fa}
+      resume={resume}
+      memberName={detail.name_en || detail.name_fa}
     />
   )
 }

@@ -40,6 +40,24 @@
   }
 }
 
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    background-color: #fff !important;
+    color: #161616 !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    line-height: 1.38 !important;
+  }
+
+  body * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
 @layer components {
   .glass-card {
     position: relative;
