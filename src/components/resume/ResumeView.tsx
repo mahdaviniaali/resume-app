@@ -73,7 +73,7 @@ const headings = {
   summary: { fa: 'خلاصه', en: 'Summary' },
   experience: { fa: 'سوابق شغلی', en: 'Work Experience' },
   projectsMain: { fa: 'پروژه‌ها — اصلی', en: 'Projects — Main' },
-  projectsSmall: { fa: 'پروژه‌های کوچک', en: 'Small Projects' },
+  projectsSmall: { fa: 'سایر پروژه‌ها', en: 'Other Projects' },
   skills: { fa: 'مهارت‌ها', en: 'Skills' },
   education: { fa: 'تحصیلات', en: 'Education' },
   certificates: { fa: 'گواهینامه‌ها', en: 'Certificates' },

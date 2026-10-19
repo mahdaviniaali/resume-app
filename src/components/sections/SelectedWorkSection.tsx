@@ -226,7 +226,7 @@ export function SelectedWorkSection() {
           </div>
 
           <Link href="/work" className="work-more">
-            Full case list →
+            Product cases →
           </Link>
         </div>
       </div>

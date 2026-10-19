@@ -17,7 +17,7 @@ const fallbackSite: SiteSettings = {
   home_content: homeContent,
 }
 
-function WorkCase({ item, index }: { item: WorkItem; index: number }) {
+function WorkCaseRow({ item, index }: { item: WorkItem; index: number }) {
   const inner = (
     <>
       <div className="work-row-meta">
@@ -33,6 +33,19 @@ function WorkCase({ item, index }: { item: WorkItem; index: number }) {
       <p className="work-row-tech">{item.tech.join(' · ')}</p>
     </>
   )
+
+  if (item.caseSlug) {
+    return (
+      <Link
+        href={`/work/${item.caseSlug}`}
+        className="work-row work-row-link"
+        style={{ ['--i' as string]: index }}
+      >
+        {inner}
+        <span className="work-row-cta">Case →</span>
+      </Link>
+    )
+  }
 
   if (item.href) {
     return (
@@ -79,18 +92,19 @@ export default function WorkPage() {
             kicker={workPage.subtitle}
             title={workPage.title}
             lead={workPage.lead}
+            leadHighlight="product story"
           />
 
           <div className="work-strip work-strip-page">
             {workItems.map((item, i) => (
-              <WorkCase key={item.id} item={item} index={i} />
+              <WorkCaseRow key={item.id} item={item} index={i} />
             ))}
           </div>
 
           <p className="mt-14 font-inter text-sm font-light tracking-[0.04em] text-[rgba(180,190,205,0.9)]">
-            Want the full path behind a build?{' '}
-            <Link href="/#team" className="text-gold transition-colors hover:text-white">
-              Meet the circle →
+            Want engineering depth?{' '}
+            <Link href="/resume" className="text-gold transition-colors hover:text-white">
+              Open the resume →
             </Link>
           </p>
         </div>

@@ -48,8 +48,8 @@
     },
     "contactsSecondary": [],
     "summary": {
-      "fa": "توسعه‌دهنده بک‌اند با ترکیب تخصص فنی و نگاه کسب‌وکارمحور. در ساخت سامانه‌های مقیاس‌پذیر، معماری میکروسرویس و ابزارهایی مثل Redis، Celery، RabbitMQ و Docker تجربه دارم؛ در کنار آن با سئو، بازاریابی محتوا و فروش فنی کار کرده‌ام.\n\nروی پروژه‌های متنوعی کار کرده‌ام — از سامانه‌های Agentic AI برای مدیریت کسب‌وکار اینستاگرام تا پلتفرم مناقصه مصالح ساختمانی. هم‌اکنون هم‌بنیان‌گذار استارتاپ هستم و چرخهٔ کامل محصول را از ایده و توسعهٔ بک‌اند تا بازاریابی و فروش مدیریت می‌کنم. باور دارم یک توسعه‌دهندهٔ خوب فقط نمی‌سازد؛ باید بداند چطور محصول را به بازار برساند.",
-      "en": "Backend developer with a blend of deep technical expertise and a business-driven mindset. Experienced in building scalable systems and microservices, working with Redis, Celery, RabbitMQ, and Docker—complemented by hands-on SEO, content marketing, and technical sales.\n\nI have worked across diverse projects—from agentic AI systems for Instagram business management to a tendering platform for construction materials. I am currently co-founding a startup and managing the full product lifecycle from ideation and backend development to marketing and sales. A strong developer should not only build products, but also know how to take them to market."
+      "fa": "توسعه‌دهنده بک‌اند با ترکیب تخصص فنی و نگاه کسب‌وکارمحور. در ساخت سامانه‌های مقیاس‌پذیر، معماری دامنه و ابزارهایی مثل Redis، Celery، RabbitMQ، PostgreSQL و Docker تجربه دارم؛ در کنار آن با سئو، بازاریابی محتوا و فروش فنی کار کرده‌ام.\n\nروی احداثینو (مناقصهٔ مصالح)، امرتون (سفارش اینستاگرام به فاکتور و پرداخت) و هاپ‌گو (بازارچهٔ سگ‌گردانی) کار کرده‌ام. هم‌بنیان‌گذار ISEMPTY هستم و چرخهٔ محصول را از ایده و بک‌اند تا ورود به بازار پیش می‌برم — باور دارم توسعه‌دهندهٔ خوب فقط نمی‌سازد؛ باید بداند چطور محصول را به بازار برساند.",
+      "en": "Backend developer with a blend of technical depth and a business-driven mindset. Experienced in scalable systems, domain architecture, and stacks like Redis, Celery, RabbitMQ, PostgreSQL, and Docker—plus SEO, content marketing, and technical sales.\n\nI have worked on Ehdasino (construction reverse auction), Amreton (Instagram orders to invoice & payment), and HopGo (trusted dog-walking marketplace). As co-founder of ISEMPTY I take products from ideation and backend through go-to-market—a strong developer should not only build, but also ship to market."
     },
     "experiences": [
       {
@@ -84,8 +84,8 @@
           "en": "2024 — Present"
         },
         "description": {
-          "fa": "هم‌بنیان‌گذاری با تیم دونفره و مدیریت چرخهٔ کامل محصول از ایده تا ورود به بازار. لید بک‌اند با Django، DRF، PostgreSQL، Redis و Docker و معماری مبتنی بر DDD. پیشبرد جذب مشتری از طریق استراتژی سئو، بازاریابی محتوا و طراحی قیف فروش.",
-          "en": "Co-founding with a two-person team and managing the full product lifecycle from ideation to market launch. Leading backend development with Django, DRF, PostgreSQL, Redis, and Docker, applying DDD for stable architecture. Driving customer acquisition through SEO strategy, content marketing, and sales-funnel design."
+          "fa": "هم‌بنیان‌گذاری ISEMPTY و مدیریت چرخهٔ محصول از ایده تا ورود به بازار — از جمله امرتون و هاپ‌گو. لید/همکاری بک‌اند با FastAPI/Django، PostgreSQL، Redis، RabbitMQ و Docker و معماری مبتنی بر DDD. پیشبرد جذب مشتری با سئو، بازاریابی محتوا و قیف فروش.",
+          "en": "Co-founding ISEMPTY and owning the product lifecycle from ideation to market—including Amreton and HopGo. Backend lead/collaboration with FastAPI/Django, PostgreSQL, Redis, RabbitMQ, and Docker under DDD. Driving acquisition via SEO, content marketing, and sales funnels."
         }
       },
       {
@@ -129,75 +129,141 @@
       "major": [
         {
           "title": {
-            "fa": "سامانه Agentic AI برای مدیریت کسب‌وکار اینستاگرام",
-            "en": "Agentic AI System for Instagram Business Management"
+            "fa": "احداثینو — مناقصه معکوس مصالح ساختمانی",
+            "en": "Ehdasino — Reverse Auction for Construction Materials"
           },
           "tech": [
             "Python",
-            "Django",
-            "DRF",
-            "Celery",
-            "Redis",
-            "PostgreSQL"
+            "Django / DRF",
+            "PostgreSQL",
+            "Redis · Celery",
+            "OTP / JWT"
           ],
           "description": {
-            "fa": "پلتفرم مبتنی بر ایجنت هوش مصنوعی برای خودکارسازی کارهای اداری و مدیریتی صفحات کسب‌وکار اینستاگرام؛ افزایش بهره‌وری ادمین و ساده‌سازی فرآیندهای تکراری.",
-            "en": "AI agent-based platform to automate administrative and management tasks for Instagram business pages—improving admin productivity and streamlining repetitive processes."
+            "fa": "همکاری در پلتفرم خرید مصالح با رقابت تأمین‌کنندگان: خریدار RFQ می‌زند، چند پیشنهاد می‌گیرد و قیمت و تحویل را شفاف مقایسه می‌کند.",
+            "en": "Collaborated on a construction-materials reverse-auction platform: buyers post RFQs, collect bids, and compare price and delivery transparently."
           },
           "features": [
             {
-              "fa": "اتوماسیون وظایف مدیریتی و اداری صفحات کسب‌وکار",
-              "en": "Automation of administrative and management tasks for business pages"
+              "fa": "منطق دامنهٔ RFQ / Proposal و جریان مناقصه",
+              "en": "RFQ / Proposal domain logic and tendering flow"
             },
             {
-              "fa": "معماری مبتنی بر ایجنت برای فرآیندهای تکراری",
-              "en": "Agent-based architecture for repetitive workflows"
+              "fa": "مدیریت امن کاربران و نقش‌ها (خریدار / تأمین‌کننده)",
+              "en": "Secure user management with buyer / supplier roles"
             },
             {
-              "fa": "پردازش ناهمزمان با Celery و Redis",
-              "en": "Async processing with Celery and Redis"
-            }
-          ],
-          "meta": {
-            "role": {
-              "fa": "نقش: توسعه‌دهنده تیم",
-              "en": "Role: Team Developer"
-            }
-          }
-        },
-        {
-          "title": {
-            "fa": "احداثینو — پلتفرم مناقصه مصالح ساختمانی",
-            "en": "Ehdasino — Tendering Platform for Construction Materials"
-          },
-          "tech": [
-            "Python",
-            "Django",
-            "DRF",
-            "MySQL"
-          ],
-          "description": {
-            "fa": "همکاری در پلتفرم آنلاین مناقصه برای مصالح و تجهیزات ساختمانی؛ پیاده‌سازی منطق اصلی مناقصه و ماژول‌های مدیریت امن کاربر.",
-            "en": "Collaborated on an online tendering platform for construction materials and equipment. Implemented core tendering logic and secure user-management modules."
-          },
-          "features": [
-            {
-              "fa": "منطق اصلی سامانه مناقصه",
-              "en": "Core tendering system logic"
-            },
-            {
-              "fa": "مدیریت امن کاربران و دسترسی‌ها",
-              "en": "Secure user management and access control"
+              "fa": "همکاری روی بک‌اند Django/DRF و تحویل قابل‌نگهداری",
+              "en": "Backend work on Django/DRF toward a maintainable delivery"
             }
           ],
           "meta": {
             "role": {
               "fa": "نقش: همکار بک‌اند",
-              "en": "Role: Backend Collaborator"
+              "en": "Role: Backend collaborator"
             },
-            "link": "http://ehdasino.ir/"
+            "date": {
+              "fa": "۱۴۰۴ — ۱۴۰۵",
+              "en": "2025 — 2026"
+            },
+            "link": "https://ehdasino.ir/"
           }
         },
+        {
+          "title": {
+            "fa": "امرتون — سفارش اینستاگرام به فاکتور و پرداخت — در حال ساخت",
+            "en": "Amreton — Instagram Orders to Invoice & Payment — Building"
+          },
+          "tech": [
+            "Python / FastAPI",
+            "Multi-tenant SaaS",
+            "PostgreSQL · Redis",
+            "Outbox / Workers",
+            "Payments · SMS",
+            "Next.js"
+          ],
+          "description": {
+            "fa": "سفارش‌های دایرکت اینستاگرام را به فاکتور آنلاین، پرداخت و سفارش قابل‌رهگیری تبدیل می‌کند — بدون درخواست رمز اینستاگرام. سهم من: بک‌اند، معماری چندمستأجری و مسیر ورود به بازار (سئو / فروش).",
+            "en": "Turns Instagram DM orders into online invoices, payments, and trackable orders—without an Instagram password. My share: backend, multi-tenant architecture, and go-to-market (SEO / sales)."
+          },
+          "features": [
+            {
+              "fa": "چرخهٔ فاکتور / پرداخت / رهگیری برای فروشندهٔ شبکه‌های اجتماعی",
+              "en": "Invoice / pay / track lifecycle for social sellers"
+            },
+            {
+              "fa": "معماری چندمستأجری و ایزولاسیون فروشگاه‌ها",
+              "en": "Multi-tenant architecture with shop isolation"
+            },
+            {
+              "fa": "پردازش ناهمزمان (outbox / worker) برای رویدادها و side-effectها",
+              "en": "Async processing (outbox / worker) for events and side effects"
+            },
+            {
+              "fa": "هم‌راستایی محصول با سئو، محتوا و قیف فروش",
+              "en": "Product aligned with SEO, content, and sales funnel"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: هم‌بنیان‌گذار — بک‌اند و ورود به بازار",
+              "en": "Role: Co-founder — backend & go-to-market"
+            },
+            "date": {
+              "fa": "پروژهٔ ISEMPTY — در حال ساخت",
+              "en": "ISEMPTY project — Building"
+            },
+            "link": "https://amreton.com/"
+          }
+        },
+        {
+          "title": {
+            "fa": "هاپ‌گو — بازارچهٔ سگ‌گردانی قابل‌اعتماد — در حال ساخت",
+            "en": "HopGo — Trusted Dog-Walking Marketplace — Building"
+          },
+          "tech": [
+            "Python / FastAPI",
+            "Hexagonal / DDD",
+            "PostgreSQL",
+            "RabbitMQ · Outbox",
+            "OTP Auth",
+            "Next.js"
+          ],
+          "description": {
+            "fa": "اتصال صاحبان سگ به سگ‌گردان‌های تأییدشده با تمرکز روی اعتماد، نزدیکی مکانی و هماهنگی سرویس. سهم من: بک‌اند، دامنه و معماری سیستم در تیم محصول.",
+            "en": "Connects dog owners with verified local walkers—trust, proximity, and coordinated service. My share: backend, domain, and system architecture on the product team."
+          },
+          "features": [
+            {
+              "fa": "بک‌اند hexagonal با bounded context و دامنهٔ تمیز",
+              "en": "Hexagonal backend with bounded contexts and a clean domain"
+            },
+            {
+              "fa": "outbox + RabbitMQ برای نوتیفیکیشن و side-effectها",
+              "en": "Outbox + RabbitMQ for notifications and side effects"
+            },
+            {
+              "fa": "جریان درخواست سرویس و matching مکانی (صاحب ↔ واکر)",
+              "en": "Service-request flow and area matching (owner ↔ walker)"
+            },
+            {
+              "fa": "OTP و نقش‌های جدا برای صاحب و واکر",
+              "en": "OTP auth with separate owner and walker roles"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: هم‌بنیان‌گذار — بک‌اند و معماری",
+              "en": "Role: Co-founder — backend & architecture"
+            },
+            "date": {
+              "fa": "پروژهٔ ISEMPTY — در حال ساخت",
+              "en": "ISEMPTY project — Building"
+            }
+          }
+        }
+      ],
+      "small": [
         {
           "title": {
             "fa": "فروشگاه اینترنتی با Django",
@@ -206,15 +272,12 @@
           "tech": [
             "Django",
             "MySQL",
-            "HTML",
-            "CSS",
-            "Bootstrap",
-            "JavaScript",
-            "AJAX"
+            "HTML / CSS / Bootstrap",
+            "JavaScript / AJAX"
           ],
           "description": {
-            "fa": "فروشگاه آنلاین کامل با سبد خرید، درگاه پرداخت، احراز هویت کاربر و پنل ادمین پویا.",
-            "en": "Fully functional online store with shopping cart, integrated payment gateway, user authentication, and a dynamic admin panel."
+            "fa": "فروشگاه آنلاین با سبد خرید، درگاه پرداخت، احراز هویت و پنل ادمین.",
+            "en": "Online store with cart, payment gateway, authentication, and admin panel."
           },
           "features": [
             {
@@ -222,23 +285,18 @@
               "en": "Shopping cart and order flow"
             },
             {
-              "fa": "یکپارچه‌سازی درگاه پرداخت",
-              "en": "Integrated payment gateway"
-            },
-            {
-              "fa": "احراز هویت کاربر و پنل ادمین",
-              "en": "User authentication and dynamic admin panel"
+              "fa": "درگاه پرداخت و پنل ادمین",
+              "en": "Payment gateway and admin panel"
             }
           ],
           "meta": {
             "role": {
               "fa": "نقش: توسعه‌دهنده انفرادی",
-              "en": "Role: Solo Developer"
+              "en": "Role: Solo developer"
             }
           }
         }
-      ],
-      "small": []
+      ]
     },
     "skills": [
       "Python (Advanced), Algorithm Design, OOP, SOLID",

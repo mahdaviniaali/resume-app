@@ -86,9 +86,9 @@ const MAHAN_MEMBER = {
   roleEn: 'Backend Developer & System Architect',
   roleFa: 'توسعه‌دهنده بک‌اند و معمار سیستم',
   shortBioEn:
-    'Backend and systems — scalable APIs, DDD, and taking products from build to market with SEO and tech sales.',
+    'Backend and systems — Amreton, HopGo, Ehdasino; DDD, APIs, and taking products from build to market with SEO and tech sales.',
   shortBioFa:
-    'بک‌اند و سیستم — API مقیاس‌پذیر، DDD، و رساندن محصول از ساخت تا بازار با سئو و فروش فنی.',
+    'بک‌اند و سیستم — امرتون، هاپ‌گو، احداثینو؛ DDD، API، و رساندن محصول از ساخت تا بازار با سئو و فروش فنی.',
   email: 'mahan.tahmasbi85@gmail.com',
   sortOrder: 1,
   isPublished: true,
@@ -197,12 +197,12 @@ async function seedIfEmpty() {
           slug: 'ali-mahdavinia',
           nameEn: 'Ali Mahdavinia',
           nameFa: 'علی مهدوی‌نیا',
-          roleEn: 'Senior Backend & AI Systems Developer',
-          roleFa: 'توسعه‌دهنده ارشد بک‌اند و سیستم‌های AI',
+          roleEn: 'Software Engineer — Backend, System Design & AI Agents',
+          roleFa: 'مهندس نرم‌افزار — بک‌اند، طراحی سیستم و ایجنت‌های هوش مصنوعی',
           shortBioEn:
-            'Senior backend work on enterprise RAG, organizational permissioning, and agents on chatbot.ir — from business need to reliable delivery.',
+            'Software engineer: system design, backend delivery, and multi-tenant platforms—plus enterprise agents and grounded RAG on chatbot.ir.',
           shortBioFa:
-            'توسعهٔ ارشد بک‌اند روی RAG سازمانی، کنترل دسترسی و ایجنت‌ها در chatbot.ir — از نیاز کسب‌وکار تا سامانه‌ای که واقعاً کار می‌کند.',
+            'مهندس نرم‌افزار: طراحی سیستم، تحویل بک‌اند و پلتفرم‌های چندمستأجری — به‌همراه ایجنت سازمانی و RAG grounded روی chatbot.ir.',
           avatarUrl: '',
           email: emailClean,
           github: contacts.github,
@@ -218,8 +218,8 @@ async function seedIfEmpty() {
                   : emptyResume(
                       'Ali Mahdavinia',
                       'علی مهدوی‌نیا',
-                      'Senior Backend & AI Systems Developer',
-                      'توسعه‌دهنده ارشد بک‌اند و سیستم‌های AI',
+                      'Software Engineer — AI Agents',
+                      'مهندس نرم‌افزار با تمرکز بر ایجنت‌های هوش مصنوعی',
                       emailClean,
                     ),
               ),

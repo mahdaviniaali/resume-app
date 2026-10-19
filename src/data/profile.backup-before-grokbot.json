@@ -1,0 +1,568 @@
+{
+  "landing": {
+    "name": "Ali Mahdavinia",
+    "tagline": "Software Engineer — Backend, System Design & AI Agents",
+    "skills": [
+      "Python / FastAPI / Django",
+      "PostgreSQL · Redis · REST",
+      "System design · Multi-tenancy",
+      "Docker · CI · Queues",
+      "LLM · RAG · AI Agents"
+    ],
+    "contacts": [
+      {
+        "type": "email",
+        "label": "Email Me",
+        "href": "mailto:alimahdavinia125@gmail.com"
+      },
+      {
+        "type": "website",
+        "label": "Website",
+        "href": "https://isempty.online"
+      },
+      {
+        "type": "telegram",
+        "label": "Telegram",
+        "href": "https://t.me/mahdaviniaali"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/mahdaviniaali/"
+      },
+      {
+        "type": "github",
+        "label": "GitHub",
+        "href": "https://github.com/mahdaviniaali"
+      },
+      {
+        "type": "whatsapp",
+        "label": "WhatsApp",
+        "href": "https://wa.me/+989059272346"
+      }
+    ],
+    "resumeLink": {
+      "label": "My Resume",
+      "href": "/resume"
+    }
+  },
+  "resume": {
+    "personal": {
+      "name": {
+        "fa": "علی مهدوی‌نیا",
+        "en": "Ali Mahdavinia"
+      },
+      "tagline": {
+        "fa": "مهندس نرم‌افزار — بک‌اند، طراحی سیستم و ایجنت‌های هوش مصنوعی",
+        "en": "Software Engineer — Backend, System Design & AI Agents"
+      },
+      "avatar": {
+        "fa": "ع",
+        "en": "A"
+      },
+      "location": {
+        "fa": "تهران",
+        "en": "Tehran"
+      },
+      "phone": {
+        "fa": "۰۹۰۵۹۲۷۲۳۴۶",
+        "en": "+98 905 927 2346"
+      },
+      "phoneHref": "tel:+989059272346",
+      "email": "alimahdavinia125@gmail.com",
+      "badges": [
+        {
+          "fa": "طراحی و توسعه نرم‌افزار",
+          "en": "Software design & delivery"
+        },
+        {
+          "fa": "بک‌اند و API",
+          "en": "Backend & APIs"
+        },
+        {
+          "fa": "معماری و چندمستأجری",
+          "en": "Architecture & multi-tenancy"
+        },
+        {
+          "fa": "LLM · RAG · Agents",
+          "en": "LLM · RAG · Agents"
+        },
+        {
+          "fa": "نظام وظیفه: پایان خدمت / معاف",
+          "en": "Military service: completed / exempt"
+        }
+      ]
+    },
+    "contactsSecondary": [
+      {
+        "type": "website",
+        "href": "https://isempty.online",
+        "label": {
+          "fa": "وب‌سایت",
+          "en": "Website"
+        }
+      },
+      {
+        "type": "github",
+        "href": "https://github.com/mahdaviniaali",
+        "label": {
+          "fa": "گیت‌هاب",
+          "en": "GitHub"
+        }
+      },
+      {
+        "type": "linkedin",
+        "href": "https://www.linkedin.com/in/mahdaviniaali/",
+        "label": {
+          "fa": "لینکدین",
+          "en": "LinkedIn"
+        }
+      },
+      {
+        "type": "telegram",
+        "href": "https://t.me/mahdaviniaali",
+        "label": {
+          "fa": "تلگرام",
+          "en": "Telegram"
+        }
+      }
+    ],
+    "summary": {
+      "fa": "مهندس نرم‌افزار با تمرکز روی طراحی سیستم، بک‌اند و تحویل سامانه‌های قابل‌نگهداری. پلتفرم‌های چندمستأجری، احراز هویت، صف‌ها و دامنهٔ B2B/فروشگاهی را از تحلیل تا API و تست پیش می‌برم. در نقش فعلی روی ایجنت‌های سازمانی، RAG grounded و runtime کنترل‌شده کار می‌کنم — جزئیات در پروژه‌ها. ابزار روزمره: Python (FastAPI/Django)، PostgreSQL، Redis، Docker، CI/CD، Git و تست‌نویسی.",
+      "en": "Software engineer focused on system design, backend, and shipping maintainable systems. I take multi-tenant platforms, auth, queues, and B2B/commerce domains from analysis through APIs and tests. In my current role I build enterprise agents, grounded RAG, and controlled runtimes—details in Projects. Day-to-day stack: Python (FastAPI/Django), PostgreSQL, Redis, Docker, CI/CD, Git, and testing."
+    },
+    "experiences": [
+      {
+        "title": {
+          "fa": "مهندس نرم‌افزار — پلتفرم و ایجنت‌های هوش مصنوعی",
+          "en": "Software Engineer — Platform & AI Agents"
+        },
+        "location": {
+          "fa": "عامر اندیش هوشمند",
+          "en": "Amer Andish Houshmand"
+        },
+        "date": {
+          "fa": "خرداد ۱۴۰۵ — اکنون",
+          "en": "May 2026 — Present"
+        },
+        "description": {
+          "fa": "طراحی و ساخت بک‌اند Agent Studio روی chatbot.ir: پلتفرم ایجنت سازمانی چندمستأجری با runtime کنترل‌شده، RAG grounded، ابزار و human-in-the-loop، و صف‌های مقاوم زیر بار دانش. جداسازی پلتفرم از لایهٔ اجرا؛ جزئیات و متریک‌ها در بخش پروژه‌ها.",
+          "en": "Designing and building the Agent Studio backend on chatbot.ir: a multi-tenant enterprise agent platform with a controlled runtime, grounded RAG, tools and human-in-the-loop, and resilient queues under knowledge-path load. Platform/execution separation; details and metrics in Projects."
+        }
+      },
+      {
+        "title": {
+          "fa": "مهندس نرم‌افزار (قراردادی)",
+          "en": "Software Engineer (Contract)"
+        },
+        "location": {
+          "fa": "اگرین پی — پروژهٔ احداثینو",
+          "en": "Agrin Pay — Ehdasino project"
+        },
+        "date": {
+          "fa": "اردیبهشت ۱۴۰۴ — خرداد ۱۴۰۵",
+          "en": "May 2025 — May 2026"
+        },
+        "description": {
+          "fa": "حدود یک سال همکاری قراردادی برای ساخت احداثینو — پلتفرم مناقصه معکوس مصالح ساختمانی. از فهم دامنهٔ B2B تا معماری hexagonal، احراز هویت OTP/JWT با نقش خریدار و تأمین‌کننده، و تحویل سامانه‌ای قابل تست و نگهداری.",
+          "en": "About a year on contract building Ehdasino—a reverse-auction platform for construction materials. From B2B domain discovery through hexagonal architecture, OTP/JWT auth for buyers and suppliers, and a testable, maintainable delivery."
+        }
+      },
+      {
+        "title": {
+          "fa": "کار پروژه‌ای پاره‌وقت",
+          "en": "Part-time Project Work"
+        },
+        "location": {
+          "fa": "تهران",
+          "en": "Tehran"
+        },
+        "date": {
+          "fa": "آذر ۱۴۰۱ — اردیبهشت ۱۴۰۴",
+          "en": "Dec 2022 — May 2025"
+        },
+        "description": {
+          "fa": "پروژه‌های پاره‌وقت پیش از نقش فعلی: نیازسنجی، طراحی و تحویل سامانه‌های سازمانی و محصولی، با تمرکز روی معماری تمیز، امنیت و تست‌پذیری.",
+          "en": "Part-time projects before the current role: discovery, design, and delivery of enterprise and product systems, with focus on clean architecture, security, and testability."
+        }
+      },
+      {
+        "title": {
+          "fa": "مدرس برنامه‌نویسی پایتون",
+          "en": "Python Programming Instructor"
+        },
+        "location": {
+          "fa": "جلسات آنلاین",
+          "en": "Online Sessions"
+        },
+        "date": {
+          "fa": "فروردین ۱۴۰۲ — مهر ۱۴۰۲",
+          "en": "Mar 2023 — Sep 2023"
+        },
+        "description": {
+          "fa": "دوره‌های رایگان پایتون برای علاقه‌مندان از شهرهای مختلف برگزار کردم و بعد از دوره هم راهنمایی‌شان را ادامه دادم.",
+          "en": "Taught free Python courses for learners from different cities, and kept mentoring them after the sessions ended."
+        }
+      }
+    ],
+    "projects": {
+      "major": [
+        {
+          "title": {
+            "fa": "Agent Studio — بک‌اند پلتفرم ایجنت چندمستأجری (chatbot.ir)",
+            "en": "Agent Studio — Multi-tenant Agent Platform Backend (chatbot.ir)"
+          },
+          "tech": [
+            "Python / FastAPI",
+            "LLM applications",
+            "RAG · Vector search",
+            "AI Agents · Tool calling",
+            "Multi-tenant Platforms",
+            "Queues & Retries",
+            "Docker · Observability",
+            "TypeScript / Next.js"
+          ],
+          "description": {
+            "fa": "بک‌اند پلتفرم ساخت و اجرای دستیار هوشمند سازمانی روی chatbot.ir: ایزولاسیون چندمستأجری، مسیر دانش زیر بار، runtime کنترل‌شده و RAG grounded. مسیر محصول در حال تکمیل است.",
+            "en": "Backend for building and running enterprise AI assistants on chatbot.ir: multi-tenant isolation, knowledge path under load, controlled runtime, and grounded RAG. Product path still iterating toward full production."
+          },
+          "features": [
+            {
+              "fa": "تحمل حدود ۲۰GB ورودی روی مسیر دانش بدون down — با صف و retry مبتنی بر منابع سیستم",
+              "en": "Handled ~20GB knowledge-path input without downtime—via resource-aware queues and retries"
+            },
+            {
+              "fa": "چندمستأجری با ایزولاسیون امن و دامنهٔ اختصاصی برای هر tenant",
+              "en": "Multi-tenant setup with secure isolation and a custom domain per tenant"
+            },
+            {
+              "fa": "ساخت runtime کنترل‌شده: مدل پیشنهاد می‌دهد، سیستم تصمیم قطعی می‌گیرد",
+              "en": "Built a controlled runtime: the model proposes, the system makes hard decisions"
+            },
+            {
+              "fa": "ساخت RAG با حدود ۹۰٪ دقت نسبت به قوانین سازمان، با استناد به منبع بازیابی‌شده",
+              "en": "Built RAG at ~90% accuracy against org policies, with answers grounded on retrieved sources"
+            },
+            {
+              "fa": "ابزار سرور/کلاینت + human-in-the-loop داخل همان اجرای ایجنت، بدون ریست کامل flow",
+              "en": "Server/client tools + human-in-the-loop inside the same agent run, without resetting the whole flow"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: مهندس نرم‌افزار بک‌اند — پلتفرم و runtime — عامر اندیش هوشمند",
+              "en": "Role: Backend Software Engineer — platform & runtime — Amer Andish Houshmand"
+            },
+            "date": {
+              "fa": "۱۴۰۵ — در حال توسعه",
+              "en": "2026 — In development"
+            },
+            "link": "https://chatbot.ir/"
+          }
+        },
+        {
+          "title": {
+            "fa": "احداثینو — مناقصه معکوس مصالح ساختمانی",
+            "en": "Ehdasino — Reverse Auction for Construction Materials"
+          },
+          "tech": [
+            "Django / DRF",
+            "Next.js",
+            "PostgreSQL · Redis · Celery",
+            "OTP / JWT Auth",
+            "Hexagonal / DDD",
+            "TDD · Docker"
+          ],
+          "description": {
+            "fa": "پلتفرم خرید مصالح ساختمانی با رقابت تأمین‌کنندگان: خریدار درخواست می‌زند، چند پیشنهاد می‌گیرد و قیمت، زمان تحویل و شرایط را شفاف مقایسه می‌کند.",
+            "en": "A construction-materials marketplace where suppliers compete: buyers post a request, collect bids, and compare price, delivery, and terms in one place."
+          },
+          "features": [
+            {
+              "fa": "مدل دامنهٔ RFQ/Proposal با قواعد ویرایش وقتی پیشنهاد ثبت شده",
+              "en": "RFQ/Proposal domain with edit rules once proposals exist"
+            },
+            {
+              "fa": "احراز هویت OTP/JWT (cookie) با نقش جدا برای خریدار و تأمین‌کننده",
+              "en": "OTP/JWT cookie auth with separate buyer and supplier roles"
+            },
+            {
+              "fa": "معماری hexagonal: use case قابل تست بدون HTTP؛ view نازک",
+              "en": "Hexagonal architecture: use cases testable without HTTP; thin views"
+            },
+            {
+              "fa": "اعلان‌های ناهمزمان با Celery و Redis؛ hardening تولید (health، scoping، observability)",
+              "en": "Async notifications via Celery + Redis; production hardening (health, scoping, observability)"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: مهندس نرم‌افزار (قراردادی) — اگرین پی",
+              "en": "Role: Software Engineer (Contract) — Agrin Pay"
+            },
+            "date": {
+              "fa": "۱۴۰۴ — ۱۴۰۵",
+              "en": "2025 — 2026"
+            },
+            "link": "http://ehdasino.ir/"
+          }
+        },
+        {
+          "title": {
+            "fa": "امرتون — سفارش اینستاگرام به فاکتور و پرداخت — در حال ساخت",
+            "en": "Amreton — Instagram Orders to Invoice & Payment — Building"
+          },
+          "tech": [
+            "Python / FastAPI",
+            "Multi-tenant SaaS",
+            "Transactional Outbox",
+            "PostgreSQL · Redis",
+            "Pluggable Payments · SMS",
+            "Next.js · SSE"
+          ],
+          "description": {
+            "fa": "سفارش‌های دایرکت اینستاگرام را به فاکتور آنلاین، پرداخت بانکی و سفارش قابل‌رهگیری تبدیل می‌کند — بدون درخواست رمز اینستاگرام.",
+            "en": "Turns Instagram DM orders into online invoices, bank payments, and trackable orders—without asking for an Instagram password."
+          },
+          "features": [
+            {
+              "fa": "مونولیت ماژولار: API + worker با transactional outbox برای رویدادها و side-effectها",
+              "en": "Modular monolith: API + worker with transactional outbox for events and side effects"
+            },
+            {
+              "fa": "چندمستأجری فروشنده با JWT tenant و ایزولاسیون فروشگاه‌ها",
+              "en": "Multi-tenant sellers with JWT tenant claims and shop isolation"
+            },
+            {
+              "fa": "درگاه و پیامک pluggable (کارت‌به‌کارت، زرین‌پال، mock؛ کاوه‌نگار / sms.ir)",
+              "en": "Pluggable payment & SMS ports (card-to-card, Zarinpal, mocks; Kavenegar / sms.ir)"
+            },
+            {
+              "fa": "کانال اینستاگرام با لینک پرداخت و قالب DM قابل ویرایش",
+              "en": "Instagram channel with pay URLs and editable DM templates"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: مهندسی نرم‌افزار و معماری سیستم",
+              "en": "Role: Software engineering & system design"
+            },
+            "date": {
+              "fa": "در حال ساخت",
+              "en": "Building"
+            },
+            "link": "https://amreton.com/"
+          }
+        },
+        {
+          "title": {
+            "fa": "هاپ‌گو — بازارچهٔ سگ‌گردانی قابل‌اعتماد — در حال ساخت",
+            "en": "HopGo — Trusted Dog-Walking Marketplace — Building"
+          },
+          "tech": [
+            "Python / FastAPI",
+            "Hexagonal / DDD",
+            "PostgreSQL",
+            "RabbitMQ · Outbox",
+            "OTP Auth",
+            "Next.js · Maps"
+          ],
+          "description": {
+            "fa": "پلتفرم اتصال صاحبان سگ به سگ‌گردان‌های تأییدشده: اعتماد، نزدیکی مکانی و هماهنگی سرویس — با تمرکز اول روی سگ‌گردانی.",
+            "en": "Connects dog owners with verified local walkers: trust, proximity, and coordinated service—starting with walking."
+          },
+          "features": [
+            {
+              "fa": "بک‌اند hexagonal با bounded context؛ دامنه بدون ORM/AMQP",
+              "en": "Hexagonal FastAPI with bounded contexts; domain free of ORM/AMQP"
+            },
+            {
+              "fa": "transactional outbox + RabbitMQ برای نوتیفیکیشن و side-effectها",
+              "en": "Transactional outbox + RabbitMQ for notifications and side effects"
+            },
+            {
+              "fa": "matching دومسیرهٔ مکانی (واکر فعال رتبه‌بندی‌شده در برابر broadcast پوشش؛ first-wins)",
+              "en": "Dual-path area matching (ranked active walkers vs coverage broadcast; first-wins)"
+            },
+            {
+              "fa": "OTP با یک شماره = یک نقش؛ تفکیک KYC واکر از پروفایل عملیاتی",
+              "en": "OTP with one phone = one role; walker KYC separated from ops profile"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: مهندسی نرم‌افزار و معماری سیستم",
+              "en": "Role: Software engineering & system design"
+            },
+            "date": {
+              "fa": "در حال ساخت",
+              "en": "Building"
+            }
+          }
+        }
+      ],
+      "small": [
+        {
+          "title": {
+            "fa": "Signal — مصرف‌کنندهٔ چندورکری Kafka",
+            "en": "Signal — Multi-Worker Kafka Consumer"
+          },
+          "tech": [
+            "Python / FastAPI",
+            "Kafka",
+            "asyncio",
+            "ProcessPoolExecutor",
+            "Docker"
+          ],
+          "description": {
+            "fa": "سرویس FastAPI با ۵ worker برای مصرف دو تاپیک Kafka (I/O و CPU جدا): backpressure، commit امن با watermark، و idempotency روی رویداد تکراری.",
+            "en": "FastAPI service with 5 workers consuming two Kafka topics (I/O vs CPU isolated): backpressure, safe watermark commits, and idempotent handling of redelivered events."
+          },
+          "features": [
+            {
+              "fa": "جداسازی I/O (asyncio) از CPU (ProcessPool) تا loop زیر بار محاسباتی زنده بماند",
+              "en": "I/O on asyncio vs CPU in ProcessPool so the event loop stays responsive under compute load"
+            },
+            {
+              "fa": "semaphore + pause/resume برای محدود کردن in-flight و جلوگیری از صف بی‌نهایت",
+              "en": "Semaphore + pause/resume to bound in-flight work—no unbounded pending queue"
+            },
+            {
+              "fa": "commit فقط روی watermark پیوستهٔ هر partition؛ شکست = بدون commit و قابل redelivery",
+              "en": "Commits only on contiguous per-partition watermarks; failures leave offsets uncommitted for redelivery"
+            },
+            {
+              "fa": "idempotency با UNIQUE(topic, event_id) در SQLite برای پیام تکراری پس از crash",
+              "en": "Idempotency via UNIQUE(topic, event_id) in SQLite so redelivered events after a crash skip duplicate inserts"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: مهندسی نرم‌افزار — سیستم‌های توزیع‌شده",
+              "en": "Role: Software engineering — distributed systems"
+            },
+            "date": {
+              "fa": "۱۴۰۵",
+              "en": "2026"
+            }
+          }
+        }
+      ]
+    },
+    "skills": [
+      "Backend: Python (FastAPI, Django), REST APIs, JWT / OTP auth, async processing",
+      "Data: PostgreSQL, Redis, SQL, RabbitMQ (outbox / queues), Kafka",
+      "Architecture: System design, multi-tenancy, hexagonal / DDD, event-driven, performance under load",
+      "AI / LLM: RAG grounding, vector search, AI agents (tool calling), LLM evaluation awareness",
+      "DevOps: Docker, CI/CD, Git, Linux, observability (logging / request tracing)",
+      "Quality: Testing (unit / integration / TDD), clean code, code review habits",
+      "Product surfaces: TypeScript / Next.js as needed"
+    ],
+    "education": [
+      {
+        "degree": {
+          "fa": "کارشناسی مهندسی کامپیوتر — گرایش نرم‌افزار",
+          "en": "Bachelor's in Computer Engineering — Software"
+        },
+        "school": {
+          "fa": "دانشگاه آزاد اسلامی تهران شمال",
+          "en": "Islamic Azad University, Tehran North"
+        },
+        "date": {
+          "fa": "مهر ۱۴۰۱ — اکنون",
+          "en": "Sep 2022 — Present"
+        },
+        "details": {
+          "fa": "داوطلبانه به هم‌کلاسی‌ها در دروس فنی کمک کردم (مبانی برنامه‌نویسی، ساختار داده، پایگاه‌داده، مهندسی نرم‌افزار و …). یک ترم عضو انجمن علمی بودم و با یکی از اساتید روی کار پژوهشی همکاری داشتم.",
+          "en": "Volunteered to help classmates with technical courses—programming fundamentals, data structures, databases, software engineering, and more. Spent a semester in the scientific association and collaborated with a professor on research."
+        }
+      }
+    ],
+    "certificates": [
+      {
+        "title": {
+          "fa": "مهندسی جامع برنامه‌نویسی پایتون",
+          "en": "Comprehensive Python Programming Engineering"
+        },
+        "issuer": {
+          "fa": "آکادمی دوران — فروردین ۱۴۰۲",
+          "en": "Doran Academy — Mar 2023"
+        }
+      },
+      {
+        "title": {
+          "fa": "Backend Develop with Django",
+          "en": "Backend Develop with Django"
+        },
+        "issuer": {
+          "fa": "آکادمی دوران — اسفند ۱۴۰۲",
+          "en": "Doran Academy — Feb 2024"
+        }
+      }
+    ],
+    "languages": [
+      {
+        "name": {
+          "fa": "فارسی",
+          "en": "Persian"
+        },
+        "level": {
+          "fa": "زبان مادری",
+          "en": "Native"
+        }
+      },
+      {
+        "name": {
+          "fa": "انگلیسی",
+          "en": "English"
+        },
+        "level": {
+          "fa": "پیشرفته — مستندات و جلسه‌های فنی",
+          "en": "Advanced — technical docs & meetings"
+        }
+      },
+      {
+        "name": {
+          "fa": "روسی",
+          "en": "Russian"
+        },
+        "level": {
+          "fa": "آشنایی نسبی",
+          "en": "Basic"
+        }
+      }
+    ],
+    "references": [
+      {
+        "name": {
+          "fa": "علی نوروزی",
+          "en": "Ali Norouzi"
+        },
+        "note": {
+          "fa": "در صورت درخواست",
+          "en": "Available upon request"
+        }
+      },
+      {
+        "name": {
+          "fa": "امیرمهدی پرویزی",
+          "en": "Amirmehdi Parvizi"
+        },
+        "note": {
+          "fa": "در صورت درخواست",
+          "en": "Available upon request"
+        }
+      }
+    ],
+    "footer": {
+      "text": {
+        "fa": "ISEMPTY — علی مهدوی‌نیا © ۱۴۰۵ · ",
+        "en": "ISEMPTY — Ali Mahdavinia © 2026 · "
+      },
+      "backToTop": {
+        "fa": "بالا",
+        "en": "Top"
+      }
+    }
+  }
+}

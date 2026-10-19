@@ -36,8 +36,8 @@ const STACK = [
 ] as const
 
 const ROLES = [
-  { label: 'AI Systems Architect', icon: HexagonIcon },
-  { label: 'Backend Engineer', icon: BracesIcon },
+  { label: 'AI Agents Engineer', icon: HexagonIcon },
+  { label: 'Software Engineer', icon: BracesIcon },
   { label: 'Solution Designer', icon: CubeIcon },
   { label: 'Builder of Digital Systems', icon: TerminalIcon },
 ] as const
