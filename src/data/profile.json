@@ -128,8 +128,8 @@
       }
     ],
     "summary": {
-      "fa": "مهندس نرم‌افزار با حدود ۳ سال و ۱۰ ماه تجربهٔ پروژه‌ای و قراردادی (پاره‌وقت و قرارداد، نه فقط تمام‌وقت شرکتی) و تمرکز روی طراحی سیستم، بک‌اند و تحویل سامانه‌های قابل‌نگهداری. پلتفرم‌های چندمستأجری، احراز هویت، صف‌ها و دامنهٔ B2B/فروشگاهی را از تحلیل تا API و تست پیش می‌برم. در نقش فعلی روی ایجنت‌های سازمانی، RAG grounded و runtime کنترل‌شده کار می‌کنم. ابزار روزمره: Python (FastAPI/Django)، PostgreSQL، Redis، Docker، CI/CD، Git و تست‌نویسی. به منتورینگ و کد ریویو هم علاقه دارم؛ دوره‌های پایتون برگزار کرده‌ام و هنرجوها را بعد از دوره هم همراهی کرده‌ام.",
-      "en": "Software engineer with ~3 years 10 months of project and contract experience (part-time and contract—not solely full-time corporate), focused on system design, backend, and shipping maintainable systems. I take multi-tenant platforms, auth, queues, and B2B/commerce domains from analysis through APIs and tests. In my current role I build enterprise agents, grounded RAG, and controlled runtimes. Day-to-day stack: Python (FastAPI/Django), PostgreSQL, Redis, Docker, CI/CD, Git, and testing. I also enjoy mentoring and code review—I have taught Python courses and kept mentoring learners afterward."
+      "fa": "مهندس نرم‌افزار با حدود ۳ سال و ۱۰ ماه تجربهٔ پروژه‌ای و قراردادی (پاره‌وقت و قرارداد، نه فقط تمام‌وقت شرکتی) و تمرکز روی طراحی سیستم، بک‌اند و تحویل سامانه‌های قابل‌نگهداری. پلتفرم‌های چندمستأجری، احراز هویت، صف‌ها و دامنهٔ B2B/فروشگاهی را از تحلیل تا API و تست پیش می‌برم. در نقش فعلی روی ایجنت‌های سازمانی، RAG grounded و runtime کنترل‌شده کار می‌کنم. از نیاز کاربر و مسئلهٔ بازار شروع می‌کنم و محصول را تا اجرای واقعی پیش می‌برم. ابزار روزمره: Python (FastAPI/Django)، PostgreSQL، Redis، Docker، CI/CD، Git و تست‌نویسی. به منتورینگ و کد ریویو هم علاقه دارم؛ دوره‌های پایتون برگزار کرده‌ام و هنرجوها را بعد از دوره هم همراهی کرده‌ام.",
+      "en": "Software engineer with ~3 years 10 months of project and contract experience (part-time and contract—not solely full-time corporate), focused on system design, backend, and shipping maintainable systems. I take multi-tenant platforms, auth, queues, and B2B/commerce domains from analysis through APIs and tests. In my current role I build enterprise agents, grounded RAG, and controlled runtimes. I start from the user and the market problem and carry the product through to real execution. Day-to-day stack: Python (FastAPI/Django), PostgreSQL, Redis, Docker, CI/CD, Git, and testing. I also enjoy mentoring and code review—I have taught Python courses and kept mentoring learners afterward."
     },
     "experiences": [
       {
@@ -279,6 +279,10 @@
           },
           "features": [
             {
+              "fa": "مسئله: خرید مصالح ساختمانی رقابت شفاف بین تأمین‌کنندگان ندارد. راه‌حل: خریدار یک درخواست ثبت می‌کند، چند پیشنهاد می‌گیرد و قیمت، زمان تحویل و شرایط را کنار هم مقایسه می‌کند",
+              "en": "Problem: buying construction materials lacks transparent supplier competition. Solution: buyers post one request, receive multiple bids, and compare price, delivery, and terms side by side"
+            },
+            {
               "fa": "مدل دامنهٔ RFQ/Proposal با قواعد ویرایش وقتی پیشنهاد ثبت شده",
               "en": "RFQ/Proposal domain with edit rules once proposals exist"
             },
@@ -326,6 +330,14 @@
           },
           "features": [
             {
+              "fa": "مسئله: فروشنده‌های اینستاگرام سفارش، آدرس و پرداخت را دستی در دایرکت جمع می‌کنند و رهگیری ندارند. راه‌حل: یک جریان کامل لینک فاکتور ← آدرس و پرداخت آنلاین ← پیامک ← کد رهگیری، با صفحهٔ پرداخت موبایل‌اول برای مشتری",
+              "en": "Problem: Instagram sellers collect orders, addresses, and payments by hand in DMs, with no tracking. Solution: an end-to-end flow—invoice link → address and online payment → SMS → tracking code—with a mobile-first checkout for customers"
+            },
+            {
+              "fa": "مستندسازی محصول‌محور با ۸۳ ADR و تفکیک «چه/برای چه کسی/چرا/تجربهٔ کاربر» از پیاده‌سازی",
+              "en": "Product-led documentation with 83 ADRs, separating What / Who / Why / UX from implementation"
+            },
+            {
               "fa": "مونولیت ماژولار: API + worker با transactional outbox برای رویدادها و side-effectها",
               "en": "Modular monolith: API + worker with transactional outbox for events and side effects"
             },
@@ -372,6 +384,14 @@
             "en": "Connects dog owners with verified local walkers: trust, proximity, and coordinated service—starting with walking."
           },
           "features": [
+            {
+              "fa": "مسئله: در ایران سپردن سگ به سگ‌گردان معمولاً از طریق آشنا و شبکه‌های اجتماعی است، بدون استاندارد و پیگیری. راه‌حل: محصول «اعتماد اول» — واکر قبل از دیده شدن در جستجو احراز هویت چندمرحله‌ای و بررسی ادمین می‌شود، پروفایل سگ برای تطبیق درست ثبت می‌شود و شروع/پایان کار با موقعیت مکانی ثبت می‌شود",
+              "en": "Problem: in Iran, finding a dog walker relies on acquaintances and social media, with no standards or follow-up. Solution: a trust-first product—walkers pass multi-step KYC and admin review before appearing in search, dog profiles drive matching, and start/end of each walk is geo-stamped"
+            },
+            {
+              "fa": "تصمیم‌های محصولی و فنی با ۲۴ ADR مستند شده‌اند؛ دامنهٔ عرضهٔ اول آگاهانه محدود شد (فقط سگ‌گردانی) تا کیفیت اعتماد حفظ شود؛ نمایش در نقشهٔ عمومی فقط با رضایت واکر",
+              "en": "Product and technical decisions documented in 24 ADRs; launch scope deliberately narrowed to walking only to protect trust quality; public-map visibility only with walker opt-in consent"
+            },
             {
               "fa": "بک‌اند hexagonal با bounded context؛ دامنه بدون ORM/AMQP",
               "en": "Hexagonal FastAPI with bounded contexts; domain free of ORM/AMQP"
@@ -457,6 +477,7 @@
       "AI / LLM: RAG grounding, vector search, AI agents (tool calling)",
       "DevOps: Docker, Kubernetes (intermediate), Cloud deployment (intermediate), CI/CD, Git, Linux, observability (logging / request tracing)",
       "Quality: Testing (unit / integration / TDD), clean code, technical documentation, mentoring & code review",
+      "Product & data: data-driven decision-making, KPI & metric definition, A/B testing, cohort & retention analysis (fundamentals)",
       "Product surfaces: TypeScript / Next.js as needed"
     ],
     "education": [
