@@ -53,8 +53,8 @@
         "en": "Ali Mahdavinia"
       },
       "tagline": {
-        "fa": "مهندس نرم‌افزار — بک‌اند، طراحی سیستم و ایجنت‌های هوش مصنوعی",
-        "en": "Software Engineer — Backend, System Design & AI Agents"
+        "fa": "مهندس بک‌اند (پایتون) — LLM/RAG",
+        "en": "Backend Engineer (Python) — LLM/RAG"
       },
       "avatar": {
         "fa": "ع",
@@ -152,20 +152,20 @@
       },
       {
         "title": {
-          "fa": "مهندس نرم‌افزار (قراردادی)",
-          "en": "Software Engineer (Contract)"
+          "fa": "مهندس نرم‌افزار",
+          "en": "Software Engineer"
         },
         "location": {
-          "fa": "اگرین پی — پروژهٔ احداثینو",
-          "en": "Agrin Pay — Ehdasino project"
+          "fa": "اگرین پی (احداثینو)",
+          "en": "Agrin Pay (Ehdasino)"
         },
         "date": {
-          "fa": "اردیبهشت ۱۴۰۴ — پایان خرداد ۱۴۰۵",
-          "en": "May 2025 — end of May 2026"
+          "fa": "اردیبهشت ۱۴۰۴ — اردیبهشت ۱۴۰۵",
+          "en": "April 2025 — April 2026"
         },
         "description": {
-          "fa": "حدود یک سال همکاری قراردادی برای ساخت احداثینو — پلتفرم مناقصه معکوس مصالح ساختمانی. از فهم دامنهٔ B2B تا معماری hexagonal، احراز هویت OTP/JWT با نقش خریدار و تأمین‌کننده، و تحویل سامانه‌ای قابل تست و نگهداری. قرارداد تا پایان خرداد ۱۴۰۵؛ نقش شرکتی از خرداد ۱۴۰۵ شروع شد (تحویل ماه‌به‌ماه بدون هم‌پوشانی نقش).",
-          "en": "About a year on contract building Ehdasino—a reverse-auction platform for construction materials. From B2B domain discovery through hexagonal architecture, OTP/JWT auth for buyers and suppliers, and a testable, maintainable delivery. Contract through end of May 2026; full-time company role began in May 2026 (clean month handoff, no overlapping roles)."
+          "fa": "حدود یک سال همکاری برای ساخت احداثینو — پلتفرم مناقصه معکوس مصالح ساختمانی. از فهم دامنهٔ B2B تا معماری hexagonal، احراز هویت OTP/JWT با نقش خریدار و تأمین‌کننده، و تحویل سامانه‌ای قابل تست و نگهداری. همکاری تا پایان اردیبهشت ۱۴۰۵؛ نقش شرکتی از خرداد ۱۴۰۵ شروع شد.",
+          "en": "About a year building Ehdasino—a reverse-auction platform for construction materials. From B2B domain discovery through hexagonal architecture, OTP/JWT auth for buyers and suppliers, and a testable, maintainable delivery. Engagement through end of April 2026; company role began in May 2026."
         }
       },
       {
@@ -301,8 +301,8 @@
           ],
           "meta": {
             "role": {
-              "fa": "نقش: مهندس نرم‌افزار (قراردادی) — اگرین پی",
-              "en": "Role: Software Engineer (Contract) — Agrin Pay"
+              "fa": "نقش: مهندس نرم‌افزار — اگرین پی",
+              "en": "Role: Software Engineer — Agrin Pay"
             },
             "date": {
               "fa": "۱۴۰۴ — ۱۴۰۵",
