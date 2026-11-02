@@ -315,6 +315,80 @@
         },
         {
           "title": {
+            "fa": "چت‌بات‌های آموزشی و خدمات پس از فروش ایساکو (ایران‌خودرو)",
+            "en": "Isaco (Iran Khodro) Training & After-Sales Chatbots"
+          },
+          "tech": [],
+          "description": {
+            "fa": "توسعه‌دهندهٔ چت‌بات و اتوماسیون برای چت‌بات‌های آموزشی و خدمات پس از فروش ایساکو.",
+            "en": "Chatbot and automation developer for Isaco's training and after-sales chatbots."
+          },
+          "features": [
+            {
+              "fa": "توسعهٔ چت‌بات آموزشی برای پاسخ به سؤال‌های مربوط به دوره‌ها",
+              "en": "Built a training chatbot that answers questions about courses"
+            },
+            {
+              "fa": "توسعهٔ چت‌بات خدمات پس از فروش برای پاسخ‌گویی به نمایندگان B2B",
+              "en": "Built an after-sales chatbot that serves B2B dealers"
+            },
+            {
+              "fa": "طراحی و پیاده‌سازی فلوهای اتوماسیون چت‌بات‌ها",
+              "en": "Designed and implemented the chatbots' automation flows"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: توسعه‌دهندهٔ چت‌بات و اتوماسیون",
+              "en": "Role: Chatbot & automation developer"
+            },
+            "date": {
+              "fa": "۱۴۰۵",
+              "en": "2026"
+            }
+          }
+        },
+        {
+          "title": {
+            "fa": "سیستم RAG سازمانی ایدرو (سازمان گسترش و نوسازی صنایع ایران)",
+            "en": "IDRO Enterprise RAG System (Industrial Development and Renovation Organization of Iran)"
+          },
+          "tech": [],
+          "description": {
+            "fa": "طراحی و توسعهٔ سیستم پرسش‌وپاسخ هوشمند سازمانی روی قوانین و بخشنامه‌های ایدرو.",
+            "en": "Designed and built an enterprise question-answering system over IDRO's regulations and directives."
+          },
+          "features": [
+            {
+              "fa": "ساخت سیستم پرسش‌وپاسخ هوشمند روی قوانین و بخشنامه‌های سازمان",
+              "en": "Built an intelligent Q&A system over the organization's regulations and directives"
+            },
+            {
+              "fa": "شناسایی تناقض‌های بین قوانین و بخشنامه‌ها",
+              "en": "Detected contradictions between regulations and directives"
+            },
+            {
+              "fa": "ارائهٔ پاسخ با ارجاع دقیق به منبع",
+              "en": "Delivered answers with precise source citations"
+            },
+            {
+              "fa": "بهینه‌سازی هزینه، یعنی بازدهی بالا با هزینهٔ کم",
+              "en": "Optimized for low cost with high performance"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: طراح و توسعه‌دهندهٔ سیستم RAG",
+              "en": "Role: RAG system designer & developer"
+            },
+            "date": {
+              "fa": "۱۴۰۵",
+              "en": "2026"
+            }
+          }
+        },
+        {
+          "title": {
             "fa": "احداثینو — مناقصه معکوس مصالح ساختمانی",
             "en": "Ehdasino — Reverse Auction for Construction Materials"
           },
