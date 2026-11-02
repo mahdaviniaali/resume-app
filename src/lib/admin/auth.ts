@@ -1,4 +1,4 @@
-const TOKEN_KEY = 'genesis_admin_token'
+const TOKEN_KEY = 'isempty_admin_token'
 
 export function getToken(): string | null {
   if (typeof window === 'undefined') return null

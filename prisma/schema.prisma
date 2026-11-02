@@ -19,9 +19,9 @@ model AdminUser {
 
 model SiteSettings {
   id          Int      @id @default(autoincrement())
-  brandName   String   @default("Genesis")
+  brandName   String   @default("ISEMPTY")
   tagline     String   @default("From the void of \"is empty\"; We code the light.")
-  email       String   @default("hello@genesis.dev")
+  email       String   @default("hello@isempty.online")
   telegram    String   @default("")
   linkedin    String   @default("")
   github      String   @default("")

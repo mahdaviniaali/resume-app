@@ -7,7 +7,7 @@ import { prisma } from '@/lib/db'
 const encoder = new TextEncoder()
 
 function secretKey() {
-  return encoder.encode(process.env.SECRET_KEY || 'genesis-dev-secret-change-me')
+  return encoder.encode(process.env.SECRET_KEY || 'isempty-dev-secret-change-me')
 }
 
 export async function hashPassword(password: string) {

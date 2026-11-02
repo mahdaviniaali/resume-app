@@ -275,6 +275,46 @@
         },
         {
           "title": {
+            "fa": "فارس‌آوا — سرویس تبدیل گفتار فارسی به متن",
+            "en": "Fars Ava — Persian Speech-to-Text Service"
+          },
+          "tech": [],
+          "description": {
+            "fa": "توسعه‌دهندهٔ بک‌اند در فاز اول محصول فارس‌آوا، سرویس تبدیل گفتار و ویدیوی فارسی به متن.",
+            "en": "Backend developer in the first phase of Fars Ava, a Persian speech and video to text service."
+          },
+          "features": [
+            {
+              "fa": "بهبود مقیاس‌پذیری بک‌اند برای پردازش هم‌زمان حجم بالای فایل‌های صوتی و ویدیویی",
+              "en": "Improved backend scalability to process large volumes of audio and video files concurrently"
+            },
+            {
+              "fa": "طراحی و توسعهٔ API برای اتصال سرویس‌های مختلف به موتور تبدیل گفتار به متن",
+              "en": "Designed and built APIs that connect external services to the speech-to-text engine"
+            },
+            {
+              "fa": "پیاده‌سازی دریافت و پردازش مستقیم ویدیو از لینک یوتیوب و آپارات",
+              "en": "Implemented direct video ingestion and processing from YouTube and Aparat links"
+            },
+            {
+              "fa": "توسعهٔ قابلیت‌های جدید بک‌اند برای محصول",
+              "en": "Built new backend features for the product"
+            }
+          ],
+          "meta": {
+            "role": {
+              "fa": "نقش: توسعه‌دهندهٔ بک‌اند در عامر اندیش هوشمند",
+              "en": "Role: Backend developer at Amer Andish Houshmand"
+            },
+            "date": {
+              "fa": "۱۴۰۵",
+              "en": "2026"
+            },
+            "link": "https://amerandish.com/farsava/"
+          }
+        },
+        {
+          "title": {
             "fa": "احداثینو — مناقصه معکوس مصالح ساختمانی",
             "en": "Ehdasino — Reverse Auction for Construction Materials"
           },
@@ -595,4 +635,4 @@
       }
     }
   }
-}
+}

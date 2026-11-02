@@ -15,8 +15,7 @@ export function Navigation({ brandName = 'ISEMPTY' }: { brandName?: string }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  const brand =
-    !brandName || brandName === 'Genesis' || brandName === 'جنسیس' ? 'ISEMPTY' : brandName
+  const brand = brandName || 'ISEMPTY'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)

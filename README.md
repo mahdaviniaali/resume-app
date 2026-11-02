@@ -1,4 +1,4 @@
-# Genesis — Team Brand Platform
+# ISEMPTY — Team Brand Platform
 
 From messy systems to durable architecture. Next.js brand site + Prisma CMS + per-member bilingual resumes.
 
@@ -29,7 +29,7 @@ Copy `.env.example` → `.env` if needed. First API request also seeds the DB if
 
 ## Homepage sections
 
-1. Hero — Genesis manifesto  
+1. Hero — ISEMPTY manifesto  
 2. Beyond — idea / craft / reach  
 3. Leverage — AI noise → shippable system  
 4. Selected work  

@@ -146,7 +146,7 @@ async function seedIfEmpty() {
     'رضا کریمی',
     'Frontend Systems Engineer',
     'مهندس سیستم‌های فرانت‌اند',
-    'reza@genesis.dev',
+    'reza@isempty.online',
   )
   rezaResume.summary = {
     en: 'Frontend systems engineer specializing in design systems and operational dashboards for multi-tenant products.',
@@ -251,7 +251,7 @@ async function seedIfEmpty() {
           shortBioFa: 'رابط‌های آرام و خوانا روی بک‌اندهای پیچیده — وضوح برای اپراتور و مشتری.',
           sortOrder: 2,
           isPublished: true,
-          email: 'reza@genesis.dev',
+          email: 'reza@isempty.online',
           github: 'https://github.com',
           resume: { create: { dataJson: JSON.stringify(rezaResume) } },
         },

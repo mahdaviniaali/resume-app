@@ -9,9 +9,9 @@ CREATE TABLE "admin_users" (
 -- CreateTable
 CREATE TABLE "site_settings" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "brandName" TEXT NOT NULL DEFAULT 'Genesis',
+    "brandName" TEXT NOT NULL DEFAULT 'ISEMPTY',
     "tagline" TEXT NOT NULL DEFAULT 'From the void of "is empty"; We code the light.',
-    "email" TEXT NOT NULL DEFAULT 'hello@genesis.dev',
+    "email" TEXT NOT NULL DEFAULT 'hello@isempty.online',
     "telegram" TEXT NOT NULL DEFAULT '',
     "linkedin" TEXT NOT NULL DEFAULT '',
     "github" TEXT NOT NULL DEFAULT '',
