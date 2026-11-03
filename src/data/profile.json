@@ -53,7 +53,7 @@
         "en": "Ali Mahdavinia"
       },
       "tagline": {
-        "fa": "مهندس بک‌اند (پایتون) — LLM/RAG",
+        "fa": "مهندس بک‌اند پایتون — LLM و RAG",
         "en": "Backend Engineer (Python) — LLM/RAG"
       },
       "avatar": {
@@ -128,7 +128,7 @@
       }
     ],
     "summary": {
-      "fa": "مهندس بک‌اند پایتون هستم و این روزها بیشتر کدی که می‌نویسم پشت ایجنت‌های هوش مصنوعی کار می‌کند. الان بک‌اند Agent Studio را می‌سازم؛ پلتفرم چندمستأجری‌ای که سازمان‌ها در آن Workspace هوشمند خودشان را روی دانش خودشان راه می‌اندازند. کار من این است که بشود به این سیستم تکیه کرد، از جدا ماندن دادهٔ هر سازمان در خود دیتابیس تا ایجنتی که وسط کار سؤال می‌پرسد و بعد دقیقاً از همان‌جا ادامه می‌دهد. برای سازمان‌های بزرگ هم کار کرده‌ام: سیستم RAG سازمانی ایدرو (سازمان گسترش و نوسازی صنایع ایران) روی قوانین و بخشنامه‌هایش، و چت‌بات‌های آموزشی و خدمات پس از فروش ایساکو (ایران‌خودرو). پیش از این، حدود یک سال بک‌اند بازار B2B احداثینو را با Django ساختم و در کنارش دو محصول خودم را هم به مرحلهٔ اجرا رساندم. نزدیک به چهار سال است که این کار را می‌کنم و FastAPI، PostgreSQL، Redis، RabbitMQ و Qdrant ابزارهای هر روزم هستند.",
+      "fa": "مهندس بک‌اند پایتون هستم و این روزها بیشتر کدی که می‌نویسم پشت ایجنت‌های هوش مصنوعی اجرا می‌شود. الان در حال ساخت بک‌اند Agent Studio هستم؛ پلتفرمی چندمستأجری که هر سازمان در آن فضای کاری هوشمند خودش را روی دانش خودش راه می‌اندازد. دغدغهٔ اصلی‌ام این است که سازمان‌ها بتوانند با خیال راحت به این سیستم تکیه کنند؛ از اینکه دادهٔ هر سازمان در خود دیتابیس از بقیه جدا بماند، تا اینکه ایجنت بتواند وسط کار از کاربر سؤال بپرسد و بعد درست از همان‌جا ادامه بدهد. با سازمان‌های بزرگ هم کار کرده‌ام: سیستم RAG سازمانی ایدرو (سازمان گسترش و نوسازی صنایع ایران) روی قوانین و بخشنامه‌هایش، و چت‌بات‌های آموزشی و خدمات پس از فروش ایساکو (ایران‌خودرو). پیش از این، حدود یک سال بک‌اند بازار B2B احداثینو را با Django ساختم و در کنارش دو محصول شخصی‌ام را هم راه انداختم. نزدیک به چهار سال است که در این حوزه کار می‌کنم و FastAPI، PostgreSQL، Redis، RabbitMQ و Qdrant ابزارهای هر روزم هستند.",
       "en": "I'm a Python backend engineer, and these days most of the code I write sits behind AI agents. Right now I'm building the backend of Agent Studio, a multi-tenant platform where organizations run their own AI workspaces on their own knowledge. My job is to make it something a company can lean on, from tenant isolation enforced in the database to agents that can stop to ask a question and pick up exactly where they left off. I've also delivered for large organizations: an enterprise RAG system over the regulations and directives of IDRO (Industrial Development and Renovation Organization of Iran), and training and after-sales chatbots for Isaco (Iran Khodro). Before that I spent about a year building Ehdasino's B2B marketplace in Django, and along the way I launched two products of my own. I've been at this for nearly four years. FastAPI, PostgreSQL, Redis, RabbitMQ and Qdrant are my everyday tools."
     },
     "experiences": [
@@ -146,7 +146,7 @@
           "en": "May 2026 — Present"
         },
         "description": {
-          "fa": "بک‌اند Agent Studio را در chatbot.ir می‌سازم؛ پلتفرم چندمستأجری Workspace هوشمند برای سازمان‌ها. تیم‌ها ایجنتشان را در Studio می‌سازند و مشتری‌هایشان در Site Portal با آن کار می‌کنند. دادهٔ هر tenant با Row-Level Security خود PostgreSQL جدا می‌ماند.\n\nقلب کار، runtime ایجنت است. پلتفرم فقط مشخص می‌کند کاربر کیست، به کدام ابزار و دانش دسترسی دارد و کدام پرامپت برایش اعمال می‌شود. اجرای واقعی در سرویس جداگانه‌ای انجام می‌شود که با gRPC streaming با پلتفرم حرف می‌زند. آنجا مدل برنامه می‌ریزد و پیشنهاد می‌دهد، هر پیشنهاد اعتبارسنجی می‌شود و وضعیت کار در دست کدی قطعی است، نه خود مدل. برای همین ایجنت می‌تواند وسط کار از کاربر سؤال بپرسد یا منتظر ابزاری بماند که در مرورگر اجرا می‌شود، و بعد دقیقاً از همان نقطه ادامه بدهد.\n\nتاریخچهٔ گفتگو در دیتابیس نگه داشته می‌شود، به شکل دفتری فقط‌افزودنی همراه با snapshot. قطع شدن اتصال، اجرا را از بین نمی‌برد و لازم نیست پیام‌های قدیمی را دوباره در پرامپت بچپانیم.\n\nدر سمت دانش، هر جواب باید به شواهد تکیه کند. برای سؤال‌هایی که به کل ایجنت نیاز ندارند یک مسیر سریع و کم‌هزینه هست، و یک eval harness با A/B تست پرامپت و امتیازدهی در Langfuse نشان می‌دهد هر تغییر واقعاً چیزی را بهتر کرده یا نه. در تست‌های داخلی حدود ۹۰ درصد جواب‌های مربوط به قوانین سازمان درست بود، و مسیر ورود دانش حدود ۲۰ گیگابایت داده را هضم کرد بی‌آنکه سرویس یک بار هم بخوابد.",
+          "fa": "بک‌اند Agent Studio را در chatbot.ir می‌سازم؛ پلتفرمی چندمستأجری که به هر سازمان یک فضای کاری هوشمند می‌دهد. تیم‌ها ایجنت‌هایشان را در Studio می‌سازند و مشتری‌هایشان از طریق Site Portal با آن‌ها کار می‌کنند. دادهٔ هر tenant هم با Row-Level Security خود PostgreSQL از بقیه جدا می‌ماند.\n\nمهم‌ترین بخش کار، runtime ایجنت است. پلتفرم فقط تعیین می‌کند کاربر کیست، به کدام ابزار و دانش دسترسی دارد و کدام پرامپت برایش اعمال شود؛ اجرای اصلی به سرویسی جداگانه سپرده می‌شود که از طریق gRPC streaming با پلتفرم در ارتباط است. آنجا مدل برنامه‌ریزی می‌کند و پیشنهاد می‌دهد، هر پیشنهاد اعتبارسنجی می‌شود و کنترل وضعیت کار با کد قطعی است، نه با خود مدل. به همین دلیل ایجنت می‌تواند وسط کار از کاربر سؤال بپرسد یا منتظر ابزاری بماند که در مرورگر اجرا می‌شود، و بعد درست از همان نقطه ادامه بدهد.\n\nتاریخچهٔ گفتگو به شکل دفتری فقط‌افزودنی، همراه با snapshot، در دیتابیس ذخیره می‌شود. به این ترتیب با قطع شدن اتصال، اجرا از دست نمی‌رود و دیگر لازم نیست پیام‌های قدیمی را دوباره در پرامپت جا بدهیم.\n\nدر بخش دانش، اصل این است که هر پاسخ به شواهد مستند باشد. برای سؤال‌هایی که به کل ایجنت نیازی ندارند یک مسیر سریع و کم‌هزینه داریم، و یک eval harness با A/B تست پرامپت و امتیازدهی در Langfuse به ما نشان می‌دهد هر تغییر واقعاً بهبودی ایجاد کرده یا نه. در تست‌های داخلی حدود ۹۰ درصد پاسخ‌ها دربارهٔ قوانین سازمان درست بود، و مسیر ورود دانش حدود ۲۰ گیگابایت داده را بدون حتی یک بار قطعی سرویس پردازش کرد.",
           "en": "I'm building the backend of Agent Studio, chatbot.ir's multi-tenant AI workspace platform. Teams build their agents in Studio, and their customers use them through a Site Portal. PostgreSQL row-level security keeps every tenant's data where it belongs.\n\nThe heart of it is the agent runtime. The platform works out who you are, which tools and knowledge you can use and which prompt applies, then hands the run to a separate runtime over gRPC streaming. There, the model plans and proposes. Every proposal gets validated, and deterministic code owns the task state. That's why an agent can stop to ask the user a question, or wait on a tool running in their browser, and then pick up exactly where it left off.\n\nConversation history lives in the database as an append-only ledger with snapshots. A dropped connection doesn't lose the run, and we never have to stuff old messages back into the prompt to remember what happened.\n\nOn the knowledge side, every answer has to be backed by evidence. Questions that don't need the full agent take a fast, cheap path. An eval harness with prompt A/B tests and Langfuse scoring tells us whether a change actually helped. In internal tests about 90% of policy answers were right, and the ingestion pipeline took in about 20 GB without the service going down once."
         }
       },
@@ -164,7 +164,7 @@
           "en": "April 2025 — April 2026"
         },
         "description": {
-          "fa": "حدود یک سال بک‌اند احداثینو را ساختم؛ بازار مناقصهٔ معکوسی که در آن تأمین‌کننده‌های مصالح ساختمانی سر هر درخواست خرید با هم رقابت می‌کنند. کل جریان درخواست و پیشنهاد را با Django/DRF و معماری hexagonal مدل کردم تا قواعد کسب‌وکار بدون درگیر شدن با HTTP تست شوند. خریدار و تأمین‌کننده با OTP و JWT وارد می‌شوند و هر کدام نقش خودشان را دارند. اعلان‌ها با Celery و Redis ناهمزمان ارسال می‌شوند. سیستم را هم با health check، محدودسازی دسترسی به داده و مانیتورینگ درست برای production آماده کردم.",
+          "fa": "حدود یک سال بک‌اند احداثینو را ساختم؛ بازار مناقصهٔ معکوسی که در آن تأمین‌کننده‌های مصالح ساختمانی برای هر درخواست خرید با هم رقابت می‌کنند. کل جریان درخواست و پیشنهاد را با Django/DRF و معماری hexagonal طراحی کردم تا قواعد کسب‌وکار مستقل از لایهٔ HTTP قابل تست باشند. خریدار و تأمین‌کننده با OTP و JWT وارد سیستم می‌شوند و هر کدام نقش خودشان را دارند. اعلان‌ها با Celery و Redis به‌صورت ناهمزمان ارسال می‌شوند. در نهایت هم سیستم را با health check، محدودسازی دسترسی به داده و مانیتورینگ مناسب برای production آماده کردم.",
           "en": "I spent about a year building the backend of Ehdasino, a reverse-auction marketplace where construction suppliers bid against each other for every purchase request. I modeled the whole request-and-bid flow in Django/DRF with a hexagonal design, so the business rules could be tested without touching HTTP. Buyers and suppliers sign in with OTP and JWT, each with their own role. Notifications go out asynchronously through Celery and Redis. I also got it ready for production with health checks, data scoping and proper observability."
         }
       },
@@ -182,7 +182,7 @@
           "en": "Dec 2022 — May 2025"
         },
         "description": {
-          "fa": "دو سال و نیم به‌صورت فریلنس کار کردم، بیشتر روی سامانه‌های داخلی سازمان‌ها و بک‌اند محصولات. معمولاً کار را از اولین جلسهٔ نیازسنجی تا تحویل APIهای امن و تست‌شده خودم جلو می‌بردم. همان‌جا یاد گرفتم معماری تمیز و تست را جدی بگیرم، قبل از اینکه کسی از من بخواهد.",
+          "fa": "دو سال و نیم به‌صورت فریلنس کار کردم، بیشتر روی سامانه‌های داخلی سازمان‌ها و بک‌اند محصولات. معمولاً هر پروژه را از اولین جلسهٔ نیازسنجی تا تحویل APIهای امن و تست‌شده، خودم پیش می‌بردم. همین تجربه به من یاد داد معماری تمیز و تست‌نویسی را جدی بگیرم، خیلی پیش از آنکه کسی از من بخواهد.",
           "en": "I freelanced for two and a half years, mostly on internal business systems and product backends. I usually carried each project myself, from the first conversation about requirements to secure, tested APIs. That's where I learned to take clean architecture and testing seriously, long before anyone asked me to."
         }
       },
@@ -200,7 +200,7 @@
           "en": "Mar 2023 — Sep 2023"
         },
         "description": {
-          "fa": "دوره‌های رایگان پایتون برای علاقه‌مندانی از شهرهای مختلف برگزار کردم و بعد از آخرین جلسه هم کنارشان ماندم و منتورشان بودم.",
+          "fa": "دوره‌های رایگان پایتون را برای علاقه‌مندانی از شهرهای مختلف برگزار کردم و بعد از جلسهٔ آخر هم همراهشان ماندم و به‌عنوان منتور راهنمایی‌شان کردم.",
           "en": "Ran free online Python courses for learners from different cities, and stayed on as their mentor after the last session."
         }
       }
@@ -224,40 +224,40 @@
             "TypeScript / Next.js"
           ],
           "description": {
-            "fa": "هر سازمان یک Workspace هوشمند مخصوص خودش دارد، با ایجنت، دانش، ابزار و یک Shelf برای کارهای در جریان که تا وقتی کسی آن را صریحاً به دانش اضافه نکند، به RAG راه پیدا نمی‌کند. تیم‌ها در Studio می‌سازند و مشتری‌هایشان نتیجه را در Site Portal می‌بینند.",
+            "fa": "هر سازمان یک فضای کاری هوشمند مخصوص خودش دارد: ایجنت‌ها، دانش، ابزارها و یک Shelf برای کارهای در جریان. محتوای Shelf تا وقتی کسی آن را صریحاً به دانش اضافه نکند، وارد RAG نمی‌شود. تیم‌ها در Studio می‌سازند و مشتری‌هایشان از نتیجه در Site Portal استفاده می‌کنند.",
             "en": "Every organization gets its own AI workspace with agents, knowledge, tools and a Shelf, a working tray that stays out of RAG until someone explicitly promotes it. Teams build in Studio, and their customers use the result through a Site Portal."
           },
           "features": [
             {
-              "fa": "پلتفرم و اجرا از هم جدا هستند: پلتفرم دسترسی، ابزار، دانش و پرامپت را مشخص می‌کند و runtime ایجنت کار را با gRPC streaming اجرا می‌کند",
+              "fa": "پلتفرم و اجرا را از هم جدا کردیم: پلتفرم دسترسی، ابزارها، دانش و پرامپت را تعیین می‌کند و runtime ایجنت کار را از طریق gRPC streaming اجرا می‌کند",
               "en": "Control plane and execution plane kept apart: the platform resolves auth, tools, knowledge and prompts, and the agent runtime runs the work over gRPC streaming"
             },
             {
-              "fa": "به‌جای یک حلقهٔ سادهٔ ReAct، runtime قراردادمحور ساختیم. برنامه‌ریزی، تصمیم، اجرا و جذب نتیجه هر کدام نقش typed خودشان را دارند، LLM فقط پیشنهادهای اعتبارسنجی‌شده می‌دهد و وضعیت کار، ادامهٔ اجرا و مکث برای سؤال از کاربر دست کد قطعی است",
+              "fa": "به‌جای یک حلقهٔ سادهٔ ReAct، یک runtime قراردادمحور ساختیم: برنامه‌ریزی، تصمیم‌گیری، اجرا و ادغام نتیجه هر کدام نقش typed و مشخص خودشان را دارند. LLM فقط پیشنهاد می‌دهد و هر پیشنهاد اعتبارسنجی می‌شود؛ وضعیت کار، ادامهٔ اجرا و مکث برای پرسیدن از کاربر در اختیار کد قطعی است",
               "en": "A contract-based runtime in place of a plain ReAct loop. Planning, decision, execution and assimilation each have a typed role, the LLM only emits validated proposals, and deterministic code owns task state, resume and pausing to ask the user"
             },
             {
-              "fa": "تاریخچهٔ ماندگار گفتگو با دفتر فقط‌افزودنی، projection و snapshotهای نسخه‌دار؛ اجرا بعد از قطع اتصال، سؤال از کاربر یا ابزار سمت مرورگر، بدون دوباره‌کاری ادامه پیدا می‌کند",
+              "fa": "تاریخچهٔ پایدار گفتگو بر پایهٔ دفتر فقط‌افزودنی، projection و snapshotهای نسخه‌دار؛ بعد از قطع اتصال، سؤال از کاربر یا اجرای ابزار در مرورگر، کار بدون دوباره‌کاری از همان‌جا ادامه پیدا می‌کند",
               "en": "Durable conversation history built on an append-only ledger, projections and versioned snapshots, with idempotent resume after a disconnect, a user question or a browser-side tool"
             },
             {
-              "fa": "RAG متکی بر شواهد، با یک مسیر سریع بدون ایجنت برای سرعت و هزینهٔ کمتر؛ حدود ۹۰ درصد جواب درست روی قوانین سازمان در تست‌های داخلی",
+              "fa": "RAG مستند به شواهد، به‌همراه یک مسیر سریع بدون ایجنت تا پاسخ‌ها سریع‌تر و کم‌هزینه‌تر باشند؛ در تست‌های داخلی حدود ۹۰ درصد پاسخ‌ها دربارهٔ قوانین سازمان درست بود",
               "en": "Evidence-grounded RAG with a fast non-agentic path for latency and cost; about 90% accurate on company policies in internal tests"
             },
             {
-              "fa": "eval harness با A/B تست پرامپت و امتیازدهی در Langfuse. پرامپت‌ها هم لایه‌لایه از سطح پلتفرم تا سازمان و tenant روی هم سوار می‌شوند، بدون کپی کردن کل متن",
+              "fa": "eval harness با A/B تست پرامپت و امتیازدهی در Langfuse. پرامپت‌ها هم لایه‌لایه، از سطح پلتفرم تا سازمان و tenant، روی هم قرار می‌گیرند و نیازی به کپی کردن کل متن نیست",
               "en": "An eval harness with prompt A/B bundles and Langfuse scoring. Prompts layer from platform to organization to tenant without forking the text"
             },
             {
-              "fa": "ایزولاسیون tenantها در خود دیتابیس با Row-Level Security در PostgreSQL، و دامنهٔ اختصاصی برای هر tenant",
+              "fa": "جداسازی tenantها در خود دیتابیس با Row-Level Security در PostgreSQL، به‌همراه دامنهٔ اختصاصی برای هر tenant",
               "en": "Tenant isolation enforced in the database with PostgreSQL row-level security, plus a custom domain per tenant"
             },
             {
-              "fa": "ورود دانش با صفی که خودش را با منابع سرور تنظیم می‌کند؛ حدود ۲۰ گیگابایت داده بدون قطعی. crawl هم سرویس جداگانهٔ خودش را دارد",
+              "fa": "ورود دانش با صفی که سرعتش را با منابع سرور تنظیم می‌کند؛ حدود ۲۰ گیگابایت داده بدون هیچ قطعی وارد سیستم شد. crawl هم در سرویس جداگانهٔ خودش انجام می‌شود",
               "en": "Knowledge ingestion that paces itself to server resources took in about 20 GB with no downtime. Crawling runs as its own separate service"
             },
             {
-              "fa": "دو لایه مانیتورینگ: Langfuse برای رفتار ایجنت و LLM، و OpenTelemetry با Tempo و Loki برای عملیات",
+              "fa": "مانیتورینگ در دو لایه: Langfuse برای رفتار ایجنت و LLM، و OpenTelemetry با Tempo و Loki برای سمت عملیات",
               "en": "Two layers of observability: Langfuse for agent and LLM behavior, OpenTelemetry with Tempo and Loki for operations"
             }
           ],
@@ -280,24 +280,24 @@
           },
           "tech": [],
           "description": {
-            "fa": "توسعه‌دهندهٔ بک‌اند در فاز اول محصول فارس‌آوا، سرویس تبدیل گفتار و ویدیوی فارسی به متن.",
+            "fa": "در فاز اول فارس‌آوا، سرویس تبدیل گفتار و ویدیوی فارسی به متن، به‌عنوان توسعه‌دهندهٔ بک‌اند کار کردم.",
             "en": "Backend developer in the first phase of Fars Ava, a Persian speech and video to text service."
           },
           "features": [
             {
-              "fa": "بهبود مقیاس‌پذیری بک‌اند برای پردازش هم‌زمان حجم بالای فایل‌های صوتی و ویدیویی",
+              "fa": "مقیاس‌پذیری بک‌اند را بهبود دادم تا حجم بالایی از فایل‌های صوتی و ویدیویی به‌صورت هم‌زمان پردازش شود",
               "en": "Improved backend scalability to process large volumes of audio and video files concurrently"
             },
             {
-              "fa": "طراحی و توسعهٔ API برای اتصال سرویس‌های مختلف به موتور تبدیل گفتار به متن",
+              "fa": "APIهایی طراحی و پیاده‌سازی کردم که سرویس‌های مختلف را به موتور تبدیل گفتار به متن وصل می‌کنند",
               "en": "Designed and built APIs that connect external services to the speech-to-text engine"
             },
             {
-              "fa": "پیاده‌سازی دریافت و پردازش مستقیم ویدیو از لینک یوتیوب و آپارات",
+              "fa": "امکان دریافت و پردازش مستقیم ویدیو از لینک یوتیوب و آپارات را پیاده‌سازی کردم",
               "en": "Implemented direct video ingestion and processing from YouTube and Aparat links"
             },
             {
-              "fa": "توسعهٔ قابلیت‌های جدید بک‌اند برای محصول",
+              "fa": "قابلیت‌های تازه‌ای به بک‌اند محصول اضافه کردم",
               "en": "Built new backend features for the product"
             }
           ],
@@ -320,20 +320,20 @@
           },
           "tech": [],
           "description": {
-            "fa": "توسعه‌دهندهٔ چت‌بات و اتوماسیون برای چت‌بات‌های آموزشی و خدمات پس از فروش ایساکو.",
+            "fa": "روی چت‌بات‌های آموزشی و خدمات پس از فروش ایساکو کار کردم؛ هم توسعهٔ خود چت‌بات‌ها و هم اتوماسیون آن‌ها.",
             "en": "Chatbot and automation developer for Isaco's training and after-sales chatbots."
           },
           "features": [
             {
-              "fa": "توسعهٔ چت‌بات آموزشی برای پاسخ به سؤال‌های مربوط به دوره‌ها",
+              "fa": "یک چت‌بات آموزشی ساختم که به سؤال‌های مربوط به دوره‌ها پاسخ می‌دهد",
               "en": "Built a training chatbot that answers questions about courses"
             },
             {
-              "fa": "توسعهٔ چت‌بات خدمات پس از فروش برای پاسخ‌گویی به نمایندگان B2B",
+              "fa": "چت‌بات خدمات پس از فروش را برای پاسخ‌گویی به نمایندگی‌های B2B توسعه دادم",
               "en": "Built an after-sales chatbot that serves B2B dealers"
             },
             {
-              "fa": "طراحی و پیاده‌سازی فلوهای اتوماسیون چت‌بات‌ها",
+              "fa": "جریان‌های اتوماسیون چت‌بات‌ها را طراحی و پیاده‌سازی کردم",
               "en": "Designed and implemented the chatbots' automation flows"
             }
           ],
@@ -355,24 +355,24 @@
           },
           "tech": [],
           "description": {
-            "fa": "طراحی و توسعهٔ سیستم پرسش‌وپاسخ هوشمند سازمانی روی قوانین و بخشنامه‌های ایدرو.",
+            "fa": "یک سیستم پرسش‌وپاسخ هوشمند سازمانی روی قوانین و بخشنامه‌های ایدرو طراحی کردم و ساختم.",
             "en": "Designed and built an enterprise question-answering system over IDRO's regulations and directives."
           },
           "features": [
             {
-              "fa": "ساخت سیستم پرسش‌وپاسخ هوشمند روی قوانین و بخشنامه‌های سازمان",
+              "fa": "سیستم به پرسش‌ها بر پایهٔ قوانین و بخشنامه‌های سازمان پاسخ می‌دهد",
               "en": "Built an intelligent Q&A system over the organization's regulations and directives"
             },
             {
-              "fa": "شناسایی تناقض‌های بین قوانین و بخشنامه‌ها",
+              "fa": "تناقض‌های بین قوانین و بخشنامه‌ها را هم شناسایی می‌کند",
               "en": "Detected contradictions between regulations and directives"
             },
             {
-              "fa": "ارائهٔ پاسخ با ارجاع دقیق به منبع",
+              "fa": "هر پاسخ با ارجاع دقیق به منبعش ارائه می‌شود",
               "en": "Delivered answers with precise source citations"
             },
             {
-              "fa": "بهینه‌سازی هزینه، یعنی بازدهی بالا با هزینهٔ کم",
+              "fa": "سیستم را طوری بهینه کردم که با هزینهٔ کم، بازدهی بالایی داشته باشد",
               "en": "Optimized for low cost with high performance"
             }
           ],
@@ -389,7 +389,7 @@
         },
         {
           "title": {
-            "fa": "احداثینو — مناقصه معکوس مصالح ساختمانی",
+            "fa": "احداثینو — مناقصهٔ معکوس مصالح ساختمانی",
             "en": "Ehdasino — Reverse Auction for Construction Materials"
           },
           "tech": [
@@ -401,24 +401,24 @@
             "TDD · Docker"
           ],
           "description": {
-            "fa": "بازاری که در آن تأمین‌کننده‌ها سر سفارش خریدار رقابت می‌کنند. خریدار یک درخواست ثبت می‌کند، چند پیشنهاد می‌گیرد و قیمت و زمان تحویل و شرایط را کنار هم می‌بیند.",
+            "fa": "بازاری که در آن تأمین‌کننده‌ها برای گرفتن سفارش خریدار با هم رقابت می‌کنند. خریدار یک درخواست ثبت می‌کند، چند پیشنهاد می‌گیرد و قیمت، زمان تحویل و شرایط را کنار هم مقایسه می‌کند.",
             "en": "A marketplace where suppliers compete for a buyer's order. The buyer posts one request, collects several bids and compares price, delivery time and terms side by side."
           },
           "features": [
             {
-              "fa": "مدل درخواست و پیشنهاد با قاعده‌ای روشن برای اینکه بعد از رسیدن پیشنهادها چه چیزی قابل تغییر است",
+              "fa": "مدل درخواست و پیشنهاد با قاعده‌ای روشن که مشخص می‌کند بعد از رسیدن پیشنهادها چه چیزهایی هنوز قابل تغییرند",
               "en": "An RFQ and proposal model with clear rules for what can still change once bids are in"
             },
             {
-              "fa": "ورود با OTP و JWT در cookie، با نقش جدا برای خریدار و تأمین‌کننده",
+              "fa": "ورود با OTP و JWT ذخیره‌شده در cookie، با نقش‌های جدا برای خریدار و تأمین‌کننده",
               "en": "OTP sign-in with JWT cookies and separate buyer and supplier roles"
             },
             {
-              "fa": "معماری hexagonal؛ use caseها بدون HTTP تست می‌شوند و viewها سبک می‌مانند",
+              "fa": "معماری hexagonal؛ use caseها بدون وابستگی به HTTP تست می‌شوند و viewها سبک می‌مانند",
               "en": "Hexagonal design: use cases are tested without HTTP, and views stay thin"
             },
             {
-              "fa": "اعلان‌های ناهمزمان با Celery و Redis، به‌علاوهٔ health check، محدودسازی داده و مانیتورینگ برای production",
+              "fa": "اعلان‌های ناهمزمان با Celery و Redis، به‌همراه health check، محدودسازی دسترسی به داده و مانیتورینگ برای production",
               "en": "Async notifications on Celery and Redis, plus health checks, data scoping and observability for production"
             }
           ],
@@ -448,12 +448,12 @@
             "Next.js · SSE"
           ],
           "description": {
-            "fa": "فروشنده‌های اینستاگرامی سفارش را در دایرکت می‌گیرند. امرتون همان پیام را به فاکتور، پرداخت آنلاین و کد رهگیری تبدیل می‌کند و هیچ‌وقت رمز اینستاگرام فروشنده را نمی‌خواهد.",
+            "fa": "فروشنده‌های اینستاگرامی سفارش‌ها را در دایرکت می‌گیرند. امرتون همان پیام را به فاکتور، پرداخت آنلاین و کد رهگیری تبدیل می‌کند، بی‌آنکه هیچ‌وقت رمز اینستاگرام فروشنده را بخواهد.",
             "en": "Instagram sellers take orders in their DMs. Amreton turns those messages into an invoice, an online payment and a tracking code, and it never asks for the seller's Instagram password."
           },
           "features": [
             {
-              "fa": "مشتری فقط یک لینک می‌گیرد: فاکتور، آدرس، پرداخت و بعد پیامکی با کد رهگیری، همه در صفحه‌ای که روی موبایل راحت کار می‌کند",
+              "fa": "مشتری فقط یک لینک دریافت می‌کند: فاکتور، آدرس، پرداخت و بعد پیامکی با کد رهگیری؛ همه در صفحه‌ای که روی موبایل راحت کار می‌کند",
               "en": "The customer gets a single link for the invoice, address and payment, then an SMS with the tracking code, all on a page built for phones"
             },
             {
@@ -461,19 +461,19 @@
               "en": "A modular monolith with an API, a worker and a transactional outbox for events"
             },
             {
-              "fa": "چندمستأجری از پایه؛ هر فروشگاه با tenant داخل JWT از بقیه جداست",
+              "fa": "چندمستأجری از پایه؛ هر فروشگاه از طریق tenant داخل JWT از بقیه جدا می‌شود",
               "en": "Multi-tenant from day one; each shop is isolated through tenant claims in the JWT"
             },
             {
-              "fa": "درگاه پرداخت و پیامک قابل تعویض‌اند: زرین‌پال، کارت‌به‌کارت، کاوه‌نگار و sms.ir",
+              "fa": "درگاه پرداخت و سرویس پیامک قابل تعویض‌اند: زرین‌پال، کارت‌به‌کارت، کاوه‌نگار و sms.ir",
               "en": "Payment and SMS providers plug in and out: Zarinpal, card-to-card, Kavenegar, sms.ir"
             },
             {
-              "fa": "کانال اینستاگرام با لینک پرداخت و قالب دایرکتی که فروشنده خودش ویرایش می‌کند",
+              "fa": "کانال اینستاگرام با لینک پرداخت و قالب پیام دایرکت که فروشنده خودش می‌تواند ویرایشش کند",
               "en": "An Instagram channel with payment links and DM templates sellers edit themselves"
             },
             {
-              "fa": "۸۳ ADR که دلیل هر تصمیم محصولی و فنی را ثبت کرده‌اند",
+              "fa": "۸۳ ADR که چرایی هر تصمیم محصولی و فنی را ثبت کرده‌اند",
               "en": "83 ADRs that record why each product and technical decision was made"
             }
           ],
@@ -503,20 +503,20 @@
             "Next.js · Maps"
           ],
           "description": {
-            "fa": "در ایران معمولاً سگ‌گردان را از طریق آشنا یا شبکه‌های اجتماعی پیدا می‌کنند، بی‌هیچ بررسی و پیگیری‌ای. هاپ‌گو صاحب سگ را به سگ‌گردان تأییدشدهٔ نزدیکش وصل می‌کند و نسخهٔ اول فقط روی سگ‌گردانی تمرکز دارد.",
+            "fa": "در ایران معمولاً سگ‌گردان را از طریق آشنا یا شبکه‌های اجتماعی پیدا می‌کنند، بدون هیچ بررسی و پیگیری‌ای. هاپ‌گو صاحبان سگ را به سگ‌گردان‌های تأییدشدهٔ نزدیکشان وصل می‌کند و نسخهٔ اول فقط روی سگ‌گردانی تمرکز دارد.",
             "en": "In Iran, people usually find a dog walker through friends or social media, with no vetting and no follow-up. HopGo connects owners with verified walkers nearby, and the first release does exactly one thing: walks."
           },
           "features": [
             {
-              "fa": "سگ‌گردان تا KYC چندمرحله‌ای و تأیید ادمین را پشت سر نگذارد، در جستجو دیده نمی‌شود. شروع و پایان هر پیاده‌روی هم با موقعیت مکانی ثبت می‌شود",
+              "fa": "سگ‌گردان تا KYC چندمرحله‌ای و تأیید ادمین را پشت سر نگذارد، در جستجو نمایش داده نمی‌شود. شروع و پایان هر پیاده‌روی هم با موقعیت مکانی ثبت می‌شود",
               "en": "Walkers pass multi-step KYC and an admin review before anyone can find them, and every walk is geo-stamped at start and finish"
             },
             {
-              "fa": "دو راه برای پیدا کردن سگ‌گردان: رتبه‌بندی سگ‌گردان‌های فعال نزدیک، یا ارسال درخواست به کل محدوده تا اولین نفری که قبول کند کار را بگیرد",
+              "fa": "دو راه برای پیدا کردن سگ‌گردان: فهرست رتبه‌بندی‌شدهٔ سگ‌گردان‌های فعال نزدیک، یا ارسال درخواست به کل محدوده تا اولین نفری که قبول کند کار را بگیرد",
               "en": "Two ways to match: rank the active walkers nearby, or broadcast to the area and let the first one to accept take it"
             },
             {
-              "fa": "نوتیفیکیشن‌ها و side effectها از مسیر transactional outbox و RabbitMQ می‌روند",
+              "fa": "اعلان‌ها و side effectها از مسیر transactional outbox و RabbitMQ ارسال می‌شوند",
               "en": "Notifications and side effects run through a transactional outbox and RabbitMQ"
             },
             {
@@ -528,7 +528,7 @@
               "en": "One phone number, one role, and a walker's KYC lives apart from their working profile"
             },
             {
-              "fa": "۲۴ ADR پشت تصمیم‌های محصولی و فنی؛ سگ‌گردان فقط با رضایت خودش روی نقشهٔ عمومی دیده می‌شود",
+              "fa": "۲۴ ADR پشتوانهٔ تصمیم‌های محصولی و فنی‌اند؛ سگ‌گردان فقط با رضایت خودش روی نقشهٔ عمومی نمایش داده می‌شود",
               "en": "24 ADRs behind the product and tech decisions; walkers appear on the public map only if they opt in"
             }
           ],
@@ -548,7 +548,7 @@
       "small": [
         {
           "title": {
-            "fa": "Signal — مصرف‌کنندهٔ چندورکری Kafka",
+            "fa": "Signal — مصرف‌کنندهٔ Kafka با چند worker",
             "en": "Signal — Multi-Worker Kafka Consumer"
           },
           "tech": [
@@ -559,24 +559,24 @@
             "Docker"
           ],
           "description": {
-            "fa": "سرویسی با FastAPI که با ۵ worker دو تاپیک Kafka را مصرف می‌کند و کار I/O و CPU را از هم جدا نگه می‌دارد. backpressure دارد، offset را امن commit می‌کند و پیام تکراری را دو بار ثبت نمی‌کند.",
+            "fa": "سرویسی با FastAPI که با ۵ worker دو تاپیک Kafka را مصرف می‌کند و کارهای I/O و CPU را از هم جدا نگه می‌دارد. backpressure دارد، offset را با اطمینان commit می‌کند و هیچ پیام تکراری‌ای را دو بار ثبت نمی‌کند.",
             "en": "A FastAPI service whose 5 workers consume two Kafka topics while keeping I/O and CPU work apart. It applies backpressure, commits offsets safely and never writes a duplicate event twice."
           },
           "features": [
             {
-              "fa": "I/O روی asyncio و کار سنگین CPU در ProcessPool، تا event loop زیر بار هم پاسخ‌گو بماند",
+              "fa": "کارهای I/O روی asyncio و پردازش‌های سنگین CPU در ProcessPool اجرا می‌شوند تا event loop زیر بار هم پاسخ‌گو بماند",
               "en": "I/O runs on asyncio and heavy CPU work in a ProcessPool, so the event loop stays responsive under load"
             },
             {
-              "fa": "semaphore و pause/resume سقف کارهای در جریان را نگه می‌دارند تا صف بی‌حساب بزرگ نشود",
+              "fa": "با semaphore و pause/resume برای کارهای در جریان سقف گذاشته‌ام تا صف بی‌رویه بزرگ نشود",
               "en": "A semaphore with pause/resume caps in-flight work, so the backlog can't grow without limit"
             },
             {
-              "fa": "offset فقط تا watermark پیوستهٔ هر partition کامیت می‌شود؛ پیامی که شکست بخورد کامیت نمی‌شود و دوباره می‌آید",
+              "fa": "offset فقط تا watermark پیوستهٔ هر partition commit می‌شود؛ پیامی که پردازشش شکست بخورد commit نمی‌شود و دوباره پردازش می‌شود",
               "en": "Offsets are committed only up to each partition's contiguous watermark; a failed message stays uncommitted and comes back"
             },
             {
-              "fa": "قید UNIQUE(topic, event_id) باعث می‌شود پیامی که بعد از crash دوباره برسد، دو بار ثبت نشود",
+              "fa": "قید UNIQUE(topic, event_id) تضمین می‌کند پیامی که بعد از crash دوباره می‌رسد، دو بار ثبت نشود",
               "en": "A UNIQUE(topic, event_id) constraint means a message replayed after a crash is never inserted twice"
             }
           ],
