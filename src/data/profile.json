@@ -60,6 +60,7 @@
         "fa": "ع",
         "en": "A"
       },
+      "photo": "/ali-avatar.webp",
       "location": {
         "fa": "تهران · حضوری، هیبرید یا دورکاری",
         "en": "Tehran, Iran · On-site, hybrid, or remote"
@@ -128,8 +129,8 @@
       }
     ],
     "summary": {
-      "fa": "مهندس بک‌اند پایتون هستم و این روزها بیشتر کدی که می‌نویسم پشت ایجنت‌های هوش مصنوعی اجرا می‌شود. الان در حال ساخت بک‌اند Agent Studio هستم؛ پلتفرمی چندمستأجری که هر سازمان در آن فضای کاری هوشمند خودش را روی دانش خودش راه می‌اندازد. دغدغهٔ اصلی‌ام این است که سازمان‌ها بتوانند با خیال راحت به این سیستم تکیه کنند؛ از اینکه دادهٔ هر سازمان در خود دیتابیس از بقیه جدا بماند، تا اینکه ایجنت بتواند وسط کار از کاربر سؤال بپرسد و بعد درست از همان‌جا ادامه بدهد. با سازمان‌های بزرگ هم کار کرده‌ام: سیستم RAG سازمانی ایدرو (سازمان گسترش و نوسازی صنایع ایران) روی قوانین و بخشنامه‌هایش، و چت‌بات‌های آموزشی و خدمات پس از فروش ایساکو (ایران‌خودرو). پیش از این، حدود یک سال بک‌اند بازار B2B احداثینو را با Django ساختم و در کنارش دو محصول شخصی‌ام را هم راه انداختم. نزدیک به چهار سال است که در این حوزه کار می‌کنم و FastAPI، PostgreSQL، Redis، RabbitMQ و Qdrant ابزارهای هر روزم هستند.",
-      "en": "I'm a Python backend engineer, and these days most of the code I write sits behind AI agents. Right now I'm building the backend of Agent Studio, a multi-tenant platform where organizations run their own AI workspaces on their own knowledge. My job is to make it something a company can lean on, from tenant isolation enforced in the database to agents that can stop to ask a question and pick up exactly where they left off. I've also delivered for large organizations: an enterprise RAG system over the regulations and directives of IDRO (Industrial Development and Renovation Organization of Iran), and training and after-sales chatbots for Isaco (Iran Khodro). Before that I spent about a year building Ehdasino's B2B marketplace in Django, and along the way I launched two products of my own. I've been at this for nearly four years. FastAPI, PostgreSQL, Redis, RabbitMQ and Qdrant are my everyday tools."
+      "fa": "مهندس نرم‌افزار با تمرکز بر مهندسی بک‌اند و ساخت سامانه‌های نرم‌افزاری قابل‌اتکا و مقیاس‌پذیر.\n\nدر طراحی و توسعهٔ پلتفرم‌های بک‌اند، معماری‌های چندمستأجری و سیستم‌های مبتنی بر هوش مصنوعی تجربه دارم. روی راهکارهای هوش مصنوعی سازمانی برای سازمان‌های بزرگ، از جمله ایدرو و ایساکو، کار کرده‌ام؛ با تمرکز بر سیستم‌های دانش‌محور، RAG سازمانی، ایجنت‌های هوش مصنوعی، و یکپارچه‌سازی قابل‌اتکای مدل‌های زبانی با جریان‌های کاری کسب‌وکار. اخیراً تمرکزم بر اجرای ماندگار ایجنت، کنترل دسترسی، و معماری مقیاس‌پذیر runtime بوده است.\n\nتجربهٔ عملی با Python، FastAPI، Django، PostgreSQL، Redis، RabbitMQ و Qdrant دارم، با تأکید بر طراحی سیستم، قابلیت نگهداری، و حل مسائل پیچیدهٔ مهندسی.",
+      "en": "Software Engineer focused on backend engineering and building reliable, scalable software systems.\n\nExperienced in designing and developing backend platforms, multi-tenant architectures, and AI-powered systems. Worked on enterprise AI solutions for large organizations, including IDRO and Isaco, focusing on knowledge-based systems, enterprise RAG, AI agents, and reliable integration of LLMs with business workflows. Recently focused on persistent agent execution, access control, and scalable runtime architecture.\n\nHands-on experience with Python, FastAPI, Django, PostgreSQL, Redis, RabbitMQ, and Qdrant, with an emphasis on system design, maintainability, and solving complex engineering problems."
     },
     "experiences": [
       {
@@ -146,14 +147,14 @@
           "en": "May 2026 — Present"
         },
         "description": {
-          "fa": "بک‌اند Agent Studio را در chatbot.ir می‌سازم؛ پلتفرمی چندمستأجری که به هر سازمان یک فضای کاری هوشمند می‌دهد. تیم‌ها ایجنت‌هایشان را در Studio می‌سازند و مشتری‌هایشان از طریق Site Portal با آن‌ها کار می‌کنند. دادهٔ هر tenant هم با Row-Level Security خود PostgreSQL از بقیه جدا می‌ماند.\n\nمهم‌ترین بخش کار، runtime ایجنت است. پلتفرم فقط تعیین می‌کند کاربر کیست، به کدام ابزار و دانش دسترسی دارد و کدام پرامپت برایش اعمال شود؛ اجرای اصلی به سرویسی جداگانه سپرده می‌شود که از طریق gRPC streaming با پلتفرم در ارتباط است. آنجا مدل برنامه‌ریزی می‌کند و پیشنهاد می‌دهد، هر پیشنهاد اعتبارسنجی می‌شود و کنترل وضعیت کار با کد قطعی است، نه با خود مدل. به همین دلیل ایجنت می‌تواند وسط کار از کاربر سؤال بپرسد یا منتظر ابزاری بماند که در مرورگر اجرا می‌شود، و بعد درست از همان نقطه ادامه بدهد.\n\nتاریخچهٔ گفتگو به شکل دفتری فقط‌افزودنی، همراه با snapshot، در دیتابیس ذخیره می‌شود. به این ترتیب با قطع شدن اتصال، اجرا از دست نمی‌رود و دیگر لازم نیست پیام‌های قدیمی را دوباره در پرامپت جا بدهیم.\n\nدر بخش دانش، اصل این است که هر پاسخ به شواهد مستند باشد. برای سؤال‌هایی که به کل ایجنت نیازی ندارند یک مسیر سریع و کم‌هزینه داریم، و یک eval harness با A/B تست پرامپت و امتیازدهی در Langfuse به ما نشان می‌دهد هر تغییر واقعاً بهبودی ایجاد کرده یا نه. در تست‌های داخلی حدود ۹۰ درصد پاسخ‌ها دربارهٔ قوانین سازمان درست بود، و مسیر ورود دانش حدود ۲۰ گیگابایت داده را بدون حتی یک بار قطعی سرویس پردازش کرد.",
-          "en": "I'm building the backend of Agent Studio, chatbot.ir's multi-tenant AI workspace platform. Teams build their agents in Studio, and their customers use them through a Site Portal. PostgreSQL row-level security keeps every tenant's data where it belongs.\n\nThe heart of it is the agent runtime. The platform works out who you are, which tools and knowledge you can use and which prompt applies, then hands the run to a separate runtime over gRPC streaming. There, the model plans and proposes. Every proposal gets validated, and deterministic code owns the task state. That's why an agent can stop to ask the user a question, or wait on a tool running in their browser, and then pick up exactly where it left off.\n\nConversation history lives in the database as an append-only ledger with snapshots. A dropped connection doesn't lose the run, and we never have to stuff old messages back into the prompt to remember what happened.\n\nOn the knowledge side, every answer has to be backed by evidence. Questions that don't need the full agent take a fast, cheap path. An eval harness with prompt A/B tests and Langfuse scoring tells us whether a change actually helped. In internal tests about 90% of policy answers were right, and the ingestion pipeline took in about 20 GB without the service going down once."
+          "fa": "بک‌اند Agent Studio را روی chatbot.ir می‌سازم؛ پلتفرمی چندمستأجری که هر سازمان در آن فضای کاری هوش مصنوعی خودش را روی دانش خودش اجرا می‌کند. تیم‌ها ایجنت‌ها را در Studio می‌سازند و مشتریان از طریق Site Portal با آن‌ها کار می‌کنند. دادهٔ هر tenant با Row-Level Security در PostgreSQL از بقیه جدا می‌ماند.\n\nپلتفرم مشخص می‌کند کاربر کیست، به کدام ابزار و دانش دسترسی دارد و کدام پرامپت اعمال می‌شود، و اجرای کار را از طریق gRPC streaming به runtime جداگانه‌ای می‌سپارد. مدل برنامه‌ریزی می‌کند و پیشنهاد می‌دهد؛ هر پیشنهاد اعتبارسنجی می‌شود و وضعیت کار در اختیار کد قطعی است. به همین دلیل ایجنت می‌تواند برای پرسیدن از کاربر، یا برای ابزاری که در مرورگر اجرا می‌شود، مکث کند و از همان نقطه ادامه دهد. تاریخچهٔ گفتگو به‌صورت دفتر فقط‌افزودنی همراه با snapshot نگه داشته می‌شود. قطع اتصال اجرا را از بین نمی‌برد و لازم نیست پیام‌های قبلی دوباره داخل پرامپت نوشته شوند.\n\nپاسخ‌ها به شواهد تکیه دارند. درخواست‌هایی که به ایجنت کامل نیاز ندارند از مسیر سریع‌تر و کم‌هزینه‌تری می‌روند. یک eval harness با آزمون A/B پرامپت و امتیازدهی در Langfuse نشان می‌دهد هر تغییر کمکی کرده است یا نه. ورود دانش با ظرفیت سرور تنظیم می‌شود و crawl در سرویس جداگانه‌ای اجرا می‌شود.",
+          "en": "Building the Agent Studio backend on chatbot.ir, a multi-tenant platform where each organization runs an AI workspace on its own knowledge. Teams build agents in Studio, and customers use them through the Site Portal. PostgreSQL row-level security keeps each tenant's data separate.\n\nThe platform determines who the user is, which tools and knowledge they can use, and which prompt applies, then hands the run to a separate runtime over gRPC streaming. The model plans and proposes. Each proposal is validated, and deterministic code owns task state. That's why an agent can pause to ask the user, or wait for a tool running in the browser, and resume from that point. Conversation history is stored as an append-only ledger with snapshots. A dropped connection does not lose the run, and earlier messages do not have to be copied back into the prompt.\n\nAnswers stay tied to evidence. Questions that do not need the full agent take a faster, lower-cost path. An evaluation harness with prompt A/B tests and Langfuse scoring checks whether a change helps. Knowledge ingestion is paced to server resources, and crawling runs as its own service."
         }
       },
       {
         "title": {
-          "fa": "مهندس نرم‌افزار",
-          "en": "Software Engineer"
+          "fa": "مهندس نرم‌افزار (قراردادی)",
+          "en": "Software Engineer (Contract)"
         },
         "location": {
           "fa": "اگرین پی (احداثینو)",
@@ -164,8 +165,8 @@
           "en": "April 2025 — April 2026"
         },
         "description": {
-          "fa": "حدود یک سال بک‌اند احداثینو را ساختم؛ بازار مناقصهٔ معکوسی که در آن تأمین‌کننده‌های مصالح ساختمانی برای هر درخواست خرید با هم رقابت می‌کنند. کل جریان درخواست و پیشنهاد را با Django/DRF و معماری hexagonal طراحی کردم تا قواعد کسب‌وکار مستقل از لایهٔ HTTP قابل تست باشند. خریدار و تأمین‌کننده با OTP و JWT وارد سیستم می‌شوند و هر کدام نقش خودشان را دارند. اعلان‌ها با Celery و Redis به‌صورت ناهمزمان ارسال می‌شوند. در نهایت هم سیستم را با health check، محدودسازی دسترسی به داده و مانیتورینگ مناسب برای production آماده کردم.",
-          "en": "I spent about a year building the backend of Ehdasino, a reverse-auction marketplace where construction suppliers bid against each other for every purchase request. I modeled the whole request-and-bid flow in Django/DRF with a hexagonal design, so the business rules could be tested without touching HTTP. Buyers and suppliers sign in with OTP and JWT, each with their own role. Notifications go out asynchronously through Celery and Redis. I also got it ready for production with health checks, data scoping and proper observability."
+          "fa": "حدود یک سال بک‌اند احداثینو را ساختم؛ بازار مناقصهٔ معکوس که در آن تأمین‌کنندگان مصالح ساختمانی برای هر درخواست خرید رقابت می‌کنند. جریان درخواست و پیشنهاد را با Django/DRF و معماری hexagonal طراحی کردم تا قواعد کسب‌وکار مستقل از HTTP قابل تست باشند. خریدار و تأمین‌کننده با OTP و JWT وارد می‌شوند و هر کدام نقش جدا دارند. اعلان‌ها با Celery و Redis به‌صورت ناهمزمان ارسال می‌شوند. سیستم را با health check، محدودسازی دسترسی به داده و مانیتورینگ برای production آماده کردم.",
+          "en": "Spent about a year building the Ehdasino backend, a reverse-auction marketplace where suppliers of construction materials compete on each purchase request. Modeled the request-and-bid flow in Django/DRF with a hexagonal architecture so business rules can be tested without HTTP. Buyers and suppliers sign in with OTP and JWT, each with a separate role. Notifications go out asynchronously through Celery and Redis. Prepared the system for production with health checks, data scoping, and observability."
         }
       },
       {
@@ -182,8 +183,8 @@
           "en": "Dec 2022 — May 2025"
         },
         "description": {
-          "fa": "دو سال و نیم به‌صورت فریلنس کار کردم، بیشتر روی سامانه‌های داخلی سازمان‌ها و بک‌اند محصولات. معمولاً هر پروژه را از اولین جلسهٔ نیازسنجی تا تحویل APIهای امن و تست‌شده، خودم پیش می‌بردم. همین تجربه به من یاد داد معماری تمیز و تست‌نویسی را جدی بگیرم، خیلی پیش از آنکه کسی از من بخواهد.",
-          "en": "I freelanced for two and a half years, mostly on internal business systems and product backends. I usually carried each project myself, from the first conversation about requirements to secure, tested APIs. That's where I learned to take clean architecture and testing seriously, long before anyone asked me to."
+          "fa": "دو سال و نیم به‌صورت فریلنس، عمدتاً روی سامانه‌های داخلی سازمان‌ها و بک‌اند محصولات کار کردم. معمولاً هر پروژه را از نیازسنجی تا APIهای امن و تست‌شده پیش می‌بردم، با توجه به معماری تمیز و تست.",
+          "en": "Freelanced for two and a half years, mainly on internal business systems and product backends. Usually carried each project from requirements through secure, tested APIs, with attention to clean architecture and testing."
         }
       },
       {
@@ -200,8 +201,8 @@
           "en": "Mar 2023 — Sep 2023"
         },
         "description": {
-          "fa": "دوره‌های رایگان پایتون را برای علاقه‌مندانی از شهرهای مختلف برگزار کردم و بعد از جلسهٔ آخر هم همراهشان ماندم و به‌عنوان منتور راهنمایی‌شان کردم.",
-          "en": "Ran free online Python courses for learners from different cities, and stayed on as their mentor after the last session."
+          "fa": "دوره‌های رایگان پایتون را به‌صورت آنلاین برای علاقه‌مندان از شهرهای مختلف برگزار کردم و پس از پایان دوره هم به‌عنوان منتور همراهشان ماندم.",
+          "en": "Taught free online Python courses for learners from different cities, and continued as their mentor after the course ended."
         }
       }
     ],
@@ -224,41 +225,41 @@
             "TypeScript / Next.js"
           ],
           "description": {
-            "fa": "هر سازمان یک فضای کاری هوشمند مخصوص خودش دارد: ایجنت‌ها، دانش، ابزارها و یک Shelf برای کارهای در جریان. محتوای Shelf تا وقتی کسی آن را صریحاً به دانش اضافه نکند، وارد RAG نمی‌شود. تیم‌ها در Studio می‌سازند و مشتری‌هایشان از نتیجه در Site Portal استفاده می‌کنند.",
-            "en": "Every organization gets its own AI workspace with agents, knowledge, tools and a Shelf, a working tray that stays out of RAG until someone explicitly promotes it. Teams build in Studio, and their customers use the result through a Site Portal."
+            "fa": "هر سازمان روی chatbot.ir فضای کاری هوش مصنوعی خودش را دارد: ایجنت‌ها، دانش، ابزارها، و یک Shelf برای کارهای در جریان. محتوای Shelf تا وقتی کسی آن را صریحاً به دانش اضافه نکند وارد RAG نمی‌شود. تیم‌ها در Studio می‌سازند و مشتریان نتیجه را از طریق Site Portal استفاده می‌کنند.",
+            "en": "Each organization has its own AI workspace on chatbot.ir: agents, knowledge, tools, and a Shelf for work in progress. Shelf content stays out of RAG until someone explicitly adds it to knowledge. Teams build in Studio, and customers use the result through the Site Portal."
           },
           "features": [
             {
-              "fa": "پلتفرم و اجرا را از هم جدا کردیم: پلتفرم دسترسی، ابزارها، دانش و پرامپت را تعیین می‌کند و runtime ایجنت کار را از طریق gRPC streaming اجرا می‌کند",
-              "en": "Control plane and execution plane kept apart: the platform resolves auth, tools, knowledge and prompts, and the agent runtime runs the work over gRPC streaming"
+              "fa": "پلتفرم و اجرا از هم جدا هستند: پلتفرم دسترسی، ابزارها، دانش و پرامپت را مشخص می‌کند و runtime ایجنت کار را از طریق gRPC streaming اجرا می‌کند.",
+              "en": "Platform and runtime are separate: the platform resolves access, tools, knowledge, and prompts, and the agent runtime executes the run over gRPC streaming."
             },
             {
-              "fa": "به‌جای یک حلقهٔ سادهٔ ReAct، یک runtime قراردادمحور ساختیم: برنامه‌ریزی، تصمیم‌گیری، اجرا و ادغام نتیجه هر کدام نقش typed و مشخص خودشان را دارند. LLM فقط پیشنهاد می‌دهد و هر پیشنهاد اعتبارسنجی می‌شود؛ وضعیت کار، ادامهٔ اجرا و مکث برای پرسیدن از کاربر در اختیار کد قطعی است",
-              "en": "A contract-based runtime in place of a plain ReAct loop. Planning, decision, execution and assimilation each have a typed role, the LLM only emits validated proposals, and deterministic code owns task state, resume and pausing to ask the user"
+              "fa": "runtime قراردادمحور به‌جای حلقهٔ سادهٔ ReAct. برنامه‌ریزی، تصمیم، اجرا و ادغام نتیجه هر کدام نقش typed مشخصی دارند. مدل فقط پیشنهاد می‌دهد، هر پیشنهاد اعتبارسنجی می‌شود، و کد قطعی مالک وضعیت کار، مکث و ادامهٔ اجراست.",
+              "en": "A contract-based runtime in place of a plain ReAct loop. Planning, decision, execution, and assimilation each have a typed role. The model only emits proposals; each proposal is validated, and deterministic code owns task state, pause, and resume."
             },
             {
-              "fa": "تاریخچهٔ پایدار گفتگو بر پایهٔ دفتر فقط‌افزودنی، projection و snapshotهای نسخه‌دار؛ بعد از قطع اتصال، سؤال از کاربر یا اجرای ابزار در مرورگر، کار بدون دوباره‌کاری از همان‌جا ادامه پیدا می‌کند",
-              "en": "Durable conversation history built on an append-only ledger, projections and versioned snapshots, with idempotent resume after a disconnect, a user question or a browser-side tool"
+              "fa": "تاریخچهٔ ماندگار بر پایهٔ دفتر فقط‌افزودنی، همراه با projection و snapshotهای نسخه‌دار. پس از قطع اتصال، سؤال از کاربر یا اجرای ابزار در مرورگر، کار بدون تکرار از همان نقطه ادامه پیدا می‌کند.",
+              "en": "Durable history on an append-only ledger, with projections and versioned snapshots. After a disconnect, a user question, or a browser-side tool, the run resumes from the same point without repeating completed work."
             },
             {
-              "fa": "RAG مستند به شواهد، به‌همراه یک مسیر سریع بدون ایجنت تا پاسخ‌ها سریع‌تر و کم‌هزینه‌تر باشند؛ در تست‌های داخلی حدود ۹۰ درصد پاسخ‌ها دربارهٔ قوانین سازمان درست بود",
-              "en": "Evidence-grounded RAG with a fast non-agentic path for latency and cost; about 90% accurate on company policies in internal tests"
+              "fa": "RAG متکی بر شواهد، به‌همراه یک مسیر سریع بدون ایجنت برای تأخیر و هزینه. در تست‌های داخلی حدود ۹۰ درصد پاسخ‌ها دربارهٔ قوانین سازمان درست بود.",
+              "en": "Evidence-grounded RAG, plus a faster non-agent path for lower latency and cost. In internal tests, about 90% of answers on company policies were correct."
             },
             {
-              "fa": "eval harness با A/B تست پرامپت و امتیازدهی در Langfuse. پرامپت‌ها هم لایه‌لایه، از سطح پلتفرم تا سازمان و tenant، روی هم قرار می‌گیرند و نیازی به کپی کردن کل متن نیست",
-              "en": "An eval harness with prompt A/B bundles and Langfuse scoring. Prompts layer from platform to organization to tenant without forking the text"
+              "fa": "eval harness با آزمون A/B پرامپت و امتیازدهی در Langfuse. پرامپت‌ها از سطح پلتفرم تا سازمان و tenant روی هم قرار می‌گیرند، بدون کپی کردن کل متن.",
+              "en": "An evaluation harness with prompt A/B tests and Langfuse scoring. Prompts layer from platform to organization to tenant without copying the full text."
             },
             {
-              "fa": "جداسازی tenantها در خود دیتابیس با Row-Level Security در PostgreSQL، به‌همراه دامنهٔ اختصاصی برای هر tenant",
-              "en": "Tenant isolation enforced in the database with PostgreSQL row-level security, plus a custom domain per tenant"
+              "fa": "جداسازی tenantها در خود دیتابیس با Row-Level Security در PostgreSQL، و دامنهٔ اختصاصی برای هر tenant.",
+              "en": "Tenant isolation in the database with PostgreSQL row-level security, and a custom domain per tenant."
             },
             {
-              "fa": "ورود دانش با صفی که سرعتش را با منابع سرور تنظیم می‌کند؛ حدود ۲۰ گیگابایت داده بدون هیچ قطعی وارد سیستم شد. crawl هم در سرویس جداگانهٔ خودش انجام می‌شود",
-              "en": "Knowledge ingestion that paces itself to server resources took in about 20 GB with no downtime. Crawling runs as its own separate service"
+              "fa": "ورود دانش با سرعتی که با منابع سرور تنظیم می‌شود؛ حدود ۲۰ گیگابایت داده بدون قطعی پردازش شد. crawl در سرویس جداگانه‌ای انجام می‌شود.",
+              "en": "Knowledge ingestion that paces itself to server resources took in about 20 GB with no downtime. Crawling runs in its own service."
             },
             {
-              "fa": "مانیتورینگ در دو لایه: Langfuse برای رفتار ایجنت و LLM، و OpenTelemetry با Tempo و Loki برای سمت عملیات",
-              "en": "Two layers of observability: Langfuse for agent and LLM behavior, OpenTelemetry with Tempo and Loki for operations"
+              "fa": "مانیتورینگ در دو لایه: Langfuse برای رفتار ایجنت و مدل زبانی، و OpenTelemetry با Tempo و Loki برای عملیات.",
+              "en": "Two layers of observability: Langfuse for agent and LLM behavior, and OpenTelemetry with Tempo and Loki for operations."
             }
           ],
           "meta": {
@@ -599,8 +600,7 @@
       "Data & messaging: PostgreSQL, Redis, SQL, RabbitMQ, Celery, Kafka, transactional outbox",
       "Architecture: system design, multi-tenancy, hexagonal/DDD, event-driven systems, modular monoliths",
       "DevOps: Docker, CI/CD, Git, Linux, logging and request tracing; working knowledge of Kubernetes and cloud deployment",
-      "Quality: unit and integration tests, TDD, ADRs, code review, mentoring",
-      "Also: TypeScript/Next.js, Go, Rust, gRPC, GraphQL"
+      "Quality: unit and integration tests, TDD, ADRs, code review, mentoring"
     ],
     "education": [
       {
@@ -617,8 +617,8 @@
           "en": "Sep 2022 — Jul 2027 (expected)"
         },
         "details": {
-          "fa": "همکاری پژوهشی با یکی از اساتید و یک ترم عضویت در انجمن علمی دانشکده.",
-          "en": "Research collaboration with a faculty member; one semester on the department's scientific association."
+          "fa": "منتور کلاس در دروس فنی، از جمله مبانی برنامه‌نویسی، ساختار داده، پایگاه داده و مهندسی نرم‌افزار. همکاری پژوهشی با یکی از اساتید، و یک ترم عضویت در انجمن علمی دانشکده.",
+          "en": "Class mentor for technical courses, including programming fundamentals, data structures, databases, and software engineering. Research collaboration with a faculty member, and one semester on the department's scientific association."
         }
       }
     ],
@@ -635,8 +635,8 @@
       },
       {
         "title": {
-          "fa": "توسعهٔ بک‌اند با Django",
-          "en": "Backend Development with Django"
+          "fa": "Backend Develop with Django",
+          "en": "Backend Develop with Django"
         },
         "issuer": {
           "fa": "آکادمی دوران — اسفند ۱۴۰۲",
@@ -661,8 +661,8 @@
           "en": "English"
         },
         "level": {
-          "fa": "پیشرفته — مطالعه و نگارش فنی، جلسات کاری",
-          "en": "Advanced — technical reading & writing, work meetings"
+          "fa": "پیشرفته",
+          "en": "Advanced"
         }
       },
       {

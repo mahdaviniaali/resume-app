@@ -104,6 +104,7 @@ export interface ResumeData {
     name: LocalizedString
     tagline: LocalizedString
     avatar: LocalizedString
+    photo?: string
     location: LocalizedString
     phone: LocalizedString
     phoneHref: string

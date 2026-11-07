@@ -84,6 +84,27 @@ const headings = {
 const waitForRender = () =>
   new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve())))
 
+function ResumeAvatar({ label, photo }: { label: string; photo?: string }) {
+  const [status, setStatus] = useState<'pending' | 'loaded' | 'error'>('pending')
+  const src = photo?.trim() || ''
+  const showImage = Boolean(src) && status === 'loaded'
+
+  return (
+    <div className={styles.avatar} aria-hidden="true">
+      {src && status !== 'error' ? (
+        <img
+          className={`${styles.avatarImage} ${showImage ? styles.avatarImageReady : ''}`}
+          src={src}
+          alt=""
+          onLoad={() => setStatus('loaded')}
+          onError={() => setStatus('error')}
+        />
+      ) : null}
+      {showImage ? null : <span className={styles.avatarFallback}>{label}</span>}
+    </div>
+  )
+}
+
 function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData }) {
   const t = (value: Parameters<typeof resolveText>[0]) => resolveText(value, lang)
   const personal = resume.personal
@@ -99,9 +120,7 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
 
       <header className={styles.header}>
         <div className={styles.headerTop}>
-          <div className={styles.avatar} aria-hidden="true">
-            {t(personal.avatar)}
-          </div>
+          <ResumeAvatar label={t(personal.avatar)} photo={personal.photo} />
           <div className={styles.nameBlock}>
             <h1>{t(personal.name)}</h1>
             <p className={styles.tagline}>{t(personal.tagline)}</p>
