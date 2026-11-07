@@ -72,6 +72,7 @@ async function upsert(prisma, slug, resume, fields, createMeta) {
       shortBioEn: fields.shortBioEn,
       shortBioFa: fields.shortBioFa,
       ...(fields.email ? { email: fields.email } : {}),
+      ...(fields.avatarUrl ? { avatarUrl: fields.avatarUrl } : {}),
     },
   })
 
@@ -119,6 +120,7 @@ async function main() {
           'Senior development and technical leadership — enterprise RAG, agents on chatbot.ir, and turning business needs into shippable architecture.',
         shortBioFa:
           'توسعهٔ ارشد و مدیریت فنی — RAG سازمانی و ایجنت‌ها روی chatbot.ir، و تبدیل نیاز کسب‌وکار به معماری قابل تحویل.',
+        avatarUrl: '/uploads/ali-mahdavinia.png',
       },
     )
 

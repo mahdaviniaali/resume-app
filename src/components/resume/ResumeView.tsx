@@ -99,8 +99,17 @@ function ResumeContent({ lang, resume }: { lang: Language; resume: ResumeData })
 
       <header className={styles.header}>
         <div className={styles.headerTop}>
-          <div className={styles.avatar} aria-hidden="true">
-            {t(personal.avatar)}
+          <div className={styles.avatar} aria-hidden={!personal.avatarImage}>
+            {personal.avatarImage ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                className={styles.avatarImage}
+                src={personal.avatarImage}
+                alt={t(personal.name)}
+              />
+            ) : (
+              t(personal.avatar)
+            )}
           </div>
           <div className={styles.nameBlock}>
             <h1>{t(personal.name)}</h1>

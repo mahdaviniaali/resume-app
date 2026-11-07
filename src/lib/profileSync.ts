@@ -13,6 +13,7 @@ type MemberFields = {
   github?: string
   linkedin?: string
   telegram?: string
+  avatarUrl?: string
 }
 
 type GlobalSync = {
@@ -72,6 +73,7 @@ async function upsertMemberResume(
         github: fields.github || '',
         linkedin: fields.linkedin || '',
         telegram: fields.telegram || '',
+        avatarUrl: fields.avatarUrl || '',
         sortOrder: createIfMissing.sortOrder,
         isPublished: true,
         resume: { create: { dataJson: resumeJson } },
@@ -85,7 +87,8 @@ async function upsertMemberResume(
     member.roleFa !== fields.roleFa ||
     member.shortBioEn !== fields.shortBioEn ||
     member.shortBioFa !== fields.shortBioFa ||
-    (fields.email !== undefined && member.email !== fields.email)
+    (fields.email !== undefined && member.email !== fields.email) ||
+    (fields.avatarUrl !== undefined && member.avatarUrl !== fields.avatarUrl)
 
   if (memberNeedsUpdate) {
     await prisma.teamMember.update({
@@ -99,6 +102,7 @@ async function upsertMemberResume(
         ...(fields.github !== undefined ? { github: fields.github } : {}),
         ...(fields.linkedin !== undefined ? { linkedin: fields.linkedin } : {}),
         ...(fields.telegram !== undefined ? { telegram: fields.telegram } : {}),
+        ...(fields.avatarUrl !== undefined ? { avatarUrl: fields.avatarUrl } : {}),
       },
     })
   }
@@ -124,6 +128,8 @@ async function syncAli() {
   const resume = (raw?.resume || null) as Record<string, unknown> | null
   if (!resume || Object.keys(resume).length === 0) return
 
+  const personal = resume.personal as { avatarImage?: string } | undefined
+
   await upsertMemberResume(
     'ali-mahdavinia',
     resume,
@@ -134,6 +140,7 @@ async function syncAli() {
         'Software engineer: system design, backend delivery, and multi-tenant platforms—plus enterprise agents and grounded RAG on chatbot.ir.',
       shortBioFa:
         'مهندس نرم‌افزار: طراحی سیستم، تحویل بک‌اند و پلتفرم‌های چندمستأجری — به‌همراه ایجنت سازمانی و RAG grounded روی chatbot.ir.',
+      avatarUrl: personal?.avatarImage || '/uploads/ali-mahdavinia.png',
     },
   )
 }
